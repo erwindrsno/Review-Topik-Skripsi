@@ -1,5 +1,6 @@
 # Review-Topik-Skripsi
-Tugas Besar - MIBD/PBW (Kelas B)
+Tugas Besar - MIBD/PBW (Kelompok E)
+
 Anggota :
  1. Erwin Darsono - 6182001002
  2. Angelina Jeany - 6182001032
