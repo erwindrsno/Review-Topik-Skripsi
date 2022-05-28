@@ -44,7 +44,7 @@ body{
 
 .tulisanHeader{
     position: relative;
-    font-family: "Open Sans", sans-serif;
+    font-family: Open Sans, sans-serif;
     color: white;
     display: inline-flex;
 }
@@ -61,14 +61,27 @@ body{
     margin: 47px 0px 0px 320px;
     font-size: 12px;
     line-height: 1;
+    font-weight: 1px;
+}
+
+.inline_block{
+    padding: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .content_grid{
+    height: fit-content;
     display: grid;
+    column-gap: 20px;
     grid-template-areas: "left right";
     align-items: center;
     justify-self: center;
     justify-content: center;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
 }
 
 #ilustrasi{
@@ -77,38 +90,72 @@ body{
 }
 
 .login_form{
+    row-gap: 50px;
+    width: 292.2px;
     height: 394.8px;
     grid-area: right;
     display: grid;
     grid-template-areas:
     "top"
-    "mid1"
-    "mid2"
-    "mid3"
-    "mid4"
+    "mid"
     "bottom";
+    font-family: Open Sans;
 }
 
 h1{
+    font-size: 40px;
     grid-area: top;
+    margin: 5px 0px 0px 0px;
 }
 
-.login_form > :nth-child(2){
-    grid-area: mid1;
-}
-
-.login_form > :nth-child(3){
-    grid-area: mid2;
-}
-
-.login_form > :nth-child(4){
-    grid-area: mid3;
-}
-
-.login_form > :nth-child(5){
-    grid-area: mid4;
-}
-
-.login_formo > :nth-last-child(){
+input[type="submit"]{
+    align-items: baseline;
     grid-area: bottom;
+    border-radius: 10px;
+    border: 0px;
+    background-color: #3d5a80;
+    color: white;
+    font-size: 20px;
+    font-family: Open Sans;
+    margin-left: 70px;
+    margin-right: 70px;
+    height: 60px;
+}
+
+.form_input{
+    display: grid;
+    row-gap: 20px;
+    grid-template-areas: 
+    "atas"
+    "bawah";
+}
+
+.email{
+    align-self: baseline;
+    grid-area: atas;
+    row-gap: 0px;
+    display: grid;
+    grid-template-areas: auto;
+}
+
+#input_email{
+    height: 20px;
+    border-radius: 10px;
+}
+
+label{
+    font-size: 18px;
+    font-family: Open Sans;
+}
+
+.password{
+    align-self: baseline;
+    grid-area: bawah;
+    display: grid;
+    grid-template-areas: auto;
+}
+
+#input_pw{
+    height: 20px;
+    border-radius: 10px;
 }
