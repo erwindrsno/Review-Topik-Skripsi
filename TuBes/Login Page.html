@@ -3,7 +3,7 @@
 <head>
     <title>Login Page</title>
     <script src = 'script.js'></script>
-    <link rel="stylesheet" href="styling/login.css">
+    <link rel="stylesheet" href="styling/LoginPage.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
@@ -18,29 +18,24 @@
             <p class="tulisanDua">Selamat datang di website Topik Skripsi Informatika UNPAR!</p>
         </div>
     </div>
-    <div class="content_grid">
-        <img src="images/login.png" id="ilustrasi">
-        <form class="login_form">
-            <h1>Sign In</h1>
-            <label for="email">Email:</label>
-            <input type="text" id="input_email" name="input_email">
-            <label for="password">Password:</label>
-            <input type="password" id="input_pw" name="input_pw">
-            <input type="submit" value="Submit">
-        </form>
+    <div class="inline_block">
+        <div class="content_grid">         
+            <img src="images/login.png" id="ilustrasi">
+            <form class="login_form">
+                <h1>Sign In</h1>
+                <div class="form_input">
+                    <div class="email">
+                        <label for="email">Email:</label>
+                        <input type="text" id="input_email" name="input_email">
+                    </div>
+                    <div class="password">
+                        <label for="password">Password:</label>
+                        <input type="password" id="input_pw" name="input_pw">
+                    </div>
+                </div>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
     </div>
 </body>
 </html>
-
-<!-- <div class="flex_container">
-    <div class="content_grid">
-        <img src="images/login.png" id="ilustrasi">
-        <form class="login_form">
-            <label for="email">Email:</label>
-            <input type="text" id="input_email" name="input_email">
-            <label for="password">Password:</label>
-            <input type="password" id="input_pw" name="input_pw">
-            <input type="submit" value="Submit">
-        </form>
-    </div>
-</div> -->
