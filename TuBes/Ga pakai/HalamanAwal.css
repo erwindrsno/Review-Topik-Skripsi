@@ -1,0 +1,64 @@
+body{
+    margin: 0px;
+}
+
+.marginKiri{
+    position: absolute;
+    margin: 0px;
+    width: 10px;
+    height: 1024px;
+    background-color: #293241;
+}
+
+#logoif{
+    margin: 11px 10px 10px 17px;
+    width: 208px;
+}
+
+.containerLogoIF{
+    margin: 0px 0px 0px 10px;
+    width: 264px;
+    height: 78px;
+    background-color: #e7e7e7;
+    position: absolute;
+}
+
+.header{
+    position: relative;
+    width: auto;
+    height: 78px;
+    background-color: #293241;
+}
+
+.garisSalam{
+    position: absolute;
+    width: 1px;
+    height: 49px;
+    margin: 14.5px 0px 0px 300px;
+    background-color: white;
+}
+
+.tulisanHeader{
+    position: relative;
+    font-family: "Open Sans", sans-serif;
+    color: white;
+}
+
+.tulisanSatu{
+    position: absolute;
+    margin: 10px 0px 0px 320px;
+    font-weight: 1px;
+    font-size: 24px;
+    line-height: 33px;
+}
+
+.tulisanDua{
+    position: absolute;
+    margin: 45px 0px 0px 320px;
+    font-size: 12px;
+    line-height: 1;
+}
+
+.ilusDosen{
+    
+}

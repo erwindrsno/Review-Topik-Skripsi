@@ -3,7 +3,7 @@
 <head>
     <title>Login Page</title>
     <script src = 'script.js'></script>
-    <link rel="stylesheet" href="styling/Login Page.css">
+    <link rel="stylesheet" href="styling/login.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
@@ -18,21 +18,29 @@
             <p class="tulisanDua">Selamat datang di website Topik Skripsi Informatika UNPAR!</p>
         </div>
     </div>
-    <div class="login">
-        <img src = images/login.png id="loginIMG">
-        <form id="register_form" action="server.php" method="post">
-            <div id="formLogin">
-                <h1 id="textS">Sign In</h1>
-                <p> Log In into your account </p>
-                <label for="email">Email</label>
-                <input type="email" id="email">
-                <label for="password">Password</label>
-                <input type="password" id="password">
-                <input type="submit" value="Sign In" id="btnS">
-                <a href="/loginMahasiswaDosen">back</a>
-            </div>
+    <div class="content_grid">
+        <img src="images/login.png" id="ilustrasi">
+        <form class="login_form">
+            <h1>Sign In</h1>
+            <label for="email">Email:</label>
+            <input type="text" id="input_email" name="input_email">
+            <label for="password">Password:</label>
+            <input type="password" id="input_pw" name="input_pw">
+            <input type="submit" value="Submit">
         </form>
-        
     </div>
 </body>
 </html>
+
+<!-- <div class="flex_container">
+    <div class="content_grid">
+        <img src="images/login.png" id="ilustrasi">
+        <form class="login_form">
+            <label for="email">Email:</label>
+            <input type="text" id="input_email" name="input_email">
+            <label for="password">Password:</label>
+            <input type="password" id="input_pw" name="input_pw">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div> -->
