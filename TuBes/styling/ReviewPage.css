@@ -1,0 +1,70 @@
+body{
+    margin: 0px;
+    margin-bottom: 0px;
+}
+
+.marginKiri{
+    position: absolute;
+    margin: 0px;
+    width: 10px;
+    height: 100%;
+    background-color: #293241;
+}
+
+#logoif{
+    margin: 11px 10px 10px 17px;
+    width: 208px;
+}
+
+.containerLogoIF{
+    height: 100%;
+    background-color: #e7e7e7;
+    position: absolute;
+    display: flex;
+}
+
+.header{
+    position: relative;
+    width: auto;
+    height: 78px;
+    background-color: #293241;
+    display: flex;
+    margin-left: 10px;
+}
+
+.garisSalam{
+    position: absolute;
+    width: 1px;
+    height: 49px;
+    margin: 14.5px 0px 0px 300px;
+    background-color: white;
+}
+
+.tulisanHeader{
+    position: relative;
+    font-family: Open Sans, sans-serif;
+    color: white;
+    display: inline-flex;
+}
+
+.tulisanSatu{
+    position: absolute;
+    margin: 10px 0px 0px 320px;
+    font-weight: 1px;
+    font-size: 24px;
+    line-height: 33px;
+}
+
+.tulisanDua{
+    margin: 47px 0px 0px 320px;
+    font-size: 12px;
+    line-height: 1;
+    font-weight: 1px;
+}
+
+.log_out{
+    position: absolute;
+    width: 34px;
+    height: 34px;
+    margin: 20px 10px 0px 1450px;
+}
