@@ -34,9 +34,10 @@ body{
 
 .garisSalam{
     position: absolute;
-    width: 1px;
+    width: 1.5px;
     height: 49px;
-    margin: 14.5px 0px 0px 300px;
+    top: 17%;
+    left: 20%;
     background-color: white;
 }
 
@@ -66,5 +67,40 @@ body{
     position: absolute;
     width: 34px;
     height: 34px;
-    margin: 20px 10px 0px 1450px;
+    margin: 22px 10px 0px 1450px;
+}
+
+.menu_bar{
+    bottom: 0;
+    height: 75%;
+    width: 15.3%;
+    margin-left: 10px;
+    background-color: #3d5a80;
+    position: fixed;
+}
+
+.profile_bar{
+    width: 17%;
+    height: 7%;
+    top: 20%;
+    margin-left: 10px;
+    background-color: #98c1d9;
+    position: fixed;
+    border-radius: 0px 20px 20px 0px;
+}
+
+#circle{
+    border-radius: 50%;
+    left: 4%;
+    top: 15%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    background-color: #ee6c4d;
+    justify-content: center;
+    align-content: center;
+}
+
+.first_letter{
+    align-items: center;
 }
