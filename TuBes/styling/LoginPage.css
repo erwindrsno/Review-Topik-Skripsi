@@ -1,19 +1,17 @@
 body{
-    margin: 0px;
-    margin-bottom: 0px;
+    margin: 0vh 0vw 0vh 0vw;
 }
 
 .marginKiri{
     position: absolute;
     margin: 0px;
-    width: 10px;
+    width: 1vw;
     height: 100%;
     background-color: #293241;
 }
 
 #logoif{
-    margin: 11px 10px 10px 17px;
-    width: 208px;
+    padding: 1vh 1vw 1vh 1vw;
 }
 
 .containerLogoIF{
@@ -25,20 +23,20 @@ body{
 
 .header{
     position: relative;
-    width: 100%;
-    height: 78px;
+    right: 0;
+    height: 10.5vh;
     background-color: #293241;
     display: flex;
-    margin-left: 10px;
+    margin-left: 1vw;
 }
 
 .garisSalam{
     position: absolute;
-    width: 1px;
-    width: 1.5px;
-    height: 49px;
-    margin: 14.5px 0px 0px 305px;
-    background-color: white;
+    width: 0.2vw;
+    height: 6vh;
+    margin-left: 22vw;
+    align-self: center;
+    background-color: red;
 }
 
 
@@ -46,23 +44,26 @@ body{
 .tulisanHeader{
     position: relative;
     font-family: Open Sans, sans-serif;
-    color: white;
+    color: red;
     display: inline-flex;
 }
 
 .tulisanSatu{
+    margin-left:23vw;
+    top: -0.5vh;
     position: absolute;
+    display: block
+    /* position: absolute;
     margin: 10px 0px 0px 320px;
-    font-weight: 1px;
-    font-size: 24px;
-    line-height: 33px;
+    font-weight: 1px; */
+    /* line-height: 33px; */
 }
 
 .tulisanDua{
-    margin: 47px 0px 0px 320px;
+    /* margin: 47px 0px 0px 320px;
     font-size: 12px;
     line-height: 1;
-    font-weight: 1px;
+    font-weight: 1px; */
 }
 
 .inline_block{
