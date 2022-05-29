@@ -74,7 +74,7 @@ body{
     justify-content: center;
 }
 
-.efek_border{
+/* .efek_border{
     border-style: inset;
     width: 41.619791666666664vw;
     height: 52.4vh;
@@ -82,7 +82,7 @@ body{
     align-self: center;
     position: absolute;
     justify-self: center;
-}
+} */
 
 .content_grid{
     display: grid;
