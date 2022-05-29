@@ -1,0 +1,170 @@
+body{
+    margin: 0px;
+}
+
+.marginKiri{
+    position: absolute;
+    margin: 0px;
+    width: 10px;
+    height: 100%;
+    background-color: #293241;
+}
+
+#logoif{
+    margin: 11px 10px 10px 17px;
+    width: 208px;
+}
+
+.containerLogoIF{
+    margin: 0px 0px 0px 10px;
+    width: 264px;
+    height: 78px;
+    background-color: #e7e7e7;
+    position: absolute;
+}
+
+.header{
+    position: relative;
+    width: 100%;
+    height: 78px;
+    background-color: #293241;
+}
+
+.garisSalam{
+    position: absolute;
+    width: 1px;
+    height: 49px;
+    margin: 14.5px 0px 0px 300px;
+    background-color: white;
+}
+
+.tulisanHeader{
+    position: relative;
+    font-family: "Open Sans", sans-serif;
+    color: white;
+}
+
+.tulisanSatu{
+    position: absolute;
+    margin: 10px 0px 0px 320px;
+    font-weight: 1px;
+    font-size: 24px;
+    line-height: 33px;
+}
+
+.tulisanDua{
+    position: absolute;
+    margin: 45px 0px 0px 320px;
+    font-size: 12px;
+    line-height: 1;
+}
+
+#namaUser{
+    margin-left: 10px;
+    background: #98C1D9;
+    margin-top: 17px;
+    border-radius: 0px 15px 15px 0px;
+    width: 200px;
+    height: 40px;
+    opacity: 30%;
+}
+
+#fitur{
+    bottom: 0;
+    height: 80%;
+    width: 170px;
+    margin-top: -10px;
+    margin-left: 10px;
+    background-color: #3d5a80;
+    position: fixed;
+    display: grid;
+    grid-template-areas: 
+    'kiri1 kanan1'
+    'kiri2 kanan2'
+    'kiri3 kanan3'
+    'kiri4 kanan4'
+    'kiri5 kanan5';
+    grid-template-rows: 35px 35px 35px 35px 35px;
+    grid-template-columns: 25px 145px;
+}
+
+#iconDaftarT{
+    margin: 10px;
+    width: 15px;
+    height: 15px;
+    grid-area: kiri1;
+}
+
+#buttonDT{
+    text-align: left;
+    margin: 9px;
+    background: #3D5A80;
+    color: white;
+    border: 0px;
+    grid-area: kanan1;
+}
+
+#iconUnggahT{
+    margin: 10px;
+    width: 15px;
+    height: 15px;
+    grid-area: kiri2;
+}
+
+#buttonUT{
+    text-align: left;
+    margin: 9px;
+    background: #3D5A80;
+    color: white;
+    border: 0px;
+    grid-area: kanan2;
+}
+#iconKotakT{
+    margin: 10px;
+    width: 15px;
+    height: 15px;
+    grid-area: kiri3;
+}
+
+#buttonKT{
+    text-align: left;
+    margin: 9px;
+    background: #3D5A80;
+    color: white;
+    border: 0px;
+    grid-area: kanan3;
+}
+#iconKelolaU{
+    margin: 10px;
+    width: 15px;
+    height: 15px;
+    grid-area: kiri4;
+}
+
+#buttonKU{
+    text-align: left;
+    margin: 9px;
+    background: #3D5A80;
+    color: white;
+    border: 0px;
+    grid-area: kanan4;
+}
+#iconTentangK{
+    margin: 10px;
+    width: 15px;
+    height: 15px;
+    grid-area: kiri5;
+}
+
+#buttonTK{
+    text-align: left;
+    margin: 9px;
+    background: #3D5A80;
+    color: white;
+    border: 0px;
+    grid-area: kanan5;
+}
+
+#date{
+    padding-left: 95%;
+}

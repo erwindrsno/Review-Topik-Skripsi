@@ -25,11 +25,10 @@ body{
 
 .header{
     position: relative;
-    width: auto;
+    width: 100%;
     height: 78px;
     background-color: #293241;
     display: flex;
-    margin-left: 10px;
 }
 
 .garisSalam{
