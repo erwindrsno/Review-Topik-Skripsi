@@ -50,17 +50,17 @@ body{
 
 .tulisanSatu{
     margin-left:23vw;
-    width: 15vw;
-    top: -2.4vh;
+    width: 20vw;
+    top: -3vh;
     position: absolute;
-    font-size:3vh;
+    font-size:1.5625vw;
 }
 
 .tulisanDua{
     width: 30vw;
     position: absolute;
     top: 4.4vh;
-    font-size: 12px;
+    font-size: 0.78125vw;
     margin-left: 23vw;
     display: block;
 }
@@ -70,23 +70,24 @@ body{
     margin-left: 1vw;
     width: 100%;
     height: 100%;
-    /* width: 97.93vw;
-    height: 89.5vh; */
     background-color: white;
     display: flex;
     justify-content: center;
 }
 
-/* .efek{
+.efek_border{
     border-style: inset;
-    width: 610px;
-    height: 394.8px;
+    width: 41.619791666666664vw;
+    height: 52.4vh;
+    margin-right: 21.3359375vw;
     align-self: center;
-} */
+    position: absolute;
+    justify-self: center;
+}
 
 .content_grid{
     display: grid;
-    column-gap: 20px;
+    column-gap: 3vw;
     grid-template-areas: "left right";
     grid-template-rows: 87vh;
     align-items: center;
@@ -94,7 +95,6 @@ body{
     margin: 0px;
     padding: 0px;
     position: fixed;
-    /* border-style: inset; */
 }
 
 #ilustrasi{
@@ -103,36 +103,37 @@ body{
 }
 
 .login_form{
-    row-gap: 50px;
-    width: 292.2px;
-    height: 394.8px;
+    row-gap: 11vh;
+    width: 19.0234375vw;
+    height: 54.724137931034484vh;
     grid-area: right;
     display: grid;
     grid-template-areas:
     "top"
     "mid"
     "bottom";
+    grid-template-rows:5vh 15vh 5vh;
     font-family: Open Sans;
 }
 
 h1{
-    font-size: 40px;
+    font-size: 2.6041666666666665vw;
     grid-area: top;
-    margin: 5px 0px 0px 0px;
+    margin-top: 3vh;
 }
 
 input[type="submit"]{
     align-items: baseline;
     grid-area: bottom;
-    border-radius: 10px;
+    border-radius: 30px;
     border: 0px;
     background-color: #3d5a80;
     color: white;
-    font-size: 20px;
+    font-size: 1.3020833333333333vw;
     font-family: Open Sans;
-    margin-left: 70px;
-    margin-right: 70px;
-    height: 60px;
+    margin-left: 4.557291666666667vw;
+    margin-right: 4.557291666666667vw;
+    height: 8.620689655172415vh;
 }
 
 ::placeholder{
@@ -142,7 +143,7 @@ input[type="submit"]{
 
 .form_input{
     display: grid;
-    row-gap: 20px;
+    row-gap: 2.8735632183908044vh;
     grid-template-areas: 
     "atas"
     "bawah";
@@ -157,12 +158,12 @@ input[type="submit"]{
 }
 
 #input_email{
-    height: 20px;
+    height: 2.8735632183908044vh;
     border-radius: 10px;
 }
 
 label{
-    font-size: 18px;
+    font-size: 1.171875vw;
     font-family: Open Sans;
 }
 
@@ -174,6 +175,6 @@ label{
 }
 
 #input_pw{
-    height: 20px;
+    height: 2.8735632183908044vh;
     border-radius: 10px;
 }
