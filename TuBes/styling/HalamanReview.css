@@ -90,8 +90,14 @@ body{
 }
 
 .nama{
-    font-family: Open Sans;
-    top: -3vh;
+    font-family: nunitosans-bold;
+    width: 10vw;
+    margin-top: 0.7vh;
+    margin-left: 0.5vw;
+}
+
+.email_user{
+    font-family: nunitosans-regular;
 
 }
 
@@ -195,4 +201,14 @@ body{
 
 #date{
     padding-left: 95%;
+}
+
+@font-face {
+    font-family: nunitosans-bold;
+    src: url('../font/Nunito_Sans/NunitoSans-Bold.ttf');
+}
+
+@font-face{
+    font-family: nunitosans-regular;
+    src: url('../font/Nunito_Sans/NunitoSans-Regular.ttf');
 }
