@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Halaman Review Jeany</title>
+    <title>Halaman Review</title>
     <script src = 'script.js'></script>
-    <link rel="stylesheet" href="../styling/styles.css">
+    <link rel="stylesheet" href="styling/HalamanReview.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body>
@@ -14,56 +14,45 @@
             <img src = logo/iflogo.png id="logoif">
         </div>
         <div class="tulisanHeader">
-            <h4 class="tulisanSatu">Sign In Page</h4>
+            <p class="tulisanSatu">Salam Akademik!</p>
             <p class="tulisanDua">Selamat datang di website Topik Skripsi Informatika UNPAR!</p>
         </div>
     </div>
-    <!-- <div class="login">
-        <img src = images/login.png id="loginIMG">
-        <form id="register_form" action="server.php" method="post">
-            <div id="formLogin">
-                <h1 id="textS"> Sign In</h1>
-                <p> Log In into your account </p>
-                <label for="email">Email</label>
-                <input type="email" id="email">
-                <label for="password">Password</label>
-                <input type="password" id="password">
-                <input type="submit" value="Sign In" id="btnS">
-                <a href="/loginMahasiswaDosen">back</a>
-            </div>
-        </form>        
-    </div> -->
     <div class = "home">
         <div id="date">
             <!-- sesuai input date publish admin -->
-            <img src = icons/Date.png id="iconDate">
+            <img src = icon/Date_range_fill.png id="iconDate">
         </div>
         
-        <div id="namaUser">
-           <!-- sesuai login -->
+        <div id="infoUser">
+        <!-- sesuai login -->
+            <div id="circle">
+                <p id="first_letter">E</p> <!-- kalo nama = Erwin Darsono, maka huruf = E -->
+            </div>
+            <p class="nama">Erwin Darsono</p> <!-- kalo nama = Erwin Darsono, maka = ERWIN DARSONO -->
         </div>
         <div id="fitur">
             <div>
-                <img src = icons/DaftarT.png id="iconDaftarT">
+                <img src = icon/Folder_alt_fill.png id="iconDaftarT">
             </div>
             <div>
-                <img src = icons/UnggahT.png id="iconUnggahT">
+                <img src = icon/import_fill.png id="iconUnggahT">
             </div>
             <div>
-                <img src = icons/KotakT.png id="iconKotakT">
+                <img src = icon/Message_fill.png id="iconKotakT">
             </div>
             <div>
-                <img src = icons/KelolaU.png id="iconKelolaU">
+                <img src = icon/user_add_alt_fill.png id="iconKelolaU">
             </div>
             <div>
-                <img src = icons/TentangK.png id="iconTentangK">
+                <img src = icon/Info_fill.png id="iconTentangK">
             </div>
             <input type="button" id="buttonDT" name="daftarT" value="Daftar Topik">
             <input type="button" id="buttonUT" name="unggahT" value="Unggah Topik">
             <input type="button" id="buttonKT" name="kotakT" value="Kotak Tinjauan">
             <input type="button" id="buttonKU" name="kelolaU" value="Kelola User">
             <input type="button" id="buttonTK" name="tentangK" value="Tentang Kami">           
-         </div>
+        </div>
     </div>
 </body>
 </html>

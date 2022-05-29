@@ -45,13 +45,12 @@ body{
     position: relative;
     font-family: Open Sans, sans-serif;
     color: white;
-    display: inline-flex;
 }
 
 .tulisanSatu{
     margin-left:23vw;
     width: 20vw;
-    top: -3vh;
+    top: -1.7vh;
     position: absolute;
     font-size:1.5625vw;
 }
