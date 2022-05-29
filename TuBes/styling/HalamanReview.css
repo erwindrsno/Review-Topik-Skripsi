@@ -1,5 +1,5 @@
 body{
-    margin: 0vh 0vw 0vh 0vw;
+    margin: 0px;
 }
 
 .marginKiri{
@@ -62,14 +62,23 @@ body{
     display: block;
 }
 
+#sign_out{
+    position: absolute;
+    align-self: center;
+    right: 0;
+    margin-right: 3vw;
+}
+
 #infoUser{
     margin-left: 1vw;
     background-color: #98c1d9;
-    margin-top: 2.2546419098143238vh;
+    /* margin-top: 2.2546419098143238vh; */
     border-radius: 0px 25px 25px 0px;
     width: 18.5vw;
     height: 7.305039787798409vh;
     display: flex;
+    bottom: 0;
+    margin-top: 3%;
 }
 
 #circle{
@@ -112,6 +121,7 @@ body{
     width: 170px;
     margin-top: -10px;
     margin-left: 10px; */
+    margin-top: 0px;
     height: 76.2vh;
     width: 16vw;
     margin-left: 1vw;
@@ -121,7 +131,7 @@ body{
 
 #fitur{
     bottom: 0;
-    height: 74.2vh;
+    height: 75.2vh;
     width: 16vw;
     position: fixed;
     display: grid;
@@ -256,10 +266,6 @@ body{
     border: 0px;
     grid-area: right;
     position: absolute;
-}
-
-#date{
-    padding-left: 95%;
 }
 
 @font-face {
