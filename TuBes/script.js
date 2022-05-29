@@ -20,6 +20,7 @@ function checkValues(){
         document.location = 'lecture.html';
     }
 }
+
 function addDate(){
     const date = new Date();
     document.getElementById('date').innerHTML = date;
@@ -85,3 +86,7 @@ function on2() {
 function off2() {
 	document.getElementById("overlay2").style.display = "none";
 }
+
+document.getElementById("sign_out").addEventListener("onclick,", () => {
+    document.location = 'Login Page.html';
+})
