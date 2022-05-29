@@ -63,6 +63,8 @@ body{
     font-weight: 1px;
 }
 
+/* Template */
+
 .log_out{
     position: absolute;
     width: 34px;
@@ -71,8 +73,10 @@ body{
 }
 
 .menu_bar{
+    display: grid;
+    grid-template-rows: ;
     bottom: 0;
-    height: 75%;
+    height: 575px;
     width: 15.3%;
     margin-left: 10px;
     background-color: #3d5a80;
@@ -87,20 +91,23 @@ body{
     background-color: #98c1d9;
     position: fixed;
     border-radius: 0px 20px 20px 0px;
+    display: flex;
+    align-items: center;
 }
 
 #circle{
+    display: flex;
+    margin-left: 10px;
     border-radius: 50%;
-    left: 4%;
-    top: 15%;
     width: 40px;
     height: 40px;
     position: absolute;
     background-color: #ee6c4d;
+    align-items: center;
     justify-content: center;
-    align-content: center;
 }
 
 .first_letter{
-    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
 }

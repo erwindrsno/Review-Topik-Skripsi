@@ -34,10 +34,10 @@ body{
 
 .garisSalam{
     position: absolute;
+    width: 1px;
     width: 1.5px;
     height: 49px;
-    top: 17%;
-    left: 20%;
+    margin: 14.5px 0px 0px 305px;
     background-color: white;
 }
 
