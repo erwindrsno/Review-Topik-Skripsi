@@ -85,6 +85,6 @@ function off2() {
 	document.getElementById("overlay2").style.display = "none";
 }
 
-document.getElementById("sign_out").addEventListener("onclick,", () => {
+document.getElementById("sign_out").addEventListener("onclick", () => {
     document.location = 'Login Page.html';
 })
