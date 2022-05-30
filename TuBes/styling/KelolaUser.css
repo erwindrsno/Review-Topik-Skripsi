@@ -1,0 +1,518 @@
+body{
+    margin: 0px;
+}
+
+.marginKiri{
+    position: absolute;
+    margin: 0px;
+    width: 1vw;
+    height: 100%;
+    background-color: #293241;
+}
+
+#logoif{
+    padding: 1vh 1vw 1vh 1vw;
+}
+
+.containerLogoIF{
+    height: 100%;
+    background-color: #e7e7e7;
+    position: absolute;
+    display: flex;
+}
+
+.header{
+    position: relative;
+    right: 0;
+    height: 10.5vh;
+    background-color: #293241;
+    display: flex;
+    margin-left: 1vw;
+}
+
+.garisSalam{
+    position: absolute;
+    width: 0.2vw;
+    height: 6vh;
+    margin-left: 22vw;
+    align-self: center;
+    background-color: white;
+}
+
+.tulisanHeader{
+    position: relative;
+    font-family: Open Sans, sans-serif;
+    color: white;
+}
+
+.tulisanSatu{
+    margin-left:23vw;
+    width: 20vw;
+    top: -1.7vh;
+    position: absolute;
+    font-size:1.5625vw;
+}
+
+.tulisanDua{
+    width: 30vw;
+    position: absolute;
+    top: 4.4vh;
+    font-size: 0.78125vw;
+    margin-left: 23vw;
+    display: block;
+}
+
+#sign_out{
+    position: absolute;
+    align-self: center;
+    right: 0;
+    margin-right: 3vw;
+}
+
+#infoUser{
+    margin-left: 1vw;
+    background-color: #98c1d9;
+    /* margin-top: 2.2546419098143238vh; */
+    border-radius: 0px 25px 25px 0px;
+    width: 18.5vw;
+    height: 7.305039787798409vh;
+    display: flex;
+    top: 0;
+    margin-top: 8.1%;
+    position: fixed;
+}
+
+#DaftarT{
+    padding-top: 2%;
+    padding-left: 23%;
+}
+#DaftarTopik{
+    padding-left: 23%;
+    padding-right: 3%;
+    grid-template-areas: 
+    'atas'
+    'bawah';
+}
+#ket{    
+    grid-area: atas;    
+    display: grid;
+    grid-template-areas: 
+    'kiri tengah1 tengah2 kanan';
+    grid-template-columns: 20% 58% 16% 5%;
+}
+#ket1{
+    display: grid;
+    grid-area: kiri;
+}
+#ket2{
+    display: grid;
+    grid-area: tengah1;
+}
+#ket3{
+    display: grid;
+    grid-area: tengah2;
+}
+#icDate{
+    display: grid;
+    grid-area: kanan;
+}
+#tabelDT{
+    display: grid;
+    grid-area: bawah;
+    text-align: center;
+}
+#tbl{
+    border: 1px;
+}
+
+#circle{
+    border-radius: 50px 50px 50px 50px;
+    width: 2.2786458333333335vw;
+    height: 4.641909814323608vh;
+    background-color: #ee6b4d;
+    margin-left: 0.5vw;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#first_letter{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.nama{
+    font-family: nunitosans-bold;
+    width: 10vw;
+    margin-top: 1.1vh;
+    margin-left: 3.5vw;
+    font-size: 1vw;
+    position: absolute;
+}
+
+.email_user{
+    font-family: nunitosans-regular;
+    position: absolute;
+    margin-top: 3.7vh;
+    font-size: 0.8vw;
+    margin-left: 3.5vw;
+}
+
+.wrapper{
+    bottom: 0;
+    /* height: 80%;
+    width: 170px;
+    margin-top: -10px;
+    margin-left: 10px; */
+    margin-top: 0px;
+    height: 76.2vh;
+    width: 16vw;
+    margin-left: 1vw;
+    background-color: #3d5a80;
+    position: fixed;
+}
+
+#fitur{
+    bottom: 0;
+    height: 75.2vh;
+    width: 16vw;
+    position: fixed;
+    display: grid;
+    row-gap: 1vh;
+    grid-template-areas: 
+    'menu1'
+    'menu2'
+    'menu3'
+    'menu4'
+    'menu5';
+    grid-template-rows: 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh;
+    align-items: center;
+}
+
+.daftar_topik{
+    grid-area: menu1;
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 4vw;
+}
+
+#iconDaftarT{
+    grid-area: left;
+    margin-left: 1vw;
+    padding: 0px;
+}
+
+#buttonDT{
+    text-align: left;
+    font-family: poppins-regular;
+    font-size: 1.3vw;
+    background: #3D5A80;
+    color: white;
+    border: 0px;
+    grid-area: right;
+    position: absolute;
+}
+
+.unggah_topik{
+    grid-area: menu2;
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 4vw;
+}
+
+#iconUnggahT{
+    grid-area: left;
+    margin-left: 0.8vw;
+    padding: 0px;
+}
+
+#buttonUT{
+    text-align: left;
+    font-family: poppins-regular;
+    /* margin-top: 2.6vh; */
+    font-size: 1.3vw;
+    background: #3D5A80;
+    color: white;
+    border: 0px;
+    grid-area: right;
+    position: absolute;
+}
+
+.kotak_tinjauan{
+    grid-area: menu3;
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 4vw;
+}
+
+#iconKotakT{
+    grid-area: left;
+    margin-left: 0.8vw;
+    padding: 0px;
+}
+
+#buttonKT{
+    text-align: left;
+    font-family: poppins-regular;
+    /* margin-top: 2.6vh; */
+    font-size: 1.3vw;
+    background: #3D5A80;
+    color: white;
+    border: 0px;
+    grid-area: right;
+    position: absolute;
+}
+
+.kelola_user{
+    grid-area: menu4;
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 4vw;
+}
+
+#iconKelolaU{
+    grid-area: left;
+    margin-left: 0.8vw;
+    padding: 0px;
+}
+
+#buttonKU{
+    text-align: left;
+    font-family: poppins-regular;
+    font-size: 1.3vw;
+    background: #3D5A80;
+    color: white;
+    border: 0px;
+    grid-area: right;
+    position: absolute;
+}
+
+.tentang_kami{
+    grid-area: menu5;
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 4vw;
+}
+
+#iconTentangK{
+    grid-area: left;
+    margin-left: 0.8vw;
+    padding: 0px;
+}
+
+#buttonTK{
+    text-align: left;
+    font-family: poppins-regular;
+    font-size: 1.3vw;
+    background: #3D5A80;
+    color: white;
+    border: 0px;
+    grid-area: right;
+    position: absolute;
+}
+
+#real_time{
+    position: absolute;
+    /* background-color: red; */
+    bottom: 0;
+    margin-bottom: 4vh;
+    justify-self: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    margin-left: 2vw;
+    font-weight: 500;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.garis_waktu{
+    position: absolute;
+    width: 0.2vw;
+    height: 6.5vh;
+    bottom: 0;
+    margin-bottom: 4.3vh;
+    margin-left: 1vw;
+    align-self: center;
+    background-color: white;
+}
+
+#real_day{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 7.5vh;
+    justify-self: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    margin-left: 2vw;
+    font-weight: 500;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@font-face {
+    font-family: nunitosans-bold;
+    src: url('../font/Nunito_Sans/NunitoSans-Bold.ttf');
+}
+
+@font-face{
+    font-family: nunitosans-regular;
+    src: url('../font/Nunito_Sans/NunitoSans-Regular.ttf');
+}
+
+@font-face{
+    font-family: poppins-regular;
+    src: url('../font/poppins/Poppins-Regular.ttf');
+}
+
+@font-face{
+    font-family: poppins-bold;
+    src: url('../font/poppins/Poppins-Bold.ttf');
+}
+
+#publish{
+    color:white;
+    background: #3D5B81;
+    margin-left: 85%;
+    margin-top: 2%;
+    border: 1px solid ;
+    border-radius: 15px;
+    font-size: 120%;
+    width: 8%;
+}
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;    
+    z-index: 2;
+    cursor: pointer;
+}
+
+#isi{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    font-size: 220%;
+    color: black;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    text-align: center;
+    border: solid;
+    border-radius: 10px;
+}
+
+#ST{
+    color:white;
+    background: #3D5B81;
+    border: 1px solid ;
+    border-radius: 15px;
+    width: 10%;
+    align-items: center;
+    justify-content: center;
+    font-size: 50%;
+}
+
+#SY{
+    border: 1px solid;
+    border-radius: 15px;
+    width: 10%;
+    align-items: center;
+    justify-content: center;
+    font-size: 50%;
+}
+
+#iconHead{
+    background-color:#293241;
+    
+}
+
+#ic2{
+    margin-left: 80%;
+    background-color: transparent;
+}
+
+#ic1{
+    margin-bottom: 0.5%;
+}
+
+#overlay2 {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;    
+    z-index: 2;
+    cursor: pointer;
+}
+
+#isi2{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: grey;
+    font-size: 70%;
+    color: white;
+    width:50%;
+    height: 50%;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    text-align: center;
+    border: solid;
+    border-radius: 10px;
+}
+
+#textGreen{
+    color:#54D761;
+}
+
+#iconCheck{
+    margin-top: 5%;
+}
+
+.dropbtn {
+    background-color: #3D5B81;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+  
+.dropbtn:hover{
+    background-color: #98C1D9;
+}
+  
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+  
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+  
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+  
+.dropdown a:hover {background-color: #ddd;}
+  
+.show {display: block;}
