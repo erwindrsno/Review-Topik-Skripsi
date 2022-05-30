@@ -135,6 +135,10 @@ document.getElementById("sign_out").addEventListener("onclick", () => {
     document.location = 'Login Page.html';
 })
 
+function dropdown() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");

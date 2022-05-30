@@ -485,6 +485,7 @@ body{
     font-size: 16px;
     border: none;
     cursor: pointer;
+    width: 160px;
 }
   
 .dropbtn:hover{
