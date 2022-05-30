@@ -40,17 +40,13 @@ function validate(){
     } else{
         inputVal.style.backgroundColor = "red";
     }
-    if(!input.match(lowCase)) {
-        alert('Password must have lower case');
-    }
-    if(!input.match(upCase)) {
-        alert('Password must have upper case');
-    }
-    if(!input.match(number)) {
-        alert('Password must have number');
-    }
-    if(input.length < 4){
-        alert('Password min 4 char');
+    if (input.length >= 4){
+        if(!input.match(lowCase) || !input.match(upCase) || !input.match(number) || input.length < 4) {
+            alert('Wrong password');
+            return false;
+        } else{
+            checkValues();
+        }
     }
 }
 
