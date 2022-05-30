@@ -77,8 +77,9 @@ body{
     width: 18.5vw;
     height: 7.305039787798409vh;
     display: flex;
-    bottom: 0;
+    bottom: 10;
     margin-top: 3%;
+    position: fixed;
 }
 
 #circle{
@@ -162,7 +163,7 @@ body{
 #buttonDT{
     text-align: left;
     font-family: poppins-regular;
-    font-size: 1.3vw;
+    font-size: 1.1vw;
     background: #3D5A80;
     color: white;
     border: 0px;
@@ -187,7 +188,7 @@ body{
     text-align: left;
     font-family: poppins-regular;
     /* margin-top: 2.6vh; */
-    font-size: 1.3vw;
+    font-size: 1.1vw;
     background: #3D5A80;
     color: white;
     border: 0px;
@@ -212,7 +213,7 @@ body{
     text-align: left;
     font-family: poppins-regular;
     /* margin-top: 2.6vh; */
-    font-size: 1.3vw;
+    font-size: 1.1vw;
     background: #3D5A80;
     color: white;
     border: 0px;
@@ -236,7 +237,7 @@ body{
 #buttonKU{
     text-align: left;
     font-family: poppins-regular;
-    font-size: 1.3vw;
+    font-size: 1.1vw;
     background: #3D5A80;
     color: white;
     border: 0px;
@@ -260,7 +261,7 @@ body{
 #buttonTK{
     text-align: left;
     font-family: poppins-regular;
-    font-size: 1.3vw;
+    font-size: 1.1vw;
     background: #3D5A80;
     color: white;
     border: 0px;
@@ -268,11 +269,21 @@ body{
     position: absolute;
 }
 
+.content_space{
+    width: 78vw;
+    height: 70vh;
+    right: 0;
+    margin: 6.2vh 1.3vw;
+    /* background-color: red; */
+    position: fixed;
+    border-style: inset;
+}
+
 #publish{
     color:white;
     background: #3D5B81;
-    margin-left: 84.01302083333333vw;
-    margin-top: 67.47480106100795vh;
+    margin-left: 87.01302083333333vw;
+    margin-top: 79.47480106100795vh;
     border: 1px solid ;
     border-radius: 15px;
     font-size: 120%;

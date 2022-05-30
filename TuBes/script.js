@@ -9,6 +9,17 @@ class Login{
     }
 }
 
+const password = document.getElementById('input_pw');
+password.addEventListener('keyup', (event) => {
+    let event1 = event.currentTarget;
+    if(event1.value.length < 4 && event1.value.length > 0){
+        event1.style.backgroundColor="red";
+    }
+    else{
+        event1.style.backgroundColor="white";
+    }
+});
+
 document.getElementById('btnS').addEventListener('onclick',checkValues);
 function checkValues(){
     const val = document.getElementById('input_email').value;
@@ -35,12 +46,7 @@ function validate(){
     const upCase = /[A-Z]/g;
     const number = /[0-9]/g;
     const input = document.getElementById('input_pw').value;
-    var inputVal = document.getElementById('input_pw');
-    if (inputVal.value.length >= 4) {
-        inputVal.style.backgroundColor = "white";
-    } else{
-        inputVal.style.backgroundColor = "red";
-    }
+    let inputVal = document.getElementById('input_pw');
     if (input.length >= 4){
         if(!input.match(lowCase) || !input.match(upCase) || !input.match(number) || input.length < 4) {
             alert('Wrong password');
