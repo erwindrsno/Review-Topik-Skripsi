@@ -11,13 +11,13 @@ class Login{
 
 document.getElementById('btnS').addEventListener('click',checkValues);
 function checkValues(){
-    const val = document.getElementById('email').value;
-    let pattern = /[a-z0-9]+@student.com/g;
+    const val = document.getElementById('input_email').value;
+    let pattern = /[a-z0-9]+@/i;
     const check = val.match(pattern);
-    if (check.includes('student')){
+    if (val.includes('student')){
         document.location = 'student.html';
-    } else{
-        document.location = 'lecture.html';
+    } else if (val.includes('lecture')){
+        document.location = 'HalamanReview.html';
     }
 }
 
@@ -37,7 +37,7 @@ function validate(){
     const number = /[0-9]/g;
     const input = document.getElementById('input_pw').value;
     var inputVal = document.getElementById('input_pw');
-    if (inputVal.value.length >= 8) {
+    if (inputVal.value.length >= 4) {
         inputVal.style.backgroundColor = "white";
     } else{
         inputVal.style.backgroundColor = "red";
@@ -51,8 +51,8 @@ function validate(){
     if(!input.match(number)) {
         alert('Password must have number');
     }
-    if(input.length < 8){
-        alert('Password min 8 char');
+    if(input.length < 4){
+        alert('Password min 4 char');
     }
 }
 

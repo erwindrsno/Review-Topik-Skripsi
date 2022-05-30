@@ -30,11 +30,11 @@
                     </div>
                     <div class="password">
                         <label for="password">Password:</label>
-                        <input type="password" id="input_pw" name="input_pw" placeholder="Enter your password" onclick=validate()>
+                        <input type="password" id="input_pw" name="input_pw" placeholder="Enter your password" onkeyup=validate()>
                     </div>
                 </div>
                 <!-- <div class="efek_border"></div> -->
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" id="btnS" onclick="checkValues()">
             </form>
         </div>
     </div>
