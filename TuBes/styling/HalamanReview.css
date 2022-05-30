@@ -268,26 +268,6 @@ body{
     position: absolute;
 }
 
-@font-face {
-    font-family: nunitosans-bold;
-    src: url('../font/Nunito_Sans/NunitoSans-Bold.ttf');
-}
-
-@font-face{
-    font-family: nunitosans-regular;
-    src: url('../font/Nunito_Sans/NunitoSans-Regular.ttf');
-}
-
-@font-face{
-    font-family: poppins-regular;
-    src: url('../font/poppins/Poppins-Regular.ttf');
-}
-
-@font-face{
-    font-family: poppins-bold;
-    src: url('../font/poppins/Poppins-Bold.ttf');
-}
-
 #publish{
     color:white;
     background: #3D5B81;
@@ -310,7 +290,7 @@ body{
     z-index: 2;
     cursor: pointer;
 }
-  
+
 #isi{
     position: absolute;
     top: 50%;
@@ -393,4 +373,24 @@ body{
 }
 #iconCheck{
     margin-top: 5%;
+}
+
+@font-face {
+    font-family: nunitosans-bold;
+    src: url('../font/Nunito_Sans/NunitoSans-Bold.ttf');
+}
+
+@font-face{
+    font-family: nunitosans-regular;
+    src: url('../font/Nunito_Sans/NunitoSans-Regular.ttf');
+}
+
+@font-face{
+    font-family: poppins-regular;
+    src: url('../font/poppins/Poppins-Regular.ttf');
+}
+
+@font-face{
+    font-family: poppins-bold;
+    src: url('../font/poppins/Poppins-Bold.ttf');
 }
