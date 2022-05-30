@@ -1,13 +1,11 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <title>Halaman Review</title>
     <script src = 'script.js' defer></script>
     <link rel="stylesheet" href="styling/HalamanReview.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
-
 <body onload="realTimeClock()">
     <div class="marginKiri"></div>
     <div class="header">
@@ -22,6 +20,16 @@
         <input type="image" src="icon/Sign_in.png" id="sign_out">
     </div>
     <div class = "home"> 
+        <div id="DaftarT">
+            <b>
+                DAFTAR TOPIK SKRIPSI - T.A 2022/2023
+            </b>
+            <br>
+            <br>
+            <b>
+                Keterangan:
+            </b>
+        </div>
         <div id="infoUser">
         <!-- sesuai login -->
             <div id="circle">
@@ -58,11 +66,212 @@
             <div id="real_day"></div>
             <div id="real_time"></div>
         </div>
-        <div class="content_space">
-            
-        </div>
-        <div>
-            <button id="publish" onclick="on1()">Publish</button>
+        <div id="DaftarTopik">
+            <div id="ket">
+                <div id="ket1">
+                    - CS = Computing Science
+                    <br>
+                    - DS = Data Science
+                </div>
+                <div id="ket2">
+                    - (*) = Topik Skripsi Jenis Bintang
+                    <br>
+                    - Non(*) = Topik Skripsi Jenis Reguler
+                </div>
+                <div id="ket3">
+                    Masa review hingga:                
+                    <br>
+                    <div id="date">
+                        <!-- sesuai input admin -->                    
+                    </div>                
+                </div>
+                <div id="icDate">
+                    <img src = icon/Date_range_fill.png>
+                </div>
+            </div>
+            <br>
+            <div id="tabelDT">
+                <table rules="all" id="tbl">
+                    <tr>
+                        <td> No </td>
+                        <td> Judul Topik </td>
+                        <td> Dosen Pengaju </td>
+                        <td> Kode Topik </td>
+                        <td> Semester </td>
+                        <td> Bidang Peminatan </td>
+                        <td> Tanggal Unggah </td>
+                        <td> Status </td>
+                        <td> Review </td>
+                    </tr>
+                    <tr>
+                        <td> 1 </td>
+                        <td> 
+                            <!-- sesuai input dari dosen -->
+                        </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 2 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 3 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 4 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 5 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 6 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 7 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 8 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 9 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 10 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 11 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 12 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 13 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 14 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 15 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                </table> 
+            </div>
         </div>
         <div id="overlay" onclick="on1()">  
             <div id="isi" >
@@ -100,6 +309,9 @@
                     <img src = icon/Vector.png >        
                 </div>    
             </div>                      
+        </div>
+        <div >
+            <button id="publish" onclick="on1()">Publish</button>
         </div>
     </div>
 </body>

@@ -77,9 +77,52 @@ body{
     width: 18.5vw;
     height: 7.305039787798409vh;
     display: flex;
-    bottom: 10;
-    margin-top: 3%;
+    top: 0;
+    margin-top: 8.1%;
     position: fixed;
+}
+
+#DaftarT{
+    padding-top: 2%;
+    padding-left: 23%;
+}
+#DaftarTopik{
+    padding-left: 23%;
+    padding-right: 3%;
+    grid-template-areas: 
+    'atas'
+    'bawah';
+}
+#ket{    
+    grid-area: atas;    
+    display: grid;
+    grid-template-areas: 
+    'kiri tengah1 tengah2 kanan';
+    grid-template-columns: 20% 58% 16% 5%;
+}
+#ket1{
+    display: grid;
+    grid-area: kiri;
+}
+#ket2{
+    display: grid;
+    grid-area: tengah1;
+}
+#ket3{
+    display: grid;
+    grid-area: tengah2;
+}
+#icDate{
+    display: grid;
+    grid-area: kanan;
+}
+#tabelDT{
+    display: grid;
+    grid-area: bawah;
+    text-align: center;
+}
+#tbl{
+    border: 1px;
 }
 
 #circle{
@@ -163,7 +206,7 @@ body{
 #buttonDT{
     text-align: left;
     font-family: poppins-regular;
-    font-size: 1.1vw;
+    font-size: 1.3vw;
     background: #3D5A80;
     color: white;
     border: 0px;
@@ -188,7 +231,7 @@ body{
     text-align: left;
     font-family: poppins-regular;
     /* margin-top: 2.6vh; */
-    font-size: 1.1vw;
+    font-size: 1.3vw;
     background: #3D5A80;
     color: white;
     border: 0px;
@@ -213,7 +256,7 @@ body{
     text-align: left;
     font-family: poppins-regular;
     /* margin-top: 2.6vh; */
-    font-size: 1.1vw;
+    font-size: 1.3vw;
     background: #3D5A80;
     color: white;
     border: 0px;
@@ -237,7 +280,7 @@ body{
 #buttonKU{
     text-align: left;
     font-family: poppins-regular;
-    font-size: 1.1vw;
+    font-size: 1.3vw;
     background: #3D5A80;
     color: white;
     border: 0px;
@@ -261,7 +304,7 @@ body{
 #buttonTK{
     text-align: left;
     font-family: poppins-regular;
-    font-size: 1.1vw;
+    font-size: 1.3vw;
     background: #3D5A80;
     color: white;
     border: 0px;
@@ -269,26 +312,73 @@ body{
     position: absolute;
 }
 
-.content_space{
-    width: 78vw;
-    height: 66vh;
-    right: 0;
-    margin: 11.2vh 1.3vw;
+#real_time{
+    position: absolute;
     /* background-color: red; */
-    position: fixed;
-    border-style: inset;
+    bottom: 0;
+    margin-bottom: 4vh;
+    justify-self: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    margin-left: 2vw;
+    font-weight: 500;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.garis_waktu{
+    position: absolute;
+    width: 0.2vw;
+    height: 6.5vh;
+    bottom: 0;
+    margin-bottom: 4.3vh;
+    margin-left: 1vw;
+    align-self: center;
+    background-color: white;
+}
+
+#real_day{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 7.5vh;
+    justify-self: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    margin-left: 2vw;
+    font-weight: 500;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+@font-face {
+    font-family: nunitosans-bold;
+    src: url('../font/Nunito_Sans/NunitoSans-Bold.ttf');
+}
+
+@font-face{
+    font-family: nunitosans-regular;
+    src: url('../font/Nunito_Sans/NunitoSans-Regular.ttf');
+}
+
+@font-face{
+    font-family: poppins-regular;
+    src: url('../font/poppins/Poppins-Regular.ttf');
+}
+
+@font-face{
+    font-family: poppins-bold;
+    src: url('../font/poppins/Poppins-Bold.ttf');
 }
 
 #publish{
     color:white;
     background: #3D5B81;
-    margin-left: 87.01302083333333vw;
-    margin-top: 81.47480106100795vh;
+    margin-left: 85%;
+    margin-top: 2%;
     border: 1px solid ;
     border-radius: 15px;
     font-size: 120%;
     width: 8%;
-    position: absolute;
 }
 #overlay {
     position: fixed;
@@ -385,62 +475,4 @@ body{
 }
 #iconCheck{
     margin-top: 5%;
-}
-
-#real_time{
-    position: absolute;
-    /* background-color: red; */
-    bottom: 0;
-    margin-bottom: 4vh;
-    justify-self: center;
-    justify-content: center;
-    font-size: 1.5vw;
-    margin-left: 2vw;
-    font-weight: 500;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.garis_waktu{
-    position: absolute;
-    width: 0.2vw;
-    height: 6.5vh;
-    bottom: 0;
-    margin-bottom: 4.3vh;
-    margin-left: 1vw;
-    align-self: center;
-    background-color: white;
-}
-
-#real_day{
-    position: absolute;
-    bottom: 0;
-    margin-bottom: 7.5vh;
-    justify-self: center;
-    justify-content: center;
-    font-size: 1.5vw;
-    margin-left: 2vw;
-    font-weight: 500;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-@font-face {
-    font-family: nunitosans-bold;
-    src: url('../font/Nunito_Sans/NunitoSans-Bold.ttf');
-}
-
-@font-face{
-    font-family: nunitosans-regular;
-    src: url('../font/Nunito_Sans/NunitoSans-Regular.ttf');
-}
-
-@font-face{
-    font-family: poppins-regular;
-    src: url('../font/poppins/Poppins-Regular.ttf');
-}
-
-@font-face{
-    font-family: poppins-bold;
-    src: url('../font/poppins/Poppins-Bold.ttf');
 }
