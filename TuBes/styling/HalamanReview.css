@@ -271,9 +271,9 @@ body{
 
 .content_space{
     width: 78vw;
-    height: 70vh;
+    height: 66vh;
     right: 0;
-    margin: 6.2vh 1.3vw;
+    margin: 11.2vh 1.3vw;
     /* background-color: red; */
     position: fixed;
     border-style: inset;
@@ -283,7 +283,7 @@ body{
     color:white;
     background: #3D5B81;
     margin-left: 87.01302083333333vw;
-    margin-top: 79.47480106100795vh;
+    margin-top: 81.47480106100795vh;
     border: 1px solid ;
     border-radius: 15px;
     font-size: 120%;
