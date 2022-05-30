@@ -131,6 +131,14 @@ function off2() {
 	document.getElementById("overlay2").style.display = "none";
 }
 
+function onUT() {
+	document.getElementById("overlayUT").style.display = "block";
+}
+
+function offUT() {
+	document.getElementById("overlayUT").style.display = "none";
+}
+
 document.getElementById("sign_out").addEventListener("onclick", () => {
     document.location = 'Login Page.html';
 })

@@ -82,52 +82,6 @@ body{
     position: fixed;
 }
 
-#DaftarT{
-    padding-top: 2%;
-    padding-left: 23%;
-}
-#DaftarTopik{
-    padding-left: 23%;
-    padding-right: 3%;
-    grid-template-areas: 
-    'atas'
-    'bawah';
-}
-#ket{    
-    grid-area: atas;    
-    display: grid;
-    grid-template-areas: 
-    'kiri tengah1 tengah2 kanan';
-    grid-template-columns: 20% 58% 16% 5%;
-}
-#ket1{
-    display: grid;
-    grid-area: kiri;
-}
-#ket2{
-    display: grid;
-    grid-area: tengah1;
-}
-#ket3{
-    display: grid;
-    grid-area: tengah2;
-    border-right: 1px solid;
-}
-
-#icDate{
-    padding-top: 7%;
-    padding-left: 12%;
-    display: grid;
-    grid-area: kanan;
-}
-#tabelDT{
-    display: grid;
-    grid-area: bawah;
-    text-align: center;
-}
-#tbl{
-    border: 1px;
-}
 
 #circle{
     border-radius: 50px 50px 50px 50px;
@@ -373,79 +327,86 @@ body{
     font-family: poppins-bold;
     src: url('../font/poppins/Poppins-Bold.ttf');
 }
-
-#publish{
-    color:white;
-    background: #3D5B81;
-    margin-left: 85%;
-    margin-top: 2%;
-    border: 1px solid ;
-    border-radius: 15px;
-    font-size: 120%;
-    width: 8%;
-}
-#overlay {
-    position: fixed;
-    display: none;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;    
-    z-index: 2;
-    cursor: pointer;
-}
-
-#isi{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background-color: white;
-    font-size: 220%;
-    color: black;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    text-align: center;
-    border: solid;
+#isiUT{
+    border: 1px solid;
     border-radius: 10px;
 }
-
-#ST{
-    color:white;
-    background: #3D5B81;
-    border: 1px solid ;
-    border-radius: 15px;
-    width: 10%;
-    align-items: center;
-    justify-content: center;
-    font-size: 50%;
-}
-
-#SY{
-    border: 1px solid;
-    border-radius: 15px;
-    width: 10%;
-    align-items: center;
-    justify-content: center;
-    font-size: 50%;
-}
-
-#iconHead{
-    background-color:#293241;
-    
-}
-
 #ic2{
     margin-left: 80%;
     background-color: transparent;
 }
 
 #ic1{
+    margin-left: 2%;
     margin-bottom: 0.5%;
 }
+#formUT{
+    display:grid;
+    grid-template-areas: 
+    'kiri1 s kanan1'
+    'kiri2 s kanan2'
+    'kosong s kanan3';
+    padding:3%;
+    line-height: 50%;
+}
+#garisV{
+    display: grid;
+    grid-area: s;
+    border-left: 1px solid;
+    height:100%;
+}
+#formUT1{
+    display: grid;
+    grid-area: kiri1;
+    padding-right: 20%;
+    padding-left: 5%;
+}
 
-#overlay2 {
+#formUT2{
+    display: grid;
+    grid-area: kiri2;
+    padding-right: 20%;
+    padding-left: 5%;
+}
+
+#formUT3{
+    display: grid;
+    grid-area: kanan1; 
+    padding-left:-5%;
+    margin-left: -35%;
+    padding-right: 5%;
+}
+#formUT4{
+    display: grid;
+    grid-area: kanan2;
+    margin-left: -35%;
+    padding-right: 5%;
+}
+#formUT5{
+    display: grid;
+    grid-area: kanan3;
+    margin-left: 50%;
+    margin-right: 10%;
+    margin-top: 10%;
+    
+}
+#submitUT{
+    color: white;
+    background: #3D5B81;
+    border: 0;
+    height: 130%;
+    border-radius: 10px;
+}
+#UnggahTopik{    
+    padding-left: 25%;
+    padding-right: 25%;
+    padding-top: 7%;    
+}
+#iconHead{
+    background-color:#293241;  
+    border-radius: 10px;
+}
+#overlayUT {
     position: fixed;
     display: none;
     width: 100%;
