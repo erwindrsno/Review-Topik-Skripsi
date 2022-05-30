@@ -9,11 +9,9 @@ class Login{
     }
 }
 
-document.getElementById('btnS').addEventListener('click',checkValues);
+document.getElementById('btnS').addEventListener('onclick',checkValues);
 function checkValues(){
     const val = document.getElementById('input_email').value;
-    let pattern = /[a-z0-9]+@/i;
-    const check = val.match(pattern);
     if (val.includes('student')){
         document.location = 'student.html';
     } else if (val.includes('lecture')){
