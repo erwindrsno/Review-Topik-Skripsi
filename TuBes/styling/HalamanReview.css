@@ -271,12 +271,13 @@ body{
 #publish{
     color:white;
     background: #3D5B81;
-    margin-left: 80%;
-    margin-top: 30%;
+    margin-left: 84.01302083333333vw;
+    margin-top: 67.47480106100795vh;
     border: 1px solid ;
     border-radius: 15px;
     font-size: 120%;
     width: 8%;
+    position: absolute;
 }
 #overlay {
     position: fixed;

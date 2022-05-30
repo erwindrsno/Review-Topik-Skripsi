@@ -29,6 +29,7 @@ function addDeadline(){
     const y = document.getElementById('numY').value;
     document.getElementById('deadline').innerHTML = d + '-' + m + '-' + y;
 }
+
 function validate(){
     const lowCase = /[a-z]/g;
     const upCase = /[A-Z]/g;
