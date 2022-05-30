@@ -387,6 +387,44 @@ body{
     margin-top: 5%;
 }
 
+#real_time{
+    position: absolute;
+    /* background-color: red; */
+    bottom: 0;
+    margin-bottom: 4vh;
+    justify-self: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    margin-left: 2vw;
+    font-weight: 500;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.garis_waktu{
+    position: absolute;
+    width: 0.2vw;
+    height: 6.5vh;
+    bottom: 0;
+    margin-bottom: 4.3vh;
+    margin-left: 1vw;
+    align-self: center;
+    background-color: white;
+}
+
+#real_day{
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 7.5vh;
+    justify-self: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    margin-left: 2vw;
+    font-weight: 500;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
 @font-face {
     font-family: nunitosans-bold;
     src: url('../font/Nunito_Sans/NunitoSans-Bold.ttf');

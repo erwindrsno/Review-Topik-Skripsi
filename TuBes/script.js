@@ -20,6 +20,49 @@ password.addEventListener('keyup', (event) => {
     }
 });
 
+function realTimeClock(){
+    let rtClock = new Date();
+    let hours = rtClock.getHours();
+    let minutes = rtClock.getMinutes();
+    let seconds = rtClock.getSeconds();
+    let days = rtClock.getDay();
+
+    let amPm = (hours < 12) ? "AM" : "PM";
+
+    hours = (hours > 12) ? hours - 12 : hours;
+
+    hours = ("0" + hours).slice(-2);
+    minutes = ("0" + minutes).slice(-2);
+    seconds = ("0" + seconds).slice(-2);
+
+    switch(days){
+        case 0:
+            days="Minggu"
+            break;
+        case 1:
+            days="Senin"
+            break;
+        case 2:
+            days="Selasa"
+            break;
+        case 3:
+            days="Rabu"
+            break;
+        case 4:
+            days="Kamis"
+            break;
+        case 5:
+            days="Jumat"
+            break;
+        case 6:
+            days="Sabtu"
+            break;
+    }
+    document.getElementById('real_day').innerHTML = days+",";
+    document.getElementById('real_time').innerHTML = hours + ":" + minutes + ":" + seconds +" " + amPm;
+    let t = setInterval(realTimeClock,500);
+}
+
 document.getElementById('btnS').addEventListener('onclick',checkValues);
 function checkValues(){
     const val = document.getElementById('input_email').value;
