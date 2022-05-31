@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <script src = 'script.js' defer></script>
+    <link rel="stylesheet" href="styling/LoginPage.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body>
+    <div class="marginKiri"></div>
+    <div class="header">
+        <div class="garisSalam"></div>
+        <div class="containerLogoIF">
+            <img src = logo/iflogo.png id="logoif">
+        </div>
+        <div class="tulisanHeader">
+            <p class="tulisanSatu">Sign In Page</p>
+            <p class="tulisanDua">Selamat datang di website Topik Skripsi Informatika UNPAR!</p>
+        </div>
+    </div>
+    <div class="flex_container">
+        <div class="content_grid">       
+            <img src="images/login.png" id="ilustrasi">
+            <form class="login_form">
+                <h1>Sign In</h1>
+                <div class="form_input">
+                    <div class="email">
+                        <label for="email">Email:</label>
+                        <input type="text" id="input_email" name="input_email" placeholder="johndoe@student.com" required>
+                    </div>
+                    <div class="password">
+                        <label for="password">Password:</label>
+                        <!-- <input type="password" id="input_pw" name="input_pw" placeholder="Enter your password" onkeyup=validate() required> -->
+                        <input type="password" id="input_pw" name="input_pw" placeholder="Enter your password">
+                    </div>
+                </div>
+                <!-- <div class="efek_border"></div> -->
+                <input type="submit" value="Submit" id="btnS" onclick="validate()">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
