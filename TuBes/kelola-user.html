@@ -59,8 +59,8 @@
                 <div class="dropdown"><br>
                     <button onclick="dropdown()" class="dropbtn">Add User</button>
                     <div id="myDropdown" class="dropdown-content">
-                      <a href="#mahasiswa">Mahasiswa</a>
-                      <a href="#dosen">Dosen</a>
+                      <a href="#mahasiswa" onclick="on1()">Mahasiswa</a>
+                      <a href="#dosen" onclick="on1()">Dosen</a>
                     </div>
                 </div>
             </div>
@@ -241,6 +241,83 @@
                 </table> 
             </div>
         </div>
+    </div>
+    <div id="overlay" onclick="on1()">  
+        <div id="isi" >
+            <div id="iconHead">
+                <img src = icon/circle.png id="ic1">
+                <img src = icon/circle.png id="ic1">
+                <img src = icon/circle.png id="ic1">
+                <button type="submit" id="ic2" onclick="off1()">
+                    <img src = icon/Close.png>
+                </button>                    
+            </div>
+            <form id="formUT">
+                <div id="formUT1">
+                    <label for="lang">Nama</label>
+                    <br>
+                    <input type="text" name="JudulTopik" id="JudulT">
+                    <br>                                            
+                </div>
+                <div id="formUT2">
+                    <label for="lang">Role</label>
+                    <br> 
+                    <select name="BidangPeminatan" id="BidangP">
+                        <option value="mhs">Mahasiswa</option>
+                        <option value="d">Dosen</option>
+                        <option value="min">Admin</option>
+                    </select>  
+                    <br>
+                </div>
+                <div id="garisV">
+
+                </div>
+                <div id="formUT3">
+                    <label for="lang">Id</label>
+                    <br>
+                    <input type="text" name="id" id="id">
+                    <br>
+                </div>
+                <div id="formUT4">
+                    <label for="lang">Email</label>
+                    <br>
+                    <input type="email" name="email" id="email">
+                    <br>
+                </div>
+                <div id="formUT4">
+                    <label for="lang">Password</label>
+                    <br>
+                    <input type="password" name="password" id="password">
+                    <br>
+                </div>
+                <div id="formUT3">
+                    <label for="lang">Semester</label>
+                    <br>
+                    <select name="Semester" id="sems">
+                        <option value="genap">Genap</option>
+                        <option value="ganjil">Ganjil</option>
+                    </select>
+                    <br>
+                </div>
+                <div id="formUT5">
+                    <input type="submit" value="add" id="submitUT" onclick="onUT()">
+                </div>
+            </form>            
+        </div>       
+    </div>        
+    <div id="overlay2" onclick="off2()">  
+        <div id="isi2">
+            <div id="iconCheck" >
+                <img src = icon/Check.png >                
+            </div>          
+            <br>
+            <h1 id="textGreen">Topik-topik berhasil disebarkan</h1>    
+            <div id="text2" >
+                Kembali ke halaman utama
+                <br>
+                <img src = icon/Vector.png >        
+            </div>    
+        </div>                      
     </div>
 </body>
 </html>
