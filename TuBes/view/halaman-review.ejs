@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halaman Review</title>
+    <script src = 'script.js' defer></script>
+    <link rel="stylesheet" href="../public/styling/HalamanReview.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body onload="realTimeClock()">
+    <div class="marginKiri"></div>
+    <div class="header">
+        <div class="garisSalam"></div>
+        <div class="containerLogoIF">
+            <img src = logo/iflogo.png id="logoif">
+        </div>
+        <div class="tulisanHeader">
+            <p class="tulisanSatu">Salam Akademik!</p>
+            <p class="tulisanDua">Selamat datang di website Topik Skripsi Informatika UNPAR!</p>
+        </div>
+        <input type="image" src="icon/Sign_in.png" id="sign_out">
+    </div>
+    <div class = "home"> 
+        <div id="DaftarT">
+            <b>
+                DAFTAR TOPIK SKRIPSI - T.A 2022/2023
+            </b>
+            <br>
+            <br>
+            <b>
+                Keterangan:
+            </b>
+        </div>
+        <div id="infoUser">
+        <!-- sesuai login -->
+            <div id="circle">
+                <p id="first_letter">E</p> <!-- kalo nama = Erwin Darsono, maka huruf = E -->
+            </div>
+            <p class="nama">ERWIN DARSONO</p> <!-- kalo nama = Erwin Darsono, maka = ERWIN DARSONO -->
+            <!-- <p>6182001002@student.id</p> sesuai NPM/NIK, mahasiswa = student.com, dosen = lecturer.com, admin = admin.com -->
+            <p class="email_user">6182001002@student.id</p>
+        </div>
+        <div class="wrapper">
+            <div id="fitur">
+                <div class="daftar_topik">
+                    <img src = icon/Folder_alt_fill.png id="iconDaftarT">
+                    <input type="button" id="buttonDT" name="daftarT" value="Daftar Topik">
+                </div>
+                <div class="unggah_topik">
+                    <img src = icon/import_fill.png id="iconUnggahT">
+                    <input type="button" id="buttonUT" name="unggahT" value="Unggah Topik">
+                </div>
+                <div class="kotak_tinjauan">
+                    <img src = icon/Message_fill.png id="iconKotakT">
+                    <input type="button" id="buttonKT" name="kotakT" value="Kotak Tinjauan">
+                </div>
+                <div class="kelola_user">
+                    <img src = icon/user_add_alt_fill.png id="iconKelolaU">
+                    <input type="button" id="buttonKU" name="kelolaU" value="Kelola User">
+                </div>
+                <div class="tentang_kami">
+                    <img src = icon/Info_fill.png id="iconTentangK">
+                    <input type="button" id="buttonTK" name="tentangK" value="Tentang Kami">     
+                </div>
+            </div>
+            <div class="garis_waktu"></div>
+            <div id="real_day"></div>
+            <div id="real_time"></div>
+        </div>
+        <div id="DaftarTopik">
+            <div id="ket">
+                <div id="ket1">
+                    - CS = Computing Science
+                    <br>
+                    - DS = Data Science
+                </div>
+                <div id="ket2">
+                    - (*) = Topik Skripsi Jenis Bintang
+                    <br>
+                    - Non(*) = Topik Skripsi Jenis Reguler
+                </div>
+                <div id="ket3">
+                    Masa review hingga:                
+                    <br>
+                    <div id="date">
+                        <!-- sesuai input admin -->                    
+                    </div>                
+                </div>
+                <div id="icDate">
+                    <img src = icon/Date_range_fill.png>
+                </div>
+            </div>
+            <br>
+            <div id="tabelDT">
+                <table rules="all" id="tbl">
+                    <tr>
+                        <td> No </td>
+                        <td> Judul Topik </td>
+                        <td> Dosen Pengaju </td>
+                        <td> Kode Topik </td>
+                        <td> Semester </td>
+                        <td> Bidang Peminatan </td>
+                        <td> Tanggal Unggah </td>
+                        <td> Status </td>
+                        <td> Review </td>
+                    </tr>
+                    <tr>
+                        <td> 1 </td>
+                        <td> 
+                            <!-- sesuai input dari dosen -->
+                        </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 2 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 3 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 4 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 5 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 6 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 7 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 8 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 9 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 10 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 11 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 12 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 13 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 14 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 15 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                </table> 
+            </div>
+        </div>
+        <div id="overlay" onclick="on1()">  
+            <div id="isi" >
+                <div id="iconHead">
+                    <img src = icon/circle.png id="ic1">
+                    <img src = icon/circle.png id="ic1">
+                    <img src = icon/circle.png id="ic1">
+                    <button type="submit" id="ic2" onclick="off1()">
+                        <img src = icon/Close.png>
+                    </button>                    
+                </div>
+                <form>
+                    <div id="text">Silahkan mengatur deadline pengambilan topik skripsi</div>
+                    <input type="date" name="date" id="inputDate">
+                    <br>
+                    <hr>
+                    <div id="text">Topik-topik skripsi akan dibuka dan disebarkan pada tanggal diatas pada pukul 00:00:00 WIB</div>
+                    <br>
+                    <div id="text"> Apakah anda yakin akan menyebarkan topik-topik skripsi tersebut? </div>
+                    <input type="submit" value="Iya" id="SY" onclick="on2()">
+                    <input type="submit" value="Tidak" id="ST">
+                </form>                
+            </div>       
+        </div>        
+        <div id="overlay2" onclick="off2()">  
+            <div id="isi2">
+                <div id="iconCheck" >
+                    <img src = icon/Check.png >                
+                </div>          
+                <br>
+                <h1 id="textGreen">Topik-topik berhasil disebarkan</h1>    
+                <div id="text2" >
+                    Kembali ke halaman utama
+                    <br>
+                    <img src = icon/Vector.png >        
+                </div>    
+            </div>                      
+        </div>
+        <div >
+            <button id="publish" onclick="on1()">Publish</button>
+        </div>
+    </div>
+</body>
+</html>
