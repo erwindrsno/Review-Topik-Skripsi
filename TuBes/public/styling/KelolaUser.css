@@ -389,7 +389,7 @@ body{
     left: 0;
     right: 0;
     bottom: 0;    
-    z-index: 2;
+    z-index: 4;
     cursor: pointer;
 }
 
@@ -429,7 +429,7 @@ body{
 
 #iconHead{
     background-color:#293241;
-    
+    border-radius: 10px;
 }
 
 #ic2{
@@ -517,3 +517,100 @@ body{
 .dropdown a:hover {background-color: #ddd;}
   
 .show {display: block;}
+
+#isiUT{
+    border: 1px solid;
+    border-radius: 10%;
+}
+#formUT{
+    display:grid;
+    grid-template-areas: 
+    'kiri1 s kanan1'
+    'kiri2 s kanan2'
+    'kiri3 s kanan3'
+    'kosong s kanan4';
+    padding:3%;
+    line-height: 50%;
+    width: 500px;
+    border-radius: 10%;
+}
+#formUT1{
+    display: grid;
+    grid-area: kiri1;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+#formUT2{
+    display: grid;
+    grid-area: kiri2;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+#formUT3{
+    display: grid;
+    grid-area: kiri3;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+#formUT4{
+    display: grid;
+    grid-area: kanan1; 
+    padding-left:-5%;
+    margin-left: -20%;
+    padding-right: 5%;
+    margin-right: 10%;
+    padding-left: 5%;
+}
+#formUT5{
+    display: grid;
+    grid-area: kanan2;
+    margin-left: -20%;
+    padding-right: 5%;
+    margin-right: 10%;
+    padding-left: 5%;
+}
+#formUT6{
+    display: grid;
+    grid-area: kanan3;
+    margin-left: -20%;
+    padding-right: 5%;
+    margin-right: 10%;
+    padding-left: 5%;
+}
+#formUT7{
+    display: grid;
+    grid-area: kanan4;
+    margin-left: 50%;
+}
+#submitUT{
+    background-color: #3D5B81;
+    color: white;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    width: 70px;
+    border-radius: 20px;
+}
+#sems{
+    width: 30%;
+}
+label{
+    margin-right: auto;
+    font-size: smaller;
+}
+#BidangP{
+    width: 50%;
+}
+#email{
+    margin-right: 5%;
+}
+#password{
+    margin-right: 5%;
+}
+#garisV{
+    display: grid;
+    grid-area: s;
+    border-left: 1px solid;
+    height:76%;
+    margin-left: 5%;
+}
