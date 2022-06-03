@@ -3,7 +3,7 @@ body{
 }
 
 .marginKiri{
-    position: absolute;
+    position: fixed; 
     margin: 0px;
     width: 1vw;
     height: 100%;
