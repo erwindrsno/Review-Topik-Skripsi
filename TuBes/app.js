@@ -3,9 +3,29 @@ import fs from 'fs';
 import express from 'express';
 import path from 'path';
 import multer from 'multer';
+import mysql from 'mysql';
 
 const port = 8080;
 const app = express();
+
+const pool = mysql.createPool({
+    user: '',
+    password: '',
+    database: '',
+    host: 'localhost'
+})
+
+const dbConnect = () => {
+    return new Promise((resolve, reject) => {
+        pool.getConnection((err, conn) => {
+            if(err){
+                reject(err);
+            }else{
+                resolve(conn);
+            }
+        })
+    })
+}
 
 const multerParser = multer();
 
