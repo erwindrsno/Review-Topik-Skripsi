@@ -1,14 +1,32 @@
 import http from 'http';
 import fs from 'fs';
 import express from 'express';
+import path from 'path';
+import multer from 'multer';
 
 const port = 8080;
 const app = express();
 
+const multerParser = multer();
+
+app.set('view engine','ejs');
+
+const staticPath = path.resolve('public');
+app.use(express.static(staticPath));    //serving static page dari public
+
+
 app.get('/', (req,res) => {
     // res.send('Hello world!');
-    res.sendFile('./login-page.html', { root: __dirname });
+    res.sendFile('/index.html');
 });
+
+app.post('/signup', multerParser.none(), (req,res) => {
+    console.log(req.body)
+})
+
+app.get('/halaman-review', (req,res) => {
+    res.sendFile('/halaman-review.html');
+})
 
 app.use('/', (req,res) => {
     res.send('Halaman tidak tersedia!');
