@@ -120,7 +120,7 @@ app.post('/signin', multerParser.none(), (req,res) => {
             if(results.length > 0) {
                 req.session.loggedin = true;
                 req.session.email = email;
-                res.redirect('/home');
+                res.redirect('/halaman-review');
                 // res.sendFile('/halaman-review.html');
             } else{
                 res.send('email/password yang diinput salah!');
@@ -140,15 +140,15 @@ app.get('/halaman-review', (req,res) => {
     res.sendFile('/halaman-review.html');
 });
 
-app.get('/home', function(request, response) {
-	if (request.session.loggedin) {
-		response.send('Welcome back, ' + request.session.email + '!');
-	} else {
-		response.send('Please login to view this page!');
-	}
-	response.end();
-});
+// app.get('/home', function(request, response) {
+// 	if (request.session.loggedin) {
+// 		response.send('Welcome back, ' + request.session.email + '!');
+// 	} else {
+// 		response.send('Please login to view this page!');
+// 	}
+// 	response.end();
+// });
 
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`);
-})
+});
