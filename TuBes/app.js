@@ -65,6 +65,13 @@ pool.query(sql,[values], function(err,result){
 //     return console.log(result);
 // })
 
+pool.query(`delete from user where Nama=?`,['Angelina Jeany'],(err, result, fields)=>{
+    if(err){
+        return console.log(err);
+    }
+    return console.log(result);
+})
+
 const multerParser = multer();
 
 app.set('view engine','ejs');
