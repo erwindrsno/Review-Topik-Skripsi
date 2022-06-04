@@ -16,19 +16,54 @@ const pool = mysql.createPool({
     connectionLimit:10
 })
 
-pool.query(`select * from role`,(err, result, fields)=>{
+// pool.query(`select * from role`,(err, result, fields)=>{
+//     if(err){
+//         return console.log(err);
+//     }
+//     return console.log(result);
+// })
+
+// pool.query(`select * from user`,(err, result, fields)=>{
+//     if(err){
+//         return console.log(err);
+//     }
+//     return console.log(result);
+// })
+
+var sql = "INSERT INTO user (IdUser, Nama, Email, Password, IdRole) VALUES ?";
+var values = [
+    ['5','Angelina Jeany','6182001032@student.unpar.ac.id','abcd','3']
+]
+pool.query(sql,[values], function(err,result){
     if(err){
         return console.log(err);
     }
-    return console.log(result);
+    console.log("records inserted: "+result.affectedRows);
 })
 
-pool.query(`select * from user`,(err, result, fields)=>{
-    if(err){
-        return console.log(err);
-    }
-    return console.log(result);
-})
+//UNTUK AMBIL DATA ADMIN
+// pool.query(`select * from user where IdRole = ?`, [1],(err, result, fields)=>{
+//     if(err){
+//         return console.log(err);
+//     }
+//     return console.log(result);
+// })
+
+//UNTUK AMBIL DATA DOSEN
+// pool.query(`select * from user where IdRole = ?`, [2],(err, result, fields)=>{
+//     if(err){
+//         return console.log(err);
+//     }
+//     return console.log(result);
+// })
+
+// UNTUK AMBIL DATA MAHASISWA
+// pool.query(`select * from user where IdRole = ?`, [1],(err, result, fields)=>{
+//     if(err){
+//         return console.log(err);
+//     }
+//     return console.log(result);
+// })
 
 const multerParser = multer();
 
