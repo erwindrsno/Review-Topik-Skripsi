@@ -9,23 +9,19 @@ const port = 8080;
 const app = express();
 
 const pool = mysql.createPool({
-    user: '',
+    user: 'root',
     password: '',
-    database: '',
-    host: 'localhost'
+    database: 'reviewts',
+    host: 'localhost',
+    connectionLimit:10
 })
 
-const dbConnect = () => {
-    return new Promise((resolve, reject) => {
-        pool.getConnection((err, conn) => {
-            if(err){
-                reject(err);
-            }else{
-                resolve(conn);
-            }
-        })
-    })
-}
+pool.query(`select * from role`,(err, result, fields)=>{
+    if(err){
+        return console.log(err);
+    }
+    return console.log(result);
+})
 
 const multerParser = multer();
 
