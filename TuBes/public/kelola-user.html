@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Halaman Kelola User</title>
-    <script src = '../script.js' defer></script>
+    <script src = 'script/script.js' defer></script>
     <link rel="stylesheet" href="styling/KelolaUser.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
@@ -31,11 +31,11 @@
             <div id="fitur">
                 <div class="daftar_topik">
                     <img src = icon/Folder_alt_fill.png id="iconDaftarT">
-                    <input type="button" id="buttonDT" name="daftarT" value="Daftar Topik">
+                    <a href ="halaman-review.html"><input type="button" id="buttonDT" name="daftarT" value="Daftar Topik"></a>
                 </div>
                 <div class="unggah_topik">
                     <img src = icon/import_fill.png id="iconUnggahT">
-                    <input type="button" id="buttonUT" name="unggahT" value="Unggah Topik">
+                    <a href ="UnggahTopik.html"><input type="button" id="buttonUT" name="unggahT" value="Unggah Topik"></a>
                 </div>
                 <div class="kotak_tinjauan">
                     <img src = icon/Message_fill.png id="iconKotakT">
@@ -43,7 +43,7 @@
                 </div>
                 <div class="kelola_user">
                     <img src = icon/user_add_alt_fill.png id="iconKelolaU">
-                    <input type="button" id="buttonKU" name="kelolaU" value="Kelola User">
+                    <a href ="kelola-user.html"><input type="button" id="buttonKU" name="kelolaU" value="Kelola User"></a>
                 </div>
                 <div class="tentang_kami">
                     <img src = icon/Info_fill.png id="iconTentangK">
@@ -57,11 +57,7 @@
         <div id="DaftarTopik">
             <div id="ket">
                 <div class="dropdown"><br>
-                    <button onclick="dropdown()" class="dropbtn">Add User</button>
-                    <div id="myDropdown" class="dropdown-content">
-                      <a href="#mahasiswa" onclick="on1()">Mahasiswa</a>
-                      <a href="#dosen" onclick="on1()">Dosen</a>
-                    </div>
+                    <button class="dropbtn" onclick="on1()">Add User</button>
                 </div>
             </div>
             <br>
@@ -284,13 +280,13 @@
                     <input type="email" name="email" id="email">
                     <br>
                 </div>
-                <div id="formUT4">
+                <div id="formUT5">
                     <label for="lang">Password</label>
                     <br>
                     <input type="password" name="password" id="password">
                     <br>
                 </div>
-                <div id="formUT3">
+                <div id="formUT6">
                     <label for="lang">Semester</label>
                     <br>
                     <select name="Semester" id="sems">
@@ -299,13 +295,13 @@
                     </select>
                     <br>
                 </div>
-                <div id="formUT5">
+                <div id="formUT7">
                     <input type="submit" value="add" id="submitUT" onclick="onUT()">
                 </div>
             </form>            
         </div>       
     </div>        
-    <div id="overlay2" onclick="off2()">  
+    <div id="overlay2" onclick="offUT()">  
         <div id="isi2">
             <div id="iconCheck" >
                 <img src = icon/Check.png >                

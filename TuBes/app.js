@@ -37,7 +37,7 @@ app.get('/', (req,res) => {
 });
 
 app.post('/signin', multerParser.none(), (req,res) => {
-    console.log(req.body);
+    console.log(req.body.input_email);
 });
 
 app.get('/halaman-review', (req,res) => {
