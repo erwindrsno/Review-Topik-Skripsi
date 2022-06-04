@@ -84,21 +84,21 @@ function addDeadline(){
     document.getElementById('deadline').innerHTML = d + '-' + m + '-' + y;
 }
 
-function validate(){
-    const lowCase = /[a-z]/g;
-    const upCase = /[A-Z]/g;
-    const number = /[0-9]/g;
-    const input = document.getElementById('input_pw').value;
-    let inputVal = document.getElementById('input_pw');
-    if (input.length >= 4){
-        if(!input.match(lowCase) || !input.match(upCase) || !input.match(number) || input.length < 4) {
-            alert('Wrong password');
-            return false;
-        } else{
-            checkValues();
-        }
-    }
-}
+// function validate(){
+//     const lowCase = /[a-z]/g;
+//     const upCase = /[A-Z]/g;
+//     const number = /[0-9]/g;
+//     const input = document.getElementById('input_pw').value;
+//     let inputVal = document.getElementById('input_pw');
+//     if (input.length >= 4){
+//         if(!input.match(lowCase) || !input.match(upCase) || !input.match(number) || input.length < 4) {
+//             alert('Wrong password');
+//             return false;
+//         } else{
+//             checkValues();
+//         }
+//     }
+// }
 
 function addNamaUser(){
     const email = document.getElementById("email").value;

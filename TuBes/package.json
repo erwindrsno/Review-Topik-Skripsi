@@ -17,6 +17,7 @@
     "nodemon": "^2.0.16"
   },
   "dependencies": {
+    "express-session": "^1.17.3",
     "mysql": "^2.18.1",
     "validator": "^13.5.2"
   }
