@@ -23,6 +23,13 @@ pool.query(`select * from role`,(err, result, fields)=>{
     return console.log(result);
 })
 
+pool.query(`select * from user`,(err, result, fields)=>{
+    if(err){
+        return console.log(err);
+    }
+    return console.log(result);
+})
+
 const multerParser = multer();
 
 app.set('view engine','ejs');
