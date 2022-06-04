@@ -614,3 +614,23 @@ label{
     height:76%;
     margin-left: 5%;
 }
+#buttonDT:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+}
+#buttonUT:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+}
+#buttonKT:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+}
+#buttonKU:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+}
+#buttonTK:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+}
