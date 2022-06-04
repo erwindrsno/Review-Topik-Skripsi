@@ -3,7 +3,7 @@ body{
 }
 
 .marginKiri{
-    position: absolute;
+    position: fixed; 
     margin: 0px;
     width: 1vw;
     height: 100%;
@@ -78,7 +78,7 @@ body{
     height: 7.305039787798409vh;
     display: flex;
     top: 0;
-    margin-top: 8.1%;
+    margin-top:8.1%;
     position: fixed;
 }
 
@@ -111,8 +111,12 @@ body{
 #ket3{
     display: grid;
     grid-area: tengah2;
+    border-right: 1px solid;
 }
+
 #icDate{
+    padding-top: 7%;
+    padding-left: 12%;
     display: grid;
     grid-area: kanan;
 }
@@ -183,8 +187,6 @@ body{
     grid-template-areas: 
     'menu1'
     'menu2'
-    'menu3'
-    'menu4'
     'menu5';
     grid-template-rows: 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh;
     align-items: center;
@@ -289,7 +291,7 @@ body{
 }
 
 .tentang_kami{
-    grid-area: menu5;
+    grid-area: menu2;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
@@ -389,7 +391,7 @@ body{
     left: 0;
     right: 0;
     bottom: 0;    
-    z-index: 4;
+    z-index: 2;
     cursor: pointer;
 }
 
@@ -416,6 +418,7 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 50%;
+    cursor: pointer;
 }
 
 #SY{
@@ -425,11 +428,12 @@ body{
     align-items: center;
     justify-content: center;
     font-size: 50%;
+    cursor: pointer;
 }
 
 #iconHead{
     background-color:#293241;
-    border-radius: 10px;
+    
 }
 
 #ic2{
@@ -450,7 +454,7 @@ body{
     left: 0;
     right: 0;
     bottom: 0;    
-    z-index: 2;
+    z-index: 4;
     cursor: pointer;
 }
 
@@ -473,146 +477,8 @@ body{
 #textGreen{
     color:#54D761;
 }
-
 #iconCheck{
     margin-top: 5%;
-}
-
-.dropbtn {
-    background-color: #3D5B81;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    width: 160px;
-}
-  
-.dropbtn:hover{
-    background-color: #98C1D9;
-}
-  
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-  
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    overflow: auto;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-  
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-  
-.dropdown a:hover {background-color: #ddd;}
-  
-.show {display: block;}
-
-#isiUT{
-    border: 1px solid;
-    border-radius: 10%;
-}
-#formUT{
-    display:grid;
-    grid-template-areas: 
-    'kiri1 s kanan1'
-    'kiri2 s kanan2'
-    'kiri3 s kanan3'
-    'kosong s kanan4';
-    padding:3%;
-    line-height: 50%;
-    width: 500px;
-    border-radius: 10%;
-}
-#formUT1{
-    display: grid;
-    grid-area: kiri1;
-    padding-right: 5%;
-    padding-left: 5%;
-}
-#formUT2{
-    display: grid;
-    grid-area: kiri2;
-    padding-right: 5%;
-    padding-left: 5%;
-}
-#formUT3{
-    display: grid;
-    grid-area: kiri3;
-    padding-right: 5%;
-    padding-left: 5%;
-}
-#formUT4{
-    display: grid;
-    grid-area: kanan1; 
-    padding-left:-5%;
-    margin-left: -20%;
-    padding-right: 5%;
-    margin-right: 10%;
-    padding-left: 5%;
-}
-#formUT5{
-    display: grid;
-    grid-area: kanan2;
-    margin-left: -20%;
-    padding-right: 5%;
-    margin-right: 10%;
-    padding-left: 5%;
-}
-#formUT6{
-    display: grid;
-    grid-area: kanan3;
-    margin-left: -20%;
-    padding-right: 5%;
-    margin-right: 10%;
-    padding-left: 5%;
-}
-#formUT7{
-    display: grid;
-    grid-area: kanan4;
-    margin-left: 50%;
-}
-#submitUT{
-    background-color: #3D5B81;
-    color: white;
-    padding: 16px;
-    border: none;
-    cursor: pointer;
-    width: 70px;
-    border-radius: 20px;
-}
-#sems{
-    width: 95%;
-}
-label{
-    margin-right: auto;
-    font-size: smaller;
-}
-#BidangP{
-    width: 100%;
-}
-#email{
-    margin-right: 5%;
-}
-#password{
-    margin-right: 5%;
-}
-#garisV{
-    display: grid;
-    grid-area: s;
-    border-left: 1px solid;
-    height:76%;
-    margin-left: 5%;
 }
 #buttonDT:hover{
     background-color: #98C1D9;
