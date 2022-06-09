@@ -84,6 +84,11 @@ function addDeadline(){
     document.getElementById('deadline').innerHTML = d + '-' + m + '-' + y;
 }
 
+function myFunction() {
+    const input = document.getElementById("myInput");
+    const filter = input.value.toUpperCase();
+}
+
 // function validate(){
 //     const lowCase = /[a-z]/g;
 //     const upCase = /[A-Z]/g;

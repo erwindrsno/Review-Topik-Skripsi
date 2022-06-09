@@ -98,7 +98,7 @@ body{
     display: grid;
     grid-template-areas: 
     'kiri tengah1 tengah2 kanan';
-    grid-template-columns: 20% 58% 16% 5%;
+    grid-template-columns: 35vh 80vh 28vh 5vh;
 }
 #ket1{
     display: grid;
@@ -111,14 +111,39 @@ body{
 #ket3{
     display: grid;
     grid-area: tengah2;
-    border-right: 1px solid;
+    
 }
-
+#myInput{
+    width: 27vh;
+    border-style:dotted;
+    border-radius: 10px;
+    border-color: rgb(126, 123, 123);
+}
 #icDate{
-    padding-top: 7%;
+    padding-top: 1vh;
     padding-left: 12%;
     display: grid;
     grid-area: kanan;
+}
+#icSearch{
+    padding-top:2vh;
+}
+
+#myUL {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+  
+#myUL li a {
+    border: 1px solid #ddd;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: #f6f6f6;
+    padding: 12px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block
 }
 #tabelDT{
     display: grid;
@@ -377,8 +402,8 @@ body{
 #publish{
     color:white;
     background: #3D5B81;
-    margin-left: 85%;
-    margin-top: 2%;
+    margin-left: 180vh;
+    margin-top: 10vh;
     border: 1px solid ;
     border-radius: 15px;
     font-size: 120%;
