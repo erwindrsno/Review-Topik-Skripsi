@@ -2,8 +2,8 @@
 <html>
 <head>
     <title>Halaman Review</title>
-    <script src = 'script.js' defer></script>
-    <link rel="stylesheet" href="../public/styling/HalamanReview.css">
+    <script src = 'script/script.js' defer></script>
+    <link rel="stylesheet" href="styling/HalamanReview.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body onload="realTimeClock()">
@@ -32,10 +32,11 @@
         </div>
         <div id="infoUser">
         <!-- sesuai login -->
+            <%=  %>  
             <div id="circle">
-                <p id="first_letter">E</p> <!-- kalo nama = Erwin Darsono, maka huruf = E -->
+                <p id="first_letter"><%= inisial %> </p> <!-- kalo nama = Erwin Darsono, maka huruf = E -->
             </div>
-            <p class="nama">ERWIN DARSONO</p> <!-- kalo nama = Erwin Darsono, maka = ERWIN DARSONO -->
+            <p class="nama"><%= nama %></p> <!-- kalo nama = Erwin Darsono, maka = ERWIN DARSONO -->
             <!-- <p>6182001002@student.id</p> sesuai NPM/NIK, mahasiswa = student.com, dosen = lecturer.com, admin = admin.com -->
             <p class="email_user">6182001002@student.id</p>
         </div>

@@ -307,7 +307,7 @@ body{
 
 #buttonTK{
     text-align: left;
-    font-family: poppins-regular;
+    font-family: 'poppins-regular';
     font-size: 1.3vw;
     background: #3D5A80;
     color: white;
@@ -355,23 +355,23 @@ body{
 }
 
 @font-face {
-    font-family: nunitosans-bold;
-    src: url('../../font/Nunito_Sans/NunitoSans-Bold.ttf');
+    font-family: 'nunitosans-bold';
+    src: url('../../fonts/Nunito_Sans/NunitoSans-Bold.ttf');
 }
 
 @font-face{
-    font-family: nunitosans-regular;
-    src: url('../../font/Nunito_Sans/NunitoSans-Regular.ttf');
+    font-family: 'nunitosans-regular';
+    src: url('../../fonts/Nunito_Sans/NunitoSans-Regular.ttf');
 }
 
 @font-face{
-    font-family: poppins-regular;
-    src: url('../../font/poppins/Poppins-Regular.ttf');
+    font-family: 'poppins-regular';
+    src: url('../../fonts/poppins/Poppins-Regular.ttf');
 }
 
 @font-face{
-    font-family: poppins-bold;
-    src: url('../../font/poppins/Poppins-Bold.ttf');
+    font-family: 'poppins-bold';
+    src: url('../../fonts/poppins/Poppins-Bold.ttf');
 }
 
 #publish{

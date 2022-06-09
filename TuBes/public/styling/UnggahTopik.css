@@ -310,22 +310,22 @@ body{
 
 @font-face {
     font-family: nunitosans-bold;
-    src: url('../../font/Nunito_Sans/NunitoSans-Bold.ttf');
+    src: url('../../fonts/Nunito_Sans/NunitoSans-Bold.ttf');
 }
 
 @font-face{
     font-family: nunitosans-regular;
-    src: url('../../font/Nunito_Sans/NunitoSans-Regular.ttf');
+    src: url('../../fonts/Nunito_Sans/NunitoSans-Regular.ttf');
 }
 
 @font-face{
     font-family: poppins-regular;
-    src: url('../../font/poppins/Poppins-Regular.ttf');
+    src: url('../../fonts/poppins/Poppins-Regular.ttf');
 }
 
 @font-face{
     font-family: poppins-bold;
-    src: url('../../font/poppins/Poppins-Bold.ttf');
+    src: url('../../fonts/poppins/Poppins-Bold.ttf');
 }
 #isiUT{
     border: 1px solid;

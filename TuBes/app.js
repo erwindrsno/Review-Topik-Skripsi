@@ -66,7 +66,7 @@ app.set('view engine','ejs');
 //     if(err){
 //         return console.log(err);
 //     }
-//     return console.log(result[0].nama);
+//     return console.log(result[0].Nama);
 // })
 
 //UNTUK AMBIL DATA DOSEN
@@ -135,7 +135,18 @@ app.post('/signin', multerParser.none(), (req,res) => {
 });
 
 app.get('/halaman-review', (req,res) => {
-    res.render('home');
+    let nama = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        return console.log(result[0].Nama+"");
+    })
+    console.log(nama);
+    console.log(JSON.stringify(nama));
+    console.log(typeof nama);
+    const inisial = 'D'
+    res.render('home', { nama, inisial });
+    // console.log("Berhasil render");
 });
 
 app.get('/logout',(req,res) => {
