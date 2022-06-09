@@ -17,7 +17,9 @@
             <p class="tulisanSatu">Salam Akademik!</p>
             <p class="tulisanDua">Selamat datang di website Topik Skripsi Informatika UNPAR!</p>
         </div>
-        <input type="image" src="icon/Sign_in.png" id="sign_out">
+        <a href="/" id="sOut">
+            <img src="icon/Sign_in.png" id="sign_out" alt="sOut">
+        </a>
     </div>
     <div class = "home"> 
         <div id="DaftarT">
@@ -84,10 +86,15 @@
                     <br>
                     <div id="date">
                         <!-- sesuai input admin -->                    
-                    </div>                
+                    </div>   
+                    <br> 
+                    <br>
+                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Bidang Peminatan" title="Type in a name"> 
                 </div>
                 <div id="icDate">
-                    <img src = icon/Date_range_fill.png>
+                    <img src = icon/Date_range_fill.png id="iconDate">
+                    <br>
+                    <img src = icon/Search_alt.png id="iconSearch">
                 </div>
             </div>
             <br>
@@ -216,61 +223,6 @@
                         <td>  </td>
                         <td>  </td>
                     </tr>
-                    <tr>
-                        <td> 11 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
-                        <td> 12 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
-                        <td> 13 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
-                        <td> 14 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
-                        <td> 15 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
                 </table> 
             </div>
         </div>
@@ -280,9 +232,9 @@
                     <img src = icon/circle.png id="ic1">
                     <img src = icon/circle.png id="ic1">
                     <img src = icon/circle.png id="ic1">
-                    <button type="submit" id="ic2" onclick="off1()">
-                        <img src = icon/Close.png>
-                    </button>                    
+                    <a href="home.ejs" id="ic2">
+                        <img src = "icon/Close.png" alt="ic2">
+                    </a>        
                 </div>
                 <form>
                     <div id="text">Silahkan mengatur deadline pengambilan topik skripsi</div>
