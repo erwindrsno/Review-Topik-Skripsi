@@ -24,7 +24,7 @@ app.use(session({
 }));
 
 app.use(express.json());
-
+app.set('view engine','ejs');
 // pool.query(`select * from role`,(err, result, fields)=>{
 //     if(err){
 //         return console.log(err);
@@ -94,15 +94,13 @@ app.use(express.json());
 
 const multerParser = multer();
 
-app.set('view engine','ejs');
-
 const staticPath = path.resolve('public');
 app.use(express.static(staticPath));    //serving static page dari public
 
 app.use(express.urlencoded({ extended: true})); //?
 
 app.get('/', (req,res) => {
-    res.sendFile('/index.html');
+    res.render('index');
 });
 
 // app.post('/signin', multerParser.none(), (req,res) => {
@@ -137,7 +135,16 @@ app.post('/signin', multerParser.none(), (req,res) => {
 });
 
 app.get('/halaman-review', (req,res) => {
-    res.sendFile('/halaman-review.html');
+    res.render('home');
+});
+
+app.get('/logout',(req,res) => {
+    req.session.destroy((err) => {
+        if(err) {
+            return console.log(err);
+        }
+        res.redirect('/');
+    });
 });
 
 // app.get('/home', function(request, response) {

@@ -178,3 +178,8 @@ label{
     border-radius: 10px;
     /* background-color: red; */
 }
+
+.warning{
+    color: red;
+    font-family: Open Sans;
+}
