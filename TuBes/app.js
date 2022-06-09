@@ -108,6 +108,9 @@ app.get('/index.ejs', (req,res) => {
 app.get('/unggah.ejs', (req,res) => {
     res.render('unggah');
 });
+app.get('/kelola.ejs', (req,res) => {
+    res.render('kelola');
+});
 
 // app.post('/signin', multerParser.none(), (req,res) => {
 //     console.log(req.body.input_email);
