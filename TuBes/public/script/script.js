@@ -144,9 +144,6 @@ function offUT() {
 	document.getElementById("overlayUT").style.display = "none";
 }
 
-document.getElementById("sign_out").addEventListener("onclick", () => {
-    document.location = 'Login Page.html';
-})
 
 function dropdown() {
     document.getElementById("myDropdown").classList.toggle("show");

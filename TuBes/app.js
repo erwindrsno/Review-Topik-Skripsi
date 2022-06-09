@@ -100,16 +100,22 @@ app.use(express.static(staticPath));    //serving static page dari public
 app.use(express.urlencoded({ extended: true})); //?
 
 app.get('/', (req,res) => {
-    res.render('index');
+    res.render('index.ejs');
 });
 app.get('/index.ejs', (req,res) => {
-    res.render('index');
+    res.render('index.ejs');
+});
+app.get('/home.ejs', (req,res) => {
+    res.render('home.ejs');
 });
 app.get('/unggah.ejs', (req,res) => {
-    res.render('unggah');
+    res.render('unggah.ejs');
 });
 app.get('/kelola.ejs', (req,res) => {
-    res.render('kelola');
+    res.render('kelola.ejs');
+});
+app.get('/tinjauan.ejs', (req,res) => {
+    res.render('tinjauan.ejs');
 });
 
 // app.post('/signin', multerParser.none(), (req,res) => {
