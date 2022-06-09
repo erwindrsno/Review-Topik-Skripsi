@@ -11,7 +11,7 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: '',
+    password: 'erwin08',
     database: 'reviewts',
     host: 'localhost',
     connectionLimit:10
@@ -142,7 +142,7 @@ app.get('/halaman-review', (req,res) => {
         return console.log(result[0].Nama+"");
     })
     console.log(nama);
-    console.log(JSON.stringify(nama));
+    // console.log(JSON.stringify(nama));
     console.log(typeof nama);
     const inisial = 'D'
     res.render('home', { nama, inisial });
