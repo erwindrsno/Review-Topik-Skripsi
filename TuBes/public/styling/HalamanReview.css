@@ -388,7 +388,7 @@ body{
     color:white;
     background: #3D5B81;
     margin-left: 180vh;
-    margin-top: 10vh;
+    margin-top: 3vh;
     border: 1px solid ;
     border-radius: 15px;
     font-size: 120%;
@@ -512,4 +512,20 @@ body{
 #buttonTK:hover{
     background-color: #98C1D9;
     border-radius: 10px;
+}
+.edit{
+    width: 20px;
+    margin-top: 8%;
+}
+.txt{
+    font-size: small;
+    line-height: 1.5;
+}
+#set{
+    margin-left: 170vh;
+    margin-top: 2vh;
+    border-radius: 15px;
+    font-size: 120%;
+    width: 3%;
+    position: absolute;
 }

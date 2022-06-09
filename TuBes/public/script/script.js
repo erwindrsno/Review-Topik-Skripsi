@@ -149,6 +149,19 @@ function dropdown() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
 
+function show(){
+    const check = true;
+    if (check){
+        document.getElementById("opt").classList.remove('hidden');
+        document.getElementById("ed").classList.add('hidden');
+        check = false;
+    } else{
+        document.getElementById("ed").classList.remove('hidden');
+        document.getElementById("opt").classList.add('hidden');
+        check = true;
+    }
+}
+
 window.onclick = function(event) {
     if (!event.target.matches('.dropbtn')) {
         var dropdowns = document.getElementsByClassName("dropdown-content");

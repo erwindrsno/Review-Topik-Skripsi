@@ -390,3 +390,296 @@ body{
     margin-top: 40vh;
     color: red;
 }
+.div{
+    margin-left: 400px;
+    display:grid;
+    grid-template-areas: 
+    'kiri1 s kanan1'
+    'kiri2 s kanan2'
+    'kiri3 s kanan3'
+    'kiri4 s kanan4'
+    'kiri5 s kanan5'
+    'kiri6 s kanan6'
+    'kiri7 s kanan7'
+    'kiri8 s kanan8'
+    'kiri9 s kanan9';
+    padding:3%;
+    line-height: 50%;
+    margin-top: -3%;
+}
+.div1{
+    display: grid;
+    grid-area: kiri1;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div2{
+    display: grid;
+    grid-area: kiri2;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div3{
+    display: grid;
+    grid-area: kiri3;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div4{
+    display: grid;
+    grid-area: kiri4;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div5{
+    display: grid;
+    grid-area: kiri5;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div6{
+    display: grid;
+    grid-area: kiri6;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div7{
+    display: grid;
+    grid-area: kiri7;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div8{
+    display: grid;
+    grid-area: kiri8;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div9{
+    display: grid;
+    grid-area: kiri9;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div10{
+    display: grid;
+    grid-area: kanan1;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div11{
+    display: grid;
+    grid-area: kanan2;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div12{
+    display: grid;
+    grid-area: kanan3;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div13{
+    display: grid;
+    grid-area: kanan4;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div14{
+    display: grid;
+    grid-area: kanan5;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div15{
+    display: grid;
+    grid-area: kanan6;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div16{
+    display: grid;
+    grid-area: kanan7;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div17{
+    display: grid;
+    grid-area: kanan8;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+.div18{
+    display: grid;
+    grid-area: kanan9;
+    padding-right: 20%;
+    padding-left: 5%;
+    padding-top: 2%;
+    margin-top: 3%;
+    width: 300px;
+    height: 30px;
+    border: 1px solid #98c1d9;
+    box-sizing: border-box;
+    background-color: #98c1d9;
+    border-radius: 0px 10px;
+}
+#garisV{
+    display: grid;
+    grid-area: s;
+    border-left: 1px solid;
+    height:100%;
+}
+#buttonDT:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+}
+#buttonUT:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+}
+#buttonKT:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+}
+#buttonKU:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+}
+#buttonTK:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+}
