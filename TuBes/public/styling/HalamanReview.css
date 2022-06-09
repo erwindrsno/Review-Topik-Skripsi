@@ -63,6 +63,7 @@ body{
 }
 
 #sign_out{
+    margin-top: 1vw;
     position: absolute;
     align-self: center;
     right: 0;
@@ -408,6 +409,7 @@ body{
     border-radius: 15px;
     font-size: 120%;
     width: 8%;
+    position: absolute;
 }
 #overlay {
     position: fixed;
