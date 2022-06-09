@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Halaman Review</title>
+    <title>Halaman Kelola User</title>
     <script src = 'script/script.js' defer></script>
-    <link rel="stylesheet" href="styling/HalamanReview.css">
+    <link rel="stylesheet" href="styling/KelolaUser.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body onload="realTimeClock()">
@@ -17,43 +17,25 @@
             <p class="tulisanSatu">Salam Akademik!</p>
             <p class="tulisanDua">Selamat datang di website Topik Skripsi Informatika UNPAR!</p>
         </div>
-        <a href="/" id="sOut">
-            <img src="icon/Sign_in.png" id="sign_out" alt="sOut">
-        </a>
+        <input type="image" src="icon/Sign_in.png" id="sign_out">
     </div>
     <div class = "home"> 
-        <div id="DaftarT">
-            <b>
-                DAFTAR TOPIK SKRIPSI - T.A 2022/2023
-            </b>
-            <br>
-            <br>
-            <b>
-                Keterangan:
-            </b>
-        </div>
         <div id="infoUser">
-        <!-- sesuai login -->
-            <%=  %>  
             <div id="circle">
-                <p id="first_letter"><%= inisial %> </p> <!-- kalo nama = Erwin Darsono, maka huruf = E -->
+                <p id="first_letter">E</p>
             </div>
-            <p class="nama"><%= nama %></p> <!-- kalo nama = Erwin Darsono, maka = ERWIN DARSONO -->
-            <!-- <p>6182001002@student.id</p> sesuai NPM/NIK, mahasiswa = student.com, dosen = lecturer.com, admin = admin.com -->
+            <p class="nama">ERWIN DARSONO</p>
             <p class="email_user">6182001002@student.id</p>
         </div>
         <div class="wrapper">
             <div id="fitur">
                 <div class="daftar_topik">
                     <img src = icon/Folder_alt_fill.png id="iconDaftarT">
-                    <input type="button" id="buttonDT" name="daftarT" value="Daftar Topik">
+                    <a href ="halaman-review.html"><input type="button" id="buttonDT" name="daftarT" value="Daftar Topik"></a>
                 </div>
                 <div class="unggah_topik">
                     <img src = icon/import_fill.png id="iconUnggahT">
-                    <a href="unggah.ejs" id="UT">
-                        <input type="button" id="buttonUT" alt="UT" name="unggahT" value="Unggah Topik">
-                    </a>
-                    
+                    <a href ="UnggahTopik.html"><input type="button" id="buttonUT" name="unggahT" value="Unggah Topik"></a>
                 </div>
                 <div class="kotak_tinjauan">
                     <img src = icon/Message_fill.png id="iconKotakT">
@@ -61,7 +43,7 @@
                 </div>
                 <div class="kelola_user">
                     <img src = icon/user_add_alt_fill.png id="iconKelolaU">
-                    <input type="button" id="buttonKU" name="kelolaU" value="Kelola User">
+                    <a href ="kelola-user.html"><input type="button" id="buttonKU" name="kelolaU" value="Kelola User"></a>
                 </div>
                 <div class="tentang_kami">
                     <img src = icon/Info_fill.png id="iconTentangK">
@@ -74,30 +56,8 @@
         </div>
         <div id="DaftarTopik">
             <div id="ket">
-                <div id="ket1">
-                    - CS = Computing Science
-                    <br>
-                    - DS = Data Science
-                </div>
-                <div id="ket2">
-                    - (*) = Topik Skripsi Jenis Bintang
-                    <br>
-                    - Non(*) = Topik Skripsi Jenis Reguler
-                </div>
-                <div id="ket3">
-                    Masa review hingga:                
-                    <br>
-                    <div id="date">
-                        <!-- sesuai input admin -->                    
-                    </div>   
-                    <br> 
-                    <br>
-                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Bidang Peminatan" title="Type in a name"> 
-                </div>
-                <div id="icDate">
-                    <img src = icon/Date_range_fill.png id="iconDate">
-                    <br>
-                    <img src = icon/Search_alt.png id="iconSearch">
+                <div class="dropdown"><br>
+                    <button class="dropbtn" onclick="on1()">Add User</button>
                 </div>
             </div>
             <br>
@@ -105,21 +65,15 @@
                 <table rules="all" id="tbl">
                     <tr>
                         <td> No </td>
-                        <td> Judul Topik </td>
-                        <td> Dosen Pengaju </td>
-                        <td> Kode Topik </td>
+                        <td> Name </td>
+                        <td> Role </td>
+                        <td> Id </td>
+                        <td> Email </td>
+                        <td> Password </td>
                         <td> Semester </td>
-                        <td> Bidang Peminatan </td>
-                        <td> Tanggal Unggah </td>
-                        <td> Status </td>
-                        <td> Review </td>
                     </tr>
                     <tr>
                         <td> 1 </td>
-                        <td> 
-                            <!-- sesuai input dari dosen -->
-                        </td>
-                        <td>  </td>
                         <td>  </td>
                         <td>  </td>
                         <td>  </td>
@@ -135,13 +89,9 @@
                         <td>  </td>
                         <td>  </td>
                         <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
                     </tr>
                     <tr>
                         <td> 3 </td>
-                        <td>  </td>
-                        <td>  </td>
                         <td>  </td>
                         <td>  </td>
                         <td>  </td>
@@ -157,13 +107,9 @@
                         <td>  </td>
                         <td>  </td>
                         <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
                     </tr>
                     <tr>
                         <td> 5 </td>
-                        <td>  </td>
-                        <td>  </td>
                         <td>  </td>
                         <td>  </td>
                         <td>  </td>
@@ -179,13 +125,9 @@
                         <td>  </td>
                         <td>  </td>
                         <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
                     </tr>
                     <tr>
                         <td> 7 </td>
-                        <td>  </td>
-                        <td>  </td>
                         <td>  </td>
                         <td>  </td>
                         <td>  </td>
@@ -201,13 +143,9 @@
                         <td>  </td>
                         <td>  </td>
                         <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
                     </tr>
                     <tr>
                         <td> 9 </td>
-                        <td>  </td>
-                        <td>  </td>
                         <td>  </td>
                         <td>  </td>
                         <td>  </td>
@@ -223,36 +161,149 @@
                         <td>  </td>
                         <td>  </td>
                         <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 11 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 12 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 13 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 14 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 15 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 16 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 17 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                    </tr>
+                    <tr>
+                        <td> 18 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
                         <td>  </td>
                         <td>  </td>
                     </tr>
                 </table> 
             </div>
         </div>
-        <div id="overlay" onclick="on1()">  
-            <div id="isi" >
-                <div id="iconHead">
-                    <img src = icon/circle.png id="ic1">
-                    <img src = icon/circle.png id="ic1">
-                    <img src = icon/circle.png id="ic1">
-                    <a href="home.ejs" id="ic2">
-                        <img src = "icon/Close.png" alt="ic2">
-                    </a>        
+    </div>
+    <div id="overlay" onclick="on1()">  
+        <div id="isi" >
+            <div id="iconHead">
+                <img src = icon/circle.png id="ic1">
+                <img src = icon/circle.png id="ic1">
+                <img src = icon/circle.png id="ic1">
+                <button type="submit" id="ic2" onclick="off1()">
+                    <img src = icon/Close.png>
+                </button>                    
+            </div>
+            <form id="formUT">
+                <div id="formUT1">
+                    <label for="lang">Nama</label>
+                    <br>
+                    <input type="text" name="JudulTopik" id="JudulT">
+                    <br>                                            
                 </div>
-                <form>
-                    <div id="text">Silahkan mengatur deadline pengambilan topik skripsi</div>
-                    <input type="date" name="date" id="inputDate">
+                <div id="formUT2">
+                    <label for="lang">Role</label>
+                    <br> 
+                    <select name="BidangPeminatan" id="BidangP">
+                        <option value="mhs">Mahasiswa</option>
+                        <option value="d">Dosen</option>
+                        <option value="min">Admin</option>
+                    </select>  
                     <br>
-                    <hr>
-                    <div id="text">Topik-topik skripsi akan dibuka dan disebarkan pada tanggal diatas pada pukul 00:00:00 WIB</div>
+                </div>
+                <div id="garisV">
+
+                </div>
+                <div id="formUT3">
+                    <label for="lang">Id</label>
                     <br>
-                    <div id="text"> Apakah anda yakin akan menyebarkan topik-topik skripsi tersebut? </div>
-                    <input type="submit" value="Iya" id="SY" onclick="on2()">
-                    <input type="submit" value="Tidak" id="ST">
-                </form>                
-            </div>       
-        </div>        
-        <div id="overlay2" onclick="off2()">  
+                    <input type="text" name="id" id="id">
+                    <br>
+                </div>
+                <div id="formUT4">
+                    <label for="lang">Email</label>
+                    <br>
+                    <input type="email" name="email" id="email">
+                    <br>
+                </div>
+                <div id="formUT5">
+                    <label for="lang">Password</label>
+                    <br>
+                    <input type="password" name="password" id="password">
+                    <br>
+                </div>
+                <div id="formUT6">
+                    <label for="lang">Semester</label>
+                    <br>
+                    <select name="Semester" id="sems">
+                        <option value="genap">Ganjil 2020/2021</option>
+                        <option value="ganjil">Genap 2020/2021</option>
+                        <option value="pendek">Pendek 2020/2021</option>
+                        <option value="genap">Ganjil 2021/2022</option>
+                        <option value="ganjil">Genap 2021/2022</option>
+                    </select>
+                    <br>
+                </div>
+                <div id="formUT7">
+                    <input type="submit" value="add" id="submitUT" onclick="on2()">
+                </div>
+            </form>            
+        </div>           
+        <div id="overlay2" onclick="offUT()">  
             <div id="isi2">
                 <div id="iconCheck" >
                     <img src = icon/Check.png >                
@@ -265,9 +316,6 @@
                     <img src = icon/Vector.png >        
                 </div>    
             </div>                      
-        </div>
-        <div >
-            <button id="publish" onclick="on1()">Publish</button>
         </div>
     </div>
 </body>

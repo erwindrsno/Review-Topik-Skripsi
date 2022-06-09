@@ -11,7 +11,7 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: 'erwin08',
+    password: '',
     database: 'reviewts',
     host: 'localhost',
     connectionLimit:10
@@ -101,6 +101,12 @@ app.use(express.urlencoded({ extended: true})); //?
 
 app.get('/', (req,res) => {
     res.render('index');
+});
+app.get('/index.ejs', (req,res) => {
+    res.render('index');
+});
+app.get('/unggah.ejs', (req,res) => {
+    res.render('unggah');
 });
 
 // app.post('/signin', multerParser.none(), (req,res) => {
