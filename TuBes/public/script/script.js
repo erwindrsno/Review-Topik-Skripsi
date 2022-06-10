@@ -89,6 +89,20 @@ function myFunction() {
     const filter = input.value.toUpperCase();
 }
 
+// function kelolaUser(){
+//     const addUser = document.getElementsByClassName('addUserBtn');
+//     let insertUser = "INSERT INTO user (IdUser, Nama, Email, Password, IdRole) VALUES ?";
+//     let values = [
+//         ['5','Angelina Jeany','6182001032@student.unpar.ac.id','abcd','3']
+//     ]
+//     pool.query(sql,[values], function(err,result){
+//         if(err){
+//             return console.log(err);
+//         }
+//         console.log("records inserted: "+result.affectedRows);
+//     })
+//     addUser.addEventListener('onclick', insertUser);
+// }
 // function validate(){
 //     const lowCase = /[a-z]/g;
 //     const upCase = /[A-Z]/g;
