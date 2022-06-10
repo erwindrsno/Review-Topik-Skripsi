@@ -17,7 +17,7 @@
             <p class="tulisanSatu">Salam Akademik!</p>
             <p class="tulisanDua">Selamat datang di website Topik Skripsi Informatika UNPAR!</p>
         </div>
-        <a href="/" id="sOut">
+        <a href="/logout" id="sOut">
             <img src="icon/Sign_in.png" id="sign_out" alt="sOut">
         </a>
     </div>
@@ -25,9 +25,9 @@
         <div id="infoUser">
         <!-- sesuai login -->
             <div id="circle">
-                <p id="first_letter">E</p> <!-- kalo nama = Erwin Darsono, maka huruf = E -->
+                <p id="first_letter"><%= inisial %> </p> <!-- kalo nama = Erwin Darsono, maka huruf = E -->
             </div>
-            <p class="nama">ERWIN DARSONO</p> <!-- kalo nama = Erwin Darsono, maka = ERWIN DARSONO -->
+            <p class="nama"><%= nama %></p> <!-- kalo nama = Erwin Darsono, maka = ERWIN DARSONO -->
             <!-- <p>6182001002@student.id</p> sesuai NPM/NIK, mahasiswa = student.com, dosen = lecturer.com, admin = admin.com -->
             <p class="email_user">6182001002@student.id</p>
         </div>
@@ -35,27 +35,27 @@
             <div id="fitur">
                 <div class="daftar_topik">
                     <img src = icon/Folder_alt_fill.png id="iconDaftarT">
-                    <a href="home.ejs" id="DT">
+                    <a href="/home" id="DT">
                         <input type="button" id="buttonDT" alt="DT" name="daftarT" value="Daftar Topik">
                     </a>
                 </div>
                 <div class="unggah_topik">
                     <img src = icon/import_fill.png id="iconUnggahT">
-                    <a href="unggah.ejs" id="UT">
+                    <a href="/unggah" id="UT">
                         <input type="button" id="buttonUT" alt="UT" name="unggahT" value="Unggah Topik">
                     </a>
                     
                 </div>
                 <div class="kotak_tinjauan">
                     <img src = icon/Message_fill.png id="iconKotakT">
-                    <a href="tinjauan.ejs" id="KT">
+                    <a href="/tinjauan" id="KT">
                         <input type="button" id="buttonKT" alt="KT" name="kotakT" value="Kotak Tinjauan">
                     </a>
                     
                 </div>
                 <div class="kelola_user">
                     <img src = icon/user_add_alt_fill.png id="iconKelolaU">
-                    <a href="kelola.ejs" id="KU">
+                    <a href="/kelola" id="KU">
                         <input type="button" id="buttonKU" alt="KU" name="kelolaU" value="Kelola User">
                     </a>
                     

@@ -11,7 +11,7 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: '',
+    password: 'erwin08',
     database: 'reviewts',
     host: 'localhost',
     connectionLimit:10
@@ -100,22 +100,58 @@ app.use(express.static(staticPath));    //serving static page dari public
 app.use(express.urlencoded({ extended: true})); //?
 
 app.get('/', (req,res) => {
-    res.render('index.ejs');
+    res.render('index');
 });
-app.get('/index.ejs', (req,res) => {
-    res.render('index.ejs');
+app.get('/index', (req,res) => {
+    res.render('index');
 });
-app.get('/home.ejs', (req,res) => {
-    res.render('home.ejs');
+app.get('/home', (req,res) => {
+    let namaUser = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        return console.log(result[0].Nama+"");
+    })
+    console.log(namaUser);
+    // console.log(JSON.stringify(nama));
+    const inisialUser = 'D'
+    res.render('home', { nama: namaUser, inisial: inisialUser });
 });
-app.get('/unggah.ejs', (req,res) => {
-    res.render('unggah.ejs');
+app.get('/unggah', (req,res) => {
+    let namaUser = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        return console.log(result[0].Nama+"");
+    })
+    console.log(namaUser);
+    // console.log(JSON.stringify(nama));
+    const inisialUser = 'D'
+    res.render('unggah', { nama: namaUser, inisial: inisialUser });
 });
-app.get('/kelola.ejs', (req,res) => {
-    res.render('kelola.ejs');
+app.get('/kelola', (req,res) => {
+    let namaUser = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        return console.log(result[0].Nama+"");
+    })
+    console.log(namaUser);
+    // console.log(JSON.stringify(nama));
+    const inisialUser = 'D'
+    res.render('kelola', { nama: namaUser, inisial: inisialUser });
 });
-app.get('/tinjauan.ejs', (req,res) => {
-    res.render('tinjauan.ejs');
+app.get('/tinjauan', (req,res) => {
+    let namaUser = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        return console.log(result[0].Nama+"");
+    })
+    console.log(namaUser);
+    // console.log(JSON.stringify(nama));
+    const inisialUser = 'D'
+    res.render('tinjauan', { nama: namaUser, inisial: inisialUser });
 });
 
 // app.post('/signin', multerParser.none(), (req,res) => {
@@ -150,17 +186,16 @@ app.post('/signin', multerParser.none(), (req,res) => {
 });
 
 app.get('/halaman-review', (req,res) => {
-    let nama = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
+    let namaUser = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
         if(err){
             return console.log(err);
         }
         return console.log(result[0].Nama+"");
     })
-    console.log(nama);
+    console.log(namaUser);
     // console.log(JSON.stringify(nama));
-    console.log(typeof nama);
-    const inisial = 'D'
-    res.render('home', { nama, inisial });
+    const inisialUser = 'D'
+    res.render('home', { nama: namaUser, inisial: inisialUser });
     // console.log("Berhasil render");
 });
 
