@@ -261,25 +261,24 @@
                     <img src = icon/Close.png>
                 </button>                    
             </div>
-            <form id="formUT">
+            <form id="formUT" class="form_user" action="/addUser" method="post" enctype="multipart/form-data">
                 <div id="formUT1">
                     <label for="lang">Nama</label>
                     <br>
-                    <input type="text" name="JudulTopik" id="JudulT">
+                    <input type="text" name="NamaUser" id="namaUser">
                     <br>                                            
                 </div>
                 <div id="formUT2">
                     <label for="lang">Role</label>
                     <br> 
-                    <select name="BidangPeminatan" id="BidangP">
-                        <option value="mhs">Mahasiswa</option>
-                        <option value="d">Dosen</option>
-                        <option value="min">Admin</option>
+                    <select name="BidangPeminatan" id="BidangP" class="role">
+                        <option value="mahasiswa">Mahasiswa</option>
+                        <option value="dosen">Dosen</option>
+                        <option value="admin">Admin</option>
                     </select>  
                     <br>
                 </div>
                 <div id="garisV">
-
                 </div>
                 <div id="formUT3">
                     <label for="lang">Id</label>
@@ -299,7 +298,7 @@
                     <input type="password" name="password" id="password">
                     <br>
                 </div>
-                <div id="formUT6">
+                <!-- <div id="formUT6">
                     <label for="lang">Semester</label>
                     <br>
                     <select name="Semester" id="sems">
@@ -310,11 +309,11 @@
                         <option value="ganjil">Genap 2021/2022</option>
                     </select>
                     <br>
-                </div>
+                </div> -->
                 <div id="formUT7">
-                    <input type="submit" value="add" id="submitUT" onclick="on2()">
+                    <input type="submit" value="add" id="submitUT" class="addUserBtn" onclick="on2()">
                 </div>
-            </form>            
+            </form>
         </div>           
         <div id="overlay2" onclick="offUT()">  
             <div id="isi2">

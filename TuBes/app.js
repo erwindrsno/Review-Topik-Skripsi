@@ -25,6 +25,7 @@ app.use(session({
 
 app.use(express.json());
 app.set('view engine','ejs');
+
 // pool.query(`select * from role`,(err, result, fields)=>{
 //     if(err){
 //         return console.log(err);
@@ -90,6 +91,15 @@ app.set('view engine','ejs');
 //         return console.log(err);
 //     }
 //     return console.log(result);
+// })
+
+//  UNTUK MEMBUAT TABLE TOPIK SKRIPSI
+// let tableTS = "CREATE TABLE TopikSkripsi (judul VARCHAR(50), namaDosen VARCHAR(20), kodeTopik CHAR(10), bidangPeminatan CHAR(2), jenisSkripsi VARCHAR(10))";
+// pool.query(tableTS, function(err,result){
+//     if(err){
+//         return console.log(err);
+//     }
+//     console.log("table topik skripsi create");
 // })
 
 const multerParser = multer();
@@ -185,6 +195,48 @@ app.post('/signin', multerParser.none(), (req,res) => {
     if (temp == 's') student = true;
 });
 
+app.post('/addUser', multerParser.none(), (req,res) => {
+    let idRole = 1;
+    let namaUser = req.body.NamaUser;
+    let role = req.body.BidangPeminatan;
+    let id = req.body.id;
+    let email = req.body.email;
+    let password = req.body.password;
+    if(role === 'dosen'){
+        idRole = 2;
+    }
+    else if(role === 'mahasiswa'){
+        idRole = 3;
+    }
+    let sql = "INSERT INTO user (IdUser, Nama, Email, Password, IdRole) VALUES ?";
+    let values = [
+        [id,namaUser,email,password,idRole]
+    ]
+    pool.query(sql,[values]);
+    // let roleUser = req.body.
+    // console.log(namaUser);
+    // console.log(namaUser);
+})
+
+app.post('/addTopik', multerParser.none(), (req,res) => {
+    console.log(req.body);
+    let judulTopik = req.body.JudulTopik;
+    let bidangPeminatan = req.body.BidangPeminatan;
+    let kodeTopik = req.body.Semester;
+    let jenis = req.body.JenisSkripsi;
+    let nama = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        return console.log(result[0].Nama+"");
+    })
+    let sql = "INSERT INTO TopikSkripsi (judul, namaDosen, kodeTopik, bidangPeminatan, jenisSkripsi) VALUES ?";
+    let values = [
+        [judulTopik,nama,kodeTopik,bidangPeminatan,jenis]
+    ]
+    pool.query(sql,[values]);
+})
+
 app.get('/halaman-review', (req,res) => {
     let namaUser = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
         if(err){
@@ -199,13 +251,16 @@ app.get('/halaman-review', (req,res) => {
     // console.log("Berhasil render");
 });
 
-app.get('/logout',(req,res) => {
-    req.session.destroy((err) => {
-        if(err) {
-            return console.log(err);
-        }
-        res.redirect('/');
-    });
+app.get('/logout', (req,res,next) => {
+    // req.session.destroy((err) => {
+    //     if(err) {
+    //         return console.log(err);
+    //     }
+    //     res.redirect('/');
+    // });
+    req.logout();
+    req.session = null;
+    res.redirect('/');
 });
 
 // app.get('/home', function(request, response) {

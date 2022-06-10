@@ -77,7 +77,7 @@
                     <img src = icon/circle.png id="ic1">
                     <!-- <input type="image" src="icon/Close.png" id="ic2" onclick="off1()"> -->
                 </div>
-                <form id="formUT">
+                <form id="formUT" method="post" class="form_user" action="/addTopik" enctype="multipart/form-data">
                     <div id="formUT1">
                         <label for="lang">Judul Topik</label>
                         <br>
@@ -99,7 +99,8 @@
                     <div id="formUT3">
                         <label for="lang">Semester</label>
                         <br>
-                        <select name="Semester" id="sems">
+                        <!-- PERLU DIPERBAIKI! -->
+                        <select name="Semester" id="sems">      
                             <option value="genap">Ganjil 2020/2021</option>
                             <option value="ganjil">Genap 2020/2021</option>
                             <option value="pendek">Pendek 2020/2021</option>
