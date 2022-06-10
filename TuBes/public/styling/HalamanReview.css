@@ -138,6 +138,9 @@ body{
 #tbl{
     border: 1px;
 }
+.tb{
+    border: 0px;
+}
 
 #circle{
     border-radius: 50px 50px 50px 50px;

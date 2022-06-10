@@ -150,16 +150,18 @@ function dropdown() {
 }
 
 function show(){
-    const check = true;
-    if (check){
-        document.getElementById("opt").classList.remove('hidden');
-        document.getElementById("ed").classList.add('hidden');
-        check = false;
+    var x = document.getElementById("opt");
+    var y = document.getElementById("ed");
+    var z = document.getElementById("rmv");
+    if (x.style.display === "none") {
+        x.style.display = "inline";
+        y.style.display = "none";
+        z.style.display = "inline";
     } else{
-        document.getElementById("ed").classList.remove('hidden');
-        document.getElementById("opt").classList.add('hidden');
-        check = true;
-    }
+        x.style.display = "none";
+        y.style.display = "inline";
+        z.style.display = "none";
+  }
 }
 
 window.onclick = function(event) {
