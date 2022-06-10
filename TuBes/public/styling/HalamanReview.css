@@ -516,7 +516,7 @@ body{
     background-color: #98C1D9;
     border-radius: 10px;
 }
-.edit{
+#edit{
     width: 20px;
     margin-top: 8%;
 }
@@ -531,4 +531,7 @@ body{
     font-size: 120%;
     width: 3%;
     position: absolute;
+}
+#set:hover{
+    background-color: #3D5B81;
 }

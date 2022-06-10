@@ -150,17 +150,32 @@ function dropdown() {
 }
 
 function show(){
-    var x = document.getElementById("opt");
-    var y = document.getElementById("ed");
-    var z = document.getElementById("rmv");
-    if (x.style.display === "none") {
-        x.style.display = "inline";
-        y.style.display = "none";
-        z.style.display = "inline";
+    const elem = document.getElementsByClassName("txt");
+    let x = document.getElementsByClassName("opt");
+    let y = document.getElementsByClassName("ed");
+    let z = document.getElementsByClassName("rmv");
+    if (x[0].style.display === "none") {
+        for (let i=0; i<elem.length; i++){
+            x = elem[i].getElementsByClassName("opt");
+            y = elem[i].getElementsByClassName("ed");
+            z = elem[i].getElementsByClassName("rmv");
+            for (let j=0; j<x.length; j++){
+                x[j].style.display = "inline";
+                y[j].style.display = "none";
+                z[j].style.display = "inline";
+            }
+        }
     } else{
-        x.style.display = "none";
-        y.style.display = "inline";
-        z.style.display = "none";
+        for (let i=0; i<elem.length; i++){
+            x = elem[i].getElementsByClassName("opt");
+            y = elem[i].getElementsByClassName("ed");
+            z = elem[i].getElementsByClassName("rmv");
+            for (let j=0; j<x.length; j++){
+                x[j].style.display = "none";
+                y[j].style.display = "inline";
+                z[j].style.display = "none";
+            }
+        }
   }
 }
 
