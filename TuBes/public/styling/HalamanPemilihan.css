@@ -98,7 +98,7 @@ body{
     display: grid;
     grid-template-areas: 
     'kiri tengah1 tengah2 kanan';
-    grid-template-columns: 20% 58% 16% 5%;
+    grid-template-columns: 35vh 80vh 28vh 5vh;
 }
 #ket1{
     display: grid;
@@ -111,14 +111,26 @@ body{
 #ket3{
     display: grid;
     grid-area: tengah2;
-    border-right: 1px solid;
+    
 }
-
 #icDate{
-    padding-top: 7%;
+    padding-top: 1vh;
     padding-left: 12%;
     display: grid;
     grid-area: kanan;
+}
+#filter{
+    display: grid;
+    grid-template-areas: 
+    'filterbp searchbtn';
+}
+#FilterBP{
+    grid-area: kiri;
+    width: fit-content;
+}
+#searchbtn{
+    grid-area: kanan;
+    margin-left: 24vh;
 }
 #tabelDT{
     display: grid;

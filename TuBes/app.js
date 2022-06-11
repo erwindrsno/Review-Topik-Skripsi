@@ -174,14 +174,24 @@ app.post('/signin', multerParser.none(), (req,res) => {
     email = req.body.input_email;
     password = req.body.input_pw;
     if(email&&password){
-        pool.query('SELECT * FROM user WHERE email = ? AND password = ?', [email,password], function(error,results,fields){
+        pool.query('SELECT IdRole FROM user WHERE email = ? AND password = ?', [email,password], function(error,results,fields){
             if(error) throw error;
-            if(results.length > 0) {
+            if(results[0].IdRole === 1) {
                 req.session.loggedin = true;
-                req.session.email = email;           
+                req.session.email = email;
                 res.redirect('/home');
                 // res.sendFile('/halaman-review.html');
-            } else{
+            }else if(results[0].IdRole === 2) {
+                req.session.loggedin = true;
+                req.session.email = email;
+                res.redirect('/homeDsn');
+                // res.sendFile('/halaman-review.html');
+            }else if(results[0].IdRole === 3) {
+                req.session.loggedin = true;
+                req.session.email = email;
+                res.redirect('/homeMhs');
+                // res.sendFile('/halaman-review.html');
+            }else{
                 res.send('email/password yang diinput salah!');
             }
             res.end();
@@ -200,6 +210,17 @@ app.get('/home', arrTopik, (req,res) => {
         let namaUser = result[0].Nama;
         let inisialUser = namaUser.charAt(0);
         res.render('home',{ nama: namaUser, inisial: inisialUser, arrTopik });
+    })
+});
+
+app.get('/homeMhs', (req,res) => {
+    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        let namaUser = result[0].Nama;
+        let inisialUser = namaUser.charAt(0);
+        res.render('homeMhs',{ nama: namaUser, inisial: inisialUser })
     })
 });
 
@@ -289,6 +310,7 @@ app.post('/addTopik', multerParser.none(), (req,res) => {
     res.render('home',{ nama: namaUser, inisial: inisialUser , arrTopik});
 })
 
+//filter halaman admin
 app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
     console.log(req.body);
     let bidangPeminatan1 = req.body.FilterBP;
@@ -299,6 +321,20 @@ app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
         return console.log(result[0].Nama+"");
     })
     console.log(pool.query(`select * from TopikSkripsi where bidangPeminatan = ?`,[bidangPeminatan1]));
+})
+
+//filter halaman mahasiswa
+app.post('/filterBPm', multerParser.none(), (req,res) => { //belum bisa
+    console.log(req.body);
+    // let bidangPeminatan1 = req.body.FilterBP;
+    // let nama = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
+    //     if(err){
+    //         return console.log(err);
+    //     }
+    //     return console.log(result[0].Nama+"");
+    // })
+    // console.log(bidangPeminatan1);
+    // console.log(pool.query(`select * from TopikSkripsi where bidangPeminatan = ?`,[req.body.FilterBP]));
 })
 
 app.get('/logout', (req,res,next) => {

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Halaman Pemilihan</title>
+    <script src = 'script/script.js' defer></script>
+    <link rel="stylesheet" href="styling/HalamanPemilihan.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+<body onload="realTimeClock()">
+    <div class="marginKiri"></div>
+    <div class="header">
+        <div class="garisSalam"></div>
+        <div class="containerLogoIF">
+            <img src = logo/iflogo.png id="logoif">
+        </div>
+        <div class="tulisanHeader">
+            <p class="tulisanSatu">Salam Akademik!</p>
+            <p class="tulisanDua">Selamat datang di website Topik Skripsi Informatika UNPAR!</p>
+        </div>
+        <input type="image" src="icon/Sign_in.png" id="sign_out">
+    </div>
+    <div class = "home"> 
+        <div id="DaftarT">
+            <b>
+                DAFTAR TOPIK SKRIPSI - T.A 2022/2023
+            </b>
+            <br>
+            <br>
+            <b>
+                Keterangan:
+            </b>
+        </div>
+        <div id="infoUser">
+            <!-- sesuai login --> 
+                <div id="circle">
+                    <p id="first_letter"><%= inisial %> </p> <!-- kalo nama = Erwin Darsono, maka huruf = E -->
+                </div>
+                <p class="nama"><%= nama %></p> <!-- kalo nama = Erwin Darsono, maka = ERWIN DARSONO -->
+                <!-- <p>6182001002@student.id</p> sesuai NPM/NIK, mahasiswa = student.com, dosen = lecturer.com, admin = admin.com -->
+                <p class="email_user">6182001002@student.id</p>
+            </div>
+        <div class="wrapper">
+            <div id="fitur">
+                <div class="daftar_topik">
+                    <img src = icon/Folder_alt_fill.png id="iconDaftarT">
+                    <a href="/homeMhs" id="DT">
+                        <input type="button" id="buttonDT" alt="DT" name="daftarT" value="Daftar Topik">
+                    </a>
+                </div>
+                <div class="tentang_kami">
+                    <img src = icon/Info_fill.png id="iconTentangK">
+                    <input type="button" id="buttonTK" name="tentangK" value="Tentang Kami">     
+                </div>
+            </div>
+            <div class="garis_waktu"></div>
+            <div id="real_day"></div>
+            <div id="real_time"></div>
+        </div>
+        <div id="DaftarTopik">
+            <div id="ket">
+                <div id="ket1">
+                    - CS = Computing Science
+                    <br>
+                    - DS = Data Science
+                </div>
+                <div id="ket2">
+                    - (*) = Topik Skripsi Jenis Bintang
+                    <br>
+                    - Non(*) = Topik Skripsi Jenis Reguler
+                </div>
+                <div id="ket3">
+                    Masa review hingga:                
+                    <br>
+                    <div id="date">
+                        <!-- sesuai input admin -->                    
+                    </div>   
+                    <br> 
+                    <form action="/filterBPm" method="post" enctype="multipart/form-data">
+                        <div id="filter">
+                            <select name="FilterBP" id="FilterBP" placeholder="Cari Bidang Peminatan">      
+                                <option value="Computing Science">Computing Science</option>
+                                <option value="Data Science">Data Science</option>
+                            </select>
+                            <input type="submit" value="filter" id="searchbtn">
+                        </div>
+                    </form>
+                    
+                </div>
+                <div id="icDate">
+                    <img src = icon/Date_range_fill.png id="iconDate">
+                </div>
+            </div>
+            <br>
+            <div id="tabelDT">
+                <table rules="all" id="tbl">
+                    <tr>
+                        <td class="tb">  </td>
+                        <td> No </td>
+                        <td> Judul Topik </td>
+                        <td> Dosen Pengaju </td>
+                        <td> Kode Topik </td>
+                        <td> Bidang Peminatan </td>
+                        <td> Jenis Skripsi </td>
+                        <td> Status </td>
+                        <td> Review </td>
+                    </tr>
+                    <tr class="txt">
+                        <td class="tb"> <img src="./icon/Remove_fill.png" class="rmv" hidden> </td>
+                        <td> 1 </td>
+                        <td> Perangkat Lunak Sistem Manajemen Inventori </td>
+                        <td> Rosa De Lima Endang Padmowati </td>
+                        <td> RDL71 </td>
+                        <td> CS </td>
+                        <td> * </td>
+                        <td> NULL </td>
+                        <td> <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()"><img src="./icon/Setting_fill.png" id="edit" class="opt" hidden> </td>
+                    </tr>
+                    <tr class="txt">
+                        <td class="tb"> <img src="./icon/Remove_fill.png" class="rmv" hidden> </td>
+                        <td> 2 </td>
+                        <td> Analisis Visualisasi Data Kasus Covid-19 </td>
+                        <td> Vania Natali </td>
+                        <td> VN82 </td>
+                        <td> DS </td>
+                        <td> - </td>
+                        <td> NULL </td>
+                        <td> <img src="./icon/Edit_fill.png" id="edit" class="ed"><img src="./icon/Setting_fill.png" id="edit" class="opt" hidden> </td>
+                    </tr>
+                    <tr class="txt">
+                        <td class="tb"> <img src="./icon/Remove_fill.png" class="rmv" hidden> </td>
+                        <td> 3 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td> <img src="./icon/Edit_fill.png" id="edit" class="ed"><img src="./icon/Setting_fill.png" id="edit" class="opt" hidden> </td>
+                    </tr>
+                    <tr class="txt">
+                        <td class="tb"> <img src="./icon/Remove_fill.png" class="rmv" hidden> </td>
+                        <td> 4 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td> <img src="./icon/Edit_fill.png" id="edit" class="ed"><img src="./icon/Setting_fill.png" id="edit" class="opt" hidden> </td>
+                    </tr>
+                    <tr class="txt">
+                        <td class="tb"> <img src="./icon/Remove_fill.png" class="rmv" hidden> </td>
+                        <td> 5 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td> <img src="./icon/Edit_fill.png" id="edit" class="ed"><img src="./icon/Setting_fill.png" id="edit" class="opt" hidden> </td>
+                    </tr>
+                    <tr class="txt">
+                        <td class="tb"> <img src="./icon/Remove_fill.png" class="rmv" hidden> </td>
+                        <td> 6 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td> <img src="./icon/Edit_fill.png" id="edit" class="ed"><img src="./icon/Setting_fill.png" id="edit" class="opt" hidden> </td>
+                    </tr>
+                    <tr class="txt">
+                        <td class="tb"> <img src="./icon/Remove_fill.png" class="rmv" hidden> </td>
+                        <td> 7 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td> <img src="./icon/Edit_fill.png" id="edit" class="ed"><img src="./icon/Setting_fill.png" id="edit" class="opt" hidden> </td>
+                    </tr>
+                    <tr class="txt">
+                        <td class="tb"> <img src="./icon/Remove_fill.png" class="rmv" hidden> </td>
+                        <td> 8 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td> <img src="./icon/Edit_fill.png" id="edit" class="ed"><img src="./icon/Setting_fill.png" id="edit" class="opt" hidden> </td>
+                    </tr>
+                    <tr class="txt">
+                        <td class="tb"> <img src="./icon/Remove_fill.png" class="rmv" hidden> </td> 
+                        <td> 9 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td> <img src="./icon/Edit_fill.png" id="edit" class="ed"><img src="./icon/Setting_fill.png" id="edit" class="opt" hidden> </td>
+                    </tr>
+                    <tr class="txt">
+                        <td class="tb"> <img src="./icon/Remove_fill.png" class="rmv" hidden> </td>
+                        <td> 10 </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td>  </td>
+                        <td> <img src="./icon/Edit_fill.png" id="edit" class="ed"><img src="./icon/Setting_fill.png" id="edit" class="opt" hidden> </td>
+                    </tr>
+                </table> 
+            </div>
+        </div>
+    </div>
+</body>
+</html>
