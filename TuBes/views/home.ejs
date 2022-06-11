@@ -102,8 +102,8 @@
                     <form action="/filterBP" method="post" enctype="multipart/form-data">
                         <div id="filter">
                             <select name="FilterBP" id="FilterBP" placeholder="Cari Bidang Peminatan">      
-                                <option value="Computing Science">Computing Science</option>
-                                <option value="Data Science">Data Science</option>
+                                <option value="CS">Computing Science</option>
+                                <option value="DS">Data Science</option>
                             </select>
                             <input type="submit" value="filter" id="searchbtn">
                         </div>
@@ -122,17 +122,27 @@
                         <td> Judul Topik </td>
                         <td> Dosen Pengaju </td>
                         <td> Kode Topik </td>
-                        <td> Semester </td>
                         <td> Bidang Peminatan </td>
-                        <td> Tanggal Unggah </td>
+                        <td> Jenis </td>
                         <td> Status </td>
                         <td> Review </td>
                     </tr>
-                    <tr>
+                    <% let index = 0 %> 
+                    <% for (let topik of arrTopik) { %>
+                        <tr>
+                            <td> <%= index+1 %> </td>
+                            <td> <%= topik[index].judul %> </td>
+                            <td> <%= topik[index].namaDosen %> </td>
+                            <td> <%= topik[index].kodeTopik %> </td>
+                            <td> <%= topik[index].bidangPeminatan %> </td>
+                            <td> <%= topik[index].jenis %> </td>
+                            <td> <%= topik[index].status %> </td>
+                            <td> </td>
+                        </tr>
+                    <% } %>  
+                    <!-- <tr>
                         <td> 1 </td>
-                        <td> 
-                            <!-- sesuai input dari dosen -->
-                        </td>
+                        <td>  </td>
                         <td>  </td>
                         <td>  </td>
                         <td>  </td>
@@ -239,7 +249,7 @@
                         <td>  </td>
                         <td>  </td>
                         <td>  </td>
-                    </tr>
+                    </tr> -->
                 </table> 
             </div>
         </div>

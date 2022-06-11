@@ -11,7 +11,7 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: '',
+    password: 'erwin08',
     database: 'reviewts',
     host: 'localhost',
     connectionLimit:10
@@ -86,7 +86,8 @@ app.set('view engine','ejs');
 //     return console.log(result);
 // })
 
-// pool.query(`delete from user where Nama=?`,['Dummy'],(err, result, fields)=>{
+//  UNTUK HAPUS RECORD
+// pool.query(`delete from TopikSkripsi where NamaDosen=?`,['Mariskha'],(err, result, fields)=>{
 //     if(err){
 //         return console.log(err);
 //     }
@@ -94,7 +95,15 @@ app.set('view engine','ejs');
 // })
 
 //  UNTUK MEMBUAT TABLE TOPIK SKRIPSI
-// let tableTS = "CREATE TABLE TopikSkripsi (judul VARCHAR(50), namaDosen VARCHAR(20), kodeTopik CHAR(10), bidangPeminatan CHAR(2), jenisSkripsi VARCHAR(10))";
+// let tableTS = "CREATE TABLE TopikSkripsi (judul VARCHAR(50), namaDosen VARCHAR(20), kodeTopik CHAR(10), bidangPeminatan VARCHAR(20), jenisSkripsi VARCHAR(10))";
+// pool.query(tableTS, function(err,result){
+//     if(err){
+//         return console.log(err);
+//     }
+//     console.log("table topik skripsi create");
+// })
+
+// let tableTS = "CREATE TABLE TopikSkripsi (judul VARCHAR(50), namaDosen VARCHAR(20), kodeTopik CHAR(10), bidangPeminatan VARCHAR(20), jenisSkripsi VARCHAR(10))";
 // pool.query(tableTS, function(err,result){
 //     if(err){
 //         return console.log(err);
@@ -145,6 +154,8 @@ const multerParser = multer();
 
 let email = "";
 let password = "";
+let arrTopik = [];
+let arrUser = [];
 
 const staticPath = path.resolve('public');
 app.use(express.static(staticPath));    //serving static page dari public
@@ -167,7 +178,7 @@ app.post('/signin', multerParser.none(), (req,res) => {
             if(error) throw error;
             if(results.length > 0) {
                 req.session.loggedin = true;
-                req.session.email = email;
+                req.session.email = email;           
                 res.redirect('/home');
                 // res.sendFile('/halaman-review.html');
             } else{
@@ -181,14 +192,14 @@ app.post('/signin', multerParser.none(), (req,res) => {
     }
 });
 
-app.get('/home', (req,res) => {
+app.get('/home', arrTopik, (req,res) => {
     pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
             return console.log(err);
         }
         let namaUser = result[0].Nama;
         let inisialUser = namaUser.charAt(0);
-        res.render('home',{ nama: namaUser, inisial: inisialUser })
+        res.render('home',{ nama: namaUser, inisial: inisialUser, arrTopik });
     })
 });
 
@@ -221,7 +232,7 @@ app.get('/tinjauan', (req,res) => {
         }
         let namaUser = result[0].Nama;
         let inisialUser = namaUser.charAt(0);
-        res.render('tinjauan',{ nama: namaUser, inisial: inisialUser })
+        res.render('tinjauan',{ nama: namaUser, inisial: inisialUser });
     })
 });
 
@@ -242,6 +253,13 @@ app.post('/addUser', multerParser.none(), (req,res) => {
     let values = [
         [id,namaUser,email,password,idRole]
     ]
+    arrUser.push({
+        idUser: id,
+        namaUser: namaUser,
+        email: email,
+        password: password,
+        
+    })
     pool.query(sql,[values]);
 })
 
@@ -258,8 +276,17 @@ app.post('/addTopik', multerParser.none(), (req,res) => {
         let values = [
             [judulTopik,result[0].Nama,kodeTopik,bidangPeminatan,jenis]
         ]
+        arrTopik.push({
+            judul: judulTopik,
+            namaDosen: result[0].Nama,
+            kodeTopik: kodeTopik,
+            bPeminatan: bidangPeminatan,
+            jenis: jenis,
+            status: null,
+        })
         pool.query(sql,[values]);
     })
+    res.render('home',{ nama: namaUser, inisial: inisialUser , arrTopik});
 })
 
 app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
@@ -271,7 +298,7 @@ app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
         }
         return console.log(result[0].Nama+"");
     })
-    console.log(pool.query(`select * from TopikSkripsi where bidangPeminatan = ?`,[req.body.FilterBP]));
+    console.log(pool.query(`select * from TopikSkripsi where bidangPeminatan = ?`,[bidangPeminatan1]));
 })
 
 app.get('/logout', (req,res,next) => {
