@@ -128,15 +128,15 @@
                         <td> Review </td>
                     </tr>
                     <% let index = 0 %> 
-                    <% for (let topik of arrTopik) { %>
+                    <% for (let topik of result) { %>
                         <tr>
-                            <td> <%= index+1 %> </td>
-                            <td> <%= topik[index].judul %> </td>
-                            <td> <%= topik[index].namaDosen %> </td>
-                            <td> <%= topik[index].kodeTopik %> </td>
-                            <td> <%= topik[index].bidangPeminatan %> </td>
-                            <td> <%= topik[index].jenis %> </td>
-                            <td> <%= topik[index].status %> </td>
+                            <td> <%= index %> </td>
+                            <td> <%= topik.judul %> </td>
+                            <td> <%= topik.namaDosen %> </td>
+                            <td> <%= topik.kodeTopik %> </td>
+                            <td> <%= topik.bidangPeminatan %> </td>
+                            <td> <%= topik.jenis %> </td>
+                            <td> <%= topik.status %> </td>
                             <td> </td>
                         </tr>
                     <% } %>  
