@@ -160,6 +160,9 @@ function offUT() {
 function opn(){
     document.getElementById("ovy").style.display = "block";
 }
+function opn1(){
+    document.getElementById("ovy1").style.display = "block";
+}
 
 function dropdown() {
     document.getElementById("myDropdown").classList.toggle("show");
@@ -192,7 +195,7 @@ function show(){
                 z[j].style.display = "none";
             }
         }
-  }
+    }
 }
 
 window.onclick = function(event) {
