@@ -126,8 +126,18 @@ body{
     display: grid;
     grid-area: kanan;
 }
-#icSearch{
-    padding-top:2vh;
+#filter{
+    display: grid;
+    grid-template-areas: 
+    'filterbp searchbtn';
+}
+#FilterBP{
+    grid-area: kiri;
+    width: fit-content;
+}
+#searchbtn{
+    grid-area: kanan;
+    margin-left: 24vh;
 }
 
 #tabelDT{

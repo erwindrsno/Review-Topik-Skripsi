@@ -11,7 +11,7 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: 'erwin08',
+    password: '',
     database: 'reviewts',
     host: 'localhost',
     connectionLimit:10
@@ -102,6 +102,15 @@ app.set('view engine','ejs');
 //     console.log("table topik skripsi create");
 // })
 
+//  UNTUK MEMBUAT TABLE REVIEW
+// let tableTS = "CREATE TABLE Review (idReview int not null,komentar VARCHAR(50), namaDosen VARCHAR(20), kodeTopik CHAR(10), bidangPeminatan CHAR(2), jenisSkripsi VARCHAR(10))";
+// pool.query(tableTS, function(err,result){
+//     if(err){
+//         return console.log(err);
+//     }
+//     console.log("table topik skripsi create");
+// })
+
 const multerParser = multer();
 
 const staticPath = path.resolve('public');
@@ -110,10 +119,10 @@ app.use(express.static(staticPath));    //serving static page dari public
 app.use(express.urlencoded({ extended: true})); //?
 
 app.get('/', (req,res) => {
-    res.render('index');
+    res.render('index.ejs');
 });
 app.get('/index', (req,res) => {
-    res.render('index');
+    res.render('index.ejs');
 });
 app.get('/home', (req,res) => {
     let namaUser = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
@@ -237,6 +246,19 @@ app.post('/addTopik', multerParser.none(), (req,res) => {
     pool.query(sql,[values]);
 })
 
+app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
+    console.log(req.body);
+    let bidangPeminatan1 = req.body.FilterBP;
+    let nama = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        return console.log(result[0].Nama+"");
+    })
+    console.log(req.body.FilterBP)
+    let sql = pool.query(`select * from TopikSkripsi where bidangPeminatan = ?`,[req.body.FilterBP]);
+})
+
 app.get('/halaman-review', (req,res) => {
     let namaUser = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
         if(err){
@@ -252,12 +274,12 @@ app.get('/halaman-review', (req,res) => {
 });
 
 app.get('/logout', (req,res,next) => {
-    // req.session.destroy((err) => {
-    //     if(err) {
-    //         return console.log(err);
-    //     }
-    //     res.redirect('/');
-    // });
+    req.session.destroy((err) => {
+        if(err) {
+            return console.log(err);
+        }
+        res.redirect('/');
+    });
     req.logout();
     req.session = null;
     res.redirect('/');

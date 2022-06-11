@@ -99,13 +99,18 @@
                         <!-- sesuai input admin -->                    
                     </div>   
                     <br> 
-                    <br>
-                    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Cari Bidang Peminatan" title="Type in a name"> 
+                    
+                    <div action="/filterBP" id="filter" method="post" enctype="multipart/form-data">
+                        <select name="FilterBP" id="FilterBP" placeholder="Cari Bidang Peminatan">      
+                            <option value="cs">Computing Science</option>
+                            <option value="ds">Data Science</option>
+                        </select>
+                        <input type="image" src="icon/Search_alt.png" id="searchbtn" border="0" alt="Submit" />
+                    </div>
+                    
                 </div>
                 <div id="icDate">
                     <img src = icon/Date_range_fill.png id="iconDate">
-                    <br>
-                    <img src = icon/Search_alt.png id="iconSearch">
                 </div>
             </div>
             <br>
@@ -256,7 +261,10 @@
                     <br>
                     <div id="text"> Apakah anda yakin akan menyebarkan topik-topik skripsi tersebut? </div>
                     <input type="submit" value="Iya" id="SY" onclick="on2()">
-                    <input type="submit" value="Tidak" id="ST">
+                    <a href="/home" id="STbtn">
+                        <input type="submit" value="Tidak" id="ST" alt="STbtn">
+                    </a> 
+                    
                 </form>                
             </div>       
         </div>        
