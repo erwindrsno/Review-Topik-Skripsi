@@ -163,11 +163,18 @@ function opn(){
 function opn1(){
     document.getElementById("ovy1").style.display = "block";
 }
-
+function opn2(){
+    document.getElementById("ovy2").style.display = "block";
+}
 function dropdown() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-
+function max(){
+    let size = document.getElementById("maxta");
+    if (size.value.length > 150){
+        alert("Comment length must under 150 words");
+    }
+}
 function show(){
     const elem = document.getElementsByClassName("txt");
     let x = document.getElementsByClassName("opt");
