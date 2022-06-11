@@ -160,7 +160,6 @@ app.get('/index', (req,res) => {
 });
 
 app.post('/signin', multerParser.none(), (req,res) => {
-    console.log(req.body);
     email = req.body.input_email;
     password = req.body.input_pw;
     if(email&&password){
