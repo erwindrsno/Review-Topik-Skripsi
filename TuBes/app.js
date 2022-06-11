@@ -102,15 +102,36 @@ app.set('view engine','ejs');
 //     console.log("table topik skripsi create");
 // })
 
-//  UNTUK MEMBUAT TABLE REVIEW
-// let tableTS = "CREATE TABLE Review (idReview int not null,komentar VARCHAR(50), namaDosen VARCHAR(20), kodeTopik CHAR(10), bidangPeminatan CHAR(2), jenisSkripsi VARCHAR(10))";
-// pool.query(tableTS, function(err,result){
+
+// let tableReview = "CREATE TABLE Review (idReview int not null,komentar VARCHAR(50),pertanyaan VARCHAR(50))";
+// pool.query(tableReview, function(err,result){
 //     if(err){
 //         return console.log(err);
 //     }
-//     console.log("table topik skripsi create");
+//     console.log("table review create");
 // })
 
+// var sql = "INSERT INTO Review (IdReview, komentar, pertanyaan) VALUES ?";
+// var values = [
+//     ['1','abc','apa?']
+// ]
+// pool.query(sql,[values], function(err,result){
+//     if(err){
+//         return console.log(err);
+//     }
+//     console.log("records inserted: "+result.affectedRows);
+// })
+
+// var sql = "INSERT INTO Review (IdReview, komentar, pertanyaan) VALUES ?";
+// var values = [
+//     ['2','abcd','kenapa?']
+// ]
+// pool.query(sql,[values], function(err,result){
+//     if(err){
+//         return console.log(err);
+//     }
+//     console.log("records inserted: "+result.affectedRows);
+// })
 const multerParser = multer();
 
 const staticPath = path.resolve('public');
@@ -255,8 +276,7 @@ app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
         }
         return console.log(result[0].Nama+"");
     })
-    console.log(req.body.FilterBP)
-    let sql = pool.query(`select * from TopikSkripsi where bidangPeminatan = ?`,[req.body.FilterBP]);
+    console.log(pool.query(`select * from TopikSkripsi where bidangPeminatan = ?`,[req.body.FilterBP]));
 })
 
 app.get('/halaman-review', (req,res) => {
