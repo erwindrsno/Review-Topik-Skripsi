@@ -11,7 +11,7 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: 'erwin08',
+    password: '',
     database: 'reviewts',
     host: 'localhost',
     connectionLimit:10
@@ -231,6 +231,22 @@ app.get('/homeMhs', (req,res) => {
     })
 });
 
+app.get('/homeDsn', (req,res) => {
+    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        namaUser = result[0].Nama;
+        inisialUser = namaUser.charAt(0);
+        pool.query(`select * from TopikSkripsi`,(err, result, fields)=>{
+            if(err){
+                return console.log(err);
+            }
+            res.render('homeDsn',{ nama: namaUser, inisial: inisialUser, result});
+        });
+    })
+});
+
 app.get('/unggah', (req,res) => {
     pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
@@ -239,6 +255,17 @@ app.get('/unggah', (req,res) => {
         let namaUser = result[0].Nama;
         let inisialUser = namaUser.charAt(0);
         res.render('unggah',{ nama: namaUser, inisial: inisialUser })
+    })
+});
+
+app.get('/unggahDsn', (req,res) => {
+    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        let namaUser = result[0].Nama;
+        let inisialUser = namaUser.charAt(0);
+        res.render('unggahDsn',{ nama: namaUser, inisial: inisialUser })
     })
 });
 
@@ -261,6 +288,17 @@ app.get('/tinjauan', (req,res) => {
         let namaUser = result[0].Nama;
         let inisialUser = namaUser.charAt(0);
         res.render('tinjauan',{ nama: namaUser, inisial: inisialUser });
+    })
+});
+
+app.get('/tinjauanDsn', (req,res) => {
+    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        let namaUser = result[0].Nama;
+        let inisialUser = namaUser.charAt(0);
+        res.render('tinjauanDsn',{ nama: namaUser, inisial: inisialUser });
     })
 });
 
@@ -306,6 +344,24 @@ app.post('/addTopik', multerParser.none(), (req,res) => {
         pool.query(sql,[values]);
     })
     res.redirect('/home');
+})
+
+app.post('/addTopikDsn', multerParser.none(), (req,res) => {
+    let judulTopik = req.body.JudulTopik;
+    let bidangPeminatan = req.body.BidangPeminatan;
+    let kodeTopik = req.body.KodeTopik;
+    let jenis = req.body.JenisSkripsi;
+    pool.query(`select Nama from user where email = ?`, [email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        let sql = "INSERT INTO TopikSkripsi (judul, namaDosen, kodeTopik, bidangPeminatan, jenisSkripsi) VALUES ?";
+        let values = [
+            [judulTopik,result[0].Nama,kodeTopik,bidangPeminatan,jenis]
+        ]
+        pool.query(sql,[values]);
+    })
+    res.redirect('/homeDsn');
 })
 
 //filter halaman admin
