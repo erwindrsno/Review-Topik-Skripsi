@@ -11,7 +11,7 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: 'erwin08',
+    password: '',
     database: 'reviewts',
     host: 'localhost',
     connectionLimit:10
@@ -248,7 +248,7 @@ app.post('/addUser', multerParser.none(), (req,res) => {
 app.post('/addTopik', multerParser.none(), (req,res) => {
     let judulTopik = req.body.JudulTopik;
     let bidangPeminatan = req.body.BidangPeminatan;
-    let kodeTopik = req.body.Semester;
+    let kodeTopik = req.body.KodeTopik;
     let jenis = req.body.JenisSkripsi;
     pool.query(`select Nama from user where email = ?`, [email],(err, result, fields)=>{
         if(err){

@@ -355,41 +355,39 @@ body{
     grid-area: s;
     border-left: 1px solid;
     height:100%;
+    margin-left: 40%;
 }
 #formUT1{
     display: grid;
     grid-area: kiri1;
-    padding-right: 20%;
+    padding-right: 10%;
     padding-left: 5%;
 }
 
 #formUT2{
     display: grid;
     grid-area: kiri2;
-    padding-right: 20%;
+    padding-right: 10%;
     padding-left: 5%;
 }
 
 #formUT3{
     display: grid;
     grid-area: kanan1; 
-    padding-left:-5%;
-    margin-left: -35%;
+    padding-left: 5%;
     padding-right: 5%;
 }
 #formUT4{
     display: grid;
     grid-area: kanan2;
-    margin-left: -35%;
+    padding-left: 5%;
     padding-right: 5%;
 }
 #formUT5{
     display: grid;
     grid-area: kanan3;
     margin-left: 50%;
-    margin-right: 10%;
     margin-top: 10%;
-    
 }
 #submitUT{
     color: white;
