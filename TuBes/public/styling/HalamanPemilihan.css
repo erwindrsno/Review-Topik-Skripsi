@@ -63,6 +63,7 @@ body{
 }
 
 #sign_out{
+    margin-top: 1vw;
     position: absolute;
     align-self: center;
     right: 0;
