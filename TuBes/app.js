@@ -11,7 +11,7 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: '',
+    password: 'erwin08',
     database: 'reviewts',
     host: 'localhost',
     connectionLimit:10
@@ -102,7 +102,7 @@ app.set('view engine','ejs');
 //     console.log("table topik skripsi create");
 // })
 
-
+//  UNTUK MEMBUAT TABLE REVIEW
 // let tableReview = "CREATE TABLE Review (idReview int not null,komentar VARCHAR(50),pertanyaan VARCHAR(50))";
 // pool.query(tableReview, function(err,result){
 //     if(err){
@@ -111,6 +111,7 @@ app.set('view engine','ejs');
 //     console.log("table review create");
 // })
 
+//  INSERT KE TABLE REVIEW
 // var sql = "INSERT INTO Review (IdReview, komentar, pertanyaan) VALUES ?";
 // var values = [
 //     ['1','abc','apa?']
@@ -122,6 +123,7 @@ app.set('view engine','ejs');
 //     console.log("records inserted: "+result.affectedRows);
 // })
 
+
 // var sql = "INSERT INTO Review (IdReview, komentar, pertanyaan) VALUES ?";
 // var values = [
 //     ['2','abcd','kenapa?']
@@ -132,7 +134,17 @@ app.set('view engine','ejs');
 //     }
 //     console.log("records inserted: "+result.affectedRows);
 // })
+
+// pool.query(`drop table TopikSkripsi`,(err, result, fields)=>{
+//     if(err){
+//         return console.log(err);
+//     }
+//     return console.log(result);
+// })
 const multerParser = multer();
+
+let email = "";
+let password = "";
 
 const staticPath = path.resolve('public');
 app.use(express.static(staticPath));    //serving static page dari public
@@ -142,74 +154,22 @@ app.use(express.urlencoded({ extended: true})); //?
 app.get('/', (req,res) => {
     res.render('index.ejs');
 });
+
 app.get('/index', (req,res) => {
     res.render('index.ejs');
 });
-app.get('/home', (req,res) => {
-    let namaUser = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
-        if(err){
-            return console.log(err);
-        }
-        return console.log(result[0].Nama+"");
-    })
-    console.log(namaUser);
-    // console.log(JSON.stringify(nama));
-    const inisialUser = 'D'
-    res.render('home', { nama: namaUser, inisial: inisialUser });
-});
-app.get('/unggah', (req,res) => {
-    let namaUser = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
-        if(err){
-            return console.log(err);
-        }
-        return console.log(result[0].Nama+"");
-    })
-    console.log(namaUser);
-    // console.log(JSON.stringify(nama));
-    const inisialUser = 'D'
-    res.render('unggah', { nama: namaUser, inisial: inisialUser });
-});
-app.get('/kelola', (req,res) => {
-    let namaUser = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
-        if(err){
-            return console.log(err);
-        }
-        return console.log(result[0].Nama+"");
-    })
-    console.log(namaUser);
-    // console.log(JSON.stringify(nama));
-    const inisialUser = 'D'
-    res.render('kelola', { nama: namaUser, inisial: inisialUser });
-});
-app.get('/tinjauan', (req,res) => {
-    let namaUser = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
-        if(err){
-            return console.log(err);
-        }
-        return console.log(result[0].Nama+"");
-    })
-    console.log(namaUser);
-    // console.log(JSON.stringify(nama));
-    const inisialUser = 'D'
-    res.render('tinjauan', { nama: namaUser, inisial: inisialUser });
-});
 
-// app.post('/signin', multerParser.none(), (req,res) => {
-//     console.log(req.body.input_email);
-// });
-
-let student = false;
 app.post('/signin', multerParser.none(), (req,res) => {
     console.log(req.body);
-    let email = req.body.input_email;
-    let password = req.body.input_pw;
+    email = req.body.input_email;
+    password = req.body.input_pw;
     if(email&&password){
         pool.query('SELECT * FROM user WHERE email = ? AND password = ?', [email,password], function(error,results,fields){
             if(error) throw error;
             if(results.length > 0) {
                 req.session.loggedin = true;
                 req.session.email = email;
-                res.redirect('/halaman-review');
+                res.redirect('/home');
                 // res.sendFile('/halaman-review.html');
             } else{
                 res.send('email/password yang diinput salah!');
@@ -220,15 +180,56 @@ app.post('/signin', multerParser.none(), (req,res) => {
         res.send('mohon input username dan password!');
         res.end();
     }
-    let indexA = email.indexOf('@');
-    let temp = email.charAt(indexA+1);
-    if (temp == 's') student = true;
+});
+
+app.get('/home', (req,res) => {
+    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        let namaUser = result[0].Nama;
+        let inisialUser = namaUser.charAt(0);
+        res.render('home',{ nama: namaUser, inisial: inisialUser })
+    })
+});
+
+app.get('/unggah', (req,res) => {
+    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        let namaUser = result[0].Nama;
+        let inisialUser = namaUser.charAt(0);
+        res.render('unggah',{ nama: namaUser, inisial: inisialUser })
+    })
+});
+
+app.get('/kelola', (req,res) => {
+    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        let namaUser = result[0].Nama;
+        let inisialUser = namaUser.charAt(0);
+        res.render('kelola',{ nama: namaUser, inisial: inisialUser })
+    })
+});
+
+app.get('/tinjauan', (req,res) => {
+    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        let namaUser = result[0].Nama;
+        let inisialUser = namaUser.charAt(0);
+        res.render('tinjauan',{ nama: namaUser, inisial: inisialUser })
+    })
 });
 
 app.post('/addUser', multerParser.none(), (req,res) => {
     let idRole = 1;
     let namaUser = req.body.NamaUser;
-    let role = req.body.BidangPeminatan;
+    let role = req.body.role;
     let id = req.body.id;
     let email = req.body.email;
     let password = req.body.password;
@@ -243,28 +244,23 @@ app.post('/addUser', multerParser.none(), (req,res) => {
         [id,namaUser,email,password,idRole]
     ]
     pool.query(sql,[values]);
-    // let roleUser = req.body.
-    // console.log(namaUser);
-    // console.log(namaUser);
 })
 
 app.post('/addTopik', multerParser.none(), (req,res) => {
-    console.log(req.body);
     let judulTopik = req.body.JudulTopik;
     let bidangPeminatan = req.body.BidangPeminatan;
     let kodeTopik = req.body.Semester;
     let jenis = req.body.JenisSkripsi;
-    let nama = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
+    pool.query(`select Nama from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
             return console.log(err);
         }
-        return console.log(result[0].Nama+"");
+        let sql = "INSERT INTO TopikSkripsi (judul, namaDosen, kodeTopik, bidangPeminatan, jenisSkripsi) VALUES ?";
+        let values = [
+            [judulTopik,result[0].Nama,kodeTopik,bidangPeminatan,jenis]
+        ]
+        pool.query(sql,[values]);
     })
-    let sql = "INSERT INTO TopikSkripsi (judul, namaDosen, kodeTopik, bidangPeminatan, jenisSkripsi) VALUES ?";
-    let values = [
-        [judulTopik,nama,kodeTopik,bidangPeminatan,jenis]
-    ]
-    pool.query(sql,[values]);
 })
 
 app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
@@ -278,20 +274,6 @@ app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
     })
     console.log(pool.query(`select * from TopikSkripsi where bidangPeminatan = ?`,[req.body.FilterBP]));
 })
-
-app.get('/halaman-review', (req,res) => {
-    let namaUser = pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
-        if(err){
-            return console.log(err);
-        }
-        return console.log(result[0].Nama+"");
-    })
-    console.log(namaUser);
-    // console.log(JSON.stringify(nama));
-    const inisialUser = 'D'
-    res.render('home', { nama: namaUser, inisial: inisialUser });
-    // console.log("Berhasil render");
-});
 
 app.get('/logout', (req,res,next) => {
     req.session.destroy((err) => {
