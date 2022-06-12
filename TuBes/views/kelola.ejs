@@ -75,22 +75,24 @@
                     <tr>
                         <td> No </td>
                         <td> Name </td>
+                        <td> ID </td>
                         <td> Role </td>
-                        <td> Id </td>
                         <td> Email </td>
                         <td> Password </td>
-                        <td> Semester </td>
                     </tr>
-                    <tr>
-                        <td> 1 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
+                    <% let index = 1 %>
+                    <% for (let user of result) { %>
+                        <!-- harus ubah lagi waktu ganti database -->
+                        <tr>
+                            <td> <%= index++ %> </td>
+                            <td> <%= user.Nama %> </td>
+                            <td> <%= user.IdUser %> </td>
+                            <td> <%= user.IdRole %> </td>
+                            <td> <%= user.Email %> </td>
+                            <td> <%= user.Password %> </td>
+                        </tr>
+                    <% } %> 
+                    <!-- <tr>
                         <td> 2 </td>
                         <td>  </td>
                         <td>  </td>
@@ -242,7 +244,7 @@
                         <td>  </td>
                         <td>  </td>
                         <td>  </td>
-                    </tr>
+                    </tr> -->
                 </table> 
             </div>
         </div>

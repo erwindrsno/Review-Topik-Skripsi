@@ -11,7 +11,7 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: '',
+    password: 'erwin08',
     database: 'reviewts',
     host: 'localhost',
     connectionLimit:10
@@ -87,7 +87,7 @@ app.set('view engine','ejs');
 // })
 
 //  UNTUK HAPUS RECORD
-// pool.query(`delete from TopikSkripsi where NamaDosen=?`,['Mariskha'],(err, result, fields)=>{
+// pool.query(`delete from user where Nama!=?`,['Mariskha'],(err, result, fields)=>{
 //     if(err){
 //         return console.log(err);
 //     }
@@ -103,7 +103,7 @@ app.set('view engine','ejs');
 //     console.log("table topik skripsi create");
 // })
 
-// let tableTS = "CREATE TABLE TopikSkripsi (judul VARCHAR(50), namaDosen VARCHAR(20), kodeTopik CHAR(10), bidangPeminatan VARCHAR(20), jenisSkripsi VARCHAR(10))";
+// let tableTS = "CREATE TABLE topikskripsi (judul VARCHAR(50), namaDosen VARCHAR(20), kodeTopik CHAR(10), bidangPeminatan CHAR(2), jenisSkripsi VARCHAR(10))";
 // pool.query(tableTS, function(err,result){
 //     if(err){
 //         return console.log(err);
@@ -150,6 +150,7 @@ app.set('view engine','ejs');
 //     }
 //     return console.log(result);
 // })
+
 const multerParser = multer();
 
 let email = "";
@@ -232,13 +233,20 @@ app.get('/homeMhs', (req,res) => {
 });
 
 app.get('/homeDsn', (req,res) => {
+    let namaUser = "";
+    let inisialUser = "";
     pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
             return console.log(err);
         }
-        let namaUser = result[0].Nama;
-        let inisialUser = namaUser.charAt(0);
-        res.render('homeDsn',{ nama: namaUser, inisial: inisialUser })
+        namaUser = result[0].Nama;
+        inisialUser = namaUser.charAt(0);
+        pool.query(`select * from TopikSkripsi`,(err, result, fields)=>{
+            if(err){
+                return console.log(err);
+            }
+            res.render('homeDsn',{ nama: namaUser, inisial: inisialUser, result});
+        });
     })
 });
 
@@ -271,7 +279,12 @@ app.get('/kelola', (req,res) => {
         }
         let namaUser = result[0].Nama;
         let inisialUser = namaUser.charAt(0);
-        res.render('kelola',{ nama: namaUser, inisial: inisialUser })
+        pool.query(`select * from user`,(err, result, fields)=>{
+            if(err){
+                return console.log(err);
+            }
+            res.render('kelola',{ nama: namaUser, inisial: inisialUser , result });
+        })
     })
 });
 
@@ -328,13 +341,14 @@ app.post('/addTopik', multerParser.none(), (req,res) => {
     let bidangPeminatan = req.body.BidangPeminatan;
     let kodeTopik = req.body.KodeTopik;
     let jenis = req.body.JenisSkripsi;
+    let status = null;
     pool.query(`select Nama from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
             return console.log(err);
         }
-        let sql = "INSERT INTO TopikSkripsi (judul, namaDosen, kodeTopik, bidangPeminatan, jenisSkripsi) VALUES ?";
+        let sql = "INSERT INTO TopikSkripsi (judul, namaDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusSkripsi) VALUES ?";
         let values = [
-            [judulTopik,result[0].Nama,kodeTopik,bidangPeminatan,jenis]
+            [judulTopik,result[0].Nama,kodeTopik,bidangPeminatan,jenis,status]
         ]
         pool.query(sql,[values]);
     })

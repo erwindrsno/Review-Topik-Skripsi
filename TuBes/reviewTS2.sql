@@ -1,45 +1,52 @@
-Drop table if EXISTS `role`;
+Drop table if EXISTS `review`;
+Drop table if EXISTS `topikSkripsi`;
 Drop table if EXISTS `user`;
-Drop table if EXISTS `TopikSkripsi`;
-Drop table if EXISTS `Review`;
+Drop table if EXISTS `role`;
 
 CREATE TABLE `role` (
-  `IdRole` int NOT NULL,
-  `NamaRole` varchar(50) NOT NULL,
-  PRIMARY KEY(`IdRole`)
+  `idRole` int NOT NULL,
+  `namaRole` varchar(50) NOT NULL,
+  PRIMARY KEY(`idRole`)
 );
     
-INSERT INTO `role` (`IdRole`, `NamaRole`) VALUES
+INSERT INTO `role` (`idRole`, `namaRole`) VALUES
 (1, 'Admin'),
 (2, 'Dosen'),
 (3, 'Mahasiswa');
 
 CREATE TABLE `user` (
-  `IdUser` int NOT NULL,
-  `Nama` varchar(50) NOT NULL,
-  `Email` varchar(50) NOT NULL,
-  `Password` varchar(16) NOT NULL,
-  `IdRole` int NOT NULL,
-  PRIMARY KEY(`IdUser`),
-  CONSTRAINT `fk_role` FOREIGN KEY(`IdRole`) REFERENCES `role`(`IdRole`)
+  `idUser` int NOT NULL,
+  `nama` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `password` varchar(16) NOT NULL,
+  `idRole` int NOT NULL,
+  PRIMARY KEY(`idUser`),
+  CONSTRAINT `fk_role` FOREIGN KEY(`idRole`) REFERENCES `role`(`idRole`)
 );
 
-INSERT INTO `user` (`IdUser`, `Nama`, `Email`, `Password`, `IdRole`) VALUES
+INSERT INTO `user` (`idUser`, `nama`, `email`, `password`, `idRole`) VALUES
 (1, 'Mariskha', 'mariskha@unpar.ac.id', 'admin', 1);
 
-CREATE TABLE `TopikSkripsi` (
+CREATE TABLE `topikSkripsi` (
+  `idDosen` int NOT NULL,
   `judul` VARCHAR(50), 
-  `namaDosen` VARCHAR(20), 
   `kodeTopik` CHAR(10), 
   `bidangPeminatan` CHAR(2), 
   `jenisSkripsi` VARCHAR(10),
-  PRIMARY KEY(`kodeTopik`)
+  `statusFinal` VARCHAR(10),
+  PRIMARY KEY(`kodeTopik`),
+  CONSTRAINT `fk_idDosen` FOREIGN KEY(`idDosen`) REFERENCES `user`(`idUser`)
 );
 
-CREATE TABLE `Review` (
-  `IdReview` int NOT NULL,
+CREATE TABLE `review` (
+  `idReviewer` int NOT NULL,
+  `idTopik` CHAR(10),
+  `idReview` int NOT NULL,
   `komentar` VARCHAR(50),
   `pertanyaan` VARCHAR(50),
-  PRIMARY KEY(`IdReview`)
+  `jawaban` VARCHAR(50),
+  `status` VARCHAR(10),
+  PRIMARY KEY(`idReview`),
+  CONSTRAINT `fk_idReviewer` FOREIGN KEY(`idReviewer`) REFERENCES `user`(`idUser`),
+  CONSTRAINT `fk_idTopik` FOREIGN KEY(`idTopik`) REFERENCES `topikSkripsi`(`kodeTopik`)
 );
-
