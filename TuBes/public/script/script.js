@@ -169,13 +169,22 @@ function opn2(){
 function dropdown() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
+function offset() {
+	document.getElementById("ovy").style.display = "none";
+    document.getElementById("kmn").style.display = "none";
+    document.getElementById("prt").style.display = "none";
+}
 function option(){
     document.getElementById("prt").removeAttribute("hidden");
+    document.getElementById("prt").style.display = "block";
     // document.getElementById("kmn").style.visibility = "hidden";
+    document.getElementById("kmn").style.display = "none";
 }
 function option1(){
     document.getElementById("kmn").removeAttribute("hidden");
+    document.getElementById("kmn").style.display = "block";
     // document.getElementById("prt").style.visibility = "hidden";
+    document.getElementById("prt").style.display = "none";
 }
 function show(){
     const elem = document.getElementsByClassName("txt");
