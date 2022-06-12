@@ -85,11 +85,11 @@
                         <!-- harus ubah lagi waktu ganti database -->
                         <tr>
                             <td> <%= index++ %> </td>
-                            <td> <%= user.Nama %> </td>
-                            <td> <%= user.IdUser %> </td>
-                            <td> <%= user.IdRole %> </td>
-                            <td> <%= user.Email %> </td>
-                            <td> <%= user.Password %> </td>
+                            <td> <%= user.nama %> </td>
+                            <td> <%= user.idUser %> </td>
+                            <td> <%= user.idRole %> </td>
+                            <td> <%= user.email %> </td>
+                            <td> <%= user.password %> </td>
                         </tr>
                     <% } %> 
                     <!-- <tr>
@@ -263,13 +263,13 @@
                 <div id="formUT1">
                     <label for="lang">Nama</label>
                     <br>
-                    <input type="text" name="NamaUser" id="namaUser">
+                    <input type="text" name="nama" id="namaUser">
                     <br>                                            
                 </div>
                 <div id="formUT2">
                     <label for="lang">Role</label>
                     <br> 
-                    <select name="role" id="role" class="role">
+                    <select name="idRole" id="role" class="role">
                         <option value="mahasiswa">Mahasiswa</option>
                         <option value="dosen">Dosen</option>
                         <option value="admin">Admin</option>
@@ -281,7 +281,7 @@
                 <div id="formUT3">
                     <label for="lang">Id</label>
                     <br>
-                    <input type="text" name="id" id="id">
+                    <input type="text" name="idUser" id="id">
                     <br>
                 </div>
                 <div id="formUT4">
@@ -309,11 +309,11 @@
                     <br>
                 </div> -->
                 <div id="formUT7">
-                    <input type="submit" value="add" id="submitUT" class="addUserBtn" onclick="on2()">
+                    <input type="submit" value="add" id="submitUT" class="addUserBtn">
                 </div>
             </form>
         </div>           
-        <div id="overlay2" onclick="offUT()">  
+        <!-- <div id="overlay2" onclick="offUT()">  
             <div id="isi2">
                 <div id="iconCheck" >
                     <img src = icon/Check.png >                
@@ -326,7 +326,7 @@
                     <img src = icon/Vector.png >        
                 </div>    
             </div>                      
-        </div>
+        </div> -->
     </div>
 </body>
 </html>
