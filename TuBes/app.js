@@ -177,21 +177,22 @@ app.post('/signin', multerParser.none(), (req,res) => {
     if(email&&password){
         pool.query('SELECT idRole FROM user WHERE email = ? AND password = ?', [email,password], function(error,results,fields){
             if(error) throw error;
-            if(results[0].idRole === 1) {
+            if(results.length > 0) {
                 req.session.loggedin = true;
                 req.session.email = email;
-                res.redirect('/home');
-                // res.sendFile('/halaman-review.html');
-            }else if(results[0].idRole === 2) {
-                req.session.loggedin = true;
-                req.session.email = email;
-                res.redirect('/homeDsn');
-                // res.sendFile('/halaman-review.html');
-            }else if(results[0].idRole === 3) {
-                req.session.loggedin = true;
-                req.session.email = email;
-                res.redirect('/homeMhs');
-                // res.sendFile('/halaman-review.html');
+                if(results[0].idRole === 1) {
+                    req.session.loggedin = true;
+                    req.session.email = email;
+                    res.redirect('/home');
+                }else if(results[0].idRole === 2) {
+                    req.session.loggedin = true;
+                    req.session.email = email;
+                    res.redirect('/homeDsn');
+                }else{
+                    req.session.loggedin = true;
+                    req.session.email = email;
+                    res.redirect('/homeMhs');
+                }
             }else{
                 res.send('email/password yang diinput salah!');
             }
@@ -217,7 +218,7 @@ app.get('/home', (req,res) => {
             if(err){
                 return console.log(err);
             }
-            res.render('home',{ nama: namaUser, inisial: inisialUser, result});
+            res.render('home',{ nama: namaUser, inisial: inisialUser, result, email });
         });
     })
 });
@@ -229,7 +230,7 @@ app.get('/homeMhs', (req,res) => {
         }
         let namaUser = result[0].nama;
         let inisialUser = namaUser.charAt(0);
-        res.render('homeMhs',{ nama: namaUser, inisial: inisialUser })
+        res.render('homeMhs',{ nama: namaUser, inisial: inisialUser , email})
     })
 });
 
@@ -246,7 +247,7 @@ app.get('/homeDsn', (req,res) => {
             if(err){
                 return console.log(err);
             }
-            res.render('homeDsn',{ nama: namaUser, inisial: inisialUser, result});
+            res.render('homeDsn',{ nama: namaUser, inisial: inisialUser, result, email});
         });
     })
 });
@@ -258,7 +259,7 @@ app.get('/unggah', (req,res) => {
         }
         let namaUser = result[0].nama;
         let inisialUser = namaUser.charAt(0);
-        res.render('unggah',{ nama: namaUser, inisial: inisialUser })
+        res.render('unggah',{ nama: namaUser, inisial: inisialUser , email })
     })
 });
 
@@ -269,7 +270,7 @@ app.get('/unggahDsn', (req,res) => {
         }
         let namaUser = result[0].nama;
         let inisialUser = namaUser.charAt(0);
-        res.render('unggahDsn',{ nama: namaUser, inisial: inisialUser })
+        res.render('unggahDsn',{ nama: namaUser, inisial: inisialUser , email})
     })
 });
 
@@ -284,7 +285,7 @@ app.get('/kelola', (req,res) => {
             if(err){
                 return console.log(err);
             }
-            res.render('kelola',{ nama: namaUser, inisial: inisialUser , result });
+            res.render('kelola',{ nama: namaUser, inisial: inisialUser , result , email});
         })
     })
 });
@@ -296,7 +297,7 @@ app.get('/tinjauan', (req,res) => {
         }
         let namaUser = result[0].nama;
         let inisialUser = namaUser.charAt(0);
-        res.render('tinjauan',{ nama: namaUser, inisial: inisialUser });
+        res.render('tinjauan',{ nama: namaUser, inisial: inisialUser , email });
     })
 });
 
@@ -307,7 +308,7 @@ app.get('/tinjauanDsn', (req,res) => {
         }
         let namaUser = result[0].nama;
         let inisialUser = namaUser.charAt(0);
-        res.render('tinjauanDsn',{ nama: namaUser, inisial: inisialUser });
+        res.render('tinjauanDsn',{ nama: namaUser, inisial: inisialUser , email });
     })
 });
 
