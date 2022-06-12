@@ -2,6 +2,7 @@ Drop table if EXISTS `review`;
 Drop table if EXISTS `topikSkripsi`;
 Drop table if EXISTS `user`;
 Drop table if EXISTS `role`;
+Drop table if EXISTS `periode`;
 
 CREATE TABLE `role` (
   `idRole` int NOT NULL,
@@ -15,7 +16,7 @@ INSERT INTO `role` (`idRole`, `namaRole`) VALUES
 (3, 'Mahasiswa');
 
 CREATE TABLE `user` (
-  `idUser` int NOT NULL,
+  `idUser` varchar(15),
   `nama` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(16) NOT NULL,
@@ -28,7 +29,7 @@ INSERT INTO `user` (`idUser`, `nama`, `email`, `password`, `idRole`) VALUES
 (1, 'Mariskha', 'mariskha@unpar.ac.id', 'admin', 1);
 
 CREATE TABLE `topikSkripsi` (
-  `idDosen` int NOT NULL,
+  `idDosen` varchar(15),
   `judul` VARCHAR(50), 
   `kodeTopik` CHAR(10), 
   `bidangPeminatan` CHAR(2), 
@@ -39,7 +40,7 @@ CREATE TABLE `topikSkripsi` (
 );
 
 CREATE TABLE `review` (
-  `idReviewer` int NOT NULL,
+  `idReviewer` varchar(15),
   `idTopik` CHAR(10),
   `idReview` int NOT NULL,
   `komentar` VARCHAR(250),
@@ -49,4 +50,11 @@ CREATE TABLE `review` (
   PRIMARY KEY(`idReview`),
   CONSTRAINT `fk_idReviewer` FOREIGN KEY(`idReviewer`) REFERENCES `user`(`idUser`),
   CONSTRAINT `fk_idTopik` FOREIGN KEY(`idTopik`) REFERENCES `topikSkripsi`(`kodeTopik`)
+);
+
+CREATE TABLE `periode` (
+  `idPeriode` int NOT NULL,
+  `semester` VARCHAR(10), 
+  `tahunAjar` VARCHAR(10), 
+  PRIMARY KEY(`idPeriode`)
 );
