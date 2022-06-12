@@ -346,7 +346,7 @@ body{
     grid-template-areas: 
     'kiri1 s kanan1'
     'kiri2 s kanan2'
-    'kosong s kanan3';
+    'kiri3 s kanan3';
     padding:3%;
     line-height: 50%;
 }
@@ -386,6 +386,12 @@ body{
 #formUT5{
     display: grid;
     grid-area: kanan3;
+    margin-left: 50%;
+    margin-top: 10%;
+}
+#formUT6{
+    display: grid;
+    grid-area: kiri3;
     margin-left: 50%;
     margin-top: 10%;
 }
