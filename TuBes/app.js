@@ -11,7 +11,7 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: '',
+    password: 'erwin08',
     database: 'reviewts2',
     host: 'localhost',
     connectionLimit:10
@@ -211,8 +211,9 @@ app.get('/home', (req,res) => {
             return console.log(err);
         }
         namaUser = result[0].nama;
+        pool.query(`select `)
         inisialUser = namaUser.charAt(0);
-        pool.query(`select * from topikSkripsi`,(err, result, fields)=>{
+        pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser`,(err, result, fields)=>{
             if(err){
                 return console.log(err);
             }
