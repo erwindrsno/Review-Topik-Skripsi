@@ -236,14 +236,9 @@ app.get('/homeDsn', (req,res) => {
         if(err){
             return console.log(err);
         }
-        namaUser = result[0].Nama;
-        inisialUser = namaUser.charAt(0);
-        pool.query(`select * from TopikSkripsi`,(err, result, fields)=>{
-            if(err){
-                return console.log(err);
-            }
-            res.render('homeDsn',{ nama: namaUser, inisial: inisialUser, result});
-        });
+        let namaUser = result[0].Nama;
+        let inisialUser = namaUser.charAt(0);
+        res.render('homeDsn',{ nama: namaUser, inisial: inisialUser })
     })
 });
 
