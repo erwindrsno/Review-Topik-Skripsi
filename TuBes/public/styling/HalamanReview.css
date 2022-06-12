@@ -595,6 +595,24 @@ body{
     cursor: pointer;
     background-color: #ccc;
 }
+#ck1{
+    top: 0;
+    height: 20px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #ccc;
+}
+#ck2{
+    top: 0;
+    height: 20px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #ccc;
+}
   
 .container:hover input ~ #ck {
     background-color: #ccc;
@@ -603,9 +621,14 @@ body{
     margin-top: 15px;
     padding-bottom: 10px;
 }
+#pr1{
+    margin-top: 15px;
+    padding-bottom: 10px;
+}
 #pc{
     justify-content: left;
     align-items: left;
+    margin-bottom: 20px;
 }
 #ovy1 {
     position: fixed;

@@ -274,16 +274,32 @@
                     <hr>
                     <div id="tt2">Status</div>
                     <div id="pc">
-                        <input type="radio" checked="checked" name="radio" id="ck">
+                        <input type="radio" name="radio" id="ck">
                         <label class="container">OK</label>    
-                        <input type="radio" name="radio" id="ck">
+                        <input type="radio" name="radio" id="ck1" onclick="option()">
                         <label class="container">INQ</label>
-                        <input type="radio" name="radio" id="ck">
+                        <input type="radio" name="radio" id="ck2" onclick="option1()">
                         <label class="container">NO</label>
                     </div>
-                    <div id="pr">
-                        <input type="submit" value="Kirim" id="SY" onclick="opn1()">
+                    <!-- <div id="pr" hidden>
+                        <input type="submit" value="Kirim" id="SY">
                         <input type="submit" value="Batal" id="ST">
+                    </div> -->
+                    <div id="kmn" hidden>
+                        <div id="tt2">Komentar<div id="tt3">* max: 250 kata</div></div>
+                        <div id="ta"><textarea placeholder="Masukan komentar di sini" rows="4" cols="74" maxlength="250" id="maxta"></textarea></div>
+                        <div id="pr1">
+                            <input type="submit" value="Kirim" id="SY">
+                            <input type="submit" value="Batal" id="ST">
+                        </div>
+                    </div>
+                    <div id="prt" hidden>
+                        <div id="tt2">Pertanyaan<div id="tt3">* max: 250 kata</div></div>
+                        <div id="ta"><textarea placeholder="Masukan pertanyaan di sini" rows="4" cols="74" maxlength="250"></textarea></div>
+                        <div id="pr">
+                            <input type="submit" value="Kirim" id="SY">
+                            <input type="submit" value="Batal" id="ST">
+                        </div>
                     </div>
                 </form>                
             </div>       

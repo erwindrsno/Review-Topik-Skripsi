@@ -169,11 +169,13 @@ function opn2(){
 function dropdown() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
-function max(){
-    let size = document.getElementById("maxta");
-    if (size.value.length > 150){
-        alert("Comment length must under 150 words");
-    }
+function option(){
+    document.getElementById("prt").removeAttribute("hidden");
+    // document.getElementById("kmn").style.visibility = "hidden";
+}
+function option1(){
+    document.getElementById("kmn").removeAttribute("hidden");
+    // document.getElementById("prt").style.visibility = "hidden";
 }
 function show(){
     const elem = document.getElementsByClassName("txt");
