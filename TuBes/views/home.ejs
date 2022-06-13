@@ -144,119 +144,9 @@
                             <td> <%= topik.bidangPeminatan %> </td>
                             <td> <%= topik.jenisSkripsi %> </td>
                             <td id="sf"> <%= topik.statusFinal %> </td>
-                            <td> <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()"><img src="./icon/Setting_fill.png" id="edit" class="opt" onclick="opn1()" hidden> </td>
+                            <td> <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()"><img src="./icon/Setting_fill.png" id="edit" class="opt" onclick="opn1()" hidden></td>
                         </tr>
                     <% } %> 
-                    <!-- <tr>
-                        <td> 1 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
-                        <td> 2 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
-                        <td> 3 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
-                        <td> 4 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
-                        <td> 5 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
-                        <td> 6 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
-                        <td> 7 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
-                        <td> 8 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
-                        <td> 9 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr>
-                    <tr>
-                        <td> 10 </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                        <td>  </td>
-                    </tr> -->
                 </table> 
             </div>
         </div>
@@ -281,14 +171,21 @@
                     <input type="submit" value="Iya" id="SY" onclick="on2()">
                     <a href="/home" id="STbtn">
                         <input type="submit" value="Tidak" id="ST" alt="STbtn">
-                    </a> 
-                    
+                    </a>              
                 </form>                
             </div>       
         </div>        
         <div class="grid">
             <div class="tes1"><img src="./icon/Setting_fill.png" id="set" onclick="show()"></div>
             <div class="tes2"><button id="publish" onclick="on1()">Publish</button></div>
+        </div>
+        <div class="grid2">
+            <div class="tombolReview">
+                <input type="submit" value="Review">
+            </div>
+            <div class="tombolPengaturan">
+                <input type="submit" value="Pengaturan">
+            </div>
         </div>
         <div id="ovy">  
             <div id="isi" >
@@ -301,22 +198,24 @@
                         <img src = "icon/Close.png" alt="ic2">
                     </a>                   
                 </div>
-                <form>
-                    <div id="tt1">Judul Topik: Perangkat Lunak Sistem Manajemen Inventori</div>
-                    <div id="tt1">Dosen Pengaju: Rosa De Lima Endang Padmowati</div>
+                <form action="/review" method="post" enctype="multipart/form-data">
+                    <label class="inputKode_review">Kode Topik</label>
+                    <input type="text" name="kodeTopik">
+                    <!-- <div id="tt1">Judul Topik: Perangkat Lunak Sistem Manajemen Inventori</div>
+                    <div id="tt1">Dosen Pengaju: Rosa De Lima Endang Padmowati</div> -->
                     <hr>
                     <div id="tt2">Status</div>
                     <div id="pc">
-                        <input type="radio" name="radio" id="ck" onclick="offset()">
+                        <input type="radio" name="radio" id="ck" onclick="offset()" value="ok">
                         <label class="container">OK</label>    
-                        <input type="radio" name="radio" id="ck1" onclick="option()">
+                        <input type="radio" name="radio" id="ck1" onclick="option()" value="inq">
                         <label class="container">INQ</label>
-                        <input type="radio" name="radio" id="ck2" onclick="option1()">
+                        <input type="radio" name="radio" id="ck2" onclick="option1()" value="no">
                         <label class="container">NO</label>
                     </div>
                     <div id="kmn" hidden>
                         <div id="tt2">Komentar<div id="tt3">* max: 250 kata</div></div>
-                        <div id="ta"><textarea placeholder="Masukan komentar di sini" rows="4" cols="74" maxlength="250" id="maxta"></textarea></div>
+                        <div id="ta"><textarea placeholder="Masukan komentar di sini" rows="4" cols="74" maxlength="250" id="maxta" name="komentar"></textarea></div>
                         <div id="pr1">
                             <input type="submit" value="Kirim" id="SY">
                             <input type="submit" value="Batal" id="ST">
@@ -324,7 +223,7 @@
                     </div>
                     <div id="prt" hidden>
                         <div id="tt2">Pertanyaan<div id="tt3">* max: 250 kata</div></div>
-                        <div id="ta"><textarea placeholder="Masukan pertanyaan di sini" rows="4" cols="74" maxlength="250"></textarea></div>
+                        <div id="ta"><textarea placeholder="Masukan pertanyaan di sini" rows="4" cols="74" maxlength="250" name="pertanyaan"></textarea></div>
                         <div id="pr">
                             <input type="submit" value="Kirim" id="SY">
                             <input type="submit" value="Batal" id="ST">

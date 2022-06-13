@@ -5,13 +5,14 @@ import path from 'path';
 import multer from 'multer';
 import mysql from 'mysql';
 import session from 'express-session';
+import crypto from 'crypto';
 
 const port = 8080;
 const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: '',
+    password: 'erwin08',
     database: 'reviewts2',
     host: 'localhost',
     connectionLimit:10
@@ -155,6 +156,7 @@ const multerParser = multer();
 
 let email = "";
 let password = "";
+let id = "";
 let arrTopik = [];
 let arrUser = [];
 
@@ -174,6 +176,13 @@ app.get('/index', (req,res) => {
 app.post('/signin', multerParser.none(), (req,res) => {
     email = req.body.input_email;
     password = req.body.input_pw;
+    pool.query(`select idUser from user where email = ?`, [email],(err, result, fields)=>{
+    if(err){
+        return console.log(err);
+    }
+        id = result[0].idUser;
+        console.log(id);
+    })
     if(email&&password){
         pool.query('SELECT idRole FROM user WHERE email = ? AND password = ?', [email,password], function(error,results,fields){
             if(error) throw error;
@@ -243,10 +252,11 @@ app.get('/homeDsn', (req,res) => {
         }
         namaUser = result[0].nama;
         inisialUser = namaUser.charAt(0);
-        pool.query(`select * from topikSkripsi`,(err, result, fields)=>{
+        pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser`,(err, result, fields)=>{
             if(err){
                 return console.log(err);
             }
+            console.log(result);
             res.render('homeDsn',{ nama: namaUser, inisial: inisialUser, result, email});
         });
     })
@@ -476,6 +486,36 @@ app.post('/deleteUser', multerParser.none(), (req,res) => {
         return console.log(result);
     })
     res.redirect('/kelola');
+})
+
+app.post('/review', multerParser.none(), (req,res) => {
+    console.log(req.body);
+    // const status = req.body.radio;
+    // crypto.randomBytes(5, (err, buf) => {
+    //     if (err) {
+    //         console.log(err);
+    //         return;
+    //     }
+    //     let idReview = buf.toString('hex');
+    //     if(status == "inq"){
+    //         let sql = "INSERT INTO review (idReviewer, i, Email, Password, IdRole) VALUES ?";
+    //         let values = [
+    //             ['5','Angelina Jeany','6182001032@student.unpar.ac.id','abcd','3']
+    //         ]
+    //         pool.query(sql,[values], function(err,result){
+    //             if(err){
+    //                 return console.log(err);
+    //             }
+    //             console.log("records inserted: "+result.affectedRows);
+    //         })
+    //     }
+    // });
+    // else if(status == "no"){
+
+    // }
+    // else{
+
+    // }
 })
 
 app.get('/logout', (req,res,next) => {
