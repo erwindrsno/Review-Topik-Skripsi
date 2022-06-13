@@ -379,20 +379,23 @@ app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
     let namaUser = "";
     let inisialUser = "";
     let bidangPeminatan1 = req.body.FilterBP;
-    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
-        if(err){
-            return console.log(err);
-        }
-        namaUser = result[0].nama;
-        inisialUser = namaUser.charAt(0);
-        pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser where bidangPeminatan =?`,[bidangPeminatan1],(err, result, fields)=>{
+    if(bidangPeminatan1==="All"){
+        res.redirect('/home');
+    }else{
+        pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
             if(err){
                 return console.log(err);
             }
-            res.render('home',{ nama: namaUser, inisial: inisialUser, result, email });
-        });
-    })
-    
+            namaUser = result[0].nama;
+            inisialUser = namaUser.charAt(0);
+            pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser where bidangPeminatan =?`,[bidangPeminatan1],(err, result, fields)=>{
+                if(err){
+                    return console.log(err);
+                }
+                res.render('home',{ nama: namaUser, inisial: inisialUser, result, email });
+            });
+        });   
+    };
 })
 
 //filter halaman mahasiswa
