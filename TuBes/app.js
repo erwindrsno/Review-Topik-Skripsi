@@ -11,7 +11,7 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: '',
+    password: 'erwin08',
     database: 'reviewts2',
     host: 'localhost',
     connectionLimit:10
@@ -392,7 +392,6 @@ app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
             res.render('home',{ nama: namaUser, inisial: inisialUser, result, email });
         });
     })
-    
 })
 
 //filter halaman mahasiswa
@@ -407,6 +406,17 @@ app.post('/filterBPm', multerParser.none(), (req,res) => { //belum bisa
     // })
     // console.log(bidangPeminatan1);
     // console.log(pool.query(`select * from TopikSkripsi where bidangPeminatan = ?`,[req.body.FilterBP]));
+})
+
+app.post('/deleteTopik', multerParser.none(), (req,res) => {
+    const kodeTopik = req.body.deleteKT;
+    pool.query(`delete from topikSkripsi where kodeTopik = ?`, [kodeTopik],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        return console.log(result);
+    })
+    res.redirect('/home');
 })
 
 app.get('/logout', (req,res,next) => {
