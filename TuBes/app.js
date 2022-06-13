@@ -376,22 +376,22 @@ app.post('/addTopikDsn', multerParser.none(), (req,res) => {
 
 //filter halaman admin
 app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
-    console.log(req.body);
-    console.log(req.body.FilterBP);
+    let namaUser = "";
+    let inisialUser = "";
     let bidangPeminatan1 = req.body.FilterBP;
-    
-    pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
+    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
             return console.log(err);
         }
-        return console.log(result[0].nama+"");
+        namaUser = result[0].nama;
+        inisialUser = namaUser.charAt(0);
+        pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser where bidangPeminatan =?`,[bidangPeminatan1],(err, result, fields)=>{
+            if(err){
+                return console.log(err);
+            }
+            res.render('home',{ nama: namaUser, inisial: inisialUser, result, email });
+        });
     })
-    pool.query(`select * from topikSkripsi where bidangPeminatan = ? order by bidangPeminatan`,[bidangPeminatan1],(err, result, fields)=>{
-        if(err){
-            return console.log(err);
-        }
-        res.render('home',{ nama: namaUser, inisial: inisialUser, result, email });
-    });
     
 })
 
