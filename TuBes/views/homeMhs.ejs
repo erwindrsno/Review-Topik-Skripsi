@@ -102,7 +102,21 @@
                         <td> Jenis Skripsi </td>
                         <td> Status </td>
                     </tr>
-                    <tr class="txt">
+                    <% let index = 1 %> 
+                    <% for (let topik of result) { %>
+                        <tr class="txt">
+                            <td> <%= index++ %> </td>
+                            <td> <%= topik.judul %> </td>
+                            <td> <%= topik.nama %> </td>
+                            <td> <%= topik.email %> </td>
+                            <td> <%= topik.kodeTopik %> </td>
+                            <td> <%= topik.bidangPeminatan %> </td>
+                            <td> <%= topik.jenisSkripsi %> </td>
+                            <td id="sf"> <%= topik.statusFinal %> </td>
+                            <td> <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()"><img src="./icon/Setting_fill.png" id="edit" class="opt" onclick="opn1()" hidden> </td>
+                        </tr>
+                    <% } %> 
+                    <!-- <tr class="txt">
                         <td> 1 </td>
                         <td> Perangkat Lunak Sistem Manajemen Inventori </td>
                         <td> Rosa De Lima Endang Padmowati </td>
@@ -111,7 +125,8 @@
                         <td> CS </td>
                         <td> * </td>
                         <td> OPEN </td>
-                    </tr>
+                    </tr> -->
+                    
                     <!-- <tr class="txt">
                         <td class="tb"> <img src="./icon/Remove_fill.png" class="rmv" hidden> </td>
                         <td> 2 </td>

@@ -11,7 +11,7 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: 'erwin08',
+    password: '',
     database: 'reviewts2',
     host: 'localhost',
     connectionLimit:10
@@ -454,6 +454,28 @@ app.post('/deleteTopik', multerParser.none(), (req,res) => {
         return console.log(result);
     })
     res.redirect('/home');
+})
+
+app.post('/deleteTopikd', multerParser.none(), (req,res) => {
+    const kodeTopik = req.body.deleteKT;
+    pool.query(`delete from topikSkripsi where kodeTopik = ?`, [kodeTopik],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        return console.log(result);
+    })
+    res.redirect('/homeDsn');
+})
+
+app.post('/deleteUser', multerParser.none(), (req,res) => {
+    const idUser = req.body.deleteU;
+    pool.query(`delete from user where idUser = ?`, [idUser],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        return console.log(result);
+    })
+    res.redirect('/kelola');
 })
 
 app.get('/logout', (req,res,next) => {
