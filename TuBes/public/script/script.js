@@ -169,6 +169,10 @@ function opn2(){
 function dropdown() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
+function ret(){
+    let x = document.getElementById("op").value;
+    document.getElementById("sf").innerHTML = x;
+}
 function offset() {
 	document.getElementById("ovy").style.display = "none";
     document.getElementById("kmn").style.display = "none";
