@@ -377,14 +377,22 @@ app.post('/addTopikDsn', multerParser.none(), (req,res) => {
 //filter halaman admin
 app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
     console.log(req.body);
+    console.log(req.body.FilterBP);
     let bidangPeminatan1 = req.body.FilterBP;
+    
     pool.query(`select * from user where email = ?`, [req.session.email],(err, result, fields)=>{
         if(err){
             return console.log(err);
         }
         return console.log(result[0].nama+"");
     })
-    console.log(pool.query(`select * from topikSkripsi where bidangPeminatan = ?`,[bidangPeminatan1]));
+    pool.query(`select * from topikSkripsi where bidangPeminatan = ? order by bidangPeminatan`,[bidangPeminatan1],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        res.render('home',{ nama: namaUser, inisial: inisialUser, result, email });
+    });
+    
 })
 
 //filter halaman mahasiswa
