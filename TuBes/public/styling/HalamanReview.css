@@ -132,12 +132,26 @@ body{
     'filterbp searchbtn';
 }
 #FilterBP{
-    grid-area: kiri;
-    width: fit-content;
+    grid-area: filterbp ;
+    width: 24vh;
 }
 #searchbtn{
-    grid-area: kanan;
-    margin-left: 24vh;
+    grid-area: searchbtn;
+    margin-left: 2vh;
+}
+#delT{
+    display: grid;
+    grid-template-areas: 
+    'deleteKT deletebtn';
+    grid-template-columns: 24vh 12vh;
+}
+#deleteKT{
+    grid-area: deleteKT;
+    width: 24vh;
+}
+#deletebtn{
+    grid-area: deletebtn;
+    margin-left: 2vh;
 }
 #clearbtn{
     grid-area: filterbp;
