@@ -174,6 +174,9 @@ function offset() {
     document.getElementById("kmn").style.display = "none";
     document.getElementById("prt").style.display = "none";
 }
+function del(){
+    let jt = prompt("Masukan judul topik yang ingin dihapus");
+}
 function option(){
     document.getElementById("prt").removeAttribute("hidden");
     document.getElementById("prt").style.display = "block";

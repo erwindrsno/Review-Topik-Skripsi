@@ -139,7 +139,11 @@ body{
     grid-area: kanan;
     margin-left: 24vh;
 }
-
+#clearbtn{
+    grid-area: filterbp;
+    position: fixed;
+    margin-left: 200px;
+}
 #tabelDT{
     display: grid;
     grid-area: bawah;
