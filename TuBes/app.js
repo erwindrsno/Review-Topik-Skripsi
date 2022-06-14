@@ -427,7 +427,7 @@ app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
     };
 })
 
-app.post('/filterBPd', multerParser.none(), (req,res) => { //belum bisa
+app.post('/filterBPd', multerParser.none(), (req,res) => {
     let namaUser = "";
     let inisialUser = "";
     let bidangPeminatan1 = req.body.FilterBP;
@@ -451,7 +451,7 @@ app.post('/filterBPd', multerParser.none(), (req,res) => { //belum bisa
 })
 
 //filter halaman mahasiswa
-app.post('/filterBPm', multerParser.none(), (req,res) => { //belum bisa
+app.post('/filterBPm', multerParser.none(), (req,res) => {
     let namaUser = "";
     let inisialUser = "";
     let bidangPeminatan1 = req.body.FilterBP;
@@ -464,7 +464,7 @@ app.post('/filterBPm', multerParser.none(), (req,res) => { //belum bisa
             }
             namaUser = result[0].nama;
             inisialUser = namaUser.charAt(0);
-            pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser where bidangPeminatan =?`,[bidangPeminatan1],(err, result, fields)=>{
+            pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser where bidangPeminatan =? AND statusFinal =?`,[bidangPeminatan1,"open"],(err, result, fields)=>{
                 if(err){
                     return console.log(err);
                 }
