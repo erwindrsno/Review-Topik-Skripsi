@@ -57,10 +57,68 @@
             <div id="real_day"></div>
             <div id="real_time"></div>
         </div>
-        <div id="isiKU">
-            <div id="isiKUsementara">
-                Belum ada Review dari Dosen lain
-            </div>
+        <div id="isiKU" class="grid_review">
+            <% if (result.length < 1) { %>
+                <p>Belum ada review dari dosen lain.</p>
+            <% } else { %>
+                <table rules="all" id="tbl">
+                    <tr>
+                        <td> No </td>
+                        <td> IdReviewer </td>
+                        <td> Judul Topik </td>
+                        <td> Status </td>
+                        <td> Isi </td>
+                        <td> Tanggap </td>
+                    </tr>
+                    <% let index = 1 %> 
+                        <% for (let review of result) { %>
+                            <tr>
+                                <td> <%= index++ %> </td>
+                                <td> <%= review.idReviewer %> </td>
+                                <td> <%= review.judul %> </td>
+                                <td> <%= review.status %> </td>
+                                <% if (review.status == 'inq') { %>
+                                    <td> <%= review.pertanyaan %></td>
+                                <% } else {%>
+                                    <td> <%= review.komentar %> </td>
+                                <% } %> 
+                                <td> <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()"></td>
+                            </tr>
+                        <% } %>
+                </table>
+            <% } %> 
+        </div>
+        <div id="ovy">  
+            <div id="isi" >
+                <div id="iconHead">
+                    <img src = icon/circle.png id="ic1">
+                    <img src = icon/circle.png id="ic1">
+                    <img src = icon/circle.png id="ic1">
+                    <a href="/home" id="ic2">
+                        <img src = "icon/Close.png" alt="ic2">
+                    </a>                   
+                </div>
+                <form action="/review" method="post" enctype="multipart/form-data">
+                    <div id="tt1"></div>
+                    <hr>
+                    <!-- <div id="tt1">Judul Topik: Rosa De Lima Endang Padmowati</div>
+                    <div id="tt2">Status: INQ</div>
+                    <div id="kmn">
+                        <div id="tt2">Komentar/Pertanyaan<div id="tt3">* max: 250 kata</div></div>
+                        <div id="ta"><textarea placeholder="Masukan komentar di sini" rows="4" cols="55" maxlength="250" id="maxta" name="komentar"></textarea></div>
+                    </div> -->
+                    <div id="prt">
+                        <div id="tt2">Jawaban<div id="tt3">* max: 250 kata</div></div>
+                        <div id="ta"><textarea placeholder="Masukan pertanyaan di sini" rows="4" cols="55" maxlength="250" name="pertanyaan"></textarea></div>
+                    </div>
+                    <div id="pr">
+                        <input type="submit" value="Kirim" id="SY">
+                        <a href="/tinjauan" id="STbtn">
+                            <input type="submit" value="Batal" id="ST" alt="STbtn">
+                        </a> 
+                    </div>
+                </form>                
+            </div>       
         </div>
     </div>
 </body>
