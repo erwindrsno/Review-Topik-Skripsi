@@ -12,7 +12,7 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: '',
+    password: 'erwin08',
     database: 'reviewts2',
     host: 'localhost',
     connectionLimit:10
@@ -566,23 +566,25 @@ app.post('/ubahStatus', multerParser.none(), (req,res) => {
     const statusFinal = req.body.ubahStatus;
     const kodeTopikUbah = req.body.namaKT;
     let valid = true;
-    pool.query(`select status from review where idTopik = ?`, [kodeTopikUbah],(err, result, fields)=>{
+    let content;
+    pool.query(`select count(status) as 'hitung' from review where idTopik = ? and status not like 'ok'`, [kodeTopikUbah],(err, result, fields)=>{
     if(err){
         return console.log(err);
     }
-        for(let i = 0; i < result.length; i++){
-            if(result[i].status == inq || result[i].status == no){
-                res.redirect('/gagalUbah');
+        console.log(result);
+        console.log(result.length);
+        if(result.hitung > 0){
+            res.redirect('/gagalUbah');
+        }
+        else{
+            pool.query(`update topikSkripsi set statusFinal = 'open' where kodeTopik = ?`,[kodeTopikUbah], (err, result, fields)=>{
+            if(err){
+                return console.log(err);
             }
+                res.redirect('/home');
+            })
         }
     })
-    pool.query(`update topikSkripsi set statusFinal = 'open' where idTopik = ?`, [kodeTopikUbah],(err, result, fields)=>{
-    if(err){
-        return console.log(err);
-    }
-        return console.log(result);
-    })
-    res.redirect('/home');
 })
 
 app.get('/gagalUbah', (req,res) => {

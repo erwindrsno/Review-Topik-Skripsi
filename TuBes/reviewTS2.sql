@@ -9,7 +9,7 @@ CREATE TABLE `role` (
   `namaRole` varchar(50) NOT NULL,
   PRIMARY KEY(`idRole`)
 );
-    
+
 INSERT INTO `role` (`idRole`, `namaRole`) VALUES
 (1, 'Admin'),
 (2, 'Dosen'),
