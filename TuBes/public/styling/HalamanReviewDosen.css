@@ -546,8 +546,8 @@ body{
 }
 #edit{
     width: 20px;
-    margin-top: 8%;
     cursor: pointer;
+    margin-left: 20px;
 }
 .txt{
     font-size: small;
