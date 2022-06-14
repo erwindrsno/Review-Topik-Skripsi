@@ -353,18 +353,20 @@ app.post('/addUser', multerParser.none(), (req,res) => {
     else if(role === 'mahasiswa'){
         idRole = 3;
     }
+    let cek = pool.query("select idRole from user where id = ?",[id]);
     let sql = "INSERT INTO user (idUser, nama, email, password, idRole) VALUES ?";
     let values = [
         [id,namaUser,email,password,idRole]
     ]
-    pool.query(`select * from user`,(err, result, fields)=>{
-    if(err){
-        return console.log(err);
+    if(cek>0){
+        // alert("gagal menambahkan user, karena idUser tersebut sudah ditambahkan sebelumnya, mohon delete user terlebih dahulu jika ingin mengubah password");
+        res.redirect('kelola');
+    }else{
+        pool.query(sql,[values]);
+        res.redirect('kelola');
+        
     }
-        return;
-    })
-    pool.query(sql,[values]);
-    res.redirect('kelola');
+    
 })
 
 app.post('/addTopik', multerParser.none(), (req,res) => {
