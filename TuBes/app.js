@@ -159,6 +159,7 @@ let password = "";
 let id = "";
 let arrTopik = [];
 let arrUser = [];
+let idRole;
 
 const staticPath = path.resolve('public');
 app.use(express.static(staticPath));    //serving static page dari public
@@ -176,11 +177,12 @@ app.get('/index', (req,res) => {
 app.post('/signin', multerParser.none(), (req,res) => {
     email = req.body.input_email;
     password = req.body.input_pw;
-    pool.query(`select idUser from user where email = ?`, [email],(err, result, fields)=>{
+    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
     if(err){
         return console.log(err);
     }
         id = result[0].idUser;
+        idRole = result[0].idRole;
     })
     if(email&&password){
         pool.query('SELECT idRole FROM user WHERE email = ? AND password = ?', [email,password], function(error,results,fields){
@@ -351,9 +353,10 @@ app.post('/addUser', multerParser.none(), (req,res) => {
     if(err){
         return console.log(err);
     }
-        return console.log(result);
+        return;
     })
     pool.query(sql,[values]);
+    res.redirect('kelola');
 })
 
 app.post('/addTopik', multerParser.none(), (req,res) => {
@@ -540,7 +543,15 @@ app.post('/review', multerParser.none(), (req,res) => {
             console.log("records inserted: "+result.affectedRows);
         })
     }
-    res.redirect('home');
+    if(idRole == 1){
+        res.redirect('home');
+    }
+    else if(idRole == 2){
+        res.redirect('homeDsn');
+    }
+    else{
+        res.redirect('homeMhs');
+    }
 })
 
 app.get('/logout', (req,res,next) => {
