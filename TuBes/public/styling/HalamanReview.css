@@ -117,6 +117,9 @@ body{
 #iconDate{
     display: inline;
 }
+#date{
+    margin-bottom: -20px;
+}
 #myInput{
     width: 27vh;
     border-style:dotted;
@@ -124,10 +127,9 @@ body{
     border-color: rgb(126, 123, 123);
 }
 #icDate{
-    padding-top: 1vh;
-    padding-left: 5%;
     display: grid;
     grid-area: kanan;
+    line-height: -5vh;
 }
 #filter{
     display: grid;
@@ -450,7 +452,9 @@ body{
 #iconDate{
     display: inline;
     position: relative;
-    width: 100px;
+    height: min-content;
+    width: 95px;
+    margin-top: -3vh;
 }
 #ovr {
     position: fixed;
