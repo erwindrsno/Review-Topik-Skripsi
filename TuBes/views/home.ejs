@@ -123,7 +123,6 @@
             <div id="tabelDT">
                 <table rules="all" id="tbl">
                     <tr>
-                        <td class="tb">  </td>
                         <td> No </td>
                         <td> Judul Topik </td>
                         <td> Dosen Pengaju </td>
@@ -136,7 +135,6 @@
                     <% let index = 1 %> 
                     <% for (let topik of result) { %>
                         <tr class="txt">
-                            <td class="tb"> <img src="./icon/Remove_fill.png" class="rmv" hidden> </td>
                             <td> <%= index++ %> </td>
                             <td> <%= topik.judul %> </td>
                             <td> <%= topik.nama %> </td>
@@ -144,7 +142,7 @@
                             <td> <%= topik.bidangPeminatan %> </td>
                             <td> <%= topik.jenisSkripsi %> </td>
                             <td id="sf"> <%= topik.statusFinal %> </td>
-                            <td> <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()"><img src="./icon/Setting_fill.png" id="edit" class="opt" onclick="opn1()" hidden></td>
+                            <td> <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()"></td>
                         </tr>
                     <% } %> 
                 </table> 
@@ -161,13 +159,7 @@
                     </a>        
                 </div>
                 <form>
-                    <div id="text">Silahkan mengatur deadline pengambilan topik skripsi</div>
-                    <input type="date" name="date" id="inputDate">
-                    <br>
-                    <hr>
-                    <div id="text">Topik-topik skripsi akan dibuka dan disebarkan pada tanggal diatas pada pukul 00:00:00 WIB</div>
-                    <br>
-                    <div id="text"> Apakah anda yakin akan menyebarkan topik-topik skripsi tersebut? </div>
+                    <div id="text"> Apakah anda ingin menyebarkan topik skripsi yang memiliki status open?</div>
                     <input type="submit" value="Iya" id="SY" onclick="on2()">
                     <a href="/home" id="STbtn">
                         <input type="submit" value="Tidak" id="ST" alt="STbtn">
@@ -266,6 +258,31 @@
                 </form>                
             </div>       
         </div>
+        <div id="overlayUS">  
+            <div id="isi" >
+                <div id="iconHead">
+                    <img src = icon/circle.png id="ic1">
+                    <img src = icon/circle.png id="ic1">
+                    <img src = icon/circle.png id="ic1">
+                    <a href="/home" id="ic2">
+                        <img src = "icon/Close.png" alt="ic2">
+                    </a>        
+                </div>
+                <form action="/ubahStatus" method="post" enctype="multipart/form-data">
+                    <input type="text" name="namaKT" id="namaKT" placeholder="Tulis Kode Topik">
+                    <select name="ubahStatus" id="FilterBP" placeholder="Ubah Status">      
+                        <option value="open">OPEN</option>
+                        <option value="declined">DECLINED</option>
+                        <option value="close">CLOSE</option>
+                    </select>
+                    <div id="text"> Apakah anda yakin untuk mengganti status? </div>
+                    <input type="submit" value="Iya" id="SY" onclick="on2()">      
+                    <a href="/home" id="STbtn">
+                        <input type="button" value="Tidak" id="ST" alt="STbtn">
+                    </a>                          
+                </form>                                
+            </div>       
+        </div>     
         <!-- <div id="ovy1">  
             <div id="isi" >
                 <div id="iconHead">
