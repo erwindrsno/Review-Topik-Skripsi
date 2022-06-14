@@ -23,9 +23,7 @@
     </div>
     <div class = "home"> 
         <div id="DaftarT">
-            <b>
-                DAFTAR TOPIK SKRIPSI - T.A 2022/2023
-            </b>
+            <div><img src="./icon/Edit_fill.png" onclick="ops()"></div><b>DAFTAR TOPIK SKRIPSI - T.A   <div id="xt">2022/2023 </div><div id="xs"></div></b>
             <br>
             <br>
             <b>
@@ -283,7 +281,7 @@
                     </a>                          
                 </form>                                
             </div>       
-        </div>     
+        </div>    
         <!-- <div id="ovy1">  
             <div id="isi" >
                 <div id="iconHead">
@@ -355,5 +353,30 @@
             </div>       
         </div>    -->
     </div>
+    <div id="ovr">  
+        <div id="isi" >
+            <div id="iconHead">
+                <img src = icon/circle.png id="ic1">
+                <img src = icon/circle.png id="ic1">
+                <img src = icon/circle.png id="ic1">
+                <a href="/home" id="ic2">
+                    <img src = "icon/Close.png" alt="ic2">
+                </a>        
+            </div>
+            <div>
+            <form>
+                <div id="tt">Tahun Ajar</div><input type="text" name="namaKT" id="taun" placeholder="tahun-ajar"><br>
+                <div id="tt">Semester</div><select name="ubahStatus" id="smes" placeholder="Ubah Status">      
+                    <option value="Ganjil">Ganjil</option>
+                    <option value="Genap">Genap</option>
+                </select>
+                <br>
+                <input type="button" value="Iya" id="SY" onclick="sms()">      
+                <a href="/home" id="STbtn">
+                    <input type="button" value="Tidak" id="ST" alt="STbtn">
+                </a>                          
+            </form>                                
+        </div>       
+    </div> 
 </body>
 </html>

@@ -169,6 +169,16 @@ function opn2(){
 function opn3(){
     document.getElementById("overlayUS").style.display = "block";
 }
+function ops(){
+    document.getElementById("ovr").style.display = "block";
+}
+function sms(){
+    let yr = document.getElementById("taun").value;
+    let semester = document.getElementById("smes").value;
+    document.getElementById("xt").innerHTML = yr;
+    document.getElementById("xs").innerHTML = " "+semester;
+    document.getElementById("ovr").style.display = "none";
+}
 function dropdown() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
