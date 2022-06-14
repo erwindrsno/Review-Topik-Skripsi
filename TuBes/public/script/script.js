@@ -179,6 +179,10 @@ function sms(){
     document.getElementById("xs").innerHTML = " "+semester;
     document.getElementById("ovr").style.display = "none";
 }
+function dt(){
+    let dt = document.getElementById("iconDate").value;
+    document.getElementById("date").innerHTML = dt;
+}
 function dropdown() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -187,7 +191,7 @@ function ret(){
     document.getElementById("sf").innerHTML = x;
 }
 function offset() {
-	document.getElementById("ovy").style.display = "none";
+	document.getElementById("kk").style.display = "block";
     document.getElementById("kmn").style.display = "none";
     document.getElementById("prt").style.display = "none";
 }
@@ -196,12 +200,14 @@ function del(){
 }
 function option(){
     document.getElementById("prt").removeAttribute("hidden");
+    document.getElementById("kk").style.display = "none";
     document.getElementById("prt").style.display = "block";
     // document.getElementById("kmn").style.visibility = "hidden";
     document.getElementById("kmn").style.display = "none";
 }
 function option1(){
     document.getElementById("kmn").removeAttribute("hidden");
+    document.getElementById("kk").style.display = "none";
     document.getElementById("kmn").style.display = "block";
     // document.getElementById("prt").style.visibility = "hidden";
     document.getElementById("prt").style.display = "none";

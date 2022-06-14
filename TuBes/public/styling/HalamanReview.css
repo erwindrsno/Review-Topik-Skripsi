@@ -114,6 +114,9 @@ body{
     grid-area: tengah2;
     
 }
+#iconDate{
+    display: inline;
+}
 #myInput{
     width: 27vh;
     border-style:dotted;
@@ -122,7 +125,7 @@ body{
 }
 #icDate{
     padding-top: 1vh;
-    padding-left: 12%;
+    padding-left: 5%;
     display: grid;
     grid-area: kanan;
 }
@@ -443,6 +446,11 @@ body{
 }
 #xs{
     display: inline;
+}
+#iconDate{
+    display: inline;
+    position: relative;
+    width: 100px;
 }
 #ovr {
     position: fixed;
