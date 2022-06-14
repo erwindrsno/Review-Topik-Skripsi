@@ -84,6 +84,38 @@
                 </tr>
             </table> 
         </div>
+        <div id="ovy">  
+            <div id="isi" >
+                <div id="iconHead">
+                    <img src = icon/circle.png id="ic1">
+                    <img src = icon/circle.png id="ic1">
+                    <img src = icon/circle.png id="ic1">
+                    <a href="/home" id="ic2">
+                        <img src = "icon/Close.png" alt="ic2">
+                    </a>                   
+                </div>
+                <form action="/review" method="post" enctype="multipart/form-data">
+                    <div id="tt1">Dari: Natalia</div>
+                    <hr>
+                    <div id="tt1">Judul Topik: Rosa De Lima Endang Padmowati</div>
+                    <div id="tt2">Status: INQ</div>
+                    <div id="kmn">
+                        <div id="tt2">Komentar<div id="tt3">* max: 250 kata</div></div>
+                        <div id="ta"><textarea placeholder="Masukan komentar di sini" rows="4" cols="55" maxlength="250" id="maxta" name="komentar"></textarea></div>
+                    </div>
+                    <div id="prt">
+                        <div id="tt2">Pertanyaan<div id="tt3">* max: 250 kata</div></div>
+                        <div id="ta"><textarea placeholder="Masukan pertanyaan di sini" rows="4" cols="55" maxlength="250" name="pertanyaan"></textarea></div>
+                    </div>
+                    <div id="pr">
+                        <input type="submit" value="Kirim" id="SY">
+                        <a href="/tinjauan" id="STbtn">
+                            <input type="submit" value="Batal" id="ST" alt="STbtn">
+                        </a> 
+                    </div>
+                </form>                
+            </div>       
+        </div>
     </div>
 </body>
 </html>
