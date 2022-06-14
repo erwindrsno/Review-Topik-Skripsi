@@ -12,7 +12,7 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: 'erwin08',
+    password: '',
     database: 'reviewts2',
     host: 'localhost',
     connectionLimit:10
@@ -234,13 +234,21 @@ app.get('/home', (req,res) => {
 });
 
 app.get('/homeMhs', (req,res) => {
+    let namaUser = "";
+    let inisialUser = "";
     pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
             return console.log(err);
         }
-        let namaUser = result[0].nama;
-        let inisialUser = namaUser.charAt(0);
-        res.render('homeMhs',{ nama: namaUser, inisial: inisialUser , email})
+        namaUser = result[0].nama;
+        pool.query(`select `)
+        inisialUser = namaUser.charAt(0);
+        pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser where statusFinal =?`,["open"],(err, result, fields)=>{
+            if(err){
+                return console.log(err);
+            }
+            res.render('homeMhs',{ nama: namaUser, inisial: inisialUser, result, email });
+        });
     })
 });
 
