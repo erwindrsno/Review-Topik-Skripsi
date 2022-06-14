@@ -75,13 +75,16 @@
                     <td> Status </td>
                     <td> Tanggap </td>
                 </tr>
-                <tr>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> </td>
-                    <td> <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()"></td>
-                </tr>
+                <% let index = 1 %> 
+                    <% for (let review of result) { %>
+                        <tr>
+                            <td> <%= index++ %> </td>
+                            <td> <%= review.idReviewer %> </td>
+                            <td> <%= review.judul %> </td>
+                            <td> <%= review.status %> </td>
+                            <td> <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()"></td>
+                        </tr>
+                    <% } %>
             </table> 
         </div>
     </div>
