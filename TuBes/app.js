@@ -181,7 +181,6 @@ app.post('/signin', multerParser.none(), (req,res) => {
         return console.log(err);
     }
         id = result[0].idUser;
-        console.log(id);
     })
     if(email&&password){
         pool.query('SELECT idRole FROM user WHERE email = ? AND password = ?', [email,password], function(error,results,fields){
@@ -256,7 +255,6 @@ app.get('/homeDsn', (req,res) => {
             if(err){
                 return console.log(err);
             }
-            console.log(result);
             res.render('homeDsn',{ nama: namaUser, inisial: inisialUser, result, email});
         });
     })
@@ -307,7 +305,12 @@ app.get('/tinjauan', (req,res) => {
         }
         let namaUser = result[0].nama;
         let inisialUser = namaUser.charAt(0);
-        res.render('tinjauan',{ nama: namaUser, inisial: inisialUser , email });
+        pool.query(`select * from review join topikSkripsi on review.idTopik = topikSkripsi.kodeTopik join user on user.idUser = topikSkripsi.idDosen where user.email = ?`, [email], (err, result, fields)=>{
+            if(err){
+                return console.log(err);
+            }
+            res.render('tinjauan',{ nama: namaUser, inisial: inisialUser , email , result});
+        })
     })
 });
 
@@ -318,7 +321,12 @@ app.get('/tinjauanDsn', (req,res) => {
         }
         let namaUser = result[0].nama;
         let inisialUser = namaUser.charAt(0);
-        res.render('tinjauanDsn',{ nama: namaUser, inisial: inisialUser , email });
+        pool.query(`select * from review join topikSkripsi on review.idTopik = topikSkripsi.kodeTopik join user on user.idUser = topikSkripsi.idDosen where user.email = ?`, [email], (err, result, fields)=>{
+            if(err){
+                return console.log(err);
+            }
+            res.render('tinjauanDsn',{ nama: namaUser, inisial: inisialUser , email , result});
+        })
     })
 });
 
@@ -490,32 +498,49 @@ app.post('/deleteUser', multerParser.none(), (req,res) => {
 
 app.post('/review', multerParser.none(), (req,res) => {
     console.log(req.body);
-    // const status = req.body.radio;
-    // crypto.randomBytes(5, (err, buf) => {
-    //     if (err) {
-    //         console.log(err);
-    //         return;
-    //     }
-    //     let idReview = buf.toString('hex');
-    //     if(status == "inq"){
-    //         let sql = "INSERT INTO review (idReviewer, i, Email, Password, IdRole) VALUES ?";
-    //         let values = [
-    //             ['5','Angelina Jeany','6182001032@student.unpar.ac.id','abcd','3']
-    //         ]
-    //         pool.query(sql,[values], function(err,result){
-    //             if(err){
-    //                 return console.log(err);
-    //             }
-    //             console.log("records inserted: "+result.affectedRows);
-    //         })
-    //     }
-    // });
-    // else if(status == "no"){
-
-    // }
-    // else{
-
-    // }
+    const kodeTopikReview = req.body.kodeTopik;
+    const statusReview = req.body.radio;
+    const komentar = req.body.komentar;
+    const pertanyaan = req.body.pertanyaan;
+    const jawaban = null;
+    let idReview = Math.floor(100000 + Math.random() * 900000);
+    if(statusReview == "inq"){
+        let sql = "INSERT INTO review (idReviewer, idTopik, idReview, komentar, pertanyaan, jawaban, status) VALUES ?";
+        let values = [
+            [id,kodeTopikReview,idReview,komentar,pertanyaan,jawaban,statusReview]
+        ]
+        pool.query(sql,[values], function(err,result){
+            if(err){
+                return console.log(err);
+            }
+            console.log("records inserted: "+result.affectedRows);
+        })
+    }
+    else if(statusReview == "no"){
+        let sql = "INSERT INTO review (idReviewer, idTopik, idReview, komentar, pertanyaan, jawaban, status) VALUES ?";
+        let values = [
+            [id,kodeTopikReview,idReview,komentar,pertanyaan,jawaban,statusReview]
+        ]
+        pool.query(sql,[values], function(err,result){
+            if(err){
+                return console.log(err);
+            }
+            console.log("records inserted: "+result.affectedRows);
+        })
+    }
+    else{
+        let sql = "INSERT INTO review (idReviewer, idTopik, idReview, komentar, pertanyaan, jawaban, status) VALUES ?";
+        let values = [
+            [id,kodeTopikReview,idReview,komentar,pertanyaan,jawaban,statusReview]
+        ]
+        pool.query(sql,[values], function(err,result){
+            if(err){
+                return console.log(err);
+            }
+            console.log("records inserted: "+result.affectedRows);
+        })
+    }
+    res.redirect('home');
 })
 
 app.get('/logout', (req,res,next) => {

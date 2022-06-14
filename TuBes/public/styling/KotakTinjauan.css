@@ -683,3 +683,8 @@ body{
     background-color: #98C1D9;
     border-radius: 10px;
 }
+
+.grid_review{
+    display: grid;
+    
+}
