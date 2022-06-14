@@ -148,7 +148,7 @@
                 </table> 
             </div>
         </div>
-        <div id="overlay" onclick="on1()">  
+        <div id="overlay">  
             <div id="isi" >
                 <div id="iconHead">
                     <img src = icon/circle.png id="ic1">
@@ -168,7 +168,7 @@
             </div>       
         </div>        
         <div class="grid">
-            <div class="tes1"><img src="./icon/Setting_fill.png" id="set" onclick="show()"></div>
+            <div class="tes1"><img src="./icon/Setting_fill.png" id="set" onclick="opn3()"></div>
             <div class="tes2"><button id="publish" onclick="on1()">Publish</button></div>
         </div>
         <div class="grid2">
@@ -268,6 +268,7 @@
                         <img src = "icon/Close.png" alt="ic2">
                     </a>        
                 </div>
+                <div>
                 <form action="/ubahStatus" method="post" enctype="multipart/form-data">
                     <input type="text" name="namaKT" id="namaKT" placeholder="Tulis Kode Topik">
                     <select name="ubahStatus" id="FilterBP" placeholder="Ubah Status">      
