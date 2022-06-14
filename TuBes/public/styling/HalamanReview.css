@@ -438,7 +438,9 @@ body{
     z-index: 2;
     cursor: pointer;
 }
-
+#overlayUS{
+    display: none;
+}
 #isi{
     position: absolute;
     top: 50%;
