@@ -554,6 +554,33 @@ app.post('/review', multerParser.none(), (req,res) => {
     }
 })
 
+app.post('/ubahStatus', multerParser.none(), (req,res) => {
+    const statusFinal = req.body.ubahStatus;
+    const kodeTopikUbah = req.body.namaKT;
+    let valid = true;
+    pool.query(`select status from review where idTopik = ?`, [kodeTopikUbah],(err, result, fields)=>{
+    if(err){
+        return console.log(err);
+    }
+        for(let i = 0; i < result.length; i++){
+            if(result[i].status == inq || result[i].status == no){
+                res.redirect('/gagalUbah');
+            }
+        }
+    })
+    pool.query(`update topikSkripsi set statusFinal = 'open' where idTopik = ?`, [kodeTopikUbah],(err, result, fields)=>{
+    if(err){
+        return console.log(err);
+    }
+        return console.log(result);
+    })
+    res.redirect('/home');
+})
+
+app.get('/gagalUbah', (req,res) => {
+    res.send('Status tidak dapat diubah menjadi open!');
+})
+
 app.get('/logout', (req,res,next) => {
     req.session.destroy((err) => {
         if(err) {
