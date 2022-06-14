@@ -234,13 +234,21 @@ app.get('/home', (req,res) => {
 });
 
 app.get('/homeMhs', (req,res) => {
+    let namaUser = "";
+    let inisialUser = "";
     pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
             return console.log(err);
         }
-        let namaUser = result[0].nama;
-        let inisialUser = namaUser.charAt(0);
-        res.render('homeMhs',{ nama: namaUser, inisial: inisialUser , email})
+        namaUser = result[0].nama;
+        pool.query(`select `)
+        inisialUser = namaUser.charAt(0);
+        pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser where statusFinal =?`,["open"],(err, result, fields)=>{
+            if(err){
+                return console.log(err);
+            }
+            res.render('homeMhs',{ nama: namaUser, inisial: inisialUser, result, email });
+        });
     })
 });
 
@@ -552,6 +560,33 @@ app.post('/review', multerParser.none(), (req,res) => {
     else{
         res.redirect('homeMhs');
     }
+})
+
+app.post('/ubahStatus', multerParser.none(), (req,res) => {
+    const statusFinal = req.body.ubahStatus;
+    const kodeTopikUbah = req.body.namaKT;
+    let valid = true;
+    pool.query(`select status from review where idTopik = ?`, [kodeTopikUbah],(err, result, fields)=>{
+    if(err){
+        return console.log(err);
+    }
+        for(let i = 0; i < result.length; i++){
+            if(result[i].status == inq || result[i].status == no){
+                res.redirect('/gagalUbah');
+            }
+        }
+    })
+    pool.query(`update topikSkripsi set statusFinal = 'open' where idTopik = ?`, [kodeTopikUbah],(err, result, fields)=>{
+    if(err){
+        return console.log(err);
+    }
+        return console.log(result);
+    })
+    res.redirect('/home');
+})
+
+app.get('/gagalUbah', (req,res) => {
+    res.send('Status tidak dapat diubah menjadi open!');
 })
 
 app.get('/logout', (req,res,next) => {
