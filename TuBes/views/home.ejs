@@ -23,7 +23,7 @@
     </div>
     <div class = "home"> 
         <div id="DaftarT">
-            <div><img src="./icon/Edit_fill.png" onclick="ops()"></div><b>DAFTAR TOPIK SKRIPSI - T.A   <div id="xt">2022/2023 </div><div id="xs"></div></b>
+            <div><img src="./icon/Edit_fill.png" onclick="ops()"></div><b>DAFTAR TOPIK SKRIPSI - T.A   <form><div id="xt">2022-2023 </div><div id="xs"></div></b></form>
             <br>
             <br>
             <b>
@@ -115,7 +115,9 @@
                 </div>
                 <div id="icDate">
                     <img src = icon/Date_range_fill.png onclick="dt()">
-                    <input type="date" id="iconDate">
+                    <form method="post" action="/reviewHingga" enctype="multipart/form-data">
+                        <input type="date" id="iconDate">
+                    </form>
                 </div>
             </div>
             <br>
@@ -370,14 +372,14 @@
                 </a>        
             </div>
             <div>
-            <form>
-                <div id="tt">Tahun Ajar</div><input type="text" name="namaKT" id="taun" placeholder="tahun-ajar"><br>
-                <div id="tt">Semester</div><select name="ubahStatus" id="smes" placeholder="Ubah Status">      
+            <form method="post" action="/periode" enctype="multipart/form-data">
+                <div id="tt">Tahun Ajar</div><input type="text" name="TahunAjar" id="TahunAjar" placeholder="tahun-ajar"><br>
+                <div id="tt">Semester</div><select name="Semester" id="smes" placeholder="Ubah Status">      
                     <option value="Ganjil">Ganjil</option>
                     <option value="Genap">Genap</option>
                 </select>
                 <br>
-                <input type="button" value="Iya" id="SY" onclick="sms()">      
+                <input type="submit" value="Iya" id="SY" onclick="sms()">      
                 <a href="/home" id="STbtn">
                     <input type="button" value="Tidak" id="ST" alt="STbtn">
                 </a>                          

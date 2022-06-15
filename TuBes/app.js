@@ -426,7 +426,23 @@ app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
         });   
     };
 })
-
+app.post('/periode', multerParser.none(), (req,res) => {
+    let tahun = req.body.TahunAjar;
+    let semester = req.body.Semester;
+    pool.query(`select idUser from user where email = ?`, [email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        let sql = "INSERT INTO periode (idPeriode, semester, tahunAjar) VALUES ?";
+        let values = [
+            [0,semester,tahun]
+        ]
+        pool.query(sql,[values]);
+        let periode = { tahun: tahun, semester:semester }
+        res.render('home', {periode: periode}, result, email);
+    })
+    res.redirect('/home');
+})
 app.post('/filterBPd', multerParser.none(), (req,res) => {
     let namaUser = "";
     let inisialUser = "";
