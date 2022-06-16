@@ -378,6 +378,7 @@ app.post('/addTopik', multerParser.none(), (req,res) => {
         if(err){
             return console.log(err);
         }
+        console.log(result);
         let sql = "INSERT INTO topikSkripsi (judul, idDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusFinal) VALUES ?";
         let values = [
             [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,"null"]
@@ -428,6 +429,7 @@ app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
         });   
     };
 })
+
 app.post('/periode', multerParser.none(), (req,res) => {
     let tahun = req.body.TahunAjar;
     let semester = req.body.Semester;
@@ -445,6 +447,7 @@ app.post('/periode', multerParser.none(), (req,res) => {
     })
     res.redirect('/home');
 })
+
 app.post('/filterBPd', multerParser.none(), (req,res) => {
     let namaUser = "";
     let inisialUser = "";
