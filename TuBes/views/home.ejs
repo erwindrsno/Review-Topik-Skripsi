@@ -372,29 +372,34 @@
         </div>    -->
     </div>
     <div id="ovr">  
-        <div id="isi" >
+        <div id="isiOverlay1" >
             <div id="iconHead">
-                <img src = icon/circle.png id="ic1">
-                <img src = icon/circle.png id="ic1">
-                <img src = icon/circle.png id="ic1">
+                <img src = icon/circle.png id="icovr">
                 <a href="/home" id="ic2">
-                    <img src = "icon/Close.png" alt="ic2">
+                    <img src = "icon/Close.png" alt="icovr2">
                 </a>        
             </div>
-            <div>
-            <form method="post" action="/periode" enctype="multipart/form-data">
-                <div id="tt">Tahun Ajar</div><input type="text" name="TahunAjar" id="TahunAjar" placeholder="tahun-ajar"><br>
-                <div id="tt">Semester</div><select name="Semester" id="smes" placeholder="Ubah Status">      
-                    <option value="Ganjil">Ganjil</option>
-                    <option value="Genap">Genap</option>
-                </select>
-                <br>
-                <input type="submit" value="Iya" id="SY" onclick="sms()">      
-                <a href="/home" id="STbtn">
-                    <input type="button" value="Tidak" id="ST" alt="STbtn">
-                </a>                          
-            </form>                                
-        </div>       
+            <div id="isiOvr">
+                <form method="post" action="/periode" enctype="multipart/form-data">
+                    <div id="tahunA">
+                        <label for="lang">Tahun Ajar</label>
+                        <input type="text" name="TahunAjar" id="TahunAjar" placeholder="tahun-ajar">
+                        <br>
+                    </div>
+                    <div id="smst">
+                        <label for="lang">Semester</label>
+                        <select name="Semester" id="smes">
+                            <option value="Ganjil">Ganjil</option>
+                            <option value="Genap">Genap</option>
+                        </select>
+                        <br>
+                    </div>
+                    <input type="submit" value="Iya" id="SY" onclick="sms()">      
+                    <a href="/home" id="STbtn">
+                        <input type="button" value="Tidak" id="ST" alt="STbtn">
+                    </a>                          
+                </form>                                   
+            </div>       
     </div> 
 </body>
 </html>

@@ -363,17 +363,27 @@
             </div>
             <div>
             <form method="post" action="/periode" enctype="multipart/form-data">
-                <div id="tt">Tahun Ajar</div><input type="text" name="TahunAjar" id="TahunAjar" placeholder="tahun-ajar"><br>
-                <div id="tt">Semester</div><select name="Semester" id="smes" placeholder="Ubah Status">      
-                    <option value="Ganjil">Ganjil</option>
-                    <option value="Genap">Genap</option>
-                </select>
+                <div id="tahunA">
+                    <label for="lang">Tahun Ajar</label>
+                    <br>
+                    <input type="text" name="TahunAjar" id="TahunAjar" placeholder="tahun-ajar">
+                    <br>
+                </div>
+                <div id="smst">
+                    <label for="lang">Semester</label>
+                    <br>
+                    <select name="Semester" id="smes">
+                        <option value="Ganjil">Ganjil</option>
+                        <option value="Genap">Genap</option>
+                    </select>
+                    <br>
+                </div>
                 <br>
                 <input type="submit" value="Iya" id="SY" onclick="sms()">      
                 <a href="/home" id="STbtn">
                     <input type="button" value="Tidak" id="ST" alt="STbtn">
                 </a>                          
-            </form>                                
+            </form>                          
         </div>       
     </div> 
 </body>

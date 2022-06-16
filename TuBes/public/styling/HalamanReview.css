@@ -521,7 +521,33 @@ body{
     border: solid;
     border-radius: 10px;
 }
-
+#isiOverlay1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 50vh;
+    height: fit-content;
+    background-color: white;
+    font-size: 150%;
+    color: black;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    text-align: center;
+    border: solid;
+    border-radius: 10px;
+}
+isiOvr{
+    grid-template-areas: 
+    'tahunA smst';
+}
+#tahunA{
+    display: grid;
+    grid-area: tahunA;
+}
+#smst{
+    display: grid;
+    grid-area: smst;
+}
 #ST{
     color:white;
     background: #3D5B81;
