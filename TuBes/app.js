@@ -453,7 +453,7 @@ app.post('/periode', multerParser.none(), (req,res) => {
 app.post('/filterBPd', multerParser.none(), (req,res) => {
     let namaUser = "";
     let inisialUser = "";
-    let bidangPeminatan1 = req.body.FilterBP;
+    let bidangPeminatan1 = req.body.FilterBPd;
     if(bidangPeminatan1==="All"){
         res.redirect('/homeDsn');
     }else{

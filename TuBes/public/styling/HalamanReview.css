@@ -112,13 +112,24 @@ body{
 #ket3{
     display: grid;
     grid-area: tengah2;
-    
+}
+#masaR{
+    margin-left: -15vh;
+}
+#iconD{
+    margin-left: 6vh;
+}
+#iDate{
+    margin-left: -13vh;
+    margin-top: -5.5vh;
 }
 #iconDate{
     display: inline;
+    margin-top: 3vh;
 }
 #date{
-    margin-bottom: -20px;
+    margin-top: -3.6vh;
+    margin-left: -15vh;
 }
 #myInput{
     width: 27vh;
@@ -135,6 +146,7 @@ body{
     display: grid;
     grid-template-areas: 
     'filterbp searchbtn';
+    margin-top: -3.8vh;
 }
 #FilterBP{
     grid-area: filterbp ;
@@ -216,7 +228,7 @@ body{
     margin-top: -10px;
     margin-left: 10px; */
     margin-top: 0px;
-    height: 76.2vh;
+    height: 76vh;
     width: 16vw;
     margin-left: 1vw;
     background-color: #3d5a80;
@@ -490,7 +502,7 @@ body{
     background: #3D5B81;
     border: 1px solid ;
     border-radius: 15px;
-    width: 20%;
+    width: 27%;
     align-items: center;
     justify-content: center;
     font-size: 50%;
@@ -500,7 +512,7 @@ body{
 #SY{
     border: 1px solid;
     border-radius: 15px;
-    width: 20%;
+    width: 27%;
     align-items: center;
     justify-content: center;
     font-size: 50%;

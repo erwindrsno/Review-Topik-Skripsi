@@ -94,7 +94,9 @@
                     </form>
                 </div>
                 <div id="ket3">
-                    Masa review hingga:                
+                    <div id="masaR">
+                    Masa review hingga:    
+                    </div>            
                     <br>
                     <div id="date">
                         <!-- sesuai input admin -->                    
@@ -111,13 +113,14 @@
                             <input type="submit" value="filter" id="searchbtn">
                         </div>
                     </form>
-                    
                 </div>
                 <div id="icDate">
-                    <img src = icon/Date_range_fill.png onclick="dt()">
-                    <form method="post" action="/reviewHingga" enctype="multipart/form-data">
-                        <input type="date" id="iconDate">
-                    </form>
+                    <div id="iDate">
+                    <img src = icon/Date_range_fill.png onclick="dt()" id="iconD">
+                        <form method="post" action="/reviewHingga" enctype="multipart/form-data">
+                            <input type="date" id="iconDate">
+                        </form>
+                    </div>
                 </div>
             </div>
             <br>
