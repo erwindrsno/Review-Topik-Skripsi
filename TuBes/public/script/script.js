@@ -172,6 +172,13 @@ function opn3(){
 function ops(){
     document.getElementById("ovr").style.display = "block";
 }
+function onEdit() {
+	document.getElementById("overlay3").style.display = "block";
+}
+
+function offEdit() {
+	document.getElementById("overlay3").style.display = "none";
+}
 function sms(){
     let yr = document.getElementById("taun").value;
     let semester = document.getElementById("smes").value;

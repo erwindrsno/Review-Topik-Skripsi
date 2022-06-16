@@ -654,3 +654,83 @@ label{
     background-color: #98C1D9;
     border-radius: 10px;
 }
+
+#overlay3{
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;    
+    z-index: 2;
+    cursor: pointer;
+}
+
+#formEdit{
+    display:grid;
+    grid-template-areas: 
+    'kiri1 s kanan1'
+    'kiri2 s kanan2'
+    'kiri3 s kanan3'
+    'kosong s kanan4';
+    padding:3%;
+    line-height: 50%;
+    width: 500px;
+    border-radius: 10%;
+}
+#formE1{
+    display: grid;
+    grid-area: kiri1;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+#formE2{
+    display: grid;
+    grid-area: kiri2;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+#formE3{
+    display: grid;
+    grid-area: kiri3;
+    padding-right: 5%;
+    padding-left: 5%;
+}
+#formE4{
+    display: grid;
+    grid-area: kanan1; 
+    padding-left:-5%;
+    margin-left: -20%;
+    padding-right: 5%;
+    margin-right: 10%;
+    padding-left: 5%;
+}
+#formE5{
+    display: grid;
+    grid-area: kanan2;
+    margin-left: -20%;
+    padding-right: 5%;
+    margin-right: 10%;
+    padding-left: 5%;
+}
+#formE6{
+    display: grid;
+    grid-area: kanan4;
+    margin-left: 50%;
+}
+/* #formUT7{
+    display: grid;
+    grid-area: kanan4;
+    margin-left: 50%;
+} */
+#submitE{
+    background-color: #3D5B81;
+    color: white;
+    padding: 16px;
+    border: none;
+    cursor: pointer;
+    width: 70px;
+    border-radius: 20px;
+}
