@@ -98,8 +98,8 @@ body{
     grid-area: atas;    
     display: grid;
     grid-template-areas: 
-    'kiri tengah1 tengah2 kanan';
-    grid-template-columns: 35vh 80vh 28vh 5vh;
+    'kiri tengah1 tengah2 tengah3 kanan';
+    grid-template-columns: 35vh 70vh 24vh 20vh;
 }
 #ket1{
     display: grid;
@@ -113,11 +113,9 @@ body{
     display: grid;
     grid-area: tengah2;
 }
-#ketA{
+#ket4{
     display: grid;
-    grid-area: kanan;
-    margin-top: 11vh;
-    margin-left: -25vh;
+    grid-area: tengah3;
 }
 #iconDate{
     display: inline;
@@ -143,21 +141,22 @@ body{
 }
 #FilterBP{
     grid-area: filterbp ;
-    width: 24vh;
+    width: 18vh;
+    font-size: 80%;
 }
 #searchbtn{
     grid-area: searchbtn;
-    margin-left: 2vh;
+    margin-left: 1vh;
 }
 #delT{
     display: grid;
     grid-template-areas: 
     'space deleteKT deletebtn';
-    grid-template-columns: 40vh 24vh 12vh;
+    grid-template-columns: 35vh 20vh 12vh;
 }
 #deleteKT{
     grid-area: deleteKT;
-    width: 24vh;
+    width: 20vh;
 }
 #deletebtn{
     grid-area: deletebtn;
