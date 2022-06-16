@@ -12,7 +12,7 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: 'erwin08',
+    password: '',
     database: 'reviewts2',
     host: 'localhost',
     connectionLimit:10
@@ -232,6 +232,24 @@ app.get('/home', (req,res) => {
         });
     })
 });
+app.get('/daftarTopik', (req,res) => {
+    let namaUser = "";
+    let inisialUser = "";
+    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        namaUser = result[0].nama;
+        pool.query(`select `)
+        inisialUser = namaUser.charAt(0);
+        pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser`,(err, result, fields)=>{
+            if(err){
+                return console.log(err);
+            }
+            res.render('daftarTopik',{ nama: namaUser, inisial: inisialUser, result, email });
+        });
+    })
+});
 
 app.get('/homeMhs', (req,res) => {
     let namaUser = "";
@@ -340,6 +358,10 @@ app.get('/tinjauanDsn', (req,res) => {
     })
 });
 
+function myFunction() {
+    alert("Gagal menambah User karena User telah terdaftar");
+}
+
 app.post('/addUser', multerParser.none(), (req,res) => {
     let idRole = 1;
     let namaUser = req.body.nama;
@@ -359,7 +381,7 @@ app.post('/addUser', multerParser.none(), (req,res) => {
         [id,namaUser,email,password,idRole]
     ]
     if(cek>0){
-        // alert("gagal menambahkan user, karena idUser tersebut sudah ditambahkan sebelumnya, mohon delete user terlebih dahulu jika ingin mengubah password");
+        myFunction();
         res.redirect('kelola');
     }else{
         pool.query(sql,[values]);
@@ -368,6 +390,7 @@ app.post('/addUser', multerParser.none(), (req,res) => {
     }
     
 })
+
 
 app.post('/addTopik', multerParser.none(), (req,res) => {
     let judulTopik = req.body.JudulTopik;
@@ -610,6 +633,30 @@ app.post('/ubahStatus', multerParser.none(), (req,res) => {
 
 app.get('/gagalUbah', (req,res) => {
     res.send('Status tidak dapat diubah menjadi open!');
+})
+
+app.post('/editUser', multerParser.none(), (req,res) => {
+    let idUserE = req.body.idUserE;
+    let roleE = req.body.roleE;
+    let namaE = req.body.namaE;
+    let emailE = req.body.emailE;
+    let passwordE = req.body.passwordE;
+    let idRoleE = 1;
+    console.log(roleE);
+    if(roleE === 'dosen'){
+        idRoleE = 2;
+    }
+    else if(roleE === 'mahasiswa'){
+        idRoleE = 3;
+    }
+    let cek = 0;
+    pool.query(`update user set nama = ?, idRole = ?, email = ?, password = ? where idUser = ?`,[namaE, idRoleE, emailE, passwordE, idUserE], (err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        cek=1;   
+    })
+        res.redirect('/kelola');
 })
 
 app.get('/logout', (req,res,next) => {

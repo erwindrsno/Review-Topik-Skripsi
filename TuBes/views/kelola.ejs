@@ -33,8 +33,14 @@
             <div id="fitur">
                 <div class="daftar_topik">
                     <img src = icon/Folder_alt_fill.png id="iconDaftarT">
-                    <a href="/home" id="DT">
+                    <a href="/daftarTopik" id="DT">
                         <input type="button" id="buttonDT" alt="DT" name="daftarT" value="Daftar Topik">
+                    </a>
+                </div>
+                <div class="review_topik">
+                    <img src = icon/Edit_fill.png id="iconDaftarT">
+                    <a href="/home" id="DT">
+                        <input type="button" id="buttonDT" alt="DT" name="daftarT" value="Review Topik">
                     </a>
                 </div>
                 <div class="unggah_topik">
@@ -76,6 +82,10 @@
                     <input type="submit" value="delete" id="deletebtn">
                 </div>
             </form>
+            <br>
+            <div id="editU">
+                <button id="editbtn" onclick="onEdit()">Edit User</button>
+            </div>
             <br>
             <div id="tabelDT">
                 <table rules="all" id="tbl">
@@ -335,5 +345,58 @@
             </div>                      
         </div> -->
     </div>
+    <div id="overlay3">  
+        <div id="isi" >
+            <div id="iconHead">
+                <img src = icon/circle.png id="ic1">
+                <img src = icon/circle.png id="ic1">
+                <img src = icon/circle.png id="ic1">
+                <a href="/kelola" id="ic2">
+                    <img src = "icon/Close.png" alt="ic2">
+                </a>        
+            </div>
+            <form id="formEdit" action="/editUser" method="post" enctype="multipart/form-data">
+                <div id="formE1">
+                    <label for="lang">Id</label>
+                    <br>
+                    <input type="text" name="idUserE" id="idE">
+                    <br>                                                             
+                </div>
+                <div id="formE2">
+                    <label for="lang">Role</label>
+                    <br> 
+                    <select name="roleE" id="roleE">
+                        <option value="mahasiswa">Mahasiswa</option>
+                        <option value="dosen">Dosen</option>
+                        <option value="admin">Admin</option>
+                    </select>  
+                    <br>
+                </div>
+                <div id="garisV">
+                </div>
+                <div id="formE3">
+                    <label for="lang">Nama</label>
+                    <br>
+                    <input type="text" name="namaE" id="namaUserE">
+                    <br>   
+                </div>
+                <div id="formE4">
+                    <label for="lang">Email</label>
+                    <br>
+                    <input type="email" name="emailE" id="emailE">
+                    <br>
+                </div>
+                <div id="formE5">
+                    <label for="lang">Password</label>
+                    <br>
+                    <input type="password" name="passwordE" id="passwordE">
+                    <br>
+                </div>
+                <div id="formE6">
+                    <input type="submit" value="edit" id="submitE" onclick="offEdit()">
+                </div>
+            </form>               
+        </div>       
+    </div>  
 </body>
 </html>
