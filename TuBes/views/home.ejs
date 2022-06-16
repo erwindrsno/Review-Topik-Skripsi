@@ -43,14 +43,8 @@
             <div id="fitur">
                 <div class="daftar_topik">
                     <img src = icon/Folder_alt_fill.png id="iconDaftarT">
-                    <a href="/daftarTopik" id="DT">
-                        <input type="button" id="buttonDT" alt="DT" name="daftarT" value="Daftar Topik">
-                    </a>
-                </div>
-                <div class="review_topik">
-                    <img src = icon/Edit_fill.png id="iconDaftarT">
                     <a href="/home" id="DT">
-                        <input type="button" id="buttonDT" alt="DT" name="daftarT" value="Review Topik">
+                        <input type="button" id="buttonDT" alt="DT" name="daftarT" value="Daftar Topik">
                     </a>
                     
                 </div>
@@ -100,13 +94,12 @@
                     </form>
                 </div>
                 <div id="ket3">
-                    <div id="ms">
-                    Masa review hingga:  
-                    </div>              
+                    Masa review hingga:                
                     <br>
                     <div id="date">
                         <!-- sesuai input admin -->                    
                     </div>   
+                    <br> 
                     <br>
                     <form action="/filterBP" method="post" enctype="multipart/form-data">
                         <div id="filter">
@@ -118,16 +111,13 @@
                             <input type="submit" value="filter" id="searchbtn">
                         </div>
                     </form>
+                    
                 </div>
-                <div id="ket4">
+                <div id="icDate">
+                    <img src = icon/Date_range_fill.png onclick="dt()">
                     <form method="post" action="/reviewHingga" enctype="multipart/form-data">
                         <input type="date" id="iconDate">
                     </form>
-                </div>
-                <div id="icDate">
-                    <div id="md">
-                        <img src = icon/Date_range_fill.png onclick="dt()">
-                    </div>                    
                 </div>
             </div>
             <br>
@@ -372,34 +362,29 @@
         </div>    -->
     </div>
     <div id="ovr">  
-        <div id="isiOverlay1" >
+        <div id="isi" >
             <div id="iconHead">
-                <img src = icon/circle.png id="icovr">
+                <img src = icon/circle.png id="ic1">
+                <img src = icon/circle.png id="ic1">
+                <img src = icon/circle.png id="ic1">
                 <a href="/home" id="ic2">
-                    <img src = "icon/Close.png" alt="icovr2">
+                    <img src = "icon/Close.png" alt="ic2">
                 </a>        
             </div>
-            <div id="isiOvr">
-                <form method="post" action="/periode" enctype="multipart/form-data">
-                    <div id="tahunA">
-                        <label for="lang">Tahun Ajar</label>
-                        <input type="text" name="TahunAjar" id="TahunAjar" placeholder="tahun-ajar">
-                        <br>
-                    </div>
-                    <div id="smst">
-                        <label for="lang">Semester</label>
-                        <select name="Semester" id="smes">
-                            <option value="Ganjil">Ganjil</option>
-                            <option value="Genap">Genap</option>
-                        </select>
-                        <br>
-                    </div>
-                    <input type="submit" value="Iya" id="SY" onclick="sms()">      
-                    <a href="/home" id="STbtn">
-                        <input type="button" value="Tidak" id="ST" alt="STbtn">
-                    </a>                          
-                </form>                                   
-            </div>       
+            <div>
+            <form method="post" action="/periode" enctype="multipart/form-data">
+                <div id="tt">Tahun Ajar</div><input type="text" name="TahunAjar" id="TahunAjar" placeholder="tahun-ajar"><br>
+                <div id="tt">Semester</div><select name="Semester" id="smes" placeholder="Ubah Status">      
+                    <option value="Ganjil">Ganjil</option>
+                    <option value="Genap">Genap</option>
+                </select>
+                <br>
+                <input type="submit" value="Iya" id="SY" onclick="sms()">      
+                <a href="/home" id="STbtn">
+                    <input type="button" value="Tidak" id="ST" alt="STbtn">
+                </a>                          
+            </form>                                
+        </div>       
     </div> 
 </body>
 </html>

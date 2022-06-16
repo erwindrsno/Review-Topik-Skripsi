@@ -309,24 +309,6 @@ body{
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
 }
-#iconDaftarT{
-    grid-area: left;
-    margin-left: 1vw;
-    padding: 0px;
-    filter: hue-rotate(207deg);
-}
-.daftar_topik{
-    grid-area: menu1;
-    display: grid;
-    grid-template-areas: "left right";
-    grid-template-columns: 4vw;
-}
-.review_topik{
-    grid-area: menu1;
-    display: grid;
-    grid-template-areas: "left right";
-    grid-template-columns: 4vw;
-}
 
 #iconTentangK{
     grid-area: left;

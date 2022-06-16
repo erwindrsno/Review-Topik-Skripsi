@@ -383,24 +383,6 @@ body{
     padding-left: 5%;
     padding-right: 5%;
 }
-#iconDaftarT{
-    grid-area: left;
-    margin-left: 1vw;
-    padding: 0px;
-    filter: hue-rotate(207deg);
-}
-.daftar_topik{
-    grid-area: menu2;
-    display: grid;
-    grid-template-areas: "left right";
-    grid-template-columns: 4vw;
-}
-.review_topik{
-    grid-area: menu1;
-    display: grid;
-    grid-template-areas: "left right";
-    grid-template-columns: 4vw;
-}
 #formUT5{
     display: grid;
     grid-area: kanan3;

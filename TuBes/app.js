@@ -232,24 +232,6 @@ app.get('/home', (req,res) => {
         });
     })
 });
-app.get('/daftarTopik', (req,res) => {
-    let namaUser = "";
-    let inisialUser = "";
-    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
-        if(err){
-            return console.log(err);
-        }
-        namaUser = result[0].nama;
-        pool.query(`select `)
-        inisialUser = namaUser.charAt(0);
-        pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser`,(err, result, fields)=>{
-            if(err){
-                return console.log(err);
-            }
-            res.render('daftarTopik',{ nama: namaUser, inisial: inisialUser, result, email });
-        });
-    })
-});
 
 app.get('/homeMhs', (req,res) => {
     let namaUser = "";
@@ -401,7 +383,6 @@ app.post('/addTopik', multerParser.none(), (req,res) => {
         if(err){
             return console.log(err);
         }
-        console.log(result);
         let sql = "INSERT INTO topikSkripsi (judul, idDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusFinal) VALUES ?";
         let values = [
             [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,"null"]
@@ -452,7 +433,6 @@ app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
         });   
     };
 })
-
 app.post('/periode', multerParser.none(), (req,res) => {
     let tahun = req.body.TahunAjar;
     let semester = req.body.Semester;
@@ -470,7 +450,6 @@ app.post('/periode', multerParser.none(), (req,res) => {
     })
     res.redirect('/home');
 })
-
 app.post('/filterBPd', multerParser.none(), (req,res) => {
     let namaUser = "";
     let inisialUser = "";
@@ -642,21 +621,19 @@ app.post('/editUser', multerParser.none(), (req,res) => {
     let emailE = req.body.emailE;
     let passwordE = req.body.passwordE;
     let idRoleE = 1;
-    console.log(roleE);
     if(roleE === 'dosen'){
         idRoleE = 2;
     }
     else if(roleE === 'mahasiswa'){
         idRoleE = 3;
     }
-    let cek = 0;
     pool.query(`update user set nama = ?, idRole = ?, email = ?, password = ? where idUser = ?`,[namaE, idRoleE, emailE, passwordE, idUserE], (err, result, fields)=>{
         if(err){
             return console.log(err);
         }
-        cek=1;   
+            
     })
-        res.redirect('/kelola');
+    res.render('/kelola');
 })
 
 app.get('/logout', (req,res,next) => {

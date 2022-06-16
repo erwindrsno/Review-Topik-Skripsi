@@ -98,8 +98,8 @@ body{
     grid-area: atas;    
     display: grid;
     grid-template-areas: 
-    'kiri tengah1 tengah2 tengah3 kanan';
-    grid-template-columns: 35vh 70vh 24vh 20vh;
+    'kiri tengah1 tengah2 kanan';
+    grid-template-columns: 35vh 80vh 28vh 5vh;
 }
 #ket1{
     display: grid;
@@ -112,10 +112,7 @@ body{
 #ket3{
     display: grid;
     grid-area: tengah2;
-}
-#ket4{
-    display: grid;
-    grid-area: tengah3;
+    
 }
 #iconDate{
     display: inline;
@@ -141,22 +138,21 @@ body{
 }
 #FilterBP{
     grid-area: filterbp ;
-    width: 18vh;
-    font-size: 80%;
+    width: 24vh;
 }
 #searchbtn{
     grid-area: searchbtn;
-    margin-left: 1vh;
+    margin-left: 2vh;
 }
 #delT{
     display: grid;
     grid-template-areas: 
     'space deleteKT deletebtn';
-    grid-template-columns: 35vh 20vh 12vh;
+    grid-template-columns: 40vh 24vh 12vh;
 }
 #deleteKT{
     grid-area: deleteKT;
-    width: 20vh;
+    width: 24vh;
 }
 #deletebtn{
     grid-area: deletebtn;
@@ -212,6 +208,7 @@ body{
     font-size: 0.8vw;
     margin-left: 3.5vw;
 }
+
 .wrapper{
     bottom: 0;
     /* height: 80%;
@@ -219,28 +216,16 @@ body{
     margin-top: -10px;
     margin-left: 10px; */
     margin-top: 0px;
-    height: 73.2vh;
+    height: 76.2vh;
     width: 16vw;
     margin-left: 1vw;
     background-color: #3d5a80;
     position: fixed;
 }
-.wrapper1{
-    bottom: 0;
-    /* height: 80%;
-    width: 170px;
-    margin-top: -10px;
-    margin-left: 10px; */
-    margin-top: 0px;
-    height: 75.9vh;
-    width: 16vw;
-    margin-left: 1vw;
-    background-color: #3d5a80;
-    position: fixed;
-}
+
 #fitur{
     bottom: 0;
-    height: 71.2vh;
+    height: 75.2vh;
     width: 16vw;
     position: fixed;
     display: grid;
@@ -254,29 +239,8 @@ body{
     grid-template-rows: 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh;
     align-items: center;
 }
-#fitur1{
-    bottom: 0;
-    height: 74.2vh;
-    width: 16vw;
-    position: fixed;
-    display: grid;
-    row-gap: 1vh;
-    grid-template-areas: 
-    'menu1'
-    'menu2'
-    'menu3'
-    'menu4'
-    'menu5';
-    grid-template-rows: 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh;
-    align-items: center;
-}
+
 .daftar_topik{
-    grid-area: menu2;
-    display: grid;
-    grid-template-areas: "left right";
-    grid-template-columns: 4vw;
-}
-.review_topik{
     grid-area: menu1;
     display: grid;
     grid-template-areas: "left right";
@@ -287,7 +251,6 @@ body{
     grid-area: left;
     margin-left: 1vw;
     padding: 0px;
-    filter: hue-rotate(207deg);
 }
 
 #buttonDT{
@@ -302,7 +265,7 @@ body{
 }
 
 .unggah_topik{
-    grid-area: menu3;
+    grid-area: menu2;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
@@ -327,7 +290,7 @@ body{
 }
 
 .kotak_tinjauan{
-    grid-area: menu4;
+    grid-area: menu3;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
@@ -352,7 +315,7 @@ body{
 }
 
 .kelola_user{
-    grid-area: menu5;
+    grid-area: menu4;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
@@ -521,33 +484,7 @@ body{
     border: solid;
     border-radius: 10px;
 }
-#isiOverlay1{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 50vh;
-    height: fit-content;
-    background-color: white;
-    font-size: 150%;
-    color: black;
-    transform: translate(-50%,-50%);
-    -ms-transform: translate(-50%,-50%);
-    text-align: center;
-    border: solid;
-    border-radius: 10px;
-}
-isiOvr{
-    grid-template-areas: 
-    'tahunA smst';
-}
-#tahunA{
-    display: grid;
-    grid-area: tahunA;
-}
-#smst{
-    display: grid;
-    grid-area: smst;
-}
+
 #ST{
     color:white;
     background: #3D5B81;
@@ -650,15 +587,6 @@ isiOvr{
 }
 #set{
     margin-left: 170vh;
-    margin-top: 2vh;
-    border-radius: 15px;
-    font-size: 120%;
-    width: 3%;
-    position: absolute;
-    cursor: pointer;
-}
-#set1{
-    margin-left: 195vh;
     margin-top: 2vh;
     border-radius: 15px;
     font-size: 120%;
