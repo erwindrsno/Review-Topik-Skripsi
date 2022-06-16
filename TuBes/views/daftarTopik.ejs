@@ -23,7 +23,7 @@
     </div>
     <div class = "home"> 
         <div id="DaftarT">
-            <div><img src="./icon/Edit_fill.png" onclick="ops()"></div><b>DAFTAR TOPIK SKRIPSI - T.A   <form><div id="xt">2022-2023 </div><div id="xs"></div></b></form>
+            <b>DAFTAR TOPIK SKRIPSI - T.A   <form><div id="xt">2022-2023 </div><div id="xs"></div></b></form>
             <br>
             <br>
             <b>
@@ -98,7 +98,10 @@
                         </div>
                     </form>
                 </div>
-                <div id="ketA">
+                <div id="ket4">
+                    <br>            
+                    <br>
+                    <br>
                     <form action="/filterBP" method="post" enctype="multipart/form-data">
                         <div id="filter">
                             <select name="FilterBP" id="FilterBP" placeholder="Cari Bidang Peminatan">     
@@ -122,7 +125,6 @@
                         <td> Bidang Peminatan </td>
                         <td> Jenis </td>
                         <td> Status </td>
-                        <td> Review </td>
                     </tr>
                     <% let index = 1 %> 
                     <% for (let topik of result) { %>
@@ -134,31 +136,11 @@
                             <td> <%= topik.bidangPeminatan %> </td>
                             <td> <%= topik.jenisSkripsi %> </td>
                             <td id="sf"> <%= topik.statusFinal %> </td>
-                            <td> <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()"></td>
                         </tr>
                     <% } %> 
                 </table> 
             </div>
         </div>
-        <div id="overlay">  
-            <div id="isi" >
-                <div id="iconHead">
-                    <img src = icon/circle.png id="ic1">
-                    <img src = icon/circle.png id="ic1">
-                    <img src = icon/circle.png id="ic1">
-                    <a href="/home" id="ic2">
-                        <img src = "icon/Close.png" alt="ic2">
-                    </a>        
-                </div>
-                <form>
-                    <div id="text"> Apakah anda ingin menyebarkan topik skripsi yang memiliki status open?</div>
-                    <input type="submit" value="Iya" id="SY" onclick="on2()">
-                    <a href="/home" id="STbtn">
-                        <input type="submit" value="Tidak" id="ST" alt="STbtn">
-                    </a>              
-                </form>                
-            </div>       
-        </div>        
         <div class="grid">
             <div class="tes1"><img src="./icon/Setting_fill.png" id="set1" onclick="opn3()"></div>
         </div>
