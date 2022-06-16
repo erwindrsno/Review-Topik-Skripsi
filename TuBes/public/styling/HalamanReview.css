@@ -112,7 +112,12 @@ body{
 #ket3{
     display: grid;
     grid-area: tengah2;
-    
+}
+#ketA{
+    display: grid;
+    grid-area: kanan;
+    margin-top: 11vh;
+    margin-left: -25vh;
 }
 #iconDate{
     display: inline;
@@ -208,7 +213,6 @@ body{
     font-size: 0.8vw;
     margin-left: 3.5vw;
 }
-
 .wrapper{
     bottom: 0;
     /* height: 80%;
@@ -216,16 +220,28 @@ body{
     margin-top: -10px;
     margin-left: 10px; */
     margin-top: 0px;
-    height: 76.2vh;
+    height: 73.2vh;
     width: 16vw;
     margin-left: 1vw;
     background-color: #3d5a80;
     position: fixed;
 }
-
+.wrapper1{
+    bottom: 0;
+    /* height: 80%;
+    width: 170px;
+    margin-top: -10px;
+    margin-left: 10px; */
+    margin-top: 0px;
+    height: 75.9vh;
+    width: 16vw;
+    margin-left: 1vw;
+    background-color: #3d5a80;
+    position: fixed;
+}
 #fitur{
     bottom: 0;
-    height: 75.2vh;
+    height: 71.2vh;
     width: 16vw;
     position: fixed;
     display: grid;
@@ -239,8 +255,29 @@ body{
     grid-template-rows: 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh;
     align-items: center;
 }
-
+#fitur1{
+    bottom: 0;
+    height: 74.2vh;
+    width: 16vw;
+    position: fixed;
+    display: grid;
+    row-gap: 1vh;
+    grid-template-areas: 
+    'menu1'
+    'menu2'
+    'menu3'
+    'menu4'
+    'menu5';
+    grid-template-rows: 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh;
+    align-items: center;
+}
 .daftar_topik{
+    grid-area: menu2;
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 4vw;
+}
+.review_topik{
     grid-area: menu1;
     display: grid;
     grid-template-areas: "left right";
@@ -251,6 +288,7 @@ body{
     grid-area: left;
     margin-left: 1vw;
     padding: 0px;
+    filter: hue-rotate(207deg);
 }
 
 #buttonDT{
@@ -265,7 +303,7 @@ body{
 }
 
 .unggah_topik{
-    grid-area: menu2;
+    grid-area: menu3;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
@@ -290,7 +328,7 @@ body{
 }
 
 .kotak_tinjauan{
-    grid-area: menu3;
+    grid-area: menu4;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
@@ -315,7 +353,7 @@ body{
 }
 
 .kelola_user{
-    grid-area: menu4;
+    grid-area: menu5;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
@@ -587,6 +625,15 @@ body{
 }
 #set{
     margin-left: 170vh;
+    margin-top: 2vh;
+    border-radius: 15px;
+    font-size: 120%;
+    width: 3%;
+    position: absolute;
+    cursor: pointer;
+}
+#set1{
+    margin-left: 195vh;
     margin-top: 2vh;
     border-radius: 15px;
     font-size: 120%;

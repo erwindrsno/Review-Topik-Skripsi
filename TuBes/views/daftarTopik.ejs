@@ -39,8 +39,8 @@
             <!-- <p>6182001002@student.id</p> sesuai NPM/NIK, mahasiswa = student.com, dosen = lecturer.com, admin = admin.com -->
             <p class="email_user"><%= email %></p>
         </div>
-        <div class="wrapper">
-            <div id="fitur">
+        <div class="wrapper1">
+            <div id="fitur1">
                 <div class="daftar_topik">
                     <img src = icon/Folder_alt_fill.png id="iconDaftarT">
                     <a href="/daftarTopik" id="DT">
@@ -94,21 +94,11 @@
                     <br><br>
                     <form action="/deleteTopik" method="post" enctype="multipart/form-data">
                         <div id="delT">
-                            <input type="text" name="deleteKT" id="deleteKT" placeholder="Tulis Kode Topik">
-                            <input type="submit" value="delete" id="deletebtn">
+                            
                         </div>
                     </form>
                 </div>
-                <div id="ket3">
-                    <div id="ms">
-                    Masa review hingga:  
-                    </div>              
-                    <br>
-                    <div id="date">
-                        <!-- sesuai input admin -->                    
-                    </div>   
-                    <br> 
-                    <br>
+                <div id="ketA">
                     <form action="/filterBP" method="post" enctype="multipart/form-data">
                         <div id="filter">
                             <select name="FilterBP" id="FilterBP" placeholder="Cari Bidang Peminatan">     
@@ -118,15 +108,6 @@
                             </select>
                             <input type="submit" value="filter" id="searchbtn">
                         </div>
-                    </form>
-                    
-                </div>
-                <div id="icDate">
-                    <div id="md">
-                    <img src = icon/Date_range_fill.png onclick="dt()">
-                    </div>
-                    <form method="post" action="/reviewHingga" enctype="multipart/form-data">
-                        <input type="date" id="iconDate">
                     </form>
                 </div>
             </div>
@@ -179,8 +160,7 @@
             </div>       
         </div>        
         <div class="grid">
-            <div class="tes1"><img src="./icon/Setting_fill.png" id="set" onclick="opn3()"></div>
-            <div class="tes2"><button id="publish" onclick="on1()">Publish</button></div>
+            <div class="tes1"><img src="./icon/Setting_fill.png" id="set1" onclick="opn3()"></div>
         </div>
         <div class="grid2">
             <div class="tombolReview">
