@@ -98,8 +98,8 @@ body{
     grid-area: atas;    
     display: grid;
     grid-template-areas: 
-    'kiri tengah1 tengah2 kanan';
-    grid-template-columns: 35vh 80vh 28vh 5vh;
+    'kiri tengah1 tengah2 tengah3 kanan';
+    grid-template-columns: 35vh 70vh 24vh 20vh;
 }
 #ket1{
     display: grid;
@@ -112,24 +112,17 @@ body{
 #ket3{
     display: grid;
     grid-area: tengah2;
+    
 }
-#masaR{
-    margin-left: -15vh;
-}
-#iconD{
-    margin-left: 6vh;
-}
-#iDate{
-    margin-left: -13vh;
-    margin-top: -5.5vh;
+#ket4{
+    display: grid;
+    grid-area: tengah3;
 }
 #iconDate{
     display: inline;
-    margin-top: 3vh;
 }
 #date{
-    margin-top: -3.6vh;
-    margin-left: -15vh;
+    margin-bottom: -20px;
 }
 #myInput{
     width: 27vh;
@@ -146,25 +139,25 @@ body{
     display: grid;
     grid-template-areas: 
     'filterbp searchbtn';
-    margin-top: -3.8vh;
 }
 #FilterBP{
     grid-area: filterbp ;
-    width: 24vh;
+    width: 18vh;
+    font-size: 80%;
 }
 #searchbtn{
     grid-area: searchbtn;
-    margin-left: 2vh;
+    margin-left: 1vh;
 }
 #delT{
     display: grid;
     grid-template-areas: 
     'space deleteKT deletebtn';
-    grid-template-columns: 40vh 24vh 12vh;
+    grid-template-columns: 35vh 20vh 12vh;
 }
 #deleteKT{
     grid-area: deleteKT;
-    width: 24vh;
+    width: 20vh;
 }
 #deletebtn{
     grid-area: deletebtn;
@@ -228,7 +221,7 @@ body{
     margin-top: -10px;
     margin-left: 10px; */
     margin-top: 0px;
-    height: 76vh;
+    height: 76.2vh;
     width: 16vw;
     margin-left: 1vw;
     background-color: #3d5a80;
@@ -502,7 +495,7 @@ body{
     background: #3D5B81;
     border: 1px solid ;
     border-radius: 15px;
-    width: 27%;
+    width: 20%;
     align-items: center;
     justify-content: center;
     font-size: 50%;
@@ -512,7 +505,7 @@ body{
 #SY{
     border: 1px solid;
     border-radius: 15px;
-    width: 27%;
+    width: 20%;
     align-items: center;
     justify-content: center;
     font-size: 50%;
@@ -743,4 +736,31 @@ body{
     display: inline;
     font-size: small;
     margin-left: 30px;
+}
+#isiOverlay1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 45vh;
+    height: fit-content;
+    background-color: white;
+    font-size: 150%;
+    color: black;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    text-align: center;
+    border: solid;
+    border-radius: 10px;
+}
+#isiOvr{
+    grid-template-areas: 
+    'tahunA smst';
+}
+#tahunA{
+    display: grid;
+    grid-area: tahunA;
+}
+#smst{
+    display: grid;
+    grid-area: smst;
 }

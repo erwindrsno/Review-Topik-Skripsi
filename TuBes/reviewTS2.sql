@@ -35,8 +35,10 @@ CREATE TABLE `topikSkripsi` (
   `bidangPeminatan` CHAR(2), 
   `jenisSkripsi` VARCHAR(10),
   `statusFinal` VARCHAR(10),
+  `idPeriode` int NOT NULL,
   PRIMARY KEY(`kodeTopik`),
-  CONSTRAINT `fk_idDosen` FOREIGN KEY(`idDosen`) REFERENCES `user`(`idUser`)
+  CONSTRAINT `fk_idDosen` FOREIGN KEY(`idDosen`) REFERENCES `user`(`idUser`),
+  CONSTRAINT `fk_idPeriode` FOREIGN KEY(`idPeriode`) REFERENCES `periode`(`idPeriode`)
 );
 
 CREATE TABLE `review` (
