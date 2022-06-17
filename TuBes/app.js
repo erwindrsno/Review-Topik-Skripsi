@@ -133,7 +133,6 @@ app.set('view engine','ejs');
 //     console.log("records inserted: "+result.affectedRows);
 // })
 
-
 // var sql = "INSERT INTO Review (IdReview, komentar, pertanyaan) VALUES ?";
 // var values = [
 //     ['2','abcd','kenapa?']
@@ -153,6 +152,7 @@ app.set('view engine','ejs');
 // })
 
 const multerParser = multer();
+const upload = multer({dest: 'public/files'});
 
 let email = "";
 let password = "";
@@ -373,7 +373,6 @@ app.post('/addUser', multerParser.none(), (req,res) => {
         res.redirect('kelola');
         
     }
-    
 })
 
 
