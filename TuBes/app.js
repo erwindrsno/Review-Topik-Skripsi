@@ -133,7 +133,6 @@ app.set('view engine','ejs');
 //     console.log("records inserted: "+result.affectedRows);
 // })
 
-
 // var sql = "INSERT INTO Review (IdReview, komentar, pertanyaan) VALUES ?";
 // var values = [
 //     ['2','abcd','kenapa?']
@@ -153,6 +152,7 @@ app.set('view engine','ejs');
 // })
 
 const multerParser = multer();
+const upload = multer({dest: 'public/files'});
 
 let email = "";
 let password = "";
@@ -370,26 +370,27 @@ app.post('/addUser', multerParser.none(), (req,res) => {
         res.redirect('kelola');
         
     }
-    
 })
 
 
-app.post('/addTopik', multerParser.none(), (req,res) => {
-    let judulTopik = req.body.JudulTopik;
-    let bidangPeminatan = req.body.BidangPeminatan;
-    let kodeTopik = req.body.KodeTopik;
-    let jenisSkripsi = req.body.JenisSkripsi;
-    pool.query(`select idUser from user where email = ?`, [email],(err, result, fields)=>{
-        if(err){
-            return console.log(err);
-        }
-        let sql = "INSERT INTO topikSkripsi (judul, idDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusFinal) VALUES ?";
-        let values = [
-            [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,"null"]
-        ]
-        pool.query(sql,[values]);
-    })
-    res.redirect('/home');
+app.post('/addTopik', upload.single('skripsi'), (req,res) => {
+    console.log(req.body);
+    console.log(req.file);
+    // let judulTopik = req.body.JudulTopik;
+    // let bidangPeminatan = req.body.BidangPeminatan;
+    // let kodeTopik = req.body.KodeTopik;
+    // let jenisSkripsi = req.body.JenisSkripsi;
+    // pool.query(`select idUser from user where email = ?`, [email],(err, result, fields)=>{
+    //     if(err){
+    //         return console.log(err);
+    //     }
+    //     let sql = "INSERT INTO topikSkripsi (judul, idDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusFinal) VALUES ?";
+    //     let values = [
+    //         [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,"null"]
+    //     ]
+    //     pool.query(sql,[values]);
+    // })
+    // res.redirect('/home');
 })
 
 app.post('/addTopikDsn', multerParser.none(), (req,res) => {
