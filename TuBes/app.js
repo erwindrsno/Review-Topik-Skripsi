@@ -249,7 +249,7 @@ app.get('/homeMhs', (req,res) => {
             if(err){
                 return console.log(err);
             }
-            res.render('homeMhs',{ nama: namaUser, inisial: inisialUser, result, email });
+            res.render('homeMhs',{ nama: namaUser, inisial: inisialUser, result, email, tahunA, semesterInput });
         });
     })
 });
@@ -267,7 +267,7 @@ app.get('/homeDsn', (req,res) => {
             if(err){
                 return console.log(err);
             }
-            res.render('homeDsn',{ nama: namaUser, inisial: inisialUser, result, email});
+            res.render('homeDsn',{ nama: namaUser, inisial: inisialUser, result, email, tahunA, semesterInput});
         });
     })
 });
