@@ -17,7 +17,6 @@
     font-family: 'poppins-bold';
     src: url('/fonts/poppins/Poppins-Bold.ttf');
 }
-
 body{
     margin: 0px;
 }
@@ -680,4 +679,7 @@ body{
     display: inline;
     font-size: small;
     margin-left: 30px;
+}
+#overlayUSd{
+    display: none;
 }

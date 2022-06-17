@@ -162,6 +162,7 @@ let arrUser = [];
 let idRole;
 let tahunA="";
 let semesterInput="";
+let idPeriode="";
 
 const staticPath = path.resolve('public');
 app.use(express.static(staticPath));    //serving static page dari public
@@ -385,9 +386,9 @@ app.post('/addTopik', multerParser.none(), (req,res) => {
         if(err){
             return console.log(err);
         }
-        let sql = "INSERT INTO topikSkripsi (judul, idDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusFinal) VALUES ?";
+        let sql = "INSERT INTO topikSkripsi (judul, idDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusFinal, idPeriode) VALUES ?";
         let values = [
-            [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,"null"]
+            [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,"null", idPeriode]
         ]
         pool.query(sql,[values]);
     })
@@ -450,9 +451,10 @@ app.post('/periode', multerParser.none(), (req,res) => {
         tahunA = req.body.TahunAjar;
         console.log(tahunA);
         semesterInput = req.body.Semester;
-        let idPeriode = tahunA + "-2";
         if(semesterInput=="Ganjil"){
             idPeriode = tahunA + "-1";
+        }else{
+            idPeriode = tahunA + "-2";
         }
         let sql = "INSERT INTO periode (idPeriode, semester, tahunAjar) VALUES ?";
         let values = [
@@ -613,7 +615,32 @@ app.post('/ubahStatus', multerParser.none(), (req,res) => {
             res.redirect('/gagalUbah');
         }
         else{
-            pool.query(`update topikSkripsi set statusFinal = 'open' where kodeTopik = ?`,[kodeTopikUbah], (err, result, fields)=>{
+            pool.query(`update topikSkripsi set statusFinal = ? where kodeTopik = ?`,[statusFinal, kodeTopikUbah], (err, result, fields)=>{
+            if(err){
+                return console.log(err);
+            }
+                res.redirect('/home');
+            })
+        }
+    })
+})
+
+app.post('/ubahStatusd', multerParser.none(), (req,res) => {
+    const statusFinal = req.body.ubahStatus;
+    const kodeTopikUbah = req.body.namaKT;
+    let valid = true;
+    let content;
+    pool.query(`select count(status) as 'hitung' from review where idTopik = ? and status not like 'ok'`, [kodeTopikUbah],(err, result, fields)=>{
+    if(err){
+        return console.log(err);
+    }
+        console.log(result);
+        console.log(result.length);
+        if(result.hitung > 0){
+            res.redirect('/gagalUbah');
+        }
+        else{
+            pool.query(`update topikSkripsi set statusFinal = ? where kodeTopik = ?`,[statusFinal, kodeTopikUbah], (err, result, fields)=>{
             if(err){
                 return console.log(err);
             }
@@ -646,7 +673,7 @@ app.post('/editUser', multerParser.none(), (req,res) => {
         }
             
     })
-    res.render('/kelola');
+    res.redirect('/kelola');
 })
 
 app.get('/logout', (req,res,next) => {

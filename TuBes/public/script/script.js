@@ -169,6 +169,9 @@ function opn2(){
 function opn3(){
     document.getElementById("overlayUS").style.display = "block";
 }
+function opn4(){
+    document.getElementById("overlayUSd").style.display = "block";
+}
 function ops(){
     document.getElementById("ovr").style.display = "block";
 }

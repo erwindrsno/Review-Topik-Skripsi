@@ -24,7 +24,7 @@
     <div class = "home"> 
         <div id="DaftarT">
             <b>
-                DAFTAR TOPIK SKRIPSI - T.A 2022/2023 <%= tahunA %> <%= semesterInput %>
+                DAFTAR TOPIK SKRIPSI - T.A <%= tahunA %> <%= semesterInput %>
             </b>
             <br>
             <br>
@@ -136,6 +136,7 @@
                         </tr>
                     <% } %> 
                 </table> 
+                <div class="tes1"><img src="./icon/Setting_fill.png" id="set" onclick="opn4()"></div>
             </div>
         </div>
         <div id="ovy">  
@@ -195,6 +196,31 @@
                 </form>           
             </div>       
         </div>
+        <div id="overlayUSd">  
+            <div id="isi" >
+                <div id="iconHead">
+                    <img src = icon/circle.png id="ic1">
+                    <img src = icon/circle.png id="ic1">
+                    <img src = icon/circle.png id="ic1">
+                    <a href="/home" id="ic2">
+                        <img src = "icon/Close.png" alt="ic2">
+                    </a>        
+                </div>
+                <div>
+                <form action="/ubahStatusd" method="post" enctype="multipart/form-data">
+                    <input type="text" name="namaKT" id="namaKT" placeholder="Tulis Kode Topik">
+                    <select name="ubahStatus" id="FilterBP" placeholder="Ubah Status">   
+                        <option value="taken">TAKEN</option>
+                        <option value="close">CLOSE</option>
+                    </select>
+                    <div id="text"> Apakah anda yakin untuk mengganti status? </div>
+                    <input type="submit" value="Iya" id="SY" onclick="on2()">      
+                    <a href="/home" id="STbtn">
+                        <input type="button" value="Tidak" id="ST" alt="STbtn">
+                    </a>                          
+                </form>                                
+            </div>       
+        </div>  
     </div>
 </body>
 </html>
