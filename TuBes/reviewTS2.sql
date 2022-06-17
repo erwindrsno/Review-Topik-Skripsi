@@ -28,6 +28,13 @@ CREATE TABLE `user` (
 INSERT INTO `user` (`idUser`, `nama`, `email`, `password`, `idRole`) VALUES
 (1, 'Mariskha', 'mariskha@unpar.ac.id', 'admin', 1);
 
+CREATE TABLE `periode` (
+  `idPeriode` CHAR(11),
+  `semester` VARCHAR(10), 
+  `tahunAjar` VARCHAR(10), 
+  PRIMARY KEY(`idPeriode`)
+);
+
 CREATE TABLE `topikSkripsi` (
   `idDosen` varchar(15),
   `judul` VARCHAR(50), 
@@ -35,7 +42,7 @@ CREATE TABLE `topikSkripsi` (
   `bidangPeminatan` CHAR(2), 
   `jenisSkripsi` VARCHAR(10),
   `statusFinal` VARCHAR(10),
-  `idPeriode` int NOT NULL,
+  `idPeriode` CHAR(11),
   PRIMARY KEY(`kodeTopik`),
   CONSTRAINT `fk_idDosen` FOREIGN KEY(`idDosen`) REFERENCES `user`(`idUser`),
   CONSTRAINT `fk_idPeriode` FOREIGN KEY(`idPeriode`) REFERENCES `periode`(`idPeriode`)
@@ -54,9 +61,3 @@ CREATE TABLE `review` (
   CONSTRAINT `fk_idTopik` FOREIGN KEY(`idTopik`) REFERENCES `topikSkripsi`(`kodeTopik`)
 );
 
-CREATE TABLE `periode` (
-  `idPeriode` int NOT NULL,
-  `semester` VARCHAR(10), 
-  `tahunAjar` VARCHAR(10), 
-  PRIMARY KEY(`idPeriode`)
-);

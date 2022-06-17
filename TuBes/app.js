@@ -13,7 +13,7 @@ const app = express();
 const pool = mysql.createPool({
     user: 'root',
     password: '',
-    database: 'reviewts2',
+    database: 'coba',
     host: 'localhost',
     connectionLimit:10
 });
@@ -160,6 +160,8 @@ let id = "";
 let arrTopik = [];
 let arrUser = [];
 let idRole;
+let tahunA="";
+let semesterInput="";
 
 const staticPath = path.resolve('public');
 app.use(express.static(staticPath));    //serving static page dari public
@@ -228,7 +230,7 @@ app.get('/home', (req,res) => {
             if(err){
                 return console.log(err);
             }
-            res.render('home',{ nama: namaUser, inisial: inisialUser, result, email });
+            res.render('home',{ nama: namaUser, inisial: inisialUser, result, email, tahunA, semesterInput });
         });
     })
 });
@@ -433,22 +435,33 @@ app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
         });   
     };
 })
+
 app.post('/periode', multerParser.none(), (req,res) => {
-    let tahun = req.body.TahunAjar;
-    let semester = req.body.Semester;
-    pool.query(`select idUser from user where email = ?`, [email],(err, result, fields)=>{
+    
+    let namaUser = "";
+    let inisialUser = "";
+    
+    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
             return console.log(err);
         }
+        namaUser = result[0].nama;
+        inisialUser = namaUser.charAt(0);
+        tahunA = req.body.TahunAjar;
+        console.log(tahunA);
+        semesterInput = req.body.Semester;
+        let idPeriode = tahunA + "-2";
+        if(semesterInput=="Ganjil"){
+            idPeriode = tahunA + "-1";
+        }
         let sql = "INSERT INTO periode (idPeriode, semester, tahunAjar) VALUES ?";
         let values = [
-            [0,semester,tahun]
+            [idPeriode,semesterInput,tahunA]
         ]
         pool.query(sql,[values]);
-        let periode = { tahun: tahun, semester:semester }
-        res.render('home', {periode: periode}, result, email);
+        console.log(tahunA);
+        res.render('home', { nama: namaUser, inisial: inisialUser, result, email,tahunA:tahunA,semesterInput:semesterInput});
     })
-    res.redirect('/home');
 })
 app.post('/filterBPd', multerParser.none(), (req,res) => {
     let namaUser = "";
