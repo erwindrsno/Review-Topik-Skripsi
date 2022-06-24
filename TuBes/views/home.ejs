@@ -24,12 +24,12 @@
     <div class = "home"> 
         <div id="DaftarT">
             <div><img src="./icon/Edit_fill.png" onclick="ops()"></div>
-            <b>
+            <b style='font-family:"Open Sans", monospace;font-size:120%'>
                 DAFTAR TOPIK SKRIPSI - T.A <%= tahunA %> <%= semesterInput %>
             </b>
             <br>
             <br>
-            <b>
+            <b style='font-family:"Open Sans", monospace;font-size:95%'>
                 Keterangan:
             </b>
         </div>
@@ -78,7 +78,7 @@
             <div id="real_time"></div>
         </div>
         <div id="DaftarTopik">
-            <div id="ket">
+            <div id="ket" style='font-family:"Open Sans", monospace;font-size:85%'>
                 <div id="ket1">
                     - CS = Computing Science
                     <br>
@@ -127,15 +127,15 @@
             <br>
             <div id="tabelDT">
                 <table rules="all" id="tbl">
-                    <tr>
-                        <td> No </td>
-                        <td> Judul Topik </td>
-                        <td> Dosen Pengaju </td>
-                        <td> Kode Topik </td>
-                        <td> Bidang Peminatan </td>
-                        <td> Jenis </td>
-                        <td> Status </td>
-                        <td> Review </td>
+                    <tr >
+                        <td id="judulTbl"> No </td>
+                        <td id="judulTbl"> Judul Topik </td>
+                        <td id="judulTbl"> Dosen Pengaju </td>
+                        <td id="judulTbl"> Kode Topik </td>
+                        <td id="judulTbl"> Bidang Peminatan </td>
+                        <td id="judulTbl"> Jenis </td>
+                        <td id="judulTbl"> Status </td>
+                        <td id="judulTbl"> Review </td>
                     </tr>
                     <% let index = 1 %> 
                     <% for (let topik of result) { %>

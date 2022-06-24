@@ -18,6 +18,16 @@
     src: url('/fonts/poppins/Poppins-Bold.ttf');
 }
 
+@font-face{
+    font-family: 'monda-regular';
+    src: url('/fonts/Monda/Monda-Regular.ttf');
+}
+
+@font-face{
+    font-family: 'monda-bold';
+    src: url('/fonts/Monda/Monda-Bold.ttf');
+}
+
 body{
     margin: 0px;
 }
@@ -160,6 +170,11 @@ body{
 }
 #tbl{
     border: 1px;
+    font-family: monda-reguler;
+}
+#judulTbl{
+    /* font-family: monda-bold; */
+    color:#3D5A80;
 }
 
 #circle{
