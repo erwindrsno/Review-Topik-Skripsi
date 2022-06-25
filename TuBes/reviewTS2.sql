@@ -36,13 +36,14 @@ CREATE TABLE `periode` (
 );
 
 CREATE TABLE `topikSkripsi` (
-  `idDosen` varchar(15),
   `judul` VARCHAR(50), 
+  `idDosen` varchar(15),  
   `kodeTopik` CHAR(10), 
   `bidangPeminatan` CHAR(2), 
   `jenisSkripsi` VARCHAR(10),
   `statusFinal` VARCHAR(10),
   `idPeriode` CHAR(11),
+  `idMahasiswa` varchar(15),
   PRIMARY KEY(`kodeTopik`),
   CONSTRAINT `fk_idDosen` FOREIGN KEY(`idDosen`) REFERENCES `user`(`idUser`),
   CONSTRAINT `fk_idPeriode` FOREIGN KEY(`idPeriode`) REFERENCES `periode`(`idPeriode`)

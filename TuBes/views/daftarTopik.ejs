@@ -73,6 +73,12 @@
                         <input type="button" id="buttonKU" alt="KU" name="kelolaU" value="Kelola User">
                     </a>                    
                 </div>
+                <div class="report">
+                    <img src = icon/user_add_alt_fill.png id="iconReport">
+                    <a href="/report" id="RTS">
+                        <input type="button" id="buttonR" alt="RTS" name="report" value="Report">
+                    </a>                    
+                </div>
             </div>
             <div class="garis_waktu"></div>
             <div id="real_day"></div>
@@ -260,9 +266,9 @@
                     </a>        
                 </div>
                 <div>
-                <form action="/ubahStatusd" method="post" enctype="multipart/form-data">
+                <form action="/ubahStatus" method="post" enctype="multipart/form-data">
                     <input type="text" name="namaKT" id="namaKT" placeholder="Tulis Kode Topik">
-                    <input type="text" name="namaMhsT" id="namaMhsT" placeholder="Tulis Nama Mahasiswa">
+                    <input type="text" name="idMhsT" id="idMhsT" placeholder="Tulis ID Mahasiswa">
                     <div>
                         <select name="ubahStatus" id="ubahStatus" placeholder="Ubah Status">   
                             <option value="taken">TAKEN</option>

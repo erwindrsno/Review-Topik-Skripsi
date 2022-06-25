@@ -208,7 +208,7 @@ body{
     'menu4'
     'menu5'
     'menu6';
-    grid-template-rows: 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh;
+    grid-template-rows: 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh;
     align-items: center;
 }
 
@@ -334,22 +334,22 @@ body{
     position: absolute;
 }
 
-.tentang_kami{
+.report{
     grid-area: menu6;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
 }
 
-#iconTentangK{
+#iconReport{
     grid-area: left;
     margin-left: 0.8vw;
     padding: 0px;
 }
 
-#buttonTK{
+#buttonR{
     text-align: left;
-    font-family: poppins-regular;
+    font-family: 'poppins-regular';
     font-size: 1.3vw;
     background: #3D5A80;
     color: white;

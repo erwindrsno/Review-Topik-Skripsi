@@ -12,8 +12,8 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: 'erwin08',
-    database: 'reviewts2',
+    password: '',
+    database: 'baru',
     host: 'localhost',
     connectionLimit:10
 });
@@ -197,6 +197,7 @@ app.post('/signin', (req,res) => {
                 req.session.loggedin = true;
                 req.session.email = email;
                 id = results[0].idUser;
+                idRole = results[0].idRole;
                 if(results[0].idRole === 1) {
                     req.session.loggedin = true;
                     req.session.email = email;
@@ -453,9 +454,9 @@ app.post('/addTopik', multerParser.none(), (req,res) => {
         if(err){
             return console.log(err);
         }
-        let sql = "INSERT INTO topikSkripsi (judul, idDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusFinal, idPeriode) VALUES ?";
+        let sql = "INSERT INTO topikSkripsi (judul, idDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusFinal) VALUES ?";
         let values = [
-            [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,"null", idPeriode]
+            [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,"null"]
         ]
         pool.query(sql,[values]);
     })
@@ -473,7 +474,7 @@ app.post('/addTopikDsn', multerParser.none(), (req,res) => {
         }
         let sql = "INSERT INTO topikSkripsi (judul, idDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusFinal) VALUES ?";
         let values = [
-            [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,'null']
+            [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,"null"]
         ]
         pool.query(sql,[values]);
     })
@@ -668,8 +669,9 @@ app.post('/review', multerParser.none(), (req,res) => {
 })
 
 app.post('/ubahStatus', multerParser.none(), (req,res) => {
-    const statusFinal = req.body.ubahStatus;
-    const kodeTopikUbah = req.body.namaKT;
+    let statusFinal = req.body.ubahStatus;
+    let kodeTopikUbah = req.body.namaKT;
+    let idMahasiswa = req.body.idMhsT;
     let valid = true;
     let content;
     pool.query(`select count(status) as 'hitung' from review where idTopik = ? and status not like 'ok'`, [kodeTopikUbah],(err, result, fields)=>{
@@ -682,7 +684,7 @@ app.post('/ubahStatus', multerParser.none(), (req,res) => {
             res.redirect('/gagalUbah');
         }
         else{
-            pool.query(`update topikSkripsi set statusFinal = ? where kodeTopik = ?`,[statusFinal, kodeTopikUbah], (err, result, fields)=>{
+            pool.query(`update topikSkripsi set statusFinal = ?, idMahasiswa =? where kodeTopik = ?`,[statusFinal, idMahasiswa, kodeTopikUbah], (err, result, fields)=>{
             if(err){
                 return console.log(err);
             }
@@ -693,8 +695,9 @@ app.post('/ubahStatus', multerParser.none(), (req,res) => {
 })
 
 app.post('/ubahStatusd', multerParser.none(), (req,res) => {
-    const statusFinal = req.body.ubahStatus;
-    const kodeTopikUbah = req.body.namaKT;
+    let statusFinal = req.body.ubahStatus;
+    let kodeTopikUbah = req.body.namaKT;
+    let idMahasiswa = req.body.idMhsT;
     let valid = true;
     let content;
     pool.query(`select count(status) as 'hitung' from review where idTopik = ? and status not like 'ok'`, [kodeTopikUbah],(err, result, fields)=>{
@@ -707,11 +710,11 @@ app.post('/ubahStatusd', multerParser.none(), (req,res) => {
             res.redirect('/gagalUbah');
         }
         else{
-            pool.query(`update topikSkripsi set statusFinal = ? where kodeTopik = ?`,[statusFinal, kodeTopikUbah], (err, result, fields)=>{
+            pool.query(`update topikSkripsi set statusFinal = ?, idMahasiswa =? where kodeTopik = ?`,[statusFinal, idMahasiswa, kodeTopikUbah], (err, result, fields)=>{
             if(err){
                 return console.log(err);
             }
-                res.redirect('/home');
+                res.redirect('/homeDsn');
             })
         }
     })
@@ -741,6 +744,23 @@ app.post('/editUser', multerParser.none(), (req,res) => {
             
     })
     res.redirect('/kelola');
+})
+
+app.get('/report', (req,res) => {
+    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        let namaUser = result[0].nama;
+        let inisialUser = namaUser.charAt(0);
+        pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser where statusFinal =?`,["close"],(err, result, fields)=>{
+            if(err){
+                return console.log(err);
+            }
+            console.log(result[0]);
+            res.render('report',{ nama: namaUser, inisial: inisialUser, result, email, tahunA, semesterInput });
+        });
+    })
 })
 
 app.get('/logout', (req,res,next) => {
