@@ -476,6 +476,16 @@ body{
     width: 8%;
     position: absolute;
 }
+#converter{
+    color:white;
+    background: #3D5B81;
+    border: 1px solid ;
+    font-size: 80%;
+    width: 10%;
+    cursor: pointer;
+    padding: 1vh;
+    border-radius: 5vh;
+}
 #overlay {
     position: fixed;
     display: none;
@@ -604,22 +614,37 @@ body{
 #buttonDT:hover{
     background-color: #98C1D9;
     border-radius: 10px;
+    cursor: pointer;
+}
+#buttonRT:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#buttonR:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+    cursor: pointer;
 }
 #buttonUT:hover{
     background-color: #98C1D9;
     border-radius: 10px;
+    cursor: pointer;
 }
 #buttonKT:hover{
     background-color: #98C1D9;
     border-radius: 10px;
+    cursor: pointer;
 }
 #buttonKU:hover{
     background-color: #98C1D9;
     border-radius: 10px;
+    cursor: pointer;
 }
 #buttonTK:hover{
     background-color: #98C1D9;
     border-radius: 10px;
+    cursor: pointer;
 }
 #edit{
     width: 20px;

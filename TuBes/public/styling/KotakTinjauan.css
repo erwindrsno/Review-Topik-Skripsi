@@ -963,22 +963,32 @@ body{
 #buttonDT:hover{
     background-color: #98C1D9;
     border-radius: 10px;
+    cursor: pointer;
+}
+#buttonRT:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+    cursor: pointer;
 }
 #buttonUT:hover{
     background-color: #98C1D9;
     border-radius: 10px;
+    cursor: pointer;
 }
 #buttonKT:hover{
     background-color: #98C1D9;
     border-radius: 10px;
+    cursor: pointer;
 }
 #buttonKU:hover{
     background-color: #98C1D9;
     border-radius: 10px;
+    cursor: pointer;
 }
 #buttonTK:hover{
     background-color: #98C1D9;
     border-radius: 10px;
+    cursor: pointer;
 }
 #edit{
     width: 20px;
