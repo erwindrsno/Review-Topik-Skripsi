@@ -12,8 +12,8 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: '',
-    database: 'coba',
+    password: 'erwin08',
+    database: 'reviewts2',
     host: 'localhost',
     connectionLimit:10
 });
@@ -177,43 +177,70 @@ app.get('/index', (req,res) => {
     res.render('index.ejs');
 });
 
-app.post('/signin', multerParser.none(), (req,res) => {
-    email = req.body.input_email;
-    password = req.body.input_pw;
-    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
-    if(err){
-        return console.log(err);
-    }
-        id = result[0].idUser;
-        idRole = result[0].idRole;
-    })
+app.post('/signin', (req,res) => {
+    email = req.body.email;
+    password = req.body.password;
+    let valid = false;
+    let hasil = 'tesfetchaja'
+    // console.log(req.body);
+    // pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
+    // if(err){
+    //     return console.log(err);
+    // }
+    //     id = result[0].idUser;
+    //     idRole = result[0].idRole;
+    // })
     if(email&&password){
-        pool.query('SELECT idRole FROM user WHERE email = ? AND password = ?', [email,password], function(error,results,fields){
+        pool.query('SELECT * FROM user WHERE email = ? AND password = ?', [email,password], function(error,results,fields){
             if(error) throw error;
-            if(results.length > 0) {
+            if(results.length > 0) {    //kalau benar
                 req.session.loggedin = true;
                 req.session.email = email;
+                id = results[0].idUser;
                 if(results[0].idRole === 1) {
                     req.session.loggedin = true;
                     req.session.email = email;
-                    res.redirect('/home');
+                    res.send({status: 'success', idUser: id, url:'/home'})
+                    // res.redirect('/home');
+                    // res.json({
+                    //     status: 'success',
+                    //     idUser: id,
+                    //     url: '/home'
+                    // });
                 }else if(results[0].idRole === 2) {
                     req.session.loggedin = true;
                     req.session.email = email;
-                    res.redirect('/homeDsn');
+                    // res.json({
+                    //     status: 'success',
+                    //     idUser: id,
+                    //     url: '/homeDsn'
+                    // });
+                    // res.redirect('/homeDsn');
                 }else{
                     req.session.loggedin = true;
                     req.session.email = email;
-                    res.redirect('/homeMhs');
+                    // res.json({
+                    //     status: 'success',
+                    //     idUser: id,
+                    //     url: '/homeMhs'
+                    // });
+                    // res.redirect('/homeMhs');
                 }
             }else{
-                res.send('email/password yang diinput salah!');
+                res.json({
+                    status: 'failed',
+                    hasil:'tesfetchaja'
+                });
             }
-            res.end();
+            // res.end();
         })
     } else{
-        res.send('mohon input username dan password!');
-        res.end();
+        res.json({
+            status: 'failed',
+            hasil:'tesfetchaja'
+        });
+        // res.send(200,valid);
+        // res.end();
     }
 });
 

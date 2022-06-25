@@ -101,7 +101,7 @@ body{
     height: 60%;
 }
 
-.login_form{
+#login_form{
     row-gap: 11vh;
     width: 19.0234375vw;
     height: 54.724137931034484vh;
@@ -179,7 +179,8 @@ label{
     /* background-color: red; */
 }
 
-.warning{
+#warning{
     color: red;
     font-family: Open Sans;
+    visibility: hidden;
 }

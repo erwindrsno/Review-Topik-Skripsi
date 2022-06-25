@@ -21,7 +21,8 @@
     <div class="flex_container">
         <div class="content_grid">       
             <img src="images/login.png" id="ilustrasi">
-            <form class="login_form" action="/signin" method="post" enctype="multipart/form-data">
+            <form id="login_form">
+            <!-- <form class="login_form" action="/signin" method="post" enctype="multipart/form-data"> -->
                 <h1>Sign In</h1>
                 <div class="form_input">
                     <div class="email">
@@ -32,11 +33,12 @@
                         <label for="password">Password:</label>
                         <!-- <input type="password" id="input_pw" name="input_pw" placeholder="Enter your password" onkeyup=validate() required> -->
                         <input type="password" id="input_pw" name="input_pw" placeholder="Enter your password">
-                        <p class="warning"></p>
+                        
+                        <p id="warning">Email atau password yang di-input salah!</p>
                     </div>
                 </div>
                 <!-- <div class="efek_border"></div> -->
-                <input type="submit" value="Submit" id="btnS" onclick="validate()">
+                <input type="submit" value="Submit" id="btnS">
             </form>
         </div>
     </div>

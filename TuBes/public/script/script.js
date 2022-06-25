@@ -124,15 +124,15 @@ function addNamaUser(){
     document.getElementById('namaUser').innerHTML = email;
 }
 
-(function(){
-    const h1 = document.getElementById("button");
-	h1.addEventListener('mouseover', function(){
-		h1.style.color = 'black';
-	});
-	h1.addEventListener('mouseout', function(){
-		h1.style.color = 'white';
-	});
-})();
+// (function(){
+//     const h1 = document.getElementById("button");
+// 	h1.addEventListener('mouseover', function(){
+// 		h1.style.color = 'black';
+// 	});
+// 	h1.addEventListener('mouseout', function(){
+// 		h1.style.color = 'white';
+// 	});
+// })();
 
 function on1() {
 	document.getElementById("overlay").style.display = "block";
@@ -264,3 +264,59 @@ window.onclick = function(event) {
         }
     }
 }
+
+const form = document.getElementById("login_form");
+form.addEventListener("submit", onSubmit);
+
+function onSubmit(event){
+    event.preventDefault();
+    let formElements = event.currentTarget.elements;
+    let arr = [];
+    for (let i = 0; i < event.currentTarget.length-1; i++) {
+        arr[i] = formElements[i].value;
+    }
+    const obj = {email : arr[0], password : arr[1]};
+    let input = encodeURL(obj);
+    //console.log(obj);
+    // const email = document.getElementById("input_email");
+    // const password = document.getElementById("input_pw");
+    // console.log(email);
+    // console.log(password);
+
+    const init = {
+        method: 'post',
+        headers: {
+            "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: input
+    };
+
+    fetch('signin',init)
+    .then(res => {
+        console.log(res.status);
+        return res.text();
+    })
+    .then(result => {
+        let resultJSON = JSON.parse(result)
+        if(resultJSON.status == 'failed'){
+            console.log('ggal');
+            document.getElementById('warning').style.visibility = 'visible';
+        }
+        else if(resultJSON.status = 'success'){
+            console.log('sukses');
+            console.log(resultJSON.url);
+            window.location.replace(resultJSON.url);
+        }
+        //document.getElementById('warning').style.visibility = visible;
+        // document.getElementById('warning').style.visibility = 'visible';
+    })
+}
+
+function encodeURL(data){
+    const ret = [];
+    for (let d in data){
+        ret.push(encodeURIComponent(d) + '=' + encodeURIComponent(data[d]));
+    }
+    return ret.join('&');
+}
+// fetch('signin')
