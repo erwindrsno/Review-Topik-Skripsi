@@ -18,12 +18,22 @@
     src: url('/fonts/poppins/Poppins-Bold.ttf');
 }
 
+@font-face{
+    font-family: 'monda-regular';
+    src: url('/fonts/Monda/Monda-Regular.ttf');
+}
+
+@font-face{
+    font-family: 'monda-bold';
+    src: url('/fonts/Monda/Monda-Bold.ttf');
+}
+
 body{
     margin: 0px;
 }
 
 .marginKiri{
-    position: absolute;
+    position: fixed; 
     margin: 0px;
     width: 1vw;
     height: 100%;
@@ -103,6 +113,107 @@ body{
     position: fixed;
 }
 
+#DaftarT{
+    padding-top: 2%;
+    padding-left: 23%;
+}
+#DaftarTopik{
+    padding-left: 23%;
+    padding-right: 3%;
+    grid-template-areas: 
+    'atas'
+    'bawah';
+}
+#ket{    
+    grid-area: atas;    
+    display: grid;
+    grid-template-areas: 
+    'kiri tengah1 tengah2 tengah3 kanan';
+    grid-template-columns: 35vh 70vh 24vh 20vh;
+}
+#ket1{
+    display: grid;
+    grid-area: kiri;
+}
+#ket2{
+    display: grid;
+    grid-area: tengah1;
+}
+#ket3{
+    display: grid;
+    grid-area: tengah2;
+    
+}
+#ket4{
+    display: grid;
+    grid-area: tengah3;
+}
+#iconDate{
+    display: inline;
+}
+#date{
+    margin-bottom: -20px;
+}
+#myInput{
+    width: 27vh;
+    border-style:dotted;
+    border-radius: 10px;
+    border-color: rgb(126, 123, 123);
+}
+#icDate{
+    display: grid;
+    grid-area: kanan;
+    line-height: -5vh;
+}
+#filter{
+    display: grid;
+    grid-template-areas: 
+    'filterbp searchbtn';
+}
+#FilterBP{
+    grid-area: filterbp ;
+    width: 18vh;
+    font-size: 80%;
+}
+#searchbtn{
+    grid-area: searchbtn;
+    margin-left: 1vh;
+}
+#delT{
+    display: grid;
+    grid-template-areas: 
+    'space deleteKT deletebtn';
+    grid-template-columns: 35vh 20vh 12vh;
+}
+#deleteKT{
+    grid-area: deleteKT;
+    width: 20vh;
+}
+#deletebtn{
+    grid-area: deletebtn;
+    margin-left: 2vh;
+}
+#clearbtn{
+    grid-area: filterbp;
+    position: fixed;
+    margin-left: 200px;
+}
+#tabelDT{
+    display: grid;
+    grid-area: bawah;
+    text-align: center;
+}
+#tbl{
+    border: 1px;
+    font-family: monda-reguler;
+}
+#judulTbl{
+    /* font-family: monda-bold; */
+    color:#3D5A80;
+}
+.tb{
+    border: 0px;
+}
 
 #circle{
     border-radius: 50px 50px 50px 50px;
@@ -307,7 +418,7 @@ body{
 
 #buttonTK{
     text-align: left;
-    font-family: poppins-regular;
+    font-family: 'poppins-regular';
     font-size: 1.3vw;
     background: #3D5A80;
     color: white;
@@ -354,90 +465,108 @@ body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#isiUT{
-    border: 1px solid;
+#publish{
+    color:white;
+    background: #3D5B81;
+    margin-left: 180vh;
+    margin-top: 3vh;
+    border: 1px solid ;
+    border-radius: 15px;
+    font-size: 120%;
+    width: 8%;
+    position: absolute;
+}
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;    
+    z-index: 2;
+    cursor: pointer;
+}
+#xt{
+    display: inline;
+}
+#xs{
+    display: inline;
+}
+#iconDate{
+    display: inline;
+    position: relative;
+    height: min-content;
+    width: 95px;
+    margin-top: -3vh;
+}
+#ovr {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;    
+    z-index: 2;
+    cursor: pointer;
+}
+#overlayUS{
+    display: none;
+}
+#isi{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: white;
+    font-size: 220%;
+    color: black;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    text-align: center;
+    border: solid;
     border-radius: 10px;
 }
+
+#ST{
+    color:white;
+    background: #3D5B81;
+    border: 1px solid ;
+    border-radius: 15px;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    font-size: 50%;
+    cursor: pointer;
+}
+
+#SY{
+    border: 1px solid;
+    border-radius: 15px;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+    font-size: 50%;
+    cursor: pointer;
+}
+
+#iconHead{
+    background-color:#293241;
+    
+}
+
 #ic2{
     margin-left: 80%;
     background-color: transparent;
 }
 
 #ic1{
-    margin-left: 2%;
     margin-bottom: 0.5%;
 }
-#formUT{
-    display:grid;
-    grid-template-areas: 
-    'kiri1 s kanan1'
-    'kiri2 s kanan2'
-    'kiri3 s kanan3';
-    padding:3%;
-    line-height: 50%;
-}
-#garisV{
-    display: grid;
-    grid-area: s;
-    border-left: 1px solid;
-    height:100%;
-    margin-left: 40%;
-}
-#formUT1{
-    display: grid;
-    grid-area: kiri1;
-    padding-right: 10%;
-    padding-left: 5%;
-}
 
-#formUT2{
-    display: grid;
-    grid-area: kiri2;
-    padding-right: 10%;
-    padding-left: 5%;
-}
-
-#formUT3{
-    display: grid;
-    grid-area: kanan1; 
-    padding-left: 5%;
-    padding-right: 5%;
-}
-#formUT4{
-    display: grid;
-    grid-area: kanan2;
-    padding-left: 5%;
-    padding-right: 5%;
-}
-#formUT5{
-    display: grid;
-    grid-area: kanan3;
-    margin-left: 50%;
-    margin-top: 10%;
-}
-#formUT6{
-    display: grid;
-    grid-area: kiri3;
-    margin-left: 50%;
-    margin-top: 10%;
-}
-#submitUT{
-    color: white;
-    background: #3D5B81;
-    border: 0;
-    height: 130%;
-    border-radius: 10px;
-}
-#UnggahTopik{    
-    padding-left: 25%;
-    padding-right: 25%;
-    padding-top: 7%;    
-}
-#iconHead{
-    background-color:#293241;  
-    border-radius: 10px;
-}
-#overlayUT {
+#overlay2 {
     position: fixed;
     display: none;
     width: 100%;
@@ -492,11 +621,189 @@ body{
     background-color: #98C1D9;
     border-radius: 10px;
 }
-#sems{
-    width: 100%;
+#edit{
+    width: 20px;
+    margin-top: 8%;
+    cursor: pointer;
 }
+.txt{
+    font-size: small;
+    line-height: 1.5;
+}
+#set{
+    margin-left: 170vh;
+    margin-top: 2vh;
+    border-radius: 15px;
+    font-size: 120%;
+    width: 3%;
+    position: absolute;
+    cursor: pointer;
+}
+.rmv{
+    width: 20px;
+    margin-top: 8%;
+    cursor: pointer;
+}
+#ovy {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;    
+    z-index: 2;
+    cursor: pointer;
+}
+.tt{
+    margin-bottom: -40px;
+    color: white;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+#tt1{
+    font-size: 20px;
+    text-align: left;
+    padding-left: 3%;
+    padding-top: 3%;
+}
+#tt2{
+    font-size: smaller;
+    text-align: left;
+    padding-left: 3%;
+    margin-top: 20px;
+}
+.container {
+    position: relative;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    text-align: left;
+}
+  
 
-.admin_inputSkripsi{
-    margin-left: 5%;
-    margin-top: 2%;
+#ck{
+    top: 0;
+    height: 20px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #ccc;
+}
+#ck1{
+    top: 0;
+    height: 20px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #ccc;
+}
+#ck2{
+    top: 0;
+    height: 20px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #ccc;
+}
+#op{
+    top: 0;
+    height: 20px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #ccc;
+}
+#tk{
+    top: 0;
+    height: 20px;
+    width: 25px;
+    background-color: #eee;
+    border-radius: 50%;
+    cursor: pointer;
+    background-color: #ccc;
+}
+.container:hover input ~ #ck {
+    background-color: #ccc;
+}
+#pr{
+    margin-top: 15px;
+    padding-bottom: 10px;
+}
+#pr1{
+    margin-top: 15px;
+    padding-bottom: 10px;
+}
+#pc{
+    justify-content: left;
+    align-items: left;
+    margin-bottom: 20px;
+}
+#ovy1 {
+    position:fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;    
+    z-index: 2;
+    cursor: pointer;
+}
+#ovy2 {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;    
+    z-index: 2;
+    cursor: pointer;
+}
+#ta{
+    margin-top: 20px;
+}
+#tt3{
+    color: red;
+    display: inline;
+    font-size: small;
+    margin-left: 30px;
+}
+#isiOverlay1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 45vh;
+    height: fit-content;
+    background-color: white;
+    font-size: 150%;
+    color: black;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    text-align: center;
+    border: solid;
+    border-radius: 10px;
+}
+#isiOvr{
+    grid-template-areas: 
+    'tahunA smst';
+}
+#tahunA{
+    display: grid;
+    grid-area: tahunA;
+}
+#smst{
+    display: grid;
+    grid-area: smst;
+}
+#overlayUSd{
+    display: none;
 }
