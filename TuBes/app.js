@@ -210,6 +210,7 @@ app.post('/signin', (req,res) => {
                 }else if(results[0].idRole === 2) {
                     req.session.loggedin = true;
                     req.session.email = email;
+                    res.send({status: 'success', idUser: id, url:'/homeDsn'})
                     // res.json({
                     //     status: 'success',
                     //     idUser: id,
@@ -219,6 +220,7 @@ app.post('/signin', (req,res) => {
                 }else{
                     req.session.loggedin = true;
                     req.session.email = email;
+                    res.send({status: 'success', idUser: id, url:'/homeMhs'})
                     // res.json({
                     //     status: 'success',
                     //     idUser: id,
