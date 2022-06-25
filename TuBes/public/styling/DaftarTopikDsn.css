@@ -804,3 +804,6 @@ body{
     display: grid;
     grid-area: smst;
 }
+#overlayUSd{
+    display: none;
+}
