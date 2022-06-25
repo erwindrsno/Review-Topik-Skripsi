@@ -265,13 +265,38 @@ body{
     'menu2'
     'menu3'
     'menu4'
-    'menu5';
+    'menu5'
+    'menu6';
     grid-template-rows: 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh;
     align-items: center;
 }
 
-.daftar_topik{
+.review_topik{
     grid-area: menu1;
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 4vw;
+}
+
+#iconReviewT{
+    grid-area: left;
+    margin-left: 1vw;
+    padding: 0px;
+}
+
+#buttonRT{
+    text-align: left;
+    font-family: poppins-regular;
+    font-size: 1.3vw;
+    background: #3D5A80;
+    color: white;
+    border: 0px;
+    grid-area: right;
+    position: absolute;
+}
+
+.daftar_topik{
+    grid-area: menu2;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
@@ -295,7 +320,7 @@ body{
 }
 
 .unggah_topik{
-    grid-area: menu2;
+    grid-area: menu3;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
@@ -320,7 +345,7 @@ body{
 }
 
 .kotak_tinjauan{
-    grid-area: menu3;
+    grid-area: menu4;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
@@ -345,7 +370,7 @@ body{
 }
 
 .kelola_user{
-    grid-area: menu4;
+    grid-area: menu5;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
