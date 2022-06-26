@@ -1,13 +1,13 @@
-class Login{
-    constructor(username,password,remember){
-        this.username=username;
-        this.password=password;
-    }
+// class Login{
+//     constructor(username,password,remember){
+//         this.username=username;
+//         this.password=password;
+//     }
 
-    toString(){
-        return '{"username":"'+this.username+'","password":"'+this.password+"}";
-    }
-}
+//     toString(){
+//         return '{"username":"'+this.username+'","password":"'+this.password+"}";
+//     }
+// }
 
 // const password = document.getElementById('input_pw');
 // password.addEventListener('keyup', (event) => {
@@ -73,21 +73,21 @@ function realTimeClock(){
 //     }
 // }
 
-function addDate(){
-    const date = new Date();
-    document.getElementById('date').innerHTML = date;
-}
-function addDeadline(){
-    const d = document.getElementById('numD').value;
-    const m = document.getElementById('numM').value;
-    const y = document.getElementById('numY').value;
-    document.getElementById('deadline').innerHTML = d + '-' + m + '-' + y;
-}
+// function addDate(){
+//     const date = new Date();
+//     document.getElementById('date').innerHTML = date;
+// }
+// function addDeadline(){
+//     const d = document.getElementById('numD').value;
+//     const m = document.getElementById('numM').value;
+//     const y = document.getElementById('numY').value;
+//     document.getElementById('deadline').innerHTML = d + '-' + m + '-' + y;
+// }
 
-function myFunction() {
-    const input = document.getElementById("myInput");
-    const filter = input.value.toUpperCase();
-}
+// function myFunction() {
+//     const input = document.getElementById("myInput");
+//     const filter = input.value.toUpperCase();
+// }
 
 // function kelolaUser(){
 //     const addUser = document.getElementsByClassName('addUserBtn');
@@ -264,6 +264,8 @@ window.onclick = function(event) {
         }
     }
 }
+
+
 
 const formLogIn = document.getElementById("login_form");
 if(formLogIn != null || formLogIn != undefined){
