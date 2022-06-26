@@ -427,6 +427,7 @@ body{
     border: 0;
     height: 130%;
     border-radius: 10px;
+    cursor: pointer;
 }
 #UnggahTopik{    
     padding-left: 25%;

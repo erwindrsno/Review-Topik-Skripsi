@@ -102,7 +102,12 @@ body{
     margin-top: 8.1%;
     position: fixed;
 }
-
+#editbtn{
+    cursor: pointer;
+}
+#deletebtn{
+    cursor: pointer;
+}
 #DaftarT{
     padding-top: 2%;
     padding-left: 23%;

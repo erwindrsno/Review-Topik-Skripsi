@@ -178,6 +178,10 @@ body{
 #searchbtn{
     grid-area: searchbtn;
     margin-left: 1vh;
+    cursor: pointer;
+}
+#setting_button{
+    cursor: pointer;
 }
 #delT{
     display: grid;

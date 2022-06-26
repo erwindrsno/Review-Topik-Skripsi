@@ -178,6 +178,7 @@ body{
 #searchbtn{
     grid-area: searchbtn;
     margin-left: 1vh;
+    cursor: pointer;
 }
 #delT{
     display: grid;
@@ -629,6 +630,9 @@ body{
 #buttonTK:hover{
     background-color: #98C1D9;
     border-radius: 10px;
+    cursor: pointer;
+}
+#setting_button{
     cursor: pointer;
 }
 #edit{

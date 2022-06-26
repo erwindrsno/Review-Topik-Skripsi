@@ -487,6 +487,9 @@ body{
     padding: 1vh;
     border-radius: 5vh;
 }
+#converter:hover{
+    opacity: 60%;
+}
 #overlay {
     position: fixed;
     display: none;

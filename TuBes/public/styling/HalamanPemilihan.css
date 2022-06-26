@@ -161,7 +161,8 @@ body{
 }
 #searchbtn{
     grid-area: kanan;
-    margin-left: 24vh;
+    margin-left: 27vh;
+    cursor: pointer;
 }
 #tabelDT{
     display: grid;

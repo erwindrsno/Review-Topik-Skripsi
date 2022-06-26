@@ -178,6 +178,7 @@ body{
 #searchbtn{
     grid-area: searchbtn;
     margin-left: 1vh;
+    cursor: pointer;
 }
 #delT{
     display: grid;
@@ -192,6 +193,7 @@ body{
 #deletebtn{
     grid-area: deletebtn;
     margin-left: 2vh;
+    cursor: pointer;
 }
 #clearbtn{
     grid-area: filterbp;
@@ -475,6 +477,7 @@ body{
     font-size: 120%;
     width: 8%;
     position: absolute;
+    cursor: pointer;
 }
 #overlay {
     position: fixed;
@@ -635,6 +638,13 @@ body{
     background-color: #98C1D9;
     border-radius: 10px;
     cursor: pointer;
+}
+#periode_button{
+    cursor: pointer;
+}
+#date_button:hover{
+    cursor: pointer;
+    opacity: 60%;
 }
 #edit{
     width: 20px;

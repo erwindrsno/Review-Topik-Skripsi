@@ -168,6 +168,7 @@ body{
 #searchbtn{
     grid-area: searchbtn;
     margin-left: 2vh;
+    cursor: pointer;
 }
 #delT{
     display: grid;
@@ -182,6 +183,7 @@ body{
 #deletebtn{
     grid-area: deletebtn;
     margin-left: 2vh;
+    cursor: pointer;
 }
 #clearbtn{
     grid-area: filterbp;
@@ -597,7 +599,7 @@ body{
 #edit{
     width: 20px;
     cursor: pointer;
-    margin-left: 20px;
+    margin-top: 1vh;
 }
 .txt{
     font-size: small;
