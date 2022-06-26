@@ -154,18 +154,18 @@ function off2() {
 // 	document.getElementById("overlayUT").style.display = "block";
 // }
 
-function offUT() {
-	document.getElementById("overlayUT").style.display = "none";
-}
+// function offUT() {
+// 	document.getElementById("overlayUT").style.display = "none";
+// }
 function opn(){
     document.getElementById("ovy").style.display = "block";
 }
 function opn1(){
     document.getElementById("ovy1").style.display = "block";
 }
-function opn2(){
-    document.getElementById("ovy2").style.display = "block";
-}
+// function opn2(){
+//     document.getElementById("ovy2").style.display = "block";
+// }
 function opn3(){
     document.getElementById("overlayUS").style.display = "block";
 }
@@ -179,35 +179,35 @@ function onEdit() {
 	document.getElementById("overlay3").style.display = "block";
 }
 
-function offEdit() {
-	document.getElementById("overlay3").style.display = "none";
-}
-function sms(){
-    let yr = document.getElementById("taun").value;
-    let semester = document.getElementById("smes").value;
-    document.getElementById("xt").innerHTML = yr;
-    document.getElementById("xs").innerHTML = " "+semester;
-    document.getElementById("ovr").style.display = "none";
-}
+// function offEdit() {
+// 	document.getElementById("overlay3").style.display = "none";
+// }
+// function sms(){
+//     let yr = document.getElementById("taun").value;
+//     let semester = document.getElementById("smes").value;
+//     document.getElementById("xt").innerHTML = yr;
+//     document.getElementById("xs").innerHTML = " "+semester;
+//     document.getElementById("ovr").style.display = "none";
+// }
 function dt(){
     let dt = document.getElementById("iconDate").value;
     document.getElementById("date").innerHTML = dt;
 }
-function dropdown() {
-    document.getElementById("myDropdown").classList.toggle("show");
-}
-function ret(){
-    let x = document.getElementById("op").value;
-    document.getElementById("sf").innerHTML = x;
-}
+// function dropdown() {
+//     document.getElementById("myDropdown").classList.toggle("show");
+// }
+// function ret(){
+//     let x = document.getElementById("op").value;
+//     document.getElementById("sf").innerHTML = x;
+// }
 function offset() {
 	document.getElementById("kk").style.display = "block";
     document.getElementById("kmn").style.display = "none";
     document.getElementById("prt").style.display = "none";
 }
-function del(){
-    let jt = prompt("Masukan judul topik yang ingin dihapus");
-}
+// function del(){
+//     let jt = prompt("Masukan judul topik yang ingin dihapus");
+// }
 function option(){
     document.getElementById("prt").removeAttribute("hidden");
     document.getElementById("kk").style.display = "none";
@@ -222,48 +222,48 @@ function option1(){
     // document.getElementById("prt").style.visibility = "hidden";
     document.getElementById("prt").style.display = "none";
 }
-function show(){
-    const elem = document.getElementsByClassName("txt");
-    let x = document.getElementsByClassName("opt");
-    let y = document.getElementsByClassName("ed");
-    let z = document.getElementsByClassName("rmv");
-    if (x[0].style.display === "none") {
-        for (let i=0; i<elem.length; i++){
-            x = elem[i].getElementsByClassName("opt");
-            y = elem[i].getElementsByClassName("ed");
-            z = elem[i].getElementsByClassName("rmv");
-            for (let j=0; j<x.length; j++){
-                x[j].style.display = "inline";
-                y[j].style.display = "none";
-                z[j].style.display = "inline";
-            }
-        }
-    } else{
-        for (let i=0; i<elem.length; i++){
-            x = elem[i].getElementsByClassName("opt");
-            y = elem[i].getElementsByClassName("ed");
-            z = elem[i].getElementsByClassName("rmv");
-            for (let j=0; j<x.length; j++){
-                x[j].style.display = "none";
-                y[j].style.display = "inline";
-                z[j].style.display = "none";
-            }
-        }
-    }
-}
+// function show(){
+//     const elem = document.getElementsByClassName("txt");
+//     let x = document.getElementsByClassName("opt");
+//     let y = document.getElementsByClassName("ed");
+//     let z = document.getElementsByClassName("rmv");
+//     if (x[0].style.display === "none") {
+//         for (let i=0; i<elem.length; i++){
+//             x = elem[i].getElementsByClassName("opt");
+//             y = elem[i].getElementsByClassName("ed");
+//             z = elem[i].getElementsByClassName("rmv");
+//             for (let j=0; j<x.length; j++){
+//                 x[j].style.display = "inline";
+//                 y[j].style.display = "none";
+//                 z[j].style.display = "inline";
+//             }
+//         }
+//     } else{
+//         for (let i=0; i<elem.length; i++){
+//             x = elem[i].getElementsByClassName("opt");
+//             y = elem[i].getElementsByClassName("ed");
+//             z = elem[i].getElementsByClassName("rmv");
+//             for (let j=0; j<x.length; j++){
+//                 x[j].style.display = "none";
+//                 y[j].style.display = "inline";
+//                 z[j].style.display = "none";
+//             }
+//         }
+//     }
+// }
 
-window.onclick = function(event) {
-    if (!event.target.matches('.dropbtn')) {
-        var dropdowns = document.getElementsByClassName("dropdown-content");
-        var i;
-        for (i = 0; i < dropdowns.length; i++) {
-            var openDropdown = dropdowns[i];
-            if (openDropdown.classList.contains('show')) {
-            openDropdown.classList.remove('show');
-            }
-        }
-    }
-}
+// window.onclick = function(event) {
+//     if (!event.target.matches('.dropbtn')) {
+//         var dropdowns = document.getElementsByClassName("dropdown-content");
+//         var i;
+//         for (i = 0; i < dropdowns.length; i++) {
+//             var openDropdown = dropdowns[i];
+//             if (openDropdown.classList.contains('show')) {
+//             openDropdown.classList.remove('show');
+//             }
+//         }
+//     }
+// }
 
 
 
