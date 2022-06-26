@@ -6,7 +6,7 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script> 
-    <link rel="stylesheet" href="styling/DaftarTopik.css">
+    <link rel="stylesheet" href="styling/Report.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body onload="realTimeClock()">
@@ -37,7 +37,7 @@
         <div class="wrapper">
             <div id="fitur">
                 <div class="review_topik">
-                    <img src = icon/Edit_fill.png id="iconReviewT">
+                    <img src = icon/Chat_alt_add_fill.png id="iconReviewT">
                     <a href="/home" id="RT">
                         <input type="button" id="buttonRT" alt="RT" name="reviewT" value="Review Topik">
                     </a>                    
@@ -67,7 +67,7 @@
                     </a>                    
                 </div>
                 <div class="report">
-                    <img src = icon/user_add_alt_fill.png id="iconReport">
+                    <img src = icon/Arhive_load_fill.png id="iconReport">
                     <a href="/report" id="RTS">
                         <input type="button" id="buttonR" alt="RTS" name="report" value="Report">
                     </a>                    
@@ -98,7 +98,7 @@
                         <td id="judulTbl"> Judul Topik </td>
                         <td id="judulTbl"> Dosen Pengaju </td>                        
                         <td id="judulTbl"> Kode Topik </td>
-                        <td id="judulTbl"> Bidang Peminatan </td>
+                        <td id="judulTbl" class="bpTbl"> Bidang Peminatan </td>
                         <td id="judulTbl"> Jenis Skripsi </td>
                         <td id="judulTbl"> Status </td>
                         <td id="judulTbl"> Id Mahasiswa</td>
@@ -110,7 +110,7 @@
                             <td> <%= topik.judul %> </td>
                             <td> <%= topik.nama %> </td>                            
                             <td> <%= topik.kodeTopik %> </td>
-                            <td> <%= topik.bidangPeminatan %> </td>
+                            <td class="bpTbl"> <%= topik.bidangPeminatan %> </td>
                             <td> <%= topik.jenisSkripsi %> </td>
                             <td id="sf"> <%= topik.statusFinal %> </td>
                             <td> <%= topik.idMahasiswa %> </td>

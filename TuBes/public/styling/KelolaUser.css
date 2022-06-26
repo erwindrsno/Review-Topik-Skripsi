@@ -221,7 +221,7 @@ body{
 
 #iconReviewT{
     grid-area: left;
-    margin-left: 1vw;
+    margin-left: 1.2vw;
     padding: 0px;
 }
 
@@ -343,7 +343,7 @@ body{
 
 #iconReport{
     grid-area: left;
-    margin-left: 0.8vw;
+    margin-left: 1vw;
     padding: 0px;
 }
 
