@@ -482,6 +482,11 @@ body{
     border-radius: 10px;
     cursor: pointer;
 }
+#buttonR:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+    cursor: pointer;
+}
 #buttonUT:hover{
     background-color: #98C1D9;
     border-radius: 10px;
