@@ -9,16 +9,16 @@ class Login{
     }
 }
 
-const password = document.getElementById('input_pw');
-password.addEventListener('keyup', (event) => {
-    let event1 = event.currentTarget;
-    if(event1.value.length < 4 && event1.value.length > 0){
-        event1.style.backgroundColor="red";
-    }
-    else{
-        event1.style.backgroundColor="white";
-    }
-});
+// const password = document.getElementById('input_pw');
+// password.addEventListener('keyup', (event) => {
+//     let event1 = event.currentTarget;
+//     if(event1.value.length < 4 && event1.value.length > 0){
+//         event1.style.backgroundColor="red";
+//     }
+//     else{
+//         event1.style.backgroundColor="white";
+//     }
+// });
 
 function realTimeClock(){
     let rtClock = new Date();
@@ -63,15 +63,15 @@ function realTimeClock(){
     let t = setInterval(realTimeClock,500);
 }
 
-document.getElementById('btnS').addEventListener('onclick',checkValues);
-function checkValues(){
-    const val = document.getElementById('input_email').value;
-    if (val.includes('student')){
-        document.location = 'student.html';
-    } else if (val.includes('lecture')){
-        document.location = 'HalamanReview.html';
-    }
-}
+// document.getElementById('btnS').addEventListener('onclick',checkValues);
+// function checkValues(){
+//     const val = document.getElementById('input_email').value;
+//     if (val.includes('student')){
+//         document.location = 'student.html';
+//     } else if (val.includes('lecture')){
+//         document.location = 'HalamanReview.html';
+//     }
+// }
 
 function addDate(){
     const date = new Date();
@@ -119,10 +119,10 @@ function myFunction() {
 //     }
 // }
 
-function addNamaUser(){
-    const email = document.getElementById("email").value;
-    document.getElementById('namaUser').innerHTML = email;
-}
+// function addNamaUser(){
+//     const email = document.getElementById("email").value;
+//     document.getElementById('namaUser').innerHTML = email;
+// }
 
 // (function(){
 //     const h1 = document.getElementById("button");
@@ -150,9 +150,9 @@ function off2() {
 	document.getElementById("overlay2").style.display = "none";
 }
 
-function onUT() {
-	document.getElementById("overlayUT").style.display = "block";
-}
+// function onUT() {
+// 	document.getElementById("overlayUT").style.display = "block";
+// }
 
 function offUT() {
 	document.getElementById("overlayUT").style.display = "none";
@@ -265,10 +265,12 @@ window.onclick = function(event) {
     }
 }
 
-const form = document.getElementById("login_form");
-form.addEventListener("submit", onSubmit);
+const formLogIn = document.getElementById("login_form");
+if(formLogIn != null || formLogIn != undefined){
+    formLogIn.addEventListener("submit", onSubmitLogIn);
+}
 
-function onSubmit(event){
+function onSubmitLogIn(event){
     event.preventDefault();
     let formElements = event.currentTarget.elements;
     let arr = [];
@@ -307,8 +309,6 @@ function onSubmit(event){
             console.log(resultJSON.url);
             window.location.replace(resultJSON.url);
         }
-        //document.getElementById('warning').style.visibility = visible;
-        // document.getElementById('warning').style.visibility = 'visible';
     })
 }
 
@@ -319,6 +319,59 @@ function encodeURL(data){
     }
     return ret.join('&');
 }
+
+const formUT = document.getElementById("form_UT");
+if(formUT != null || formUT != undefined){
+    formUT.addEventListener("submit", onSubmitUT);
+}
+
+function onSubmitUT(event){
+    event.preventDefault();
+    let formElements = event.currentTarget.elements;
+    console.log(formElements);
+    let arr = [];
+    for (let i = 0; i < event.currentTarget.length-1; i++) {
+        arr[i] = formElements[i].value;
+    }
+    console.log(arr);
+    // const obj = {email : arr[0], password : arr[1]};
+    // let input = encodeURL(obj);
+    //console.log(obj);
+    // const email = document.getElementById("input_email");
+    // const password = document.getElementById("input_pw");
+    // console.log(email);
+    // console.log(password);
+
+    // const init = {
+    //     method: 'post',
+    //     headers: {
+    //         "Content-Type": "application/x-www-form-urlencoded"
+    //     },
+    //     body: input
+    // };
+
+    // fetch('signin',init)
+    // .then(res => {
+    //     console.log(res.status);
+    //     return res.text();
+    // })
+    // .then(result => {
+    //     let resultJSON = JSON.parse(result)
+    //     if(resultJSON.status == 'failed'){
+    //         console.log('ggal');
+    //         document.getElementById('warning').style.visibility = 'visible';
+    //     }
+    //     else if(resultJSON.status = 'success'){
+    //         console.log('sukses');
+    //         console.log(resultJSON.url);
+    //         window.location.replace(resultJSON.url);
+    //     }
+    // })
+}
+
+
+
+
 // fetch('signin')
 function printToPDF() {
     console.log('converting...');
@@ -360,9 +413,9 @@ function printToPDF() {
   
           pdf.setPage(i + 1); 
           pdf.addImage(canvasDataURL, 'PNG', 28, 40, (width * .65), (height * .62));
-  
+
         }
         pdf.save('DaftarTopik.pdf');
-      }
+    }
     });
-  }
+}
