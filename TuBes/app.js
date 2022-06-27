@@ -488,9 +488,7 @@ app.post('/addTopik', upload.single('skripsi'), (req,res) => {
     let inisialUserKodeTopik = generateInisialUserLengkap();
     let kodeTopik = inisialUserKodeTopik+checkDuplicateAndGenerateIdTopik();
     let jenisSkripsi = req.body.JenisSkripsi;
-    let pathFile = req.file.destination;
-    // console.log(req.body);
-    // console.log(req.file);
+    let pathFile = req.file.path;
     pool.query(`select idUser from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
             return console.log(err);
@@ -510,13 +508,14 @@ app.post('/addTopikDsn', multerParser.none(), (req,res) => {
     let inisialUserKodeTopik = generateInisialUserLengkap();
     let kodeTopik = inisialUserKodeTopik+checkDuplicateAndGenerateIdTopik();
     let jenisSkripsi = req.body.JenisSkripsi;
+    let pathFile = req.file.path;
     pool.query(`select idUser from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
             return console.log(err);
         }
-        let sql = "INSERT INTO topikSkripsi (judul, idDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusFinal) VALUES ?";
+        let sql = "INSERT INTO topikSkripsi (judul, idDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusFinal, path) VALUES ?";
         let values = [
-            [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,"null"]
+            [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,"null", pathFile]
         ]
         pool.query(sql,[values]);
     })
