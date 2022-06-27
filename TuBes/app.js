@@ -5,7 +5,8 @@ import path from 'path';
 import multer from 'multer';
 import mysql from 'mysql';
 import session from 'express-session';
-import crypto, { checkPrime } from 'crypto';
+import crypto from 'crypto';
+import bcrypt from 'bcrypt';
 
 const port = 8080;
 const app = express();
@@ -442,18 +443,21 @@ app.post('/addUser', multerParser.none(), (req,res) => {
     else if(role === 'mahasiswa'){
         idRole = 3;
     }
-    let cek = pool.query("select idRole from user where id = ?",[id]);
-    let sql = "INSERT INTO user (idUser, nama, email, password, idRole) VALUES ?";
-    let values = [
-        [id,namaUser,email,password,idRole]
-    ]
-    if(cek>0){
-        myFunction();
-        res.redirect('kelola');
-    }else{
-        pool.query(sql,[values]);
-        res.redirect('kelola');
-    }
+    // bcrypt.hash(password,10, function(err, hash) {
+        let cek = pool.query("select idRole from user where id = ?",[id]);
+        let sql = "INSERT INTO user (idUser, nama, email, password, idRole) VALUES ?";
+        let values = [
+            [id,namaUser,email,password,idRole]
+        ]
+        if(cek>0){
+            myFunction();
+            res.redirect('kelola');
+        }else{
+            pool.query(sql,[values]);
+            res.redirect('kelola');
+        
+        }
+    // })
 })
 
 let setIdTopik = insertToSetIdTopik();

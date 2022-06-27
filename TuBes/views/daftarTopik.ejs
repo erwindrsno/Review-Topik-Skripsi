@@ -98,7 +98,7 @@
                 </div>
                 <div id="ket3"> 
                     <br> 
-                    <form action="/filterBP" method="post" enctype="multipart/form-data">
+                    <!-- <form action="/filterBP" method="post" enctype="multipart/form-data">
                         <div id="filter">
                             <select name="FilterBP" id="FilterBP" placeholder="Cari Bidang Peminatan">    
                                 <option value="All">All</option>  
@@ -108,7 +108,7 @@
                             <input type="submit" value="filter" id="searchbtn">
                         </div>
                     </form>
-                    
+                     -->
                 </div>
             </div>
             <br>
@@ -118,7 +118,6 @@
                         <td id="judulTbl"> No </td>
                         <td id="judulTbl"> Judul Topik </td>
                         <td id="judulTbl"> Dosen Pengaju </td>
-                        <td id="judulTbl"> Email </td>
                         <td id="judulTbl"> Kode Topik </td>
                         <td id="judulTbl"> Bidang Peminatan </td>
                         <td id="judulTbl"> Jenis Skripsi </td>
@@ -130,7 +129,6 @@
                             <td> <%= index++ %> </td>
                             <td> <%= topik.judul %> </td>
                             <td> <%= topik.nama %> </td>
-                            <td> <%= topik.email %> </td>
                             <td> <%= topik.kodeTopik %> </td>
                             <td> <%= topik.bidangPeminatan %> </td>
                             <td> <%= topik.jenisSkripsi %> </td>

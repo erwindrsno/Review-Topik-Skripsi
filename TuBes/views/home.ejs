@@ -97,12 +97,12 @@
                     <br>
                     - Non(*) = Topik Skripsi Jenis Reguler
                     <br><br>
-                    <form action="/deleteTopik" method="post" enctype="multipart/form-data">
+                    <!-- <form action="/deleteTopik" method="post" enctype="multipart/form-data">
                         <div id="delT">
                             <input type="text" name="deleteKT" id="deleteKT" placeholder="Tulis Kode Topik">
                             <input type="submit" value="delete" id="deletebtn">
                         </div>
-                    </form>
+                    </form> -->
                 </div>
                 <div id="ket3">
                     Masa review hingga:                
@@ -110,8 +110,14 @@
                     <div id="date">
                         <!-- sesuai input admin -->                    
                     </div>   
-                    <br> 
-                    <br>
+                    <br> <br>
+                    <form action="/deleteTopik" method="post" enctype="multipart/form-data">
+                        <div id="delT">
+                            <input type="text" name="deleteKT" id="deleteKT" placeholder="Tulis Kode Topik">
+                            <input type="submit" value="delete" id="deletebtn">
+                        </div>
+                    </form>
+                    <!-- <br>
                     <form action="/filterBP" method="post" enctype="multipart/form-data">
                         <div id="filter">
                             <select name="FilterBP" id="FilterBP" placeholder="Cari Bidang Peminatan">     
@@ -121,7 +127,7 @@
                             </select>
                             <input type="submit" value="filter" id="searchbtn">
                         </div>
-                    </form>                    
+                    </form>                     -->
                 </div>
                 <div id="ket4">
                     <form method="post" action="/reviewHingga" enctype="multipart/form-data">
