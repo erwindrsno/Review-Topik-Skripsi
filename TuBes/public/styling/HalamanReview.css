@@ -183,12 +183,13 @@ body{
 #delT{
     display: grid;
     grid-template-areas: 
-    'space deleteKT deletebtn';
-    grid-template-columns: 35vh 20vh 12vh;
+    'deleteKT deletebtn';
+    grid-template-columns: 18vh 12vh;
+    margin-left: -6vh;
 }
 #deleteKT{
     grid-area: deleteKT;
-    width: 20vh;
+    width: 18vh;
 }
 #deletebtn{
     grid-area: deletebtn;
