@@ -3,6 +3,7 @@
 <head>
     <title>Halaman Review</title>
     <script src = 'script/script.js' defer></script>
+    <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?serve=CESDK2J7&placement=getbutterflycom" id="_carbonads_js"></script>
     <link rel="stylesheet" href="styling/HalamanReview.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
@@ -140,7 +141,7 @@
             </div>
             <br>
             <div id="tabelDT">
-                <table rules="all" id="tbl">
+                <table rules="all" id="tbl" class="wp-list-table widefat striped posts">
                     <tr >
                         <td id="judulTbl"> No </td>
                         <td id="judulTbl"> Judul Topik </td>
@@ -189,6 +190,9 @@
         <div class="grid">
             <div class="tes1"><img src="./icon/Setting_fill.png" id="set" onclick="opn3()"></div>
             <div class="tes2"><button id="publish" onclick="on1()">Publish</button></div>
+            <button id="prevButton" onclick="pager.showPage(1)">Previous</button> 
+            <button id="nextButton" onclick="pager.showPage(2)">Next</button> 
+            <div id="pageNavPosition" class="pager-nav" onclick="pager.showPage(2)"></div>
         </div>
         <div class="grid2">
             <div class="tombolReview">
