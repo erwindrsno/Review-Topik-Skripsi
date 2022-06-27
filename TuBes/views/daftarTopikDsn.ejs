@@ -110,6 +110,7 @@
                         <td id="judulTbl"> Bidang Peminatan </td>
                         <td id="judulTbl"> Jenis Skripsi </td>
                         <td id="judulTbl"> Status </td>
+                        <td id="judulTbl"> PDF </td>
                     </tr>
                     <% let index = 1 %> 
                     <% for (let topik of result) { %>
@@ -121,6 +122,11 @@
                             <td> <%= topik.bidangPeminatan %> </td>
                             <td> <%= topik.jenisSkripsi %> </td>
                             <td id="sf"> <%= topik.statusFinal %> </td>
+                            <td> 
+                                <a href="http://daa.labftis.net/assignments/pdf/25">
+                                    <img src="http://daa.labftis.net/assets/images/pdf.svg" aria-label="Download PDF">
+                                </a>
+                            </td>
                         </tr>
                     <% } %> 
                     <!-- <tr class="txt">

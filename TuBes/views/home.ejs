@@ -135,14 +135,11 @@
                         <input type="date" id="iconDate">
                     </form>
                     <br>
-                    <div id="txtR">
-                        Review Here -->
-                    </div>
                 </div>
                 <div id="icDate">
                     <img src = icon/Date_range_fill.png onclick="dt()">      
                     <br><br>
-                    <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()">              
+                                 
                 </div>
                 
             </div>
@@ -157,6 +154,7 @@
                         <td id="judulTbl"> Bidang Peminatan </td>
                         <td id="judulTbl"> Jenis </td>
                         <td id="judulTbl"> Status </td>
+                        <td id="judulTbl"> PDF </td>
                     </tr>
                     <% let index = 1 %> 
                     <% for (let topik of result) { %>
@@ -168,6 +166,11 @@
                             <td> <%= topik.bidangPeminatan %> </td>
                             <td> <%= topik.jenisSkripsi %> </td>
                             <td id="sf"> <%= topik.statusFinal %> </td>
+                            <td> 
+                                <a href= <%= topik.pathFile %>>
+                                    <img src="http://daa.labftis.net/assets/images/pdf.svg" aria-label="Download PDF">
+                                </a>
+                            </td>
                         </tr>
                     <% } %> 
                 </table> 
@@ -192,9 +195,10 @@
                 </form>                
             </div>       
         </div>        
+        <!-- <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()">  -->
         <div class="grid">
             <div class="tes1"><img src="./icon/Setting_fill.png" id="set" onclick="opn3()"></div>
-            <div class="tes2"><button id="publish" onclick="on1()">Publish</button></div>
+            <div class="tes2"><button id="publish" onclick="opn()">Review</button></div>
             <button id="prevButton" onclick="pager.showPage(1)">Previous</button> 
             <button id="nextButton" onclick="pager.showPage(2)">Next</button> 
             <div id="pageNavPosition" class="pager-nav" onclick="pager.showPage(2)"></div>

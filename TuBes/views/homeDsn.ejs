@@ -90,19 +90,13 @@
                             <input type="submit" value="delete" id="deletebtn">
                         </div>
                     </form> -->
-                </div>
-                
+                </div>                
                 <div id="ket3">
                     <br>
-                    <br><br>
-                    <div id="txtR">
-                        Review Here -->
-                    </div>
                 </div>
                 <div id="icDate">
                     <br>    
-                    <br><br>
-                    <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()">              
+                              
                 </div>
             </div>
             <br>
@@ -116,6 +110,7 @@
                         <td id="judulTbl"> Bidang Peminatan </td>
                         <td id="judulTbl"> Jenis </td>
                         <td id="judulTbl"> Status </td>
+                        <td id="judulTbl"> PDF </td>
                     </tr>
                     <% let index = 1 %> 
                     <% for (let topik of result) { %>
@@ -127,6 +122,11 @@
                             <td> <%= topik.bidangPeminatan %> </td>
                             <td> <%= topik.jenisSkripsi %> </td>
                             <td id="sf"> <%= topik.statusFinal %> </td>
+                            <td> 
+                                <a href= <%= topik.pathFile %>>
+                                    <img src="http://daa.labftis.net/assets/images/pdf.svg" aria-label="Download PDF">
+                                </a>
+                            </td>
                         </tr>
                     <% } %> 
                 </table> 
@@ -138,7 +138,12 @@
             </div> -->
             <div id="pageNavPosition" class="pager-nav" id="pag-button" onclick="pagination(1)"></div>
         </div>
-        
+        <div class="grid">
+            <div class="tes2"><button id="publish" onclick="opn()">Review</button></div>
+            <button id="prevButton" onclick="pager.showPage(1)">Previous</button> 
+            <button id="nextButton" onclick="pager.showPage(2)">Next</button> 
+            <div id="pageNavPosition" class="pager-nav" onclick="pager.showPage(2)"></div>
+        </div>
         <div id="ovy">  
             <div id="isi" >
                 <div id="iconHead">
