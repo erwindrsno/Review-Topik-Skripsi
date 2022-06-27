@@ -164,6 +164,24 @@ let idRole;
 let tahunA="";
 let semesterInput="";
 let idPeriode="";
+let namaUser = "";
+let inisialUser = "";
+
+function generateInisialUserLengkap(){
+    let inisialUserLengkap ="";
+    for(let i = 0; i < namaUser.length; i++){
+        if(i == 0){
+            inisialUserLengkap += namaUser[0];
+        }
+        else if(namaUser[i] == " "){
+            inisialUserLengkap += namaUser[i+1];
+        }
+    }
+    while(inisialUserLengkap.length < 3){
+        inisialUserLengkap += inisialUserLengkap[inisialUserLengkap.length-1];
+    }
+    return inisialUserLengkap;
+}
 
 const staticPath = path.resolve('public');
 app.use(express.static(staticPath));    //serving static page dari public
@@ -249,8 +267,6 @@ app.post('/signin', (req,res) => {
 });
 
 app.get('/home', (req,res) => {
-    let namaUser = "";
-    let inisialUser = "";
     pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
             return console.log(err);
@@ -376,6 +392,7 @@ app.get('/kelola', (req,res) => {
             if(err){
                 return console.log(err);
             }
+            console.log(result);
             res.render('kelola',{ nama: namaUser, inisial: inisialUser , result , email});
         })
     })
@@ -413,10 +430,6 @@ app.get('/tinjauanDsn', (req,res) => {
     })
 });
 
-function myFunction() {
-    alert("Gagal menambah User karena User telah terdaftar");
-}
-
 app.post('/addUser', multerParser.none(), (req,res) => {
     let idRole = 1;
     let namaUser = req.body.nama;
@@ -447,11 +460,33 @@ app.post('/addUser', multerParser.none(), (req,res) => {
     // })
 })
 
+let setIdTopik = insertToSetIdTopik();
+
+function insertToSetIdTopik(){
+    pool.query(`select kodeTopik from topikSkripsi`,(err, result, fields)=>{
+    if(err){
+        return console.log(err);
+    }
+        setIdTopik = new Set([result]);
+    })
+}
+
+function checkDuplicateAndGenerateIdTopik(){
+    let id = Math.floor(100000 + Math.random() * 900000);
+    if(!setIdTopik.has(id)){
+        setIdTopik.add(id);
+        return id;
+    }
+    else{
+        checkDuplicateAndGenerateIdTopik();
+    }
+}
 
 app.post('/addTopik', multerParser.none(), (req,res) => {
     let judulTopik = req.body.JudulTopik;
     let bidangPeminatan = req.body.BidangPeminatan;
-    let kodeTopik = req.body.KodeTopik;
+    let inisialUserKodeTopik = generateInisialUserLengkap();
+    let kodeTopik = inisialUserKodeTopik+checkDuplicateAndGenerateIdTopik();
     let jenisSkripsi = req.body.JenisSkripsi;
     pool.query(`select idUser from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
@@ -469,7 +504,8 @@ app.post('/addTopik', multerParser.none(), (req,res) => {
 app.post('/addTopikDsn', multerParser.none(), (req,res) => {
     let judulTopik = req.body.JudulTopik;
     let bidangPeminatan = req.body.BidangPeminatan;
-    let kodeTopik = req.body.KodeTopik;
+    let inisialUserKodeTopik = generateInisialUserLengkap();
+    let kodeTopik = inisialUserKodeTopik+checkDuplicateAndGenerateIdTopik();
     let jenisSkripsi = req.body.JenisSkripsi;
     pool.query(`select idUser from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
@@ -536,6 +572,7 @@ app.post('/periode', multerParser.none(), (req,res) => {
         res.render('home', { nama: namaUser, inisial: inisialUser, result, email,tahunA:tahunA,semesterInput:semesterInput});
     })
 })
+
 app.post('/filterBPd', multerParser.none(), (req,res) => {
     let namaUser = "";
     let inisialUser = "";
@@ -577,7 +614,7 @@ app.post('/filterBPm', multerParser.none(), (req,res) => {
                 if(err){
                     return console.log(err);
                 }
-                res.render('homeMhs',{ nama: namaUser, inisial: inisialUser, result, email });
+                res.render('homeMhs',{ nama: namaUser, inisial: inisialUser, result, email, tahunA, semesterInput });
             });
         });   
     };
@@ -585,6 +622,7 @@ app.post('/filterBPm', multerParser.none(), (req,res) => {
 
 app.post('/deleteTopik', multerParser.none(), (req,res) => {
     const kodeTopik = req.body.deleteKT;
+    setIdTopik.delete(kodeTopik);
     pool.query(`delete from topikSkripsi where kodeTopik = ?`, [kodeTopik],(err, result, fields)=>{
         if(err){
             return console.log(err);
@@ -596,6 +634,7 @@ app.post('/deleteTopik', multerParser.none(), (req,res) => {
 
 app.post('/deleteTopikd', multerParser.none(), (req,res) => {
     const kodeTopik = req.body.deleteKT;
+    setIdTopik.delete(kodeTopik);
     pool.query(`delete from topikSkripsi where kodeTopik = ?`, [kodeTopik],(err, result, fields)=>{
         if(err){
             return console.log(err);
@@ -616,6 +655,29 @@ app.post('/deleteUser', multerParser.none(), (req,res) => {
     res.redirect('/kelola');
 })
 
+let setIdReview = insertToSetIdReview();
+
+function insertToSetIdReview(){
+    pool.query(`select idReview from review`,(err, result, fields)=>{
+    if(err){
+        return console.log(err);
+    }
+        setIdReview = new Set([result]);
+        return setIdReview;
+    })
+}
+
+function checkDuplicateAndGenerateIdReview(){
+    let id = Math.floor(100000 + Math.random() * 900000);
+    if(!setIdReview.has(id)){
+        setIdReview.add(id);
+        return id;
+    }
+    else{
+        checkDuplicateAndGenerateIdReview();
+    }
+}
+
 app.post('/review', multerParser.none(), (req,res) => {
     console.log(req.body);
     const kodeTopikReview = req.body.kodeTopik;
@@ -623,7 +685,7 @@ app.post('/review', multerParser.none(), (req,res) => {
     const komentar = req.body.komentar;
     const pertanyaan = req.body.pertanyaan;
     const jawaban = null;
-    let idReview = Math.floor(100000 + Math.random() * 900000);
+    const idReview = checkDuplicateAndGenerateIdReview();
     if(statusReview == "inq"){
         let sql = "INSERT INTO review (idReviewer, idTopik, idReview, komentar, pertanyaan, jawaban, status) VALUES ?";
         let values = [

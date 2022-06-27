@@ -381,7 +381,7 @@ body{
     grid-area: s;
     border-left: 1px solid;
     height:100%;
-    margin-left: 40%;
+    margin-left: 20%;
 }
 #formUT1{
     display: grid;
@@ -400,7 +400,7 @@ body{
 #formUT3{
     display: grid;
     grid-area: kanan1; 
-    padding-left: 5%;
+    margin-left:-8vh;
     padding-right: 5%;
 }
 #formUT4{
