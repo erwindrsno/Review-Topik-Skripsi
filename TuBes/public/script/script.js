@@ -506,7 +506,7 @@ function Pager(tableName, itemsPerPage) {
             pagerHtml = '<span onclick="' + pagerName + '.prev();" class="pg-normal pg-prev">&#171;</span>';
 
         for (let page = 1; page <= this.pages; page++) {
-            pagerHtml += '<span id="pg' + page + '" class="pg-normal pg-next" onclick="' + pagerName + 'showPage(' + page + ');">' + page + '</span>';
+            pagerHtml += '<span id="pg' + page + '" class="pg-normal pg-next" onclick="' + pagerName + '.showPage(' + page + ');">' + page + '</span>';
         }
 
         pagerHtml += '<span onclick="' + pagerName + '.next();" class="pg-normal">&#187;</span>';
@@ -523,3 +523,11 @@ let pager = new Pager('tbl', 5);
 pager.init();
 pager.showPageNav('tbl', 'pageNavPosition');
 pager.showPage(1);
+
+function pagination(currentPage){
+    if (this.currentPage == 1){
+        pager.showPage(2);
+    } else{
+        pager.showPage(1);
+    }
+}
