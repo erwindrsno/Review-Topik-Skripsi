@@ -150,6 +150,7 @@ body{
     display: grid;
     grid-area: kanan;
 }
+
 #filter{
     display: grid;
     grid-template-areas: 

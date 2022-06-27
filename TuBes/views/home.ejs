@@ -133,10 +133,17 @@
                     <form method="post" action="/reviewHingga" enctype="multipart/form-data">
                         <input type="date" id="iconDate">
                     </form>
+                    <br>
+                    <div id="txtR">
+                        Review Here -->
+                    </div>
                 </div>
                 <div id="icDate">
-                    <img src = icon/Date_range_fill.png onclick="dt()">                    
+                    <img src = icon/Date_range_fill.png onclick="dt()">      
+                    <br><br>
+                    <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()">              
                 </div>
+                
             </div>
             <br>
             <div id="tabelDT">
@@ -149,7 +156,6 @@
                         <td id="judulTbl"> Bidang Peminatan </td>
                         <td id="judulTbl"> Jenis </td>
                         <td id="judulTbl"> Status </td>
-                        <td id="judulTbl"> Review </td>
                     </tr>
                     <% let index = 1 %> 
                     <% for (let topik of result) { %>
@@ -161,7 +167,6 @@
                             <td> <%= topik.bidangPeminatan %> </td>
                             <td> <%= topik.jenisSkripsi %> </td>
                             <td id="sf"> <%= topik.statusFinal %> </td>
-                            <td> <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()"></td>
                         </tr>
                     <% } %> 
                 </table> 

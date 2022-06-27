@@ -163,7 +163,11 @@ body{
 #icDate{
     display: grid;
     grid-area: kanan;
-    line-height: -5vh;
+}
+#txtR{
+    margin-left:2vh;
+    margin-top:2vh;
+    color : red;
 }
 #filter{
     display: grid;
@@ -649,7 +653,6 @@ body{
 }
 #edit{
     width: 20px;
-    margin-top: 8%;
     cursor: pointer;
 }
 .txt{

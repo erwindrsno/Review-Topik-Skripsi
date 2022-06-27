@@ -13,8 +13,8 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: 'erwin08',
-    database: 'reviewts2',
+    password: '',
+    database: 'baru',
     host: 'localhost',
     connectionLimit:10
 });
@@ -614,7 +614,7 @@ app.post('/filterBPm', multerParser.none(), (req,res) => {
                 if(err){
                     return console.log(err);
                 }
-                res.render('homeMhs',{ nama: namaUser, inisial: inisialUser, result, email });
+                res.render('homeMhs',{ nama: namaUser, inisial: inisialUser, result, email, tahunA, semesterInput });
             });
         });   
     };

@@ -736,3 +736,8 @@ body{
 #overlayUSd{
     display: none;
 }
+#txtR{
+    margin-left:8vh;
+    margin-top:2vh;
+    color : red;
+}
