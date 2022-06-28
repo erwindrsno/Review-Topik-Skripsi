@@ -20,7 +20,7 @@
 //     }
 // });
 
-function realTimeClock(){
+function realTimeClock(){                                       //time di sidenav
     let rtClock = new Date();
     let hours = rtClock.getHours();
     let minutes = rtClock.getMinutes();
@@ -134,21 +134,21 @@ function realTimeClock(){
 // 	});
 // })();
 
-function on1() {
-	document.getElementById("overlay").style.display = "block";
+function on1() {                                                    //overlay add user di kelola user                           
+	document.getElementById("overlay").style.display = "block";     
 }
 
-function off1() {
-	document.getElementById("overlay").style.display = "none";
-}
+// function off1() {                                                   
+// 	document.getElementById("overlay").style.display = "none";
+// }
 
-function on2() {
-	document.getElementById("overlay2").style.display = "block";
-}
+// function on2() {
+// 	document.getElementById("overlay2").style.display = "block";
+// }
 
-function off2() {
-	document.getElementById("overlay2").style.display = "none";
-}
+// function off2() {
+// 	document.getElementById("overlay2").style.display = "none";
+// }
 
 // function onUT() {
 // 	document.getElementById("overlayUT").style.display = "block";
@@ -157,7 +157,7 @@ function off2() {
 // function offUT() {
 // 	document.getElementById("overlayUT").style.display = "none";
 // }
-function opn(){
+function opn(){                                                 //overlay review di home admin & home dosen
     document.getElementById("ovy").style.display = "block";
 }
 function opn1(){
@@ -189,7 +189,7 @@ function onEdit() {
 //     document.getElementById("xs").innerHTML = " "+semester;
 //     document.getElementById("ovr").style.display = "none";
 // }
-function dt(){
+function dt(){                                              //masa review hingga
     let dt = document.getElementById("iconDate").value;
     document.getElementById("date").innerHTML = dt;
 }
@@ -200,7 +200,7 @@ function dt(){
 //     let x = document.getElementById("op").value;
 //     document.getElementById("sf").innerHTML = x;
 // }
-function offset() {
+function offset() {                                             //button OK pada review
 	document.getElementById("kk").style.display = "block";
     document.getElementById("kmn").style.display = "none";
     document.getElementById("prt").style.display = "none";
@@ -208,14 +208,14 @@ function offset() {
 // function del(){
 //     let jt = prompt("Masukan judul topik yang ingin dihapus");
 // }
-function option(){
+function option(){                                              //button INQ pada review
     document.getElementById("prt").removeAttribute("hidden");
     document.getElementById("kk").style.display = "none";
     document.getElementById("prt").style.display = "block";
     // document.getElementById("kmn").style.visibility = "hidden";
     document.getElementById("kmn").style.display = "none";
 }
-function option1(){
+function option1(){                                             //button NO pada review
     document.getElementById("kmn").removeAttribute("hidden");
     document.getElementById("kk").style.display = "none";
     document.getElementById("kmn").style.display = "block";
@@ -375,40 +375,38 @@ if(formUT != null || formUT != undefined){
 
 
 // fetch('signin')
-function printToPDF() {
-    console.log('converting...');
-  
-    var printableArea = document.getElementById('pdf');
+function printToPDF() {                                     //convert html to pdf pada report
+    let printableArea = document.getElementById('pdf');
   
     html2canvas(printableArea, {
       useCORS: true,
       onrendered: function(canvas) {
   
-        var pdf = new jsPDF('p', 'pt', 'letter');
+        let pdf = new jsPDF('p', 'pt', 'letter');
   
-        var pageHeight = 980;
-        var pageWidth = 2500;
+        let pageHeight = 980;
+        let pageWidth = 2500;
 
-        for (var i = 0; i <= printableArea.clientHeight / pageHeight; i++) {
-          var srcImg = canvas;
-          var sX = 0;
-          var sY = pageHeight * i; 
-          var sWidth = pageWidth;
-          var sHeight = pageHeight;
-          var dX = 0;
-          var dY = 0;
-          var dWidth = pageWidth;
-          var dHeight = pageHeight;
+        for (let i = 0; i <= printableArea.clientHeight / pageHeight; i++) {
+          let srcImg = canvas;
+          let sX = 0;
+          let sY = pageHeight * i; 
+          let sWidth = pageWidth;
+          let sHeight = pageHeight;
+          let dX = 0;
+          let dY = 0;
+          let dWidth = pageWidth;
+          let dHeight = pageHeight;
   
           window.onePageCanvas = document.createElement("canvas");
           onePageCanvas.setAttribute('width', pageWidth);
           onePageCanvas.setAttribute('height', pageHeight);
-          var ctx = onePageCanvas.getContext('2d');
+          let ctx = onePageCanvas.getContext('2d');
           ctx.drawImage(srcImg, sX, sY, sWidth, sHeight, dX, dY, dWidth, dHeight);
   
-          var canvasDataURL = onePageCanvas.toDataURL("image/png", 1.0);
-          var width = onePageCanvas.width;
-          var height = onePageCanvas.clientHeight;
+          let canvasDataURL = onePageCanvas.toDataURL("image/png", 1.0);
+          let width = onePageCanvas.width;
+          let height = onePageCanvas.clientHeight;
   
           if (i > 0) 
             pdf.addPage(612, 791);
@@ -421,7 +419,7 @@ function printToPDF() {
     }
     });
 }
-function Pager(tableName, itemsPerPage) {
+function Pager(tableName, itemsPerPage) {                   //pagination
     'use strict';
 
     this.tableName = tableName;
@@ -433,7 +431,7 @@ function Pager(tableName, itemsPerPage) {
     this.showRecords = function (from, to) {
         let rows = document.getElementById(tableName).rows;
 
-        // i starts from 1 to skip table header row
+        // i dimulai dari 1 buat skip baris header dari table
         for (let i = 1; i < rows.length; i++) {
             if (i < from || i > to) {
                 rows[i].style.display = 'none';
@@ -445,7 +443,6 @@ function Pager(tableName, itemsPerPage) {
 
     this.showPage = function (pageNumber) {
         if (!this.inited) {
-            // Not initialized
             return;
         }
 
@@ -498,7 +495,6 @@ function Pager(tableName, itemsPerPage) {
 
     this.showPageNav = function (pagerName, positionId) {
         if (!this.inited) {
-            // Not initialized
             return;
         }
 
@@ -515,9 +511,6 @@ function Pager(tableName, itemsPerPage) {
     };
 }
 
-
-
-//
 let pager = new Pager('tbl', 5);
 
 pager.init();
