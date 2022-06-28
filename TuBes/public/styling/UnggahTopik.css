@@ -400,7 +400,6 @@ body{
 #formUT3{
     display: grid;
     grid-area: kanan1; 
-    margin-left:-8vh;
     padding-right: 5%;
 }
 #formUT4{
@@ -428,6 +427,9 @@ body{
     height: 130%;
     border-radius: 10px;
     cursor: pointer;
+}
+#file{
+    margin-left: -2.5vh;
 }
 #UnggahTopik{    
     padding-left: 25%;

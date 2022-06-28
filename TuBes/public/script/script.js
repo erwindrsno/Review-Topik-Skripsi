@@ -523,11 +523,3 @@ let pager = new Pager('tbl', 5);
 pager.init();
 pager.showPageNav('tbl', 'pageNavPosition');
 pager.showPage(1);
-
-function pagination(currentPage){
-    if (this.currentPage == 1){
-        pager.showPage(2);
-    } else{
-        pager.showPage(1);
-    }
-}
