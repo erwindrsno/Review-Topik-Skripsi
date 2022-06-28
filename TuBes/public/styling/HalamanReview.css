@@ -396,7 +396,7 @@ body{
 
 #iconKotakJ{
     grid-area: left;
-    margin-left: 0.8vw;
+    margin-left: 1vw;
     padding: 0px;
 }
 
@@ -670,6 +670,11 @@ body{
     border-radius: 10px;
     cursor: pointer;
 }
+#buttonKJ:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+    cursor: pointer;
+}
 #periode_button{
     cursor: pointer;
 }
@@ -884,4 +889,11 @@ body{
 .pager-nav .pg-selected {
     background-color: #f9f9f9;
     border: 1px solid #CCCCCC;
+}
+#icon_periode{
+    cursor: pointer;
+}
+#icon_date:hover{
+    cursor: pointer;
+    opacity: 60%;
 }

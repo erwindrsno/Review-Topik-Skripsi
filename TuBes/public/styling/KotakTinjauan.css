@@ -333,7 +333,7 @@ body{
 
 #iconKotakJ{
     grid-area: left;
-    margin-left: 0.8vw;
+    margin-left: 1vw;
     padding: 0px;
 }
 
@@ -855,6 +855,11 @@ body{
     cursor: pointer;
 }
 #buttonTK:hover{
+    background-color: #98C1D9;
+    border-radius: 10px;
+    cursor: pointer;
+}
+#buttonKJ:hover{
     background-color: #98C1D9;
     border-radius: 10px;
     cursor: pointer;
