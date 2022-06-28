@@ -88,17 +88,18 @@
                 <table rules="all" id="tbl">
                     <tr>
                         <td> No </td>
+                        <td> Id Review </td>
                         <td> Nama Reviewer </td>
                         <td> Judul Topik </td>
                         <td> Status </td>
-                        <td> Isi </td>
-                        <td> Tanggap </td>
+                        <td> Isi </td>                        
                     </tr>
                     <% let index = 1 %> 
                         <% for (let review of result) { %>
                             <tr>
                                 <td> <%= index++ %> </td>
-                                <td> <%= review.namaReviewer %> </td>
+                                <td> <%= review.idReview %> </td>
+                                <td> <%= review.namaReviewer %> </td>                                
                                 <td> <%= review.judul %> </td>
                                 <td> <%= review.status %> </td>
                                 <% if (review.status == 'inq') { %>
@@ -106,12 +107,20 @@
                                 <% } else {%>
                                     <td> <%= review.komentar %> </td>
                                 <% } %> 
-                                <td> <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()"></td>
                             </tr>
                         <% } %>
                 </table>
+                
             <% } %> 
         </div>
+        <% if (result.length >= 1) { %>
+        <div class="grid">
+            <div class="tes2"><button id="publish" onclick="opn()">Tanggap</button></div>
+            <button id="prevButton" onclick="pager.showPage(1)">Previous</button> 
+            <button id="nextButton" onclick="pager.showPage(2)">Next</button> 
+            <div id="pageNavPosition" class="pager-nav"></div>
+        </div>
+        <% } %>
         <div id="ovy">  
             <div id="isi" >
                 <div id="iconHead">
