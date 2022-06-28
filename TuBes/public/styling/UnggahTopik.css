@@ -165,8 +165,9 @@ body{
     'menu3'
     'menu4'
     'menu5'
-    'menu6';
-    grid-template-rows: 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh;
+    'menu6'
+    'menu7';
+    grid-template-rows: 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh;
     align-items: center;
 }
 
@@ -268,8 +269,33 @@ body{
     position: absolute;
 }
 
-.kelola_user{
+.kotak_jawaban{
     grid-area: menu5;
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 4vw;
+}
+
+#iconKotakJ{
+    grid-area: left;
+    margin-left: 0.8vw;
+    padding: 0px;
+}
+
+#buttonKJ{
+    text-align: left;
+    font-family: poppins-regular;
+    /* margin-top: 2.6vh; */
+    font-size: 1.3vw;
+    background: #3D5A80;
+    color: white;
+    border: 0px;
+    grid-area: right;
+    position: absolute;
+}
+
+.kelola_user{
+    grid-area: menu6;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
@@ -293,7 +319,7 @@ body{
 }
 
 .report{
-    grid-area: menu6;
+    grid-area: menu7;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
@@ -500,6 +526,7 @@ body{
     border-radius: 10px;
     cursor: pointer;
 }
+
 #buttonKU:hover{
     background-color: #98C1D9;
     border-radius: 10px;

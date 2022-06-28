@@ -220,8 +220,9 @@ body{
     'menu3'
     'menu4'
     'menu5'
-    'menu6';
-    grid-template-rows: 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh;
+    'menu6'
+    'menu7';
+    grid-template-rows: 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh;
     align-items: center;
 }
 
@@ -234,7 +235,7 @@ body{
 
 #iconReviewT{
     grid-area: left;
-    margin-left: 1vw;
+    margin-left: 1.2vw;
     padding: 0px;
 }
 
@@ -323,8 +324,33 @@ body{
     position: absolute;
 }
 
-.kelola_user{
+.kotak_jawaban{
     grid-area: menu5;
+    display: grid;
+    grid-template-areas: "left right";
+    grid-template-columns: 4vw;
+}
+
+#iconKotakJ{
+    grid-area: left;
+    margin-left: 0.8vw;
+    padding: 0px;
+}
+
+#buttonKJ{
+    text-align: left;
+    font-family: poppins-regular;
+    /* margin-top: 2.6vh; */
+    font-size: 1.3vw;
+    background: #3D5A80;
+    color: white;
+    border: 0px;
+    grid-area: right;
+    position: absolute;
+}
+
+.kelola_user{
+    grid-area: menu6;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
@@ -347,20 +373,20 @@ body{
     position: absolute;
 }
 
-.tentang_kami{
-    grid-area: menu6;
+.report{
+    grid-area: menu7;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
 }
 
-#iconTentangK{
+#iconReport{
     grid-area: left;
-    margin-left: 0.8vw;
+    margin-left: 1vw;
     padding: 0px;
 }
 
-#buttonTK{
+#buttonR{
     text-align: left;
     font-family: 'poppins-regular';
     font-size: 1.3vw;
@@ -629,169 +655,7 @@ body{
     position: fixed;
 }
 
-#fitur{
-    bottom: 0;
-    height: 75.2vh;
-    width: 16vw;
-    position: fixed;
-    display: grid;
-    row-gap: 1vh;
-    grid-template-areas: 
-    'menu1'
-    'menu2'
-    'menu3'
-    'menu4'
-    'menu5'
-    'menu6';
-    grid-template-rows: 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh 6.5vh;
-    align-items: center;
-}
 
-.review_topik{
-    grid-area: menu1;
-    display: grid;
-    grid-template-areas: "left right";
-    grid-template-columns: 4vw;
-}
-
-#iconReviewT{
-    grid-area: left;
-    margin-left: 1.2vw;
-    padding: 0px;
-}
-
-#buttonRT{
-    text-align: left;
-    font-family: poppins-regular;
-    font-size: 1.3vw;
-    background: #3D5A80;
-    color: white;
-    border: 0px;
-    grid-area: right;
-    position: absolute;
-}
-
-.daftar_topik{
-    grid-area: menu2;
-    display: grid;
-    grid-template-areas: "left right";
-    grid-template-columns: 4vw;
-}
-
-#iconDaftarT{
-    grid-area: left;
-    margin-left: 1vw;
-    padding: 0px;
-}
-
-#buttonDT{
-    text-align: left;
-    font-family: poppins-regular;
-    font-size: 1.3vw;
-    background: #3D5A80;
-    color: white;
-    border: 0px;
-    grid-area: right;
-    position: absolute;
-}
-
-.unggah_topik{
-    grid-area: menu3;
-    display: grid;
-    grid-template-areas: "left right";
-    grid-template-columns: 4vw;
-}
-
-#iconUnggahT{
-    grid-area: left;
-    margin-left: 0.8vw;
-    padding: 0px;
-}
-
-#buttonUT{
-    text-align: left;
-    font-family: poppins-regular;
-    /* margin-top: 2.6vh; */
-    font-size: 1.3vw;
-    background: #3D5A80;
-    color: white;
-    border: 0px;
-    grid-area: right;
-    position: absolute;
-}
-
-.kotak_tinjauan{
-    grid-area: menu4;
-    display: grid;
-    grid-template-areas: "left right";
-    grid-template-columns: 4vw;
-}
-
-#iconKotakT{
-    grid-area: left;
-    margin-left: 0.8vw;
-    padding: 0px;
-}
-
-#buttonKT{
-    text-align: left;
-    font-family: poppins-regular;
-    /* margin-top: 2.6vh; */
-    font-size: 1.3vw;
-    background: #3D5A80;
-    color: white;
-    border: 0px;
-    grid-area: right;
-    position: absolute;
-}
-
-.kelola_user{
-    grid-area: menu5;
-    display: grid;
-    grid-template-areas: "left right";
-    grid-template-columns: 4vw;
-}
-
-#iconKelolaU{
-    grid-area: left;
-    margin-left: 0.8vw;
-    padding: 0px;
-}
-
-#buttonKU{
-    text-align: left;
-    font-family: poppins-regular;
-    font-size: 1.3vw;
-    background: #3D5A80;
-    color: white;
-    border: 0px;
-    grid-area: right;
-    position: absolute;
-}
-
-.report{
-    grid-area: menu6;
-    display: grid;
-    grid-template-areas: "left right";
-    grid-template-columns: 4vw;
-}
-
-#iconReport{
-    grid-area: left;
-    margin-left: 1vw;
-    padding: 0px;
-}
-
-#buttonR{
-    text-align: left;
-    font-family: 'poppins-regular';
-    font-size: 1.3vw;
-    background: #3D5A80;
-    color: white;
-    border: 0px;
-    grid-area: right;
-    position: absolute;
-}
 
 #real_time{
     position: absolute;

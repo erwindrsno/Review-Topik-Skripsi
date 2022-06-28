@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>UnggahTopik</title>
+    <title>Kotak Jawaban</title>
     <script src = 'script/script.js' defer></script>
-    <link rel="stylesheet" href="styling/UnggahTopik.css">
+    <link rel="stylesheet" href="styling/KotakTinjauan.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 <body onload="realTimeClock()">
@@ -24,6 +24,7 @@
     <div class = "home"> 
         <div id="infoUser">
         <!-- sesuai login -->
+            <%=  %>  
             <div id="circle">
                 <p id="first_letter"><%= inisial %> </p> <!-- kalo nama = Erwin Darsono, maka huruf = E -->
             </div>
@@ -80,52 +81,62 @@
             <div id="real_day"></div>
             <div id="real_time"></div>
         </div>
-        <div id="UnggahTopik">  
-            <div id="isiUT" >
+        <div id="isiKU" class="grid_review">
+            <% if (result.length < 1) { %>
+                <p>Belum ada pertanyaan dari dosen lain.</p>
+            <% } else { %>
+                <table rules="all" id="tbl">
+                    <tr>
+                        <td> No </td>
+                        <td> IdReviewer </td>
+                        <td> Judul Topik </td>
+                        <td> Status </td>
+                        <td> Jawaban </td>
+                    </tr>
+                    <% let index = 1 %> 
+                        <% for (let review of result) { %>
+                            <tr>
+                                <td> <%= index++ %> </td>
+                                <td> <%= review.idReviewer %> </td>
+                                <td> <%= review.judul %> </td>
+                                <td> <%= review.status %> </td>
+                                <td> <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()"></td>
+                            </tr>
+                        <% } %>
+                </table>
+            <% } %> 
+        </div>
+        <div id="ovy">  
+            <div id="isi" >
                 <div id="iconHead">
                     <img src = icon/circle.png id="ic1">
                     <img src = icon/circle.png id="ic1">
                     <img src = icon/circle.png id="ic1">
-                    <!-- <input type="image" src="icon/Close.png" id="ic2" onclick="off1()"> -->
+                    <a href="/home" id="ic2">
+                        <img src = "icon/Close.png" alt="ic2">
+                    </a>                   
                 </div>
-                <form id="formUT" class="form_user" method="post" action="/addTopik" enctype="multipart/form-data">
-                    <div id="formUT1">
-                        <label for="lang">Judul Topik</label>
-                        <br>
-                        <input type="text" name="JudulTopik" id="JudulT">
-                        <br>                                            
-                    </div>
-                    <div id="formUT2">
-                        <label for="lang">Bidang Peminatan</label>
-                        <br> 
-                        <select name="BidangPeminatan" id="BidangP">
-                            <option value="CS">Computing Science</option>
-                            <option value="DS">Data Science</option>
-                        </select>  
-                        <br>
-                    </div>
-                    <div id="file">
-                        <input type="file" class="admin_inputSkripsi" id="myFile" name="skripsi"/>
-                    </div>
-                    <div id="garisV">
-                    </div>
-                    <div id="formUT3">
-                        <label for="lang">Jenis Skripsi</label>
-                        <br>
-                        <select name="JenisSkripsi" id="jenisS">
-                            <option value="reguler">Reguler</option>
-                            <option value="bintang">Bintang</option>
-                        </select>
-                        <br>
-                    </div>
-                    <div id="formUT5">
-                        <input type="submit" value="submit" id="submitUT" onclick="onUT()">
-                    </div>
-                    <!-- <div id="formUT6">
-                        <a href="https://drive.google.com/drive/u/0/folders/1IlMBecPmHCRb8jA67hSDHqNn21rfIzMC">Link drive</a>
+                <form action="/review" method="post" enctype="multipart/form-data">
+                    <div id="tt1"></div>
+                    <hr>
+                    <!-- <div id="tt1">Judul Topik: Rosa De Lima Endang Padmowati</div>
+                    <div id="tt2">Status: INQ</div>
+                    <div id="kmn">
+                        <div id="tt2">Komentar/Pertanyaan<div id="tt3">* max: 250 kata</div></div>
+                        <div id="ta"><textarea placeholder="Masukan komentar di sini" rows="4" cols="55" maxlength="250" id="maxta" name="komentar"></textarea></div>
                     </div> -->
-                </form>
-            </div>          
+                    <div id="prt">
+                        <div id="tt2">Jawaban<div id="tt3">* max: 250 kata</div></div>
+                        <div id="ta"><textarea placeholder="Masukan pertanyaan di sini" rows="4" cols="55" maxlength="250" name="pertanyaan"></textarea></div>
+                    </div>
+                    <div id="pr">
+                        <input type="submit" value="Kirim" id="SY">
+                        <a href="/tinjauan" id="STbtn">
+                            <input type="submit" value="Batal" id="ST" alt="STbtn">
+                        </a> 
+                    </div>
+                </form>                
+            </div>       
         </div>
     </div>
 </body>
