@@ -371,22 +371,23 @@ body{
     position: absolute;
 }
 
-.kelola_user{
+.kotak_jawaban{
     grid-area: menu5;
     display: grid;
     grid-template-areas: "left right";
     grid-template-columns: 4vw;
 }
 
-#iconKelolaU{
+#iconKotakJ{
     grid-area: left;
     margin-left: 0.8vw;
     padding: 0px;
 }
 
-#buttonKU{
+#buttonKJ{
     text-align: left;
     font-family: poppins-regular;
+    /* margin-top: 2.6vh; */
     font-size: 1.3vw;
     background: #3D5A80;
     color: white;

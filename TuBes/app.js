@@ -13,8 +13,8 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: 'erwin08',
-    database: 'reviewts2',
+    password: '',
+    database: 'baru',
     host: 'localhost',
     connectionLimit:10
 });
@@ -442,6 +442,21 @@ app.get('/jawaban', (req,res) => {
                 return console.log(err);
             }
             res.render('jawaban',{ nama: namaUser, inisial: inisialUser , email , result});
+        })
+    })
+});
+app.get('/jawabanDsn', (req,res) => {
+    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        let namaUser = result[0].nama;
+        let inisialUser = namaUser.charAt(0);
+        pool.query(`select * from review join topikSkripsi on review.idTopik = topikSkripsi.kodeTopik join user on user.idUser = topikSkripsi.idDosen where user.email = ?`, [email], (err, result, fields)=>{
+            if(err){
+                return console.log(err);
+            }
+            res.render('jawabanDsn',{ nama: namaUser, inisial: inisialUser , email , result});
         })
     })
 });
