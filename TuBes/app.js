@@ -13,8 +13,8 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: '',
-    database: 'baru',
+    password: 'erwin08',
+    database: 'reviewts2',
     host: 'localhost',
     connectionLimit:10
 });
@@ -167,21 +167,21 @@ let idPeriode="";
 let namaUser = "";
 let inisialUser = "";
 
-function generateInisialUserLengkap(){
-    let inisialUserLengkap ="";
-    for(let i = 0; i < namaUser.length; i++){
-        if(i == 0){
-            inisialUserLengkap += namaUser[0];
-        }
-        else if(namaUser[i] == " "){
-            inisialUserLengkap += namaUser[i+1];
-        }
-    }
-    while(inisialUserLengkap.length < 3){
-        inisialUserLengkap += inisialUserLengkap[inisialUserLengkap.length-1];
-    }
-    return inisialUserLengkap;
-}
+// function generateInisialUserLengkap(){
+//     let inisialUserLengkap ="";
+//     for(let i = 0; i < namaUser.length; i++){
+//         if(i == 0){
+//             inisialUserLengkap += namaUser[0];
+//         }
+//         else if(namaUser[i] == " "){
+//             inisialUserLengkap += namaUser[i+1];
+//         }
+//     }
+//     while(inisialUserLengkap.length < 3){
+//         inisialUserLengkap += inisialUserLengkap[inisialUserLengkap.length-1];
+//     }
+//     return inisialUserLengkap;
+// }
 
 const staticPath = path.resolve('public');
 app.use(express.static(staticPath));    //serving static page dari public
@@ -405,10 +405,11 @@ app.get('/tinjauan', (req,res) => {
         }
         let namaUser = result[0].nama;
         let inisialUser = namaUser.charAt(0);
-        pool.query(`select * from review join topikSkripsi on review.idTopik = topikSkripsi.kodeTopik join user on user.idUser = topikSkripsi.idDosen where user.email = ?`, [email], (err, result, fields)=>{
+        pool.query(`select *,(select nama from user where review.idReviewer = user.idUser) as 'namaReviewer' from review join topikSkripsi on review.idTopik = topikSkripsi.kodeTopik join user on user.idUser = topikSkripsi.idDosen where user.email = ?`, [email], (err, result, fields)=>{
             if(err){
                 return console.log(err);
             }
+            // console.log(result);
             res.render('tinjauan',{ nama: namaUser, inisial: inisialUser , email , result});
         })
     })
@@ -421,7 +422,7 @@ app.get('/tinjauanDsn', (req,res) => {
         }
         let namaUser = result[0].nama;
         let inisialUser = namaUser.charAt(0);
-        pool.query(`select * from review join topikSkripsi on review.idTopik = topikSkripsi.kodeTopik join user on user.idUser = topikSkripsi.idDosen where user.email = ?`, [email], (err, result, fields)=>{
+        pool.query(`select *,(select nama from user where review.idReviewer = user.idUser) as 'namaReviewer' from review join topikSkripsi on review.idTopik = topikSkripsi.kodeTopik join user on user.idUser = topikSkripsi.idDosen where user.email = ?`, [email], (err, result, fields)=>{
             if(err){
                 return console.log(err);
             }
@@ -445,6 +446,7 @@ app.get('/jawaban', (req,res) => {
         })
     })
 });
+
 app.get('/jawabanDsn', (req,res) => {
     pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
@@ -516,8 +518,8 @@ function checkDuplicateAndGenerateIdTopik(){
 app.post('/addTopik', upload.single('skripsi'), (req,res) => {
     let judulTopik = req.body.JudulTopik;
     let bidangPeminatan = req.body.BidangPeminatan;
-    let inisialUserKodeTopik = generateInisialUserLengkap();
-    let kodeTopik = inisialUserKodeTopik+checkDuplicateAndGenerateIdTopik();
+    // let inisialUserKodeTopik = generateInisialUserLengkap();
+    let kodeTopik = checkDuplicateAndGenerateIdTopik();
     let jenisSkripsi = req.body.JenisSkripsi;
     let pathFile = req.file.path;
     pool.query(`select idUser from user where email = ?`, [email],(err, result, fields)=>{
@@ -536,8 +538,8 @@ app.post('/addTopik', upload.single('skripsi'), (req,res) => {
 app.post('/addTopikDsn', upload.single('skripsi'), (req,res) => {
     let judulTopik = req.body.JudulTopik;
     let bidangPeminatan = req.body.BidangPeminatan;
-    let inisialUserKodeTopik = generateInisialUserLengkap();
-    let kodeTopik = inisialUserKodeTopik+checkDuplicateAndGenerateIdTopik();
+    // let inisialUserKodeTopik = generateInisialUserLengkap();
+    let kodeTopik = checkDuplicateAndGenerateIdTopik();
     let jenisSkripsi = req.body.JenisSkripsi;
     let pathFile = req.file.path;
     pool.query(`select idUser from user where email = ?`, [email],(err, result, fields)=>{
@@ -765,6 +767,20 @@ app.post('/review', multerParser.none(), (req,res) => {
         res.redirect('homeMhs');
     }
 })
+
+// app.post('/jawab', multerParser.none(), (req,res) => {
+//     // console.log(req.body);
+//     let sql = "INSERT INTO review (idReviewer, idTopik, idReview, komentar, pertanyaan, jawaban, status) VALUES ?";
+//     let values = [
+//         [id,kodeTopikReview,idReview,komentar,pertanyaan,jawaban,statusReview]
+//     ]
+//     pool.query(sql,[values], function(err,result){
+//         if(err){
+//             return console.log(err);
+//         }
+//         console.log("records inserted: "+result.affectedRows);
+//     })
+// })
 
 app.post('/ubahStatus', multerParser.none(), (req,res) => {
     let statusFinal = req.body.ubahStatus;

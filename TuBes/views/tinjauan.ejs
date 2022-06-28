@@ -88,7 +88,7 @@
                 <table rules="all" id="tbl">
                     <tr>
                         <td> No </td>
-                        <td> IdReviewer </td>
+                        <td> Nama Reviewer </td>
                         <td> Judul Topik </td>
                         <td> Status </td>
                         <td> Isi </td>
@@ -98,7 +98,7 @@
                         <% for (let review of result) { %>
                             <tr>
                                 <td> <%= index++ %> </td>
-                                <td> <%= review.idReviewer %> </td>
+                                <td> <%= review.namaReviewer %> </td>
                                 <td> <%= review.judul %> </td>
                                 <td> <%= review.status %> </td>
                                 <% if (review.status == 'inq') { %>
@@ -122,7 +122,7 @@
                         <img src = "icon/Close.png" alt="ic2">
                     </a>                   
                 </div>
-                <form action="/review" method="post" enctype="multipart/form-data">
+                <form action="/jawab" method="post" enctype="multipart/form-data">
                     <div id="tt1"></div>
                     <hr>
                     <!-- <div id="tt1">Judul Topik: Rosa De Lima Endang Padmowati</div>
@@ -133,7 +133,7 @@
                     </div> -->
                     <div id="prt">
                         <div id="tt2">Jawaban<div id="tt3">* max: 250 kata</div></div>
-                        <div id="ta"><textarea placeholder="Masukan pertanyaan di sini" rows="4" cols="55" maxlength="250" name="pertanyaan"></textarea></div>
+                        <div id="ta"><textarea placeholder="Masukan jawaban di sini" rows="4" cols="55" maxlength="250" name="jawaban"></textarea></div>
                     </div>
                     <div id="pr">
                         <input type="submit" value="Kirim" id="SY">
