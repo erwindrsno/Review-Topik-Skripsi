@@ -503,13 +503,13 @@ function Pager(tableName, itemsPerPage) {
         }
 
         let element = document.getElementById(positionId),
-            pagerHtml = '<span onclick="' + pagerName + '.prev();" class="pg-normal pg-prev">&#171;</span>';
+            pagerHtml = '<span onclick="pager.prev();" class="pg-normal pg-prev">&#171;</span>';
 
         for (let page = 1; page <= this.pages; page++) {
-            pagerHtml += '<span id="pg' + page + '" class="pg-normal pg-next" onclick="' + pagerName + '.showPage(' + page + ');">' + page + '</span>';
+            pagerHtml += '<span id="pg' + page + '" class="pg-normal pg-next" onclick="pager.showPage(' + page + ');">' + page + '</span>';
         }
 
-        pagerHtml += '<span onclick="' + pagerName + '.next();" class="pg-normal">&#187;</span>';
+        pagerHtml += '<span onclick="pager.next();" class="pg-normal">&#187;</span>';
 
         element.innerHTML = pagerHtml;
     };
