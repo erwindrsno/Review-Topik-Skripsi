@@ -434,7 +434,10 @@ body{
     color: white;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+#txtIR{
+    font-size: large;
+    margin-left: 4vh;
+}
 body{
     margin: 0px;
 }
@@ -787,6 +790,9 @@ body{
 
 #ic1{
     margin-bottom: -7%;
+}
+#idR{
+    margin-right: 40vh;
 }
 
 #overlay2 {
