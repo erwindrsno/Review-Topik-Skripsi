@@ -13,8 +13,8 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: '',
-    database: 'review',
+    password: 'erwin08',
+    database: 'reviewts2',
     host: 'localhost',
     connectionLimit:10
 });
@@ -502,7 +502,7 @@ app.post('/addTopik', upload.single('skripsi'), (req,res) => {
     res.redirect('/home');
 })
 
-app.post('/addTopikDsn', multerParser.none(), (req,res) => {
+app.post('/addTopikDsn', upload.single('skripsi'), (req,res) => {
     let judulTopik = req.body.JudulTopik;
     let bidangPeminatan = req.body.BidangPeminatan;
     let inisialUserKodeTopik = generateInisialUserLengkap();
@@ -837,9 +837,9 @@ app.get('/logout', (req,res,next) => {
         }
         res.redirect('/');
     });
-    req.logout();
-    req.session = null;
-    res.redirect('/');
+    // req.logout();
+    // req.session = null;
+    // res.redirect('/');
 });
 
 // app.get('/home', function(request, response) {
