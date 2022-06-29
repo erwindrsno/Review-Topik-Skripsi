@@ -13,8 +13,8 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: '',
-    database: 'baru',
+    password: 'erwin08',
+    database: 'reviewts2',
     host: 'localhost',
     connectionLimit:10
 });
@@ -431,37 +431,60 @@ app.get('/tinjauanDsn', (req,res) => {
     })
 });
 
-app.get('/jawaban', (req,res) => {
-    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
-        if(err){
-            return console.log(err);
-        }
-        let namaUser = result[0].nama;
-        let inisialUser = namaUser.charAt(0);
-        pool.query(`select * from review join topikSkripsi on review.idTopik = topikSkripsi.kodeTopik join user on user.idUser = topikSkripsi.idDosen where user.email = ?`, [email], (err, result, fields)=>{
-            if(err){
-                return console.log(err);
-            }
-            res.render('jawaban',{ nama: namaUser, inisial: inisialUser , email , result});
-        })
+app.post('/respon', multerParser.none(), (req,res) => {
+    // console.log(req.body);
+    pool.query(`update review set jawaban = ? where idReview = ?`,[req.body.konten,req.body.idReview], (err, result, fields)=>{
+    if(err){
+        return console.log(err);
+    }
+        res.redirect('/home');
     })
 });
 
-app.get('/jawabanDsn', (req,res) => {
+app.post('/responDsn', (req,res) => {
+    pool.query(`update review set jawaban = ? where idReview = ?`,[req.body.konten,req.body.idReview], (err, result, fields)=>{
+    if(err){
+        return console.log(err);
+    }
+        res.redirect('/home');
+    })
+});
+
+app.get('/jawaban',(req,res) => {
     pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
             return console.log(err);
         }
         let namaUser = result[0].nama;
         let inisialUser = namaUser.charAt(0);
-        pool.query(`select * from review join topikSkripsi on review.idTopik = topikSkripsi.kodeTopik join user on user.idUser = topikSkripsi.idDosen where user.email = ?`, [email], (err, result, fields)=>{
+        pool.query(`select * from review where IdReviewer = ?`, [id],(err, result, fields)=>{
             if(err){
                 return console.log(err);
             }
-            res.render('jawabanDsn',{ nama: namaUser, inisial: inisialUser , email , result});
+            console.log(result);
+            // console.log(id);
+            res.render('jawaban', {nama: namaUser, inisial: inisialUser , email , result });
         })
     })
-});
+})
+
+app.get('/jawabanDsn',(req,res) => {
+    pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
+        if(err){
+            return console.log(err);
+        }
+        let namaUser = result[0].nama;
+        let inisialUser = namaUser.charAt(0);
+        pool.query(`select *,(select nama from user where review.idReviewer = user.idUser) as 'namaReviewer' from review join user on review.idReviewer = user.idUser join topikSkripsi on review.idTopik = topikSkripsi.kodeTopik where idReviewer = ?`, [id],(err, result, fields)=>{
+            if(err){
+                return console.log(err);
+            }
+            console.log(result);
+            // console.log(id);
+            res.render('jawabanDsn', {nama: namaUser, inisial: inisialUser , email , result });
+        })
+    })
+})
 
 app.post('/addUser', multerParser.none(), (req,res) => {
     let idRole = 1;

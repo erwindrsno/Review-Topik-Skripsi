@@ -71,30 +71,22 @@
         </div>
         <div id="isiKU" class="grid_review">
             <% if (result.length < 1) { %>
-                <p>Belum ada pertanyaan dari dosen lain.</p>
+                <p>Belum ada jawaban dari dosen lain.</p>
             <% } else { %>
                 <table rules="all" id="tbl">
                     <tr>
                         <td> No </td>
-                        <td> IdReviewer </td>
                         <td> Judul Topik </td>
                         <td> Status </td>
-                        <td> Isi </td>
-                        <td> Tanggap </td>
+                        <td> Jawaban </td>
                     </tr>
                     <% let index = 1 %> 
-                        <% for (let review of result) { %>
+                        <% for (let jawaban of result) { %>
                             <tr>
                                 <td> <%= index++ %> </td>
-                                <td> <%= review.idReviewer %> </td>
-                                <td> <%= review.judul %> </td>
-                                <td> <%= review.status %> </td>
-                                <% if (review.status == 'inq') { %>
-                                    <td> <%= review.pertanyaan %></td>
-                                <% } else {%>
-                                    <td> <%= review.komentar %> </td>
-                                <% } %> 
-                                <td> <img src="./icon/Edit_fill.png" id="edit" class="ed" onclick="opn()"></td>
+                                <td> <%= jawaban.judul %> </td>
+                                <td> <%= jawaban.status %> </td>
+                                <td> <%= jawaban.jawaban %> </td>
                             </tr>
                         <% } %>
                 </table>
