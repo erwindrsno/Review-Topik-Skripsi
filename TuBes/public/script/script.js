@@ -314,53 +314,53 @@ function onSubmitLogIn(event){
     })
 }
 
-const formAddUser = document.getElementsByClassName('form_user');
-if(formAddUser != null || formAddUser != undefined){
-    formAddUser.addEventListener("submit", onSubmitAddUser);
-}
+// const formAddUser = document.getElementsByClassName('form_user');
+// if(formAddUser != null || formAddUser != undefined){
+//     formAddUser.addEventListener("submit", onSubmitAddUser);
+// }
 
-function onSubmitAddUser(event){
-    event.preventDefault();
-    console.log(event.event.currentTarget.elements);
-    // let formElements = event.currentTarget.elements;
-    // let arr = [];
-    // for (let i = 0; i < event.currentTarget.length-1; i++) {
-    //     arr[i] = formElements[i].value;
-    // }
-    // const obj = {email : arr[0], password : arr[1]};
-    // let input = encodeURL(obj);
-    // //console.log(obj);
-    // // const email = document.getElementById("input_email");
-    // // const password = document.getElementById("input_pw");
-    // // console.log(email);
-    // // console.log(password);
+// function onSubmitAddUser(event){
+//     event.preventDefault();
+//     console.log(event.event.currentTarget.elements);
+//     // let formElements = event.currentTarget.elements;
+//     // let arr = [];
+//     // for (let i = 0; i < event.currentTarget.length-1; i++) {
+//     //     arr[i] = formElements[i].value;
+//     // }
+//     // const obj = {email : arr[0], password : arr[1]};
+//     // let input = encodeURL(obj);
+//     // //console.log(obj);
+//     // // const email = document.getElementById("input_email");
+//     // // const password = document.getElementById("input_pw");
+//     // // console.log(email);
+//     // // console.log(password);
 
-    // const init = {
-    //     method: 'post',
-    //     headers: {
-    //         "Content-Type": "application/x-www-form-urlencoded"
-    //     },
-    //     body: input
-    // };
+//     // const init = {
+//     //     method: 'post',
+//     //     headers: {
+//     //         "Content-Type": "application/x-www-form-urlencoded"
+//     //     },
+//     //     body: input
+//     // };
 
-    // fetch('signin',init)
-    // .then(res => {
-    //     console.log(res.status);
-    //     return res.text();
-    // })
-    // .then(result => {
-    //     let resultJSON = JSON.parse(result)
-    //     if(resultJSON.status == 'failed'){
-    //         console.log('ggal');
-    //         document.getElementById('warning').style.visibility = 'visible';
-    //     }
-    //     else if(resultJSON.status = 'success'){
-    //         console.log('sukses');
-    //         console.log(resultJSON.url);
-    //         window.location.replace(resultJSON.url);
-    //     }
-    // })
-}
+//     // fetch('signin',init)
+//     // .then(res => {
+//     //     console.log(res.status);
+//     //     return res.text();
+//     // })
+//     // .then(result => {
+//     //     let resultJSON = JSON.parse(result)
+//     //     if(resultJSON.status == 'failed'){
+//     //         console.log('ggal');
+//     //         document.getElementById('warning').style.visibility = 'visible';
+//     //     }
+//     //     else if(resultJSON.status = 'success'){
+//     //         console.log('sukses');
+//     //         console.log(resultJSON.url);
+//     //         window.location.replace(resultJSON.url);
+//     //     }
+//     // })
+// }
 
 function encodeURL(data){
     const ret = [];

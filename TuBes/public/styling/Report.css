@@ -202,7 +202,7 @@ body{
     display: grid;
     grid-area: bawah;
     text-align: center;
-    margin-right: 10%;
+    margin-right: 20vw;
 }
 #tbl{
     border: 1px;
