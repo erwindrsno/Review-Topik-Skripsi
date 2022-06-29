@@ -26,7 +26,7 @@ CREATE TABLE `user` (
 );
 
 INSERT INTO `user` (`idUser`, `nama`, `email`, `password`, `idRole`) VALUES
-(1, 'Mariskha', 'mariskha@unpar.ac.id', 'admin', 1);
+(1, 'Admin Dummy', 'admin@unpar.ac.id', 'admin', 1);
 
 CREATE TABLE `periode` (
   `idPeriode` CHAR(11),

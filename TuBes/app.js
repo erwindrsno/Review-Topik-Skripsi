@@ -434,20 +434,24 @@ app.get('/tinjauanDsn', (req,res) => {
 
 app.post('/respon', multerParser.none(), (req,res) => {
     // console.log(req.body);
+    console.log(req.body);
     pool.query(`update review set jawaban = ? where idReview = ?`,[req.body.konten,req.body.idReview], (err, result, fields)=>{
     if(err){
         return console.log(err);
     }
+        // console.log(result);
         res.redirect('/home');
     })
 });
 
 app.post('/responDsn', (req,res) => {
+    console.log(req.body);
     pool.query(`update review set jawaban = ? where idReview = ?`,[req.body.konten,req.body.idReview], (err, result, fields)=>{
     if(err){
         return console.log(err);
     }
-        res.redirect('/home');
+    // console.log(result);    
+    res.redirect('/home');
     })
 });
 
