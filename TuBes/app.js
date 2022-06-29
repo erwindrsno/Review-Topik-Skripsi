@@ -13,8 +13,8 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: '',
-    database: 'test',
+    password: 'erwin08',
+    database: 'reviewts3',
     host: 'localhost',
     connectionLimit:10
 });
@@ -328,9 +328,10 @@ app.get('/daftarTopik', (req,res) => {
             return console.log(err);
         }
         namaUser = result[0].nama;
+        let idUs = result[0].idUser;
         pool.query(`select `)
         inisialUser = namaUser.charAt(0);
-        pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser where statusFinal =?`,["open"],(err, result, fields)=>{
+        pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser where (statusFinal =? OR statusFinal =? OR statusFinal =?) AND idDosen=?`,["open", "close", "taken", idUs],(err, result, fields)=>{
             if(err){
                 return console.log(err);
             }
@@ -615,7 +616,7 @@ app.post('/periode', multerParser.none(), (req,res) => {
         namaUser = result[0].nama;
         inisialUser = namaUser.charAt(0);
         tahunA = req.body.TahunAjar;
-        console.log(tahunA);
+        // console.log(tahunA);
         semesterInput = req.body.Semester;
         if(semesterInput=="Ganjil"){
             idPeriode = tahunA + "-1";
