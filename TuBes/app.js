@@ -330,7 +330,7 @@ app.get('/daftarTopik', (req,res) => {
         namaUser = result[0].nama;
         pool.query(`select `)
         inisialUser = namaUser.charAt(0);
-        pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser where statusFinal =?`,["open"],(err, result, fields)=>{
+        pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser where (statusFinal =? OR statusFinal =? OR statusFinal =?) AND idDosen=?`,["open", "close", "taken", idUs],(err, result, fields)=>{
             if(err){
                 return console.log(err);
             }
