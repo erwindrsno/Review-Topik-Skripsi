@@ -106,7 +106,7 @@
                         <td id="judulTbl"> Kode Topik </td>
                         <td id="judulTbl" class="bpTbl"> B. Peminatan </td>
                         <td id="judulTbl"> Jenis Skripsi </td>
-                        <td id="judulTbl"> Id Mahasiswa</td>
+                        <td id="judulTbl"> Nama Mahasiswa</td>
                     </tr>
                     <% let index = 1 %> 
                     <% for (let topik of result) { %>
@@ -117,7 +117,7 @@
                             <td> <%= topik.kodeTopik %> </td>
                             <td class="bpTbl"> <%= topik.bidangPeminatan %> </td>
                             <td> <%= topik.jenisSkripsi %> </td>
-                            <td> <%= topik.idMahasiswa %> </td>
+                            <td> <%= topik.namaMahasiswa %> </td>
                         </tr>
                     <% } %> 
                 </table> 
