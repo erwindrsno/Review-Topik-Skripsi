@@ -13,8 +13,8 @@ const app = express();
 
 const pool = mysql.createPool({
     user: 'root',
-    password: '',
-    database: 'test',
+    password: 'erwin08',
+    database: 'reviewts3',
     host: 'localhost',
     connectionLimit:10
 });
@@ -615,7 +615,7 @@ app.post('/periode', multerParser.none(), (req,res) => {
         namaUser = result[0].nama;
         inisialUser = namaUser.charAt(0);
         tahunA = req.body.TahunAjar;
-        console.log(tahunA);
+        // console.log(tahunA);
         semesterInput = req.body.Semester;
         if(semesterInput=="Ganjil"){
             idPeriode = tahunA + "-1";
