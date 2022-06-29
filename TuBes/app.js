@@ -499,7 +499,7 @@ app.post('/addUser', multerParser.none(), (req,res) => {
     else if(role === 'mahasiswa'){
         idRole = 3;
     }
-    // bcrypt.hash(password,10, function(err, hash) {
+    bcrypt.hash(password,10, function(err, hash) {
         let cek = pool.query("select idRole from user where id = ?",[id]);
         let sql = "INSERT INTO user (idUser, nama, email, password, idRole) VALUES ?";
         let values = [
@@ -513,7 +513,7 @@ app.post('/addUser', multerParser.none(), (req,res) => {
             res.redirect('kelola');
         
         }
-    // })
+    })
 })
 
 let setIdTopik = insertToSetIdTopik();
@@ -545,14 +545,16 @@ app.post('/addTopik', upload.single('skripsi'), (req,res) => {
     let kodeTopik = checkDuplicateAndGenerateIdTopik();
     let jenisSkripsi = req.body.JenisSkripsi;
     let pathFile = req.file.path;
+    console.log(idPeriode);
     pool.query(`select idUser from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
             return console.log(err);
         }
-        let sql = "INSERT INTO topikSkripsi (judul, idDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusFinal, path) VALUES ?";
+        let sql = "INSERT INTO topikSkripsi (judul, idDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusFinal,idPeriode, path) VALUES ?";
         let values = [
-            [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,"null",pathFile]
+            [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,"null",idPeriode,pathFile]
         ]
+        console.log(idPeriode);
         pool.query(sql,[values]);
     })
     res.redirect('/home');
@@ -569,10 +571,11 @@ app.post('/addTopikDsn', upload.single('skripsi'), (req,res) => {
         if(err){
             return console.log(err);
         }
-        let sql = "INSERT INTO topikSkripsi (judul, idDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusFinal, path) VALUES ?";
+        let sql = "INSERT INTO topikSkripsi (judul, idDosen, kodeTopik, bidangPeminatan, jenisSkripsi, statusFinal,idPeriode, path) VALUES ?";
         let values = [
-            [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,"null", pathFile]
+            [judulTopik,result[0].idUser,kodeTopik,bidangPeminatan,jenisSkripsi,"null",idPeriode, pathFile]
         ]
+        console.log(idPeriode);
         pool.query(sql,[values]);
     })
     res.redirect('/homeDsn');
@@ -603,10 +606,8 @@ app.post('/filterBP', multerParser.none(), (req,res) => { //belum bisa
 })
 
 app.post('/periode', multerParser.none(), (req,res) => {
-    
     let namaUser = "";
     let inisialUser = "";
-    
     pool.query(`select * from user where email = ?`, [email],(err, result, fields)=>{
         if(err){
             return console.log(err);
@@ -626,8 +627,14 @@ app.post('/periode', multerParser.none(), (req,res) => {
             [idPeriode,semesterInput,tahunA]
         ]
         pool.query(sql,[values]);
-        console.log(tahunA);
-        res.render('home', { nama: namaUser, inisial: inisialUser, result, email,tahunA:tahunA,semesterInput:semesterInput});
+        pool.query(`select * from topikSkripsi join user on topikSkripsi.idDosen = user.idUser where statusFinal!='close'`,(err, result, fields)=>{
+            if(err){
+                return console.log(err);
+            }
+            res.render('home', { nama: namaUser, inisial: inisialUser, email,tahunA:tahunA,semesterInput:semesterInput,result});
+        });
+        // console.log(result);
+        // res.render('home', { nama: namaUser, inisial: inisialUser, email,tahunA:tahunA,semesterInput:semesterInput});
     })
 })
 
