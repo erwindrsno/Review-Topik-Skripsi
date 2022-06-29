@@ -392,7 +392,7 @@ app.get('/kelola', (req,res) => {
             if(err){
                 return console.log(err);
             }
-            console.log(result);
+            // console.log(result);
             res.render('kelola',{ nama: namaUser, inisial: inisialUser , result , email});
         })
     })
@@ -461,7 +461,7 @@ app.get('/jawaban',(req,res) => {
             if(err){
                 return console.log(err);
             }
-            console.log(result);
+            // console.log(result);
             // console.log(id);
             res.render('jawaban', {nama: namaUser, inisial: inisialUser , email , result });
         })
@@ -479,7 +479,7 @@ app.get('/jawabanDsn',(req,res) => {
             if(err){
                 return console.log(err);
             }
-            console.log(result);
+            // console.log(result);
             // console.log(id);
             res.render('jawabanDsn', {nama: namaUser, inisial: inisialUser , email , result });
         })
