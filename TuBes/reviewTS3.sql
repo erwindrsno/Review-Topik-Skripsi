@@ -44,6 +44,7 @@ CREATE TABLE `topikSkripsi` (
   `statusFinal` VARCHAR(10),
   `idPeriode` CHAR(11),
   `idMahasiswa` varchar(15),
+  `path` varchar(150) DEFAULT NULL,
   PRIMARY KEY(`kodeTopik`),
   CONSTRAINT `fk_idDosen` FOREIGN KEY(`idDosen`) REFERENCES `user`(`idUser`),
   CONSTRAINT `fk_idPeriode` FOREIGN KEY(`idPeriode`) REFERENCES `periode`(`idPeriode`)
@@ -61,4 +62,3 @@ CREATE TABLE `review` (
   CONSTRAINT `fk_idReviewer` FOREIGN KEY(`idReviewer`) REFERENCES `user`(`idUser`),
   CONSTRAINT `fk_idTopik` FOREIGN KEY(`idTopik`) REFERENCES `topikSkripsi`(`kodeTopik`)
 );
-
