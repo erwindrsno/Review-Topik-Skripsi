@@ -314,14 +314,14 @@ function onSubmitLogIn(event){
     })
 }
 
-const formAddUser = document.getElementsByClassName('form_user');
-if(formAddUser != null || formAddUser != undefined){
-    formAddUser.addEventListener("submit", onSubmitAddUser);
-}
+// const formAddUser = document.getElementsByClassName('form_user');
+// if(formAddUser != null || formAddUser != undefined){
+//     formAddUser.addEventListener("submit", onSubmitAddUser);
+// }
 
-function onSubmitAddUser(event){
-    event.preventDefault();
-    console.log(event.event.currentTarget.elements);
+// function onSubmitAddUser(event){
+//     event.preventDefault();
+//     console.log(event.event.currentTarget.elements);
     // let formElements = event.currentTarget.elements;
     // let arr = [];
     // for (let i = 0; i < event.currentTarget.length-1; i++) {
@@ -360,7 +360,7 @@ function onSubmitAddUser(event){
     //         window.location.replace(resultJSON.url);
     //     }
     // })
-}
+// }
 
 function encodeURL(data){
     const ret = [];
@@ -427,10 +427,10 @@ function printToPDF() {                                     //convert html to pd
     let printableArea = document.getElementById('pdf');
   
     html2canvas(printableArea, {
-      useCORS: true,
-      onrendered: function(canvas) {
+      useCORS: true,    //http reader mengizinkan server menunjukkan origins (disable mechanism)
+      onrendered: function(canvas) {    //ketika objek ter-render function jalan
   
-        let pdf = new jsPDF('p', 'pt', 'letter');
+        let pdf = new jsPDF('p', 'pt', 'a4');
   
         let pageHeight = 980;
         let pageWidth = 2500;
